@@ -1,0 +1,24 @@
+html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+header {
+    background-color: lightblue;
+    margin-top: 0;
+}
+.container {
+    display: flex;
+    list-style: none;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-size: 18px;
+  }
+
+  .search {
+    flex: 1;
+  }
+
+  .container > li {
+    flex: 1;
+  }
