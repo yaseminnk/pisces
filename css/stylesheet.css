@@ -23,63 +23,10 @@ body {
 }
 
 
-/*** EDITOR RESPONSIVE LAYOUT ***/
-.flex-container {
-  display: flex;            
-  flex-wrap: wrap;
-  height: 100vh;
-  margin: 0 0 22px 0;      
-  padding: 0;
-  overflow: hidden;
-}
-.container-navfield {
-  flex-basis: 12%;
-  min-width: 248px;
-  padding: 10px 22px;
-}
-
 /* ---------------------------------------------------
 ******************** NAVBAR STYLE ******************** 
 -----------------------------------------------------*/
 
-/*** Nav-Bar sidebar ***/
-#nav-bar {     
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  outline: none;    
-  background-color: rgb(134, 135, 189);
-}
-#nav-bar #logo {
-  font-family: 'Libre Baskerville', serif;
-  font-size: 38px;
-  /*color: rgb(44, 44, 44);*/
-  color: rgba(255, 255, 255, 0.75);
-}
-#nav-bar .nav-ul {
-  padding: 0;
-}
-#nav-bar .nav-ul li {
-  margin-bottom: 30px;
-  list-style-type: none;
-}
-#nav-bar .nav-ul li a {
-  font-weight: 600;
-  color: rgb(175, 23, 175);
-  color: rgb(252,252,252);
-  padding: 10px;
-  text-decoration: none;
-}
-#nav-bar .nav-ul li a:hover {
-  opacity: 0.9;
-}
-.fa-bars {
-  color: rgb(255,255,255);
-}        
-.menu-toggler {
-  display: none;
-}
-
-
-/*** EDITOR Nav-Bar ***/
 .navbar {
   font-size: 18px;
   background: linear-gradient(260deg, #2376ae 0%, #c16ecf   100%);
@@ -197,50 +144,7 @@ footer span {
 }
 
 
-
-
 @media screen and (min-width: 768px) {
-
-  .flex-container {
-    height: auto;            
-  }
-  #nav-bar {
-    flex-grow: 1;
-    flex-basis: 100%;
-    height: auto;               
-    overflow: hidden;
-  }
-  .container-workfield {
-    flex-grow: 1;
-    flex-basis: 100%;
-    height: 100%;
-    margin: 0;
-  }
-  #editor {
-    min-height: 344px;
-  }
-  #logo {
-    display: none;
-  }
-  .menu-collapse {
-    display: none;
-  }
-  .menu-burger {
-    display: flex;
-    justify-content: center;
-  }
-  .menu-toggler {
-    display: block;
-    background-color: transparent;
-    cursor: pointer;
-    padding: 0.2em 0.5em;
-    font-size: 2em;
-    line-height: 1;
-    border: 1px solid transparent;
-  }
-  .nav-ul li {
-    text-align: center;
-  }
 
   .navbar {
       display: flex;
