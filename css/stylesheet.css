@@ -6,32 +6,46 @@ html {
 body {
   width: 100%;
   height: 100%;
-  font-family: 'Josefin Sans', sans-serif;
+  /* background-image: url("https://source.unsplash.com/WmnsGyaFnCQ");  */
+  /* background-image: url("https://source.unsplash.com/PdfRE-xB--s");  */
+  /* background-image: url("https://source.unsplash.com/J4kK8b9Fgj8");  */
+  background-image: url("https://source.unsplash.com/W-UY4H3dTMw");
+  background-position: center; 
+  background-size: cover;
+  /*background-repeat: no-repeat;
+  font-family: 'Josefin Sans', sans-serif; */
+  font-family: 'Libre Baskerville', serif;
 }
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
+
+
 /* ---------------------------------------------------
 ******************** NAVBAR STYLE ******************** 
 -----------------------------------------------------*/
+
 .navbar {
   font-size: 18px;
-  background-image: linear-gradient(260deg, #2376ae 0%, #c16ecf   100%);
+  background: linear-gradient(260deg, #2376ae 0%, #c16ecf   100%);
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  padding-bottom: 10px;
+  padding-bottom: 15px;
 }
 .main-nav {
   list-style-type: none;
   display: none;
+  align-items: center;
 }
 
 .logo {
   display: inline-block;
-  font-size: 22px;
+  font-size: 38px;
+  font-weight: 700;
   margin-top: 10px;
   margin-left: 20px;
+  font-family: 'Libre Baskerville', serif;
 }
 
 .nav-links,
@@ -46,11 +60,23 @@ body {
 }
 
 #btnGetStarted {
-  height: 25px;
-  width: 100px;
-  color: #2376ae; 
-  margin-left: 40px;
+  /* height: 25px;
+  width: 100px; */
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 11px 21px;
+  background-color: transparent;
+  margin-left: 18px;
+  font-size: 18px;
+  font-family: 'Libre Baskerville', serif;
 }
+
+#btnGetStarted:hover {
+  background-color: rgba(255,255,255,0.8);
+  color: #2376ae;
+  transition-duration: .5s; 
+}
+
 .navbar-toggle {
   position: absolute;
   top: 10px;
@@ -65,12 +91,66 @@ body {
 } 
 
 
+/* ---------------------------------------------------
+******************** MAIN BODY STYLE ******************** 
+-----------------------------------------------------*/
+.title-tag-container {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  width: 100%; 
+  height: 100%;
+  margin-top: 130px ;
+}
+
+.text {
+  background-image: linear-gradient(to right, #2376ae 0%, #c16ecf  100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 60px;
+  text-align: center;
+  text-transform: uppercase;
+  /*margin: auto 100px; */
+}
+
+/* ---------------------------------------------------
+******************** FOOTER STYLE ******************** 
+-----------------------------------------------------*/
+
+footer {
+  width: 100%;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  padding-right: 20px;
+  padding-top:7px;
+  background: linear-gradient(260deg, #2376ae 0%, #c16ecf   100%);
+  height: 30px;
+  position: fixed;
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  text-align: center;
+  bottom: 0;
+}
+footer span {
+  width: 10px;
+  margin-right: 5px;
+  padding-top:1px;
+}
+
+
 @media screen and (min-width: 768px) {
+
   .navbar {
       display: flex;
       justify-content: space-between;
       padding-bottom: 0;
-      height: 70px;
+      height: 90px;
       align-items: center;
   }
 
@@ -101,4 +181,5 @@ body {
   .nav-links:hover {
       color: rgba(255, 255, 255, 1);
   }
+
 }

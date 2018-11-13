@@ -5,6 +5,7 @@ var toolbarOptions = [
     [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
     [{ 'font': [] }],
     [{ 'align': [] }],
+    ['link', 'image'],
 
     // [{ 'header': 1 }, { 'header': 2 }],               // custom button values
     // [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
@@ -12,16 +13,26 @@ var toolbarOptions = [
     // [{ 'direction': 'rtl' }],                         // text direction
     // [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
   
-    ['clean']                                         // remove formatting button
+    //['clean']                                         // remove formatting button
+
   ];
+
   
   
-var quill = new Quill('#editor', {
+  quill = new Quill('#editor', {
     modules: {
-        toolbar: toolbarOptions
+      toolbar: toolbarOptions,
     },
     theme: 'snow'
+  });
 
+var btnSaveDelta = document.getElementById('btnSaveDelta');
+
+btnSaveDelta.addEventListener('click', function() {
+  
+});
+
+<<<<<<< HEAD
 });
 
 // Cookies
@@ -64,3 +75,5 @@ document.getElementById("saveButton").addEventListener("click", function(){
     alert("You didn't write a note");
   }
 });
+=======
+>>>>>>> 99ac0b73a201bab8753e917492648ba69ce91ad3
