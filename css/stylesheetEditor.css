@@ -102,6 +102,15 @@
   display: none;
 }
 
+/* #div_btnSaveDelta {
+  display: flex;
+  justify-content: flex-end;
+}
+#btnSaveDelta {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+} */
 
 @media screen and (max-width: 768px) {
 
