@@ -1,3 +1,5 @@
+
+
 var toolbarOptions = [
     ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
     [{ 'list': 'ordered'}, { 'list': 'bullet' }],
@@ -16,7 +18,6 @@ var toolbarOptions = [
     //['clean']                                         // remove formatting button
 
   ];
-
   
   
   quill = new Quill('#editor', {
@@ -28,15 +29,15 @@ var toolbarOptions = [
 
 var btnSaveDelta = document.getElementById('btnSaveDelta');
 
+/*
 btnSaveDelta.addEventListener('click', function() {
   
 });
-
-<<<<<<< HEAD
-});
+*/
 
 // Cookies
 
+/*
 function setCookie(cname,cvalue,exdays) {
   var d = new Date();
   d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -75,5 +76,4 @@ document.getElementById("saveButton").addEventListener("click", function(){
     alert("You didn't write a note");
   }
 });
-=======
->>>>>>> 99ac0b73a201bab8753e917492648ba69ce91ad3
+*/
