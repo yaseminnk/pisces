@@ -24,6 +24,7 @@ var toolbarOptions = [
     modules: {
       toolbar: toolbarOptions,
     },
+    placeholder: 'write here...',
     theme: 'snow'
   });
 

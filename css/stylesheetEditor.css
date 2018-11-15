@@ -20,23 +20,83 @@
 }
 .container-navfield {
   flex-basis: 12%;
-  min-width: 248px;
+  min-width: 150px;
   padding: 10px 22px;
 }
 
 
 /* DISPLAY CONTAINER */
 .note-fav-container {
-	flex-basis: auto;
+	  flex-basis: auto;
     padding: 0;
     margin: 0;
 }
+
+/* Moitrayee edit */
+
 .data-container-hd {
-    display: none;
+    /* display: none; */
+    width: 150px;
+    background-color: rgb(158, 159, 206);
 }
+
+.data-container-hd .header{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding-top:50px;
+  padding-bottom:40px;
+  padding-left: 10px;
+  font-size: 1.5em;
+  border-bottom: 1px solid rgb(209, 201, 201);
+}
+
+.note-item{
+  /* font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: 70px;
+  border-bottom: 1px solid rgb(209, 201, 201);
+  padding-left: 10px;
+  padding-top: 10px;  */
+  height: 80px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-bottom: 1px solid rgb(209, 201, 201);
+}
+
+.note-item .note-title{
+  padding-left: 10px;
+  padding-top: 5px;
+  height: 20px;
+  font-size: 0.7em; 
+  font-weight: bold;
+}
+.note-item .note-content{
+  padding-left: 10px;
+  padding-top:2px;
+  height:25px;
+  font-size:0.7em;
+}
+.note-item .note-created{
+  padding-left: 10px;
+  padding-top: 10px;
+  height:10px;
+  font-size:0.5em;
+}
+
+
+#noteTitle{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: 40px;  
+  padding-left: 20px;
+  padding-top: 10px; 
+  padding-bottom: 10px;
+  font-size: 1.6em;
+  border: 0px;
+}
+
+/* Moitrayee edit */
+
+
 .note-field,
 .favorit-field {
-  border: 1px solid rgb(232, 232, 232);
+  /* border: 1px solid rgb(232, 232, 232); */
   padding: 0;
   margin: 0;
 }
