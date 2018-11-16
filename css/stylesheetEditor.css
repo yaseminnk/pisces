@@ -89,29 +89,35 @@
   font-size:0.6em;
 }
 
+/* TOP TITLE AND SEARCH FIELD */
 
-#noteTitle, #noteSearch {
+#noteTitle {
+  width: 54%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  height: 40px;  
-  padding-left: 20px;
-  padding-top: 10px; 
-  padding-bottom: 10px;
-  padding: 8px 20px;
+  padding: 18px;
   font-size: 1.4em;
   border: 0px;
 }
-#noteTitle {
-  width: 48%;
+
+#noteSearch { 
+  display: inline;
+  padding: 8px;
+  border: 1px solid rgb(224,224,224);
+  border-radius: 8px;
 }
-#noteSearch {
-  border-left: 1px solid rgb(187,187,187);
-  width: 30%;
+#searchInput {
+  padding: 8px 12px;
+  border: none;
+  width: auto; 
+  min-width: 270px;
+  font-size: 0.85em;
 }
-#noteTitle:active, #noteSearch:active {
+#searchInput:focus {
   outline: none;
+  border: none;
 }
 
-#noteTitle:focus, #noteSearch:focus {
+#noteTitle:active, #noteTitle:focus {
   outline: none;
 }
 
@@ -119,7 +125,6 @@
 
 .note-field,
 .favorit-field {
-  /* border: 1px solid rgb(232, 232, 232); */
   padding: 0;
   margin: 0;
 }
@@ -201,6 +206,12 @@
   justify-content: flex-end;
 } */
 
+@media screen and (max-width: 1199px) {
+  #noteTitle {
+    width: 46%;
+  }
+}
+
 @media screen and (max-width: 768px) {
 
   .flex-container {
@@ -244,6 +255,17 @@
     text-align: center;
   }
 
+  .top-title-field {
+    margin: 2px 12px 20px 0;
+  }
+  #noteTitle {
+    display: block;
+  }
+  #noteSearch {  
+    display: block;
+    padding: 8px;
+  }
+
   .note-fav-container {
     flex-basis: 100%;
     flex-wrap: wrap;
@@ -251,7 +273,10 @@
   .note-fav-container .header-notes {
     text-align: center;
   }
+}
 
+@media screen and (max-width: 479px) {
+  /* FUTURE STYLING FOR MOBILPHONES */
 }
  
   
