@@ -206,9 +206,31 @@
   justify-content: flex-end;
 } */
 
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 1226px) {
+  .container-workfield {
+    flex-basis: 58%; 
+    flex-grow: 1;
+  }  
+  #searchInput {
+    min-width: 220px;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1099px) {
   #noteTitle {
     width: 46%;
+  }
+  #searchInput {
+    min-width: 180px;
+  }
+}
+
+@media screen and (min-width: 767px) and (max-width: 991px) {  
+  #noteTitle {
+    width: 42%;
+  }
+  #searchInput {
+    min-width: 160px;
   }
 }
 
@@ -264,6 +286,7 @@
   #noteSearch {  
     display: block;
     padding: 8px;
+    margin: 10px;
   }
 
   .note-fav-container {
