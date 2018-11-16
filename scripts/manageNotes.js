@@ -18,17 +18,14 @@
       ];
     loadNotes();
     
-    
-    
-    // var newNote = document.getElementById('navNewNote').getElementsByTagName('a')[0];
+        
     var newNote = document.getElementById('navNewNote');
     newNote.addEventListener('click',function(){
         var newId = uniqueID();
         var note = { id : newId, title : "Untitled" , content : "no content" , created : new Date().toLocaleString()};
     
         document.getElementById('noteTitle').value = "Untitled";
-    
-        
+            
         notes.unshift(note); //add notes to beginning of the Array, push() add item in the end of the array.
         loadNotes();
     

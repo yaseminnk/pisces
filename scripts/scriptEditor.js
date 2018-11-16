@@ -9,7 +9,7 @@ var collapsedMenu = document.getElementById("collapse-target");
 var navNewNote = document.getElementById('navNewNote');
 var navSearch = document.getElementById('navSearch');
 var noteTitle = document.getElementById('noteTitle');
-var noteSearch = document.getElementById('noteSearch');
+var noteSearch = document.getElementById('searchInput');
 
 
 // EVENT LISTENERS 
