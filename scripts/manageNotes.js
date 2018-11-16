@@ -20,7 +20,8 @@
     
     
     
-    var newNote = document.getElementById('nav-new-note').getElementsByTagName('a')[0];
+    // var newNote = document.getElementById('navNewNote').getElementsByTagName('a')[0];
+    var newNote = document.getElementById('navNewNote');
     newNote.addEventListener('click',function(){
         var newId = uniqueID();
         var note = { id : newId, title : "Untitled" , content : "no content" , created : new Date().toLocaleString()};
