@@ -3,29 +3,14 @@
 /*** STYLESHEET EDITOR ***/
 /*************************/
 
-/*** GENERICS ***/
-
-* {
-  outline: none;
-}
-body {
-  padding: 0;
-  margin: 0;
-}
-li {
-  list-style-type: none;
-}
 
 /*** EDITOR RESPONSIVE LAYOUT ***/
 
 #nav-bar {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   outline: none;
+  overflow-x: auto; 
 }
-#logo-brand {
-  display: none;
-}
-
 .flex-container {
   display: flex;            
   flex-wrap: wrap;
@@ -35,7 +20,7 @@ li {
   overflow: hidden;
 }
 .container-navfield {
-  flex-basis: 11%;
+  flex-basis: 12%;
   min-width: 150px;
   padding: 0 22px;
   outline: none;
@@ -44,9 +29,7 @@ li {
 
 /* DISPLAY CONTAINER */
 .note-fav-container {
-    flex-basis: auto;
-    width: 150px;
-    background-color: rgb(158, 159, 206);
+	  flex-basis: auto;
     padding: 0;
     margin: 0;
 }
@@ -54,12 +37,13 @@ li {
 /* Moitrayee edit */
 
 .data-container-hd {
-    display: none; 
-   /* width: 150px;
-    background-color: rgb(158, 159, 206);*/
+    /* display: none; */
+    width: 150px;
+    background-color: rgb(158, 159, 206);
+    overflow-x: auto;
 }
 
-.note-fav-container .header-notes {
+.data-container-hd .header-notes {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   padding-top: 40px;
   padding-bottom:40px;
@@ -95,10 +79,13 @@ li {
   cursor: pointer;
 }
 .note-item .note-content{
+  box-sizing: border-box;
   padding-left: 10px;
   padding-top:2px;
   height:25px;
-  font-size:0.8em;
+  font-size:0.6em;
+  overflow: hidden;
+  white-space: nowrap;
 }
 .note-item .note-created{
   padding-left: 10px;
@@ -107,34 +94,29 @@ li {
   font-size:0.6em;
 }
 
-/* TOP TITLE AND SEARCH FIELD */
 
-#noteTitle {
-  width: 54%;
+#noteTitle, #noteSearch {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  padding: 18px;
+  height: 40px;  
+  padding-left: 20px;
+  padding-top: 10px; 
+  padding-bottom: 10px;
+  padding: 8px 20px;
   font-size: 1.4em;
   border: 0px;
 }
-
-#noteSearch { 
-  display: inline;
-  padding: 8px;
-  border: 1px solid rgb(224,224,224);
-  border-radius: 8px;
+#noteTitle {
+  width: 48%;
 }
-#searchInput {
-  padding: 8px 12px;
-  border: none;
-  width: auto; 
-  min-width: 270px;
-  font-size: 0.85em;
+#noteSearch {
+  border-left: 1px solid rgb(187,187,187);
+  width: 30%;
 }
-#searchInput:focus {
+#noteTitle:active, #noteSearch:active {
   outline: none;
-  border: none;
 }
-#noteTitle:active, #noteTitle:focus {
+
+#noteTitle:focus, #noteSearch:focus {
   outline: none;
 }
 
@@ -142,15 +124,14 @@ li {
 
 .note-field,
 .favorit-field {
+  /* border: 1px solid rgb(232, 232, 232); */
   padding: 0;
   margin: 0;
 }
-/*
 .note-field-hd,
  .favorite-field-hd {
  display: hidden;
 }
-*/
 .container-workfield {
   flex-basis: 68%;
   flex-grow: 1;
@@ -163,6 +144,7 @@ li {
   padding: 10px 20px !important;
   border: none !important;
   border-top: 1px solid rgb(187,187,187) !important;
+  /*border-bottom: 1px solid rgb(187,187,187) !important;*/
 }
 
 .container-workfield {
@@ -191,10 +173,11 @@ li {
 
 .nav-ul li {
   margin-bottom: 30px;
+  list-style-type: none;
 }
 
 .nav-ul li a {
-  font-size: 1.15em;
+  font-size: 1.2em;
   font-weight: 600;
   color: rgb(175, 23, 175);
   color: rgb(252,252,252);
@@ -223,51 +206,11 @@ li {
   justify-content: flex-end;
 } */
 
-@media screen and (max-width: 1226px) {
-  .container-workfield {
-    flex-basis: 58%; 
-    flex-grow: 1;
-  }  
-  #searchInput {
-    min-width: 220px;
-  }
-}
-
-@media screen and (min-width: 992px) and (max-width: 1099px) {
-  #noteTitle {
-    width: 46%;
-  }
-  #searchInput {
-    min-width: 180px;
-  }
-}
-
-@media screen and (min-width: 769px) and (max-width: 991px) {  
-  #noteTitle {
-    width: 42%;
-  }
-  #searchInput {
-    min-width: 160px;
-  }
-}
-
 @media screen and (max-width: 768px) {
 
   .flex-container {
     height: auto;            
   }
-
-  #logo-brand {
-    display: block;
-    width: 100%;
-    background-color: rgb(158, 159, 206);    
-  }
-  #logo-brand h1 {
-    font-family: 'Libre Baskerville', serif;    
-    color: rgba(255, 255, 255, 0.75);
-    text-align: center;    
-  }
-
   #nav-bar {
     flex-grow: 1;
     flex-basis: 100%;
@@ -307,28 +250,12 @@ li {
   }
 
   .note-fav-container {
-    /*display: none;*/
-    width: 100%;
-  }
-
-  .top-title-field {
-    margin: 2px 12px 20px 0;
-  }
-  #noteTitle {
-    display: block;
-  }
-  #noteSearch {  
-    display: block;
-    padding: 8px;
-    margin: 10px;
+    flex-basis: 100%;
+    flex-wrap: wrap;
   }
   .note-fav-container .header-notes {
     text-align: center;
   }
-}
-
-@media screen and (max-width: 479px) {
-  /* FUTURE STYLING FOR MOBILES */
 }
  
   

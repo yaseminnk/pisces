@@ -33,21 +33,19 @@
 
     <div class="flex-container">
 
-        <div id="logo-brand">
-            <h1>QUIRE</h1>
-        </div><br>
         <div id="nav-bar" class="flex-item container-navfield">
 
             <div class="menu-burger">
-                <button id="menu-toggler" class="menu-toggler" data-toggle="collapse" data-target="#collapseTarget">
+                <button id="menu-toggler" class="menu-toggler" data-toggle="collapse" data-target="#collapse-target">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
 
-            <div id="collapseTarget" class="menu-collapse">
-                <h1 id="logo">QUIRE</h1><br>
+            <div class="menu-collapse" id="collapse-target">
+                <h2 id="logo">QUIRE</h2><br>
                 <ul class="nav-ul">
                     <li><a id="navNewNote" href="#">NEW NOTE</a></li>
+                    <li><a id="navSearch" href="#">SEARCH</a></li>
                     <li><a id="navNotes" href="#">MY NOTES</a></li>
                     <li><a id="navFavorites" href="#">FAVORITES</a></li>
                     <li><a id="navSave" href="#">SAVE</a></li>
@@ -57,12 +55,13 @@
         </div>
 
         <div class="note-fav-container data-container-hd">
+        <!--<div class="note-fav-container">-->
 
             <div class="header-notes">
                 All Notes
             </div>
             <div class="note-field note-field-hd">
-                <!-- <div id="noteUniqueidNote01" class="note-item" > 
+                <!-- <div id="noteUniqueidNote01" class="note-item" onClick="selectNote()"> 
                     <div class="note-title">Note01</div>
                     <div class="note-content">content....</div> 
                     <div class="note-created">2018-11-14</div> 
@@ -83,12 +82,9 @@
                 <!--<div class="note-title-top">-->
                 <input type="text" name="title" id="noteTitle" placeholder="Title">
                 <!--</div>-->
-                <form id="noteSearch">
-                    <label>
-                    <i style="opacity: 0.5"class="fas fa-search"></i>
-                    <input id="searchInput"type="text" name="search-title" placeholder=" Search">
-                    </label>
-                </form>                           
+                <!--<div class="note-search-top">-->
+                <input type="text" name="search-title" id="noteSearch" placeholder="Search">
+                <!--</div>-->
             </div>
 
             <div id="toolbar"></div>
