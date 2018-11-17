@@ -1,81 +1,110 @@
-
-html {
+html{
   width: 100%;
   height: 100%; 
 }
-body {
+
+body{
   width: 100%;
   height: 100%;
   /* background-image: url("https://source.unsplash.com/WmnsGyaFnCQ");  */
   /* background-image: url("https://source.unsplash.com/PdfRE-xB--s");  */
   /* background-image: url("https://source.unsplash.com/J4kK8b9Fgj8");  */
-  background-image: url("https://source.unsplash.com/W-UY4H3dTMw");
-  background-position: center; 
-  background-size: cover;
+  /*background-image: url("https://source.unsplash.com/W-UY4H3dTMw");*/
+
   /*background-repeat: no-repeat;
   font-family: 'Josefin Sans', sans-serif; */
   font-family: 'Libre Baskerville', serif;
-}
-* {
-  box-sizing: border-box;
-  padding: 0;
   margin: 0;
 }
 
+* {
+  box-sizing: border-box;
+  /*padding: 0;
+  margin: 0;*/
+}
 
 /* ---------------------------------------------------
 ******************** NAVBAR STYLE ******************** 
 -----------------------------------------------------*/
+#topPage{
+  background-image: url("https://source.unsplash.com/ZVThOAHgt1c");
+  background-position: center; 
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+}
 
 .navbar {
   font-size: 18px;
-  background: linear-gradient(260deg, #2376ae 0%, #c16ecf   100%);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  padding-bottom: 15px;
+  width: 100%;
+  /*position: fixed;*/
+  top: 0;
+  z-index: 1;
 }
+
 .main-nav {
   list-style-type: none;
   display: none;
   align-items: center;
+  font-family: 'Josefin Sans'
+}
+
+.main-nav a:hover{
+  transition-duration: 0.5s;
 }
 
 .logo {
   display: inline-block;
   font-size: 38px;
-  font-weight: 700;
+  font-weight: 400;
   margin-top: 10px;
-  margin-left: 20px;
-  font-family: 'Libre Baskerville', serif;
+  margin-left: 30px;
+  font-family: 'Libre Baskerville';
+  text-decoration: none;
+  color: #214DBF;
 }
 
-.nav-links,
-.logo {
+.logo:hover{
+  transition-duration: 0.5s;
+}
+
+.nav-links{
   text-decoration: none;
   color: rgba(255, 255, 255, 0.7);
 }
+
 
 .main-nav li {
   text-align: center;
   margin: 15px auto; 
 }
 
-#btnGetStarted {
-  /* height: 25px;
-  width: 100px; */
-  border: none;
-  color: rgba(255, 255, 255, 0.7);
-  padding: 11px 21px;
-  background-color: transparent;
-  margin-left: 18px;
-  font-size: 18px;
-  font-family: 'Libre Baskerville', serif;
+
+#getStarted{
+  text-align: center;
 }
 
-#btnGetStarted:hover {
-  background-color: rgba(255,255,255,0.8);
-  color: #2376ae;
-  transition-duration: .5s; 
+#getStarted a{
+  /*font-family: 'Josefin Sans';*/
+  font-family: 'Mukta Mahee';
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 28px;
+  letter-spacing: 2px;
+  padding-bottom: 5px;
+
+  background-image: linear-gradient(#FFF,#FFF);
+  background-size: 0 1px, auto;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  transition: all .3s ease-out;
 }
+
+#getStarted a:hover{
+  color: #FFF;
+  background-size: 100% 1px, auto;
+}
+
 
 .navbar-toggle {
   position: absolute;
@@ -91,6 +120,7 @@ body {
 } 
 
 
+
 /* ---------------------------------------------------
 ******************** MAIN BODY STYLE ******************** 
 -----------------------------------------------------*/
@@ -102,21 +132,177 @@ body {
   background: transparent;
   width: 100%; 
   height: 100%;
-  margin-top: 130px ;
+  margin-top: 90px ;
 }
 
-.text {
-  background-image: linear-gradient(to right, #2376ae 0%, #c16ecf  100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.text{
+  color: #768ECB;
+  /*text-shadow: -1px 0 #3c67d3, 0 1px #3c67d3, 1px 0 #3c67d3, 0 -1px #3c67d3;*/
   font-size: 30px;
-  font-weight: 700;
   line-height: 60px;
   text-align: center;
   text-transform: uppercase;
+  /*font-family: 'Cutive Mono';*/
+  font-family: 'Mukta Mahee';
+  letter-spacing: 5px;
   /*margin: auto 100px; */
 }
+
+.welcome{
+  text-align: center;
+  padding: 80px 0;
+  color: #BEBEBE;
+}
+
+.welcome h1{
+  font-family: 'Mukta Mahee';
+  font-size: 40px;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.welcome span{
+  color: #214DBF;
+  font-family: 'Libre Baskerville';
+  letter-spacing: 0;
+}
+
+#featureGuide{
+  display: flex;
+  flex-wrap: nowrap;
+  /*height: 50vh;*/
+  height: 60%;
+}
+
+.feature-guide{
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.feature-guide h2{
+  font-family: 'Mukta Mahee';
+  font-size: 25px;
+  color: #214DBF;
+  font-weight: 200;
+  letter-spacing: 2px; 
+}
+
+#feature{
+/*  background-color: #1a42db;
+*/  background-color: #E5E9F5;
+  margin-left: 20px;
+  margin-right: 5px;
+  position: relative;
+  border-radius: 100px 3px 100px 3px;
+}
+
+#feature h2{
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 10px;
+  margin-right: 20px;
+}
+
+#guide{
+/*background-color: #1a42db;*/  
+  background-color: #E5E9F5;
+  margin-right: 20px;
+  margin-left: 5px;
+  position: relative;
+  border-radius: 3px 100px 3px 100px;
+}
+
+#guide h2{
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.feature-guide-text{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-us{
+  text-align: center;
+  padding: 80px 0;
+  color: #BEBEBE;
+}
+
+.about-us h1{
+  font-family: 'Mukta Mahee';
+  font-size: 40px;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.about-us span{
+  color: #214DBF;
+}
+
+
+#aboutContact{
+  display: flex;
+  flex-wrap: nowrap;
+  /*height: 50vh;*/
+  height: 40%;
+  margin-bottom: 30px;
+}
+
+.about-contact{
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.about-contact p{
+  font-family: 'Mukta Mahee';
+  font-size: 25px;
+  color: #214DBF;
+  font-weight: 200;
+  letter-spacing: 2px; 
+}
+
+#aboutPisces{
+/*background-color: #1a42db;*/  
+  /*background-color: #E5E9F5;
+  margin-left: 20px;
+  margin-right: 5px;
+  position: relative;
+  border-radius: 100px 3px 3px 100px;*/
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#aboutPisces p{
+  font-size: 20px;
+}
+
+
+/*#contact{ 
+  background-color: #E5E9F5;
+  margin-right: 20px;
+  margin-left: 5px;
+  position: relative;
+  border-radius: 3px 100px 100px 3px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#contact p{
+  font-size: 20px;
+}*/
+
+
 
 /* ---------------------------------------------------
 ******************** FOOTER STYLE ******************** 
@@ -128,14 +314,16 @@ footer {
   color: rgba(255, 255, 255, 0.7);
   padding-right: 20px;
   padding-top:7px;
-  background: linear-gradient(260deg, #2376ae 0%, #c16ecf   100%);
+  /*background: linear-gradient(260deg, #2376ae 0%, #c16ecf   100%);*/
   height: 30px;
-  position: fixed;
   display: flex;
   flex: 1;
   justify-content: flex-end;
   text-align: center;
   bottom: 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 footer span {
   width: 10px;
@@ -143,12 +331,7 @@ footer span {
   padding-top:1px;
 }
 
-/* ---------------------------------------------------
-******************** MEDIA QUERIES ******************** 
------------------------------------------------------*/
-
 @media screen and (min-width: 768px) {
-
   .navbar {
       display: flex;
       justify-content: space-between;
@@ -186,3 +369,64 @@ footer span {
   }
 
 }
+
+@media screen and (max-width: 768px){
+
+  .text{
+  font-size: 25px;
+  line-height: 50px;
+  }
+
+  .welcome h1{
+    font-size: 33px;
+  }
+
+  #featureGuide{
+    flex-direction: column;
+    height: 70%;
+  }
+
+  .feature-guide h2{
+    font-size: 20px;
+  }
+
+  #feature{
+    margin: 0 10px;
+    margin-bottom: 5px;
+    font-size: 
+  }
+
+  #guide{
+    margin: 0 10px;
+    margin-top: 5px;
+  }
+
+  .about-us h1{
+    font-size: 33px;
+  }
+
+  #aboutContact{
+    flex-direction: column;
+    height: 50%;
+  }
+
+  .about-contact p{
+    font-size: 20px;
+  }
+
+  #aboutPisces{
+    margin: 0 10px;
+    margin-bottom: 5px;
+    font-size:
+  }
+
+  #contact{
+    margin: 0 10px;
+    margin-top: 5px;
+  }
+}
+
+
+
+
+
