@@ -5,7 +5,7 @@
     var storedNotes = JSON.parse(localStorage.getItem("notes"));
   
     if ( storedNotes !== null){
-        notes= storedNotes;// Get the saved ote from localStorage and return them as object
+        notes= storedNotes;// Get the saved note from localStorage and return them as object
         showAllNotes();
     } else {
         }
@@ -87,7 +87,7 @@
     function showAllNotes()
     {
         var allNotehtmlContent = "";
-          for(i=0; i< notes.length; i++){
+          for(var i=0; i< notes.length; i++){
             allNotehtmlContent += 
            '<div id="'+ notes[i].id +'" class="note-item" onClick="selectNote(\''+ notes[i].id +'\')">' +
               '<div class="note-title">'+ notes[i].title +'</div>' +

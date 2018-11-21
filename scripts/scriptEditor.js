@@ -3,7 +3,10 @@
 /**************************/
 
 
+    
+    
 // ANCHORS 
+var logo = document.getElementById('logo');
 var menuToggler = document.getElementById('menu-toggler');
 var collapsedMenu = document.getElementById("collapseTarget");
 
@@ -18,6 +21,7 @@ var cM = collapsedMenu;
 
 
 // EVENT LISTENERS 
+logo.addEventListener('click', takeMeHome);
 menuToggler.addEventListener('click', toggleMenu);
 navNewNote.addEventListener('click', focusOnTitle);
 //navSearch.addEventListener('click', focusOnSearch);
@@ -26,6 +30,9 @@ navMyNotes.addEventListener('click', showNotesField);
 
 
 // CALLBACKS
+function takeMeHome() {
+    window.open('index.html','_self');
+}
 
 function focusOnTitle() {
     noteTitle.focus();

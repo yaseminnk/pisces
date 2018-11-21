@@ -35,8 +35,8 @@ li {
   overflow: hidden;
 }
 .container-navfield {
-  flex-basis: 11%;
-  min-width: 150px;
+  flex-basis: 8%;
+  /* min-width: 150px; */
   padding: 0 22px;
   outline: none;
 }
@@ -46,7 +46,7 @@ li {
 .note-fav-container {
     flex-basis: auto;
     width: 150px;
-    background-color: rgb(158, 159, 206);
+    background-color: rgb(32, 32, 32);
     padding: 0;
     margin: 0;
 }
@@ -55,20 +55,22 @@ li {
 
 .data-container-hd {
     display: none; 
-   /* width: 150px;
-    background-color: rgb(158, 159, 206);*/
+   /* width: 150px;*/
+    background-color: rgb(61, 59, 59);
+    overflow-x: auto;
 }
 
 .note-fav-container .header-notes {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   padding-top: 40px;
   padding-bottom:40px;
-  padding-left: 10px;
-  font-size: 1.5em;
+  padding-left: 18px;
+  font-size: 1.2em;
   border-bottom: 1px solid rgb(209, 201, 201);
   font-weight: 600;
-  color: rgb(255,255,255);
+  color: rgb(247, 239, 239);
   text-shadow: 1px 1px 0.5px rgb(44,44,44);
+  background-color: rgb(61, 59, 59);
 }
 
 .note-item{
@@ -81,6 +83,7 @@ li {
   height: 80px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   border-bottom: 1px solid rgb(209, 201, 201);
+  background-color: rgb(61, 59, 59);
 }
 
 .note-item .note-title{
@@ -90,23 +93,26 @@ li {
   padding-top: 5px;
   margin-bottom: 8px;
   height: 20px;
-  font-size: 1em; 
-  font-weight: 600;
+  font-size: 0.7em; 
+  font-weight: 500;
   cursor: pointer;
 }
 .note-item .note-content{
+  box-sizing: border-box;
   padding-left: 10px;
   padding-top:2px;
   height:25px;
-  font-size:0.8em;
+  font-size:0.7em;
   overflow: hidden;
   white-space: nowrap;
+  color: rgba(255, 255, 255, 0.75);
 }
 .note-item .note-created{
   padding-left: 10px;
   padding-top: 10px;
   height:10px;
   font-size:0.6em;
+  color: rgba(255, 255, 255, 0.75);
 }
 
 /* TOP TITLE AND SEARCH FIELD */
@@ -178,14 +184,19 @@ li {
 /*** NAV-BAR FIELD ***/
 
 #nav-bar {         
-  background-color: rgb(134, 135, 189);
+  /* background-color: rgb(134, 135, 189); */
+  background-color:rgb(46, 45, 45);;
 }
 
 #logo {
   font-family: 'Libre Baskerville', serif;
-  font-size: 38px;
+  font-size: 30px;
   color: rgba(255, 255, 255, 0.75);
 }
+#logo:hover {
+  color: #ffffff; 
+  cursor: pointer; 
+  }
 
 .nav-ul {
   padding: 0;
@@ -196,16 +207,19 @@ li {
 }
 
 .nav-ul li a {
-  font-size: 1.15em;
+  font-size: 0.8em;
+  letter-spacing: 1px;
   font-weight: 600;
   color: rgb(175, 23, 175);
-  color: rgb(252,252,252);
+  color: rgb(230, 222, 222);
   padding: 10px;
   text-decoration: none;
 }
 
 .nav-ul li a:hover {
   opacity: 0.9;
+  padding-left: 2px;
+  transition: all 0.3s ease-in-out;
 }
 
 .fa-bars {
@@ -265,7 +279,7 @@ li {
   #logo-brand {
     display: block;
     width: 100%;
-    background-color: rgb(158, 159, 206);    
+    background-color:  rgb(46, 45, 45);   
   }
   #logo-brand h1 {
     font-family: 'Libre Baskerville', serif;    
