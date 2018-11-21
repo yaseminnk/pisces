@@ -18,11 +18,11 @@ li {
 
 /*** EDITOR RESPONSIVE LAYOUT ***/
 
-#nav-bar {
+#navBar {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   outline: none;
 }
-#logo-brand {
+#logoBrand {
   display: none;
 }
 
@@ -197,15 +197,20 @@ li {
   color: #ffffff; 
   cursor: pointer; 
   }
+#logoShortVer {
+  display: none;     
+  font-family: 'Libre Baskerville', serif;
+  text-align: center;
+  font-size: 52px;
+  color: rgba(255, 255, 255, 0.75);  
+}
 
 .nav-ul {
   padding: 0;
 }
-
 .nav-ul li {
   margin-bottom: 30px;
 }
-
 .nav-ul li a {
   font-size: 0.8em;
   letter-spacing: 1px;
@@ -215,11 +220,18 @@ li {
   padding: 10px;
   text-decoration: none;
 }
-
 .nav-ul li a:hover {
   opacity: 0.9;
   padding-left: 2px;
   transition: all 0.3s ease-in-out;
+}
+
+/* Hidden nav icons */
+#newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #trashNoteHd {
+  display: none;
+  cursor: pointer;
+  font-size: 1.45em;
+  text-align: center;
 }
 
 .fa-bars {
@@ -268,6 +280,23 @@ li {
   #searchInput {
     min-width: 160px;
   }
+  .container-navfield {
+    flex-basis: 7%;
+    min-width: 90px;
+  }
+  #logo {
+    display: none;
+  }
+  #logoShortVer {
+    display: block;    
+  }
+  #newNote, #myNotes, #favNotes, #saveNote, #trashNote {
+    display: none;
+  }  
+  #newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #trashNoteHd {
+    display: block;    
+  }  
+
 }
 
 @media screen and (max-width: 768px) {
@@ -276,22 +305,23 @@ li {
     height: auto;            
   }
 
-  #logo-brand {
+  #logoBrand {
     display: block;
     width: 100%;
     background-color:  rgb(46, 45, 45);   
   }
-  #logo-brand h1 {
+  #logoBrand h1 {
     font-family: 'Libre Baskerville', serif;    
     color: rgba(255, 255, 255, 0.75);
     text-align: center;    
   }
 
-  #nav-bar {
+  #navBar {
     flex-grow: 1;
     flex-basis: 100%;
     height: auto;               
     overflow: hidden;
+    padding: 8px;
   }
   .container-workfield {
     flex-grow: 1;
