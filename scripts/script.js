@@ -1,5 +1,5 @@
-let mainNav = document.getElementById('js-menu');
-let navBarToggle = document.getElementById('js-navbar-toggle');
+let mainNav = document.getElementById('jsMenu');
+let navBarToggle = document.getElementById('jsNavbarToggle');
 let btnGetStarted = document.getElementById ('btnGetStarted');
 
 // EventListener for hamburger menu.

@@ -1,62 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
-<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Quire</title>
-    <meta name="description" content="An organized multifunctional notebook that saves your time">  
-	<meta name="author" content="team-Pisces">
+    <link rel="stylesheet" href="css/stylesheet.css">
 
     <!-- *** Google fonts *** -->
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cutive+Mono" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Mukta+Mahee" rel="stylesheet">
 
-    <!-- *** Fontawsome *** -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+
+
+    <!-- *** Fontawsam *** -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" 
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" 
         crossorigin="anonymous">
-    <link rel="stylesheet" href="css/stylesheet.css">
-    
 </head>
 
 <body>
-    <header>
-        <nav class="navbar">
-            <span class="navbar-toggle" id="js-navbar-toggle">
-                <i class="fas fa-bars"></i>
-            </span>
-            <a href="#" class="logo">Quire</a>
-            <ul class="main-nav" id="js-menu">
-                <li>
-                    <a href="#" class="nav-links">Features</a>
-                </li>
-                <li>
-                    <a href="#" class="nav-links">Guides</a>
-                </li>
-                <li>
-                    <a href="#" class="nav-links">About Us</a>
-                </li>
-                <li>
-                    <button id="btnGetStarted"> Get Started </button>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Top page -->
+    <div id="topPage">
+        <header>
+            <nav id="navbar" class="navbar">
+                <span class="navbar-toggle" id="jsNavbarToggle">
+                    <i class="fas fa-bars"></i>
+                </span>
+                <a href="./index.html" class="logo">Quire</a>
+                <ul class="main-nav" id="jsMenu">
+                    <li>
+                        <a href="#feature" class="nav-links">Features</a>
+                    </li>
+                    <li>
+                        <a href="#guide" class="nav-links">Guides</a>
+                    </li>
+                    <li>
+                        <a href="#aboutUs" class="nav-links">About Us</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
 
-    <main>
-        <div class="title-tag-container">
-            <p class="text">An organized multifunctional<br> notebook<br>
-                that saves your time.</p>
+
+        <main>
+            <div class="title-tag-container">
+                <p class="text"><!-- An organized multifunctional<br> notebook<br>
+                    that saves your time. -->Time saver.<br> An organized multifunctional<br>notebook.</p>
+            </div>
+            <div id="getStarted">
+                <a href="./editor.html">Get Started</a> 
+            </div>
+        </main>
+        
+        <footer>
+            <span>&copy;</span>2018 team-Pisces creation
+        </footer>
+    </div>
+    
+    <div class="welcome">
+        <h1>Welcome to <span>Quire</span></h1>
+    </div>
+
+    <!-- Features & Guides-->
+    <div id="featureGuide">
+        <div id="feature" class="feature-guide">
+            <h2>Features</h2>
+            <div class="feature-guide-text">
+                <p>- Simple, fast and easy to use.<br>
+                    - Create attractive notes with minimalist style.<br>
+                    - Fun and interactive: Add images and links.<br>
+                    - Get organised: Share your notes and save your favourites.<br>
+                    - Something missing? Search your documents.<br>
+                    - Local storage, online editing.<br>(- ... efficiency)</p>
+            </div>
         </div>
-    </main>
+        <div id="guide" class="feature-guide">
+            <h2>Guides</h2>
+            <!-- <div class="feature-guide-text">
+                <p>Quire is free text editor!</p>
+            </div> -->
+        </div>
+    </div>
+    
 
-    <footer><span>&copy;</span>team-Pisces creation</footer>
+    <!-- About Us -->
+    <div id="aboutUs" class="about-us">
+        <h1>About <span>Us</span></h1>
+    </div>
 
-    <script src="scripts/script.js"></script>
+    <div id="aboutContact">
+        <div id="aboutPisces" class="about-contact">
+            <p>We are Pisces!<br>4 junior front end developers with genuine interest in<br> coding, UX and function.<br><br>Come visit us at KYH!<br> We are seated in the "Steve Jobs" room and look forward to discuss!</p>
+        </div>
+        <!-- <div id="contact" class="about-contact">
+            <p>...</p>
+        </div> -->
+    </div>
+
+    
+   <script src="scripts/script.js"></script> 
 </body>
-
 </html>
+
+

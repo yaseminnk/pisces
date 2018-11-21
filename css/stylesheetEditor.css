@@ -114,8 +114,8 @@ li {
 #noteTitle {
   width: 54%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  padding: 18px;
-  font-size: 1.4em;
+  padding: 14px 18px 18px 18px;
+  font-size: 1.35em;
   border: 0px;
 }
 
@@ -224,6 +224,9 @@ li {
   flex-direction: row;
   justify-content: flex-end;
 } */
+
+
+/*** MEDIA QUERIES ***/
 
 @media screen and (max-width: 1226px) {
   .container-workfield {
