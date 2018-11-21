@@ -99,6 +99,8 @@ li {
   padding-top:2px;
   height:25px;
   font-size:0.8em;
+  overflow: hidden;
+  white-space: nowrap;
 }
 .note-item .note-created{
   padding-left: 10px;
