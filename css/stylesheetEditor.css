@@ -21,6 +21,7 @@ li {
 #navBar {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   outline: none;
+  /* background-color: black; */
 }
 #logoBrand {
   display: none;
@@ -183,7 +184,7 @@ li {
 
 /*** NAV-BAR FIELD ***/
 
-#nav-bar {         
+#navBar {         
   /* background-color: rgb(134, 135, 189); */
   background-color:rgb(46, 45, 45);;
 }

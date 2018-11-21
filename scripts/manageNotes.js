@@ -3,15 +3,9 @@
     currentNoteId = "";
     window.notes = [];
     var storedNotes = JSON.parse(localStorage.getItem("notes"));
-<<<<<<< HEAD
-  
-    if ( storedNotes !== null){
-        notes= storedNotes;// Get the saved note from localStorage and return them as object
-=======
 
     if (storedNotes !== null) {
-        notes = storedNotes;// Get the saved ote from localStorage and return them as object
->>>>>>> 6b7c812c0729eb0282e40d8580969ba1c0009d29
+        notes = storedNotes;// Get the saved note from localStorage and return them as object
         showAllNotes();
     } else {
     }
@@ -90,7 +84,6 @@
     // -----**** Updates All notes view **** ------    
     function showAllNotes() {
         var allNotehtmlContent = "";
-<<<<<<< HEAD
           for(var i=0; i< notes.length; i++){
             allNotehtmlContent += 
            '<div id="'+ notes[i].id +'" class="note-item" onClick="selectNote(\''+ notes[i].id +'\')">' +
@@ -99,19 +92,10 @@
               '<div class="note-created">'+ notes[i].created +'</div>' +
            '</div>';
           }
-=======
-        for (i = 0; i < notes.length; i++) {
-            allNotehtmlContent +=
-                '<div id="' + notes[i].id + '" class="note-item" onClick="selectNote(\'' + notes[i].id + '\')">' +
-                '<div class="note-title">' + notes[i].title + '</div>' +
-                '<div class="note-content">' + notes[i].contentText + '</div>' +
-                '<div class="note-created">' + notes[i].created + '</div>' +
-                '</div>';
-        }
->>>>>>> 6b7c812c0729eb0282e40d8580969ba1c0009d29
 
         // notes.forEach(function(item){
         //   allNotehtmlContent += '<div class="note-item"><div class="note-title">'+ item.title +'</div><div class="note-content">'+ item.content +'</div><div class="note-created">'+ item.created +'</div></div>';
+        //
         // });
 
         var allNote = document.getElementsByClassName('note-field')[0];
