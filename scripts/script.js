@@ -28,11 +28,11 @@ var values = document.cookie;
 // }
 
 
-if( values.indexOf("visitedQuire=") === -1 ) {
-    document.cookie = "visitedQuire=true;"; // setting cookie
-    //window.open('index.html', '_self');
+// if( values.indexOf("visitedQuire=") === -1 ) {
+//     document.cookie = "visitedQuire=true;"; // setting cookie
+//     //window.open('index.html', '_self');
  
- } else {
-    //document.cookie = "visitedQuire=false"; // setting cookie
-    window.open('editor.html', '_self');
- }
+//  } else {
+//     //document.cookie = "visitedQuire=false"; // setting cookie
+//     window.open('editor.html', '_self');
+//  }
