@@ -27,6 +27,35 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
         crossorigin="anonymous">
     <link rel="stylesheet" href="css/stylesheetEditor.css">
+
+<style>
+#myPrecious:Before {
+  color: lightsteelblue;
+  content: "Delta (Aka precious content) with .getContents() :\A\A";
+}
+
+#myPrecious {
+  padding: 20px;
+  height: 120px;
+  background-color: #444;
+  color: orange;
+  white-space: pre-wrap;
+  /* css-3 */
+  white-space: -moz-pre-wrap;
+  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;
+  /* Opera 4-6 */
+  white-space: -o-pre-wrap;
+  /* Opera 7 */
+  word-wrap: break-word;
+  /* Internet Explorer 5.5+ */
+  border-radius: 5px;
+  overflow: auto;
+  border: 10px solid #444;
+}
+
+</style>
+
 </head>
 
 <body>
@@ -102,15 +131,16 @@
             </div>
 
             <!--<div id="toolbar"></div>-->
-            <div id="editor"></div>
-
+            <div id="editor">
+            </div>
+           
         </div>
     </div>
 
     <script src="scripts/quill.js"></script>
     <script src="scripts/scriptEditor.js"></script>
     <script src="scripts/manageNotes.js"></script>
-    
+        
 </body>
 
 </html>

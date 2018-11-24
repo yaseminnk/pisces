@@ -31,6 +31,7 @@
         currentNoteId = note.id;
     });
 
+
     // -----**** Changing note title **** ------
     document.getElementById('noteTitle').addEventListener('change', function () {
         document.getElementById(currentNoteId).getElementsByClassName('note-title')[0].innerText = this.value;
