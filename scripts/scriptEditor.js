@@ -54,20 +54,36 @@ function showNotesField() {
 
  // ANCHORS
  var qlToolbar = document.querySelector('.ql-toolbar');        
- var elForm = document.createElement('form');
+ 
+ var elFormTitle = document.createElement('form');
+ var elFormSearch = document.createElement('form'); 
+ var elInputTitle = document.createElement('input');
+ var elInputSearch = document.createElement('input');
+ 
+ var elIconTitle = document.createElement('i');
  var elIcon = document.createElement('i');
- var elInput = document.createElement('input');
-
+ 
  // ADD ATTRIBUTES TO NEW ELEMENTS
- elForm.setAttribute('id','noteSearch');
+ elFormSearch.setAttribute('id','noteSearch');
  elIcon.setAttribute('class', 'fas fa-search');
- elInput.setAttribute('id','searchInput');
- elIcon.setAttribute('title','Search');
- elInput.setAttribute('placeholder','Search');
+ elInputSearch.setAttribute('id','searchInput');
+ elIcon.setAttribute('title','Search');  
+ elInputSearch.setAttribute('placeholder','Search');
+
+elIconTitle.setAttribute('class', 'fas fa-file-signature');
+elIconTitle.setAttribute('title','Title');
+ elFormTitle.setAttribute('id','noteTitle');
+ elInputTitle.setAttribute('id','titleInput'); 
+ elInputTitle.setAttribute('placeholder','Title');
 
  // APPEND NEW ELEMENTS TO THE DOM
- elForm.appendChild(elIcon);
- elForm.appendChild(elInput);
- qlToolbar.appendChild(elForm);
+ elFormTitle.appendChild(elIconTitle);
+ elFormTitle.appendChild(elInputTitle);
+ elFormSearch.appendChild(elIcon);
+ elFormSearch.appendChild(elInputSearch);
+  
+ qlToolbar.insertBefore(elFormTitle, qlToolbar.childNodes[0]);
+ qlToolbar.appendChild(elFormSearch);
+
 
  
