@@ -50,45 +50,10 @@ function showNotesField() {
     notesContainer.classList.toggle('data-container-hd');
 }
 
-/*** NEW SEARCH BAR ELEMENT AND APPEND IT TO THE TOOLBAR ***/
 
- // ANCHORS
-<<<<<<< HEAD
- let qlToolbar = document.querySelector('.ql-toolbar');        
- let elFormSearch = document.createElement('form');
- let elFormTitle = document.createElement('form');
+// NEW ELEMENTS CREATED AND ADDED TO THE TOOLBAR 
 
- let elInputTitle = document.createElement('input');
- let elIcon = document.createElement('i');
- let elInputSearch = document.createElement('input');
-
- // ADD ATTRIBUTES TO NEW ELEMENTS
- elFormTitle.setAttribute('id','noteTitle');
- elFormSearch.setAttribute('id','noteSearch');
-
-elInputTitle.setAttribute('type', 'text');
-elInputTitle.setAttribute('name','title');
-//elInputTitle.setAttribute('id','noteTitle');
-elInputTitle.setAttribute('id','titleInput');
-elInputTitle.setAttribute('placeholder','Title');
-elInputTitle.style.width = "220px";
-elInputTitle.style.padding = "2px";
-
- elIcon.setAttribute('class', 'fas fa-search');
- elInputSearch.setAttribute('id','searchInput');
- elIcon.setAttribute('title','Search');
- elInputSearch.setAttribute('placeholder','Search');
-
- // APPEND NEW ELEMENTS TO THE DOM
- elFormTitle.appendChild(elInputTitle); 
- elFormSearch.appendChild(elIcon); 
- elFormSearch.appendChild(elInputSearch);
-  
- qlToolbar.insertBefore(elFormTitle, qlToolbar.firstChild); 
- qlToolbar.appendChild(elFormSearch);
-=======
- var qlToolbar = document.querySelector('.ql-toolbar');        
- 
+ var qlToolbar = document.querySelector('.ql-toolbar');         
  var elFormTitle = document.createElement('form');
  var elFormSearch = document.createElement('form'); 
  var elInputTitle = document.createElement('input');
@@ -119,20 +84,4 @@ elIconTitle.setAttribute('title','Title');
  qlToolbar.insertBefore(elFormTitle, qlToolbar.childNodes[0]);
  qlToolbar.appendChild(elFormSearch);
 
->>>>>>> quirePhilip
-
   
-/*** ADDED TITLE TO THE EDITOR TEXT -FIELD ***/
-
-{   
-    // WE CREATE NEW ELEMENTS    
-    /*let elInput = document.createElement('input');
-    elInput.setAttribute('id','noteTitle');
-    elInput.setAttribute('name','title');
-    elInput.setAttribute('placeholder','Title');
-    elInput.value = "OLLE";
-    */
-    // WE ADD THE NEW ELEMENT TO THE DOM
-    //qlEditor.appendChild(elInput);
-    //qlEditor.innerHTML = "<input type='text' name='title' id='noteTitle' placeholder='Title'>";
-}

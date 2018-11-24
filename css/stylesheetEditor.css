@@ -128,16 +128,6 @@ li {
 
 #noteSearch { 
   display: inline;
-<<<<<<< HEAD
-  padding: 8px;  
-  border: 1px solid rgb(224,224,224);
-  border-radius: 8px;
-  margin-left: 38px;
-}
-#noteTitle { 
-  display: inline;
-  padding: 2px 4px 4px 8px;  
-=======
   padding: 8px;
   margin-left: 20px;
   border: 1px solid rgb(224,224,224);
@@ -147,7 +137,6 @@ li {
   display: inline;
   padding: 8px;
   margin-right: 20px;
->>>>>>> quirePhilip
   border: 1px solid rgb(224,224,224);
   border-radius: 8px;
   margin-right: 38px;
