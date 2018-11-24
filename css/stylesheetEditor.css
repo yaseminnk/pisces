@@ -113,13 +113,14 @@ li {
 
 /* TOP TITLE AND SEARCH FIELD */
 
+/*
 #noteTitle {
   width: 54%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   padding: 14px 18px 18px 18px;
   font-size: 1.35em;
   border: 0px;
-}
+}*/
 
 #noteSearchHd {
   display: none;
@@ -128,22 +129,32 @@ li {
 #noteSearch { 
   display: inline;
   padding: 8px;
-  margin-left: 38px;
+  margin-left: 20px;
   border: 1px solid rgb(224,224,224);
   border-radius: 8px;
 }
-#searchInput {
+#noteTitle { 
+  display: inline;
+  padding: 8px;
+  margin-right: 20px;
+  border: 1px solid rgb(224,224,224);
+  border-radius: 8px;
+  margin-right: 38px;
+}
+
+#searchInput, #titleInput {
   padding: 8px 12px;
   border: none;
   width: auto; 
-  min-width: 250px;
+  min-width: 228px;
   font-size: 0.85em;
 }
+
 #searchInput:focus {
   outline: none;
   border: none;
 }
-.fa-search {
+.fa-search, .fa-file-signature {
   opacity: 0.5;
 }
 
