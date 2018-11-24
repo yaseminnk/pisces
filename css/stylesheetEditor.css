@@ -74,12 +74,7 @@ li {
   background-color: rgb(61, 59, 59);
 }
 
-.note-item{
-  /* font-family: Verdana, Geneva, Tahoma, sans-serif;
-  height: 70px;
-  border-bottom: 1px solid rgb(209, 201, 201);
-  padding-left: 10px;
-  padding-top: 10px;  */
+.note-item{  
   padding: 10px 8px 18px 8px;
   height: 80px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -126,9 +121,14 @@ li {
   border: 0px;
 }
 
+#noteSearchHd {
+  display: none;
+}
+
 #noteSearch { 
   display: inline;
   padding: 8px;
+  margin-left: 38px;
   border: 1px solid rgb(224,224,224);
   border-radius: 8px;
 }
@@ -136,13 +136,17 @@ li {
   padding: 8px 12px;
   border: none;
   width: auto; 
-  min-width: 270px;
+  min-width: 250px;
   font-size: 0.85em;
 }
 #searchInput:focus {
   outline: none;
   border: none;
 }
+.fa-search {
+  opacity: 0.5;
+}
+
 #noteTitle:active, #noteTitle:focus {
   outline: none;
 }
@@ -173,10 +177,10 @@ li {
   border: none !important;
   border-top: 1px solid rgb(187,187,187) !important;
 }
-
+/*
 .container-workfield {
   border: 1px solid rgb(187,187,187);  
-}
+}*/
 #editor {
   background-color: rgb(252, 252, 252);
 }
@@ -213,17 +217,16 @@ li {
   margin-bottom: 30px;
 }
 .nav-ul li a {
-  font-size: 0.8em;
+  font-size: 0.9em;
   letter-spacing: 1px;
   font-weight: 600;
-  color: rgb(175, 23, 175);
-  color: rgb(230, 222, 222);
+  color: rgb(234, 230, 230);
   padding: 10px;
   text-decoration: none;
 }
 .nav-ul li a:hover {
   opacity: 0.9;
-  padding-left: 2px;
+  padding-left: 8px;
   transition: all 0.3s ease-in-out;
 }
 
@@ -260,8 +263,14 @@ li {
     flex-basis: 58%; 
     flex-grow: 1;
   }  
+  #noteSearch {
+    display: inline-block;
+    padding: 0 4px 0 10px;
+    margin: 14px 0 8px 0;
+  }
+
   #searchInput {
-    min-width: 220px;
+    min-width: 200px;
   }
 }
 
@@ -277,7 +286,7 @@ li {
 @media screen and (min-width: 769px) and (max-width: 991px) {  
   #noteTitle {
     width: 42%;
-  }
+  }  
   #searchInput {
     min-width: 160px;
   }
@@ -290,6 +299,7 @@ li {
   }
   #logoShortVer {
     display: block;    
+    margin: 2px 0 20px 0;
   }
   #newNote, #myNotes, #favNotes, #saveNote, #trashNote {
     display: none;
@@ -367,11 +377,25 @@ li {
   #noteTitle {
     display: block;
   }
+
+  #noteSearchHd {
+    display: block;    
+    padding: 4px;
+    margin: 12px 10px 10px 10px;
+    border: 1px solid rgb(224,224,224);
+    border-radius: 8px;
+  }
+  #noteSearch {  
+    display: none;
+  }
+
+  /*
   #noteSearch {  
     display: block;
     padding: 8px;
     margin: 10px;
   }
+  */
   .note-fav-container .header-notes {
     text-align: center;
   }
