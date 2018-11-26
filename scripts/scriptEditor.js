@@ -5,35 +5,49 @@
 
 // ANCHORS 
 var logo = document.getElementById('logo');
+var logoShort = document.getElementById('logoShortVer');
 var menuToggler = document.getElementById('menu-toggler');
 var collapsedMenu = document.getElementById("collapseTarget");
 var cM = collapsedMenu;
+
 var navNewNote = document.getElementById('navNewNote');
-var navMyNotes = document.getElementById('navNotes');
+var navNotes = document.getElementById('navNotes');
+var navFavorites = document.getElementById('navFavorites');
 var noteTitle = document.getElementById('noteTitle');
+var noteField = document.querySelector('.note-field');
+
 var noteSearch = document.getElementById('searchInput');
 var notesContainer = document.querySelector('.note-fav-container');
 
 
 // EVENT LISTENERS 
 logo.addEventListener('click', takeMeHome);
+logoShort.addEventListener('click', takeMeHome);
 menuToggler.addEventListener('click', toggleMenu);
 navNewNote.addEventListener('click', focusOnTitle);
-navNewNote.addEventListener('click', showNotesField);
-navMyNotes.addEventListener('click', showNotesField);
-
+navNotes.addEventListener('click', showNotesField);
+navFavorites.addEventListener('click', showNotesField);
+noteField.addEventListener('click', modNoteField);
 
 // CALLBACKS
 function takeMeHome() {
     window.open('index.html','_self');
 }
 
-function focusOnTitle() {
+function focusOnTitle() {    
     noteTitle.focus();
+    noteTitle.setAttribute('placeholder', '');
+    noteTitle.innerHTML = "";
 }
 function focusOnSearch() {
     noteSearch.focus();
 }
+
+function modNoteField() {
+    this.classList.toggle('note-field-light');
+    this.classList.toggle('note-field');
+}
+
 
 // Burger menu - small screens
 function toggleMenu() {
@@ -69,19 +83,20 @@ function showNotesField() {
  elIcon.setAttribute('title','Search');  
  elInputSearch.setAttribute('placeholder','Search');
 
+ /*
 elIconTitle.setAttribute('class', 'fas fa-file-signature');
 elIconTitle.setAttribute('title','Title');
  elFormTitle.setAttribute('id','noteTitle');
  elInputTitle.setAttribute('id','titleInput'); 
  elInputTitle.setAttribute('placeholder','Title');
-
+*/
  // APPEND NEW ELEMENTS TO THE DOM
- elFormTitle.appendChild(elIconTitle);
- elFormTitle.appendChild(elInputTitle);
+ //elFormTitle.appendChild(elIconTitle);
+ //elFormTitle.appendChild(elInputTitle);
  elFormSearch.appendChild(elIcon);
  elFormSearch.appendChild(elInputSearch);
   
- qlToolbar.insertBefore(elFormTitle, qlToolbar.childNodes[0]);
+ //qlToolbar.insertBefore(elFormTitle, qlToolbar.childNodes[0]);
  qlToolbar.appendChild(elFormSearch);
 
   
