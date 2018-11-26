@@ -3,7 +3,7 @@
 <!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
 <!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!-->
-<html class="no-js" lang="en">
+<!-- <html class="no-js" lang="en"> -->
 <!--<![endif]-->
 
 <head>
@@ -65,7 +65,7 @@
         <div id="logoBrand">
             <h1>QUIRE</h1>
         </div><br>
-        <div id="navBar" class="flex-item container-navfield">
+        <div id="navBar" class="flex-item container-navfield stand">
 
             <div class="menu-burger">
                 <button id="menu-toggler" class="menu-toggler" data-toggle="collapse" data-target="#collapseTarget">
@@ -91,6 +91,29 @@
 
                     <li id="trashNote"><a id="navTrash" href="#">TRASH</a></li>
                     <li id="trashNoteHd"><a id="navTrash" title="Trash note"><i class="fas fa-trash"></i></a></li>
+                    <!--<button id="standard">Standard</button><br>
+	                <button id="greentheme">Green</button><br>
+                    <button id="bluetheme">Blue</button><br>
+                    <button id="pinktheme">pink</button><br>-->
+
+                    <!--<li id="theme"><a id="navTheme" href="#">THEME</a></li>-->
+
+                    <button class="dropdown-btn">THEME 
+                            <i class="fa fa-caret-down"></i>
+                          </button>
+                          <div class="dropdown-container">
+                            <a class="drop" id="standard" href="#">DEFAULT</a>
+                            <a class="drop" id="greentheme" href="#">GREEN</a>
+                            <a class="drop" id="bluetheme" href="#">BLUE</a>
+                            <a class="drop" id="pinktheme" href="#">PINK</a>
+                          </div>
+                    <!--<li id="theme">
+                        <select>
+                            <option id="green" value="green">Green</option>
+                            <option id="red" value="red">Red</option>
+                            <option id="pink" value="pink">Pink</option>
+                          </select>
+                    </li> -->
                 </ul>
             </div>
         </div>
