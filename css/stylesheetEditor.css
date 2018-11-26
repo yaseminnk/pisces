@@ -57,14 +57,17 @@
 }
 
 #editor {
-  background-color: rgb(252, 252, 252);
+  /*background-color: rgb(252, 252, 252);*/
+  /*height:600px;*/
 }
-
 
 /*** NAV-BAR FIELD ***/
 
-#nav-bar {         
-  background-color: rgb(134, 135, 189);
+#navBar {  
+  width:150px;       
+  /* background-color: rgb(134, 135, 189); */
+  /*background-color:rgb(46, 45, 45);*/
+  
 }
 
 #logo {
@@ -102,6 +105,126 @@
   display: none;
 }
 
+/* Change THEME*/
+/*standardTheme*/
+.stand{
+background-color:rgb(46, 45, 45);
+}
+.xstand{
+  background-color:lightgrey;
+}
+/*#greenTheme*/
+.green {
+  background-color: rgb(37, 71, 37);
+  font-style: inherit;
+  font-family:'Times New Roman', Times, serif;
+}
+.xgreen{
+  background-color:lightgreen;
+  color:white;
+}
+
+/*#blueTheme */
+.blue
+{
+  background-color: blue;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.xblue{
+  background-color:lightblue;
+}
+
+/*#pinkTheme*/ 
+.pink
+{
+  background-color: rgb(134, 37, 97);
+  font-style:initial;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.xpink{
+  background-color:lightpink;
+}
+/*dropdown menu*/
+.dropdown-container {
+  display: none;
+  padding-left: 8px;
+}
+
+.drop{
+  display:block;
+  text-decoration: none;
+  /*color:white;*/
+  font-size: 12px;
+  padding:5px;
+}
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+}
+.active {
+  /*background-color: grey;*/
+  /*color:white;*/
+  text-decoration: none;
+}
+
+
+/* #div_btnSaveDelta {
+  display: flex;
+  justify-content: flex-end;
+}
+#btnSaveDelta {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+} */
+
+
+/*** MEDIA QUERIES ***/
+
+@media screen and (max-width: 1226px) {
+  .container-workfield {
+    flex-basis: 58%; 
+    flex-grow: 1;
+  }  
+  #searchInput {
+    min-width: 220px;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1099px) {
+  #noteTitle {
+    width: 46%;
+  }
+  #searchInput {
+    min-width: 180px;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 991px) {  
+  #noteTitle {
+    width: 42%;
+  }
+  #searchInput {
+    min-width: 160px;
+  }
+  .container-navfield {
+    flex-basis: 7%;
+    min-width: 90px;
+  }
+  #logo {
+    display: none;
+  }
+  #logoShortVer {
+    display: block;    
+  }
+  #newNote, #myNotes, #favNotes, #saveNote, #trashNote {
+    display: none;
+  }  
+  #newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #trashNoteHd {
+    display: block;    
+  }  
+
+}
 
 @media screen and (max-width: 768px) {
 

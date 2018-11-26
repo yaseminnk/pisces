@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!-- <html class="no-js" lang="en"> -->
+<!--<![endif]-->
 
 <head>
     <meta charset="UTF-8">
@@ -35,7 +40,10 @@
 
     <div class="flex-container">
 
-        <div id="nav-bar" class="flex-item container-navfield">
+        <div id="logoBrand">
+            <h1>QUIRE</h1>
+        </div><br>
+        <div id="navBar" class="flex-item container-navfield stand">
 
             <div class="menu-burger">
                 <button id="menu-toggler" class="menu-toggler" data-toggle="collapse" data-target="#collapse-target">
@@ -46,19 +54,51 @@
             <div class="menu-collapse" id="collapse-target">
                 <h2 id="logo">Quire</h2><br>
                 <ul class="nav-ul">
-                    <li id="nav-new-note"><a href="#">NEW NOTE</a></li>
-                    <li id="nav-search"><a href="#">SEARCH</a></li>
-                    <li id="nav-notes"><a id="my-notes" href="#">MY NOTES</a></li>
-                    <li id="nav-favorites"><a id="my-favorites" href="#">FAVORITES</a></li>
-                    <li id="nav-save"><a href="#">SAVE</a></li>
-                    <li id="nav-trash"><a href="#">TRASH</a></li>
+                    <li id="newNote"><a id="navNewNote" href="#">NEW NOTE</a></li>
+                    <li id="newNoteHd"><a id="navNewNote" title="Open new note"><i class="far fa-envelope-open"></i></a></li>
+
+                    <li id="myNotes"><a id="navNotes" href="#">MY NOTES</a></li>
+                    <li id="myNotesHd"><a id="navNotes" title="My notes"><i class="far fa-file"></i></a></li>
+
+                    <li id="favNotes"><a id="navFavorites" href="#">FAVORITES</a></li>
+                    <li id="favNotesHd"><a id="navFavorites" title="My favorites"><i class="far fa-star"></i></a></li>
+
+                    <li id="saveNote"><a id="navSave" href="#">SAVE</a></li>
+                    <li id="saveNoteHd"><a id="navSave" title="Save note"><i class="far fa-save"></i></a></li>
+
+                    <li id="trashNote"><a id="navTrash" href="#">TRASH</a></li>
+                    <li id="trashNoteHd"><a id="navTrash" title="Trash note"><i class="fas fa-trash"></i></a></li>
+                    <!--<button id="standard">Standard</button><br>
+	                <button id="greentheme">Green</button><br>
+                    <button id="bluetheme">Blue</button><br>
+                    <button id="pinktheme">pink</button><br>-->
+
+                    <!--<li id="theme"><a id="navTheme" href="#">THEME</a></li>-->
+
+                    <button class="dropdown-btn">THEME 
+                            <i class="fa fa-caret-down"></i>
+                          </button>
+                          <div class="dropdown-container">
+                            <a class="drop" id="standard" href="#">DEFAULT</a>
+                            <a class="drop" id="greentheme" href="#">GREEN</a>
+                            <a class="drop" id="bluetheme" href="#">BLUE</a>
+                            <a class="drop" id="pinktheme" href="#">PINK</a>
+                          </div>
+                    <!--<li id="theme">
+                        <select>
+                            <option id="green" value="green">Green</option>
+                            <option id="red" value="red">Red</option>
+                            <option id="pink" value="pink">Pink</option>
+                          </select>
+                    </li> -->
                 </ul>
             </div>
         </div>
 
         <div class="flex-item container-workfield">
             <div id="toolbar"></div>
-            <div id="editor"></div>
+            <div id="editor" class="xstand"></div>
+
         </div>
     </div>
 
