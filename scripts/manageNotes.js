@@ -13,22 +13,24 @@
 
     // -----**** Creating new note and adding to the array **** ------
     var newNote = document.getElementById('navNewNote');
+
     newNote.addEventListener('click', function () {
         var newId = uniqueID();
         var note = {
             id: newId,
-            title: "untitled",
+            //title: "Untitled",
+            title: "",
             contentText: "no content...",
             contentHtml: "",
             created: new Date().toLocaleString()
-        };
+        };        
         document.getElementById('noteTitle').value = note.title;
         // document.getElementsByClassName('ql-editor')[0].innerHTML = "";
         quill.setContents(""); // setting an empty editor for writing new note.
         notes.unshift(note); //add notes to beginning of the Array, push() add item in the end of the array.
         //notes.push(note);
         showAllNotes();
-        currentNoteId = note.id;
+        currentNoteId = note.id;        
     });
 
 

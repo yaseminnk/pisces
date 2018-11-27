@@ -37,7 +37,7 @@ li {
 }
 .container-navfield {
   flex-basis: 8%;
-  /* min-width: 150px; */
+  min-width: 150px;
   padding: 0 22px;
   outline: none;
 }
@@ -46,7 +46,7 @@ li {
 /* DISPLAY CONTAINER */
 .note-fav-container {
     flex-basis: auto;
-    width: 150px;
+    min-width: 168px;
     background-color: rgb(32, 32, 32);
     padding: 0;
     margin: 0;
@@ -56,7 +56,6 @@ li {
 
 .data-container-hd {
     display: none; 
-   /* width: 150px;*/
     background-color: rgb(61, 59, 59);
     overflow-x: auto;
 }
@@ -74,14 +73,14 @@ li {
   background-color: rgb(61, 59, 59);
 }
 
+/*
 .note-item{  
-  padding: 10px 8px 18px 8px;
-  height: 80px;
+  padding: 12px 8px 18px 8px;
+  height: 82px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   border-bottom: 1px solid rgb(209, 201, 201);
   background-color: rgb(61, 59, 59);
 }
-
 .note-item .note-title{
   color: rgb(255,255,255);
   text-shadow: 0.5px 0.5px 0 rgb(57,57,57);
@@ -89,7 +88,7 @@ li {
   padding-top: 5px;
   margin-bottom: 8px;
   height: 20px;
-  font-size: 0.7em; 
+  font-size: 0.85em; 
   font-weight: 500;
   cursor: pointer;
 }
@@ -98,7 +97,7 @@ li {
   padding-left: 10px;
   padding-top:2px;
   height:25px;
-  font-size:0.7em;
+  font-size:0.75em;
   overflow: hidden;
   white-space: nowrap;
   color: rgba(255, 255, 255, 0.75);
@@ -107,8 +106,75 @@ li {
   padding-left: 10px;
   padding-top: 10px;
   height:10px;
-  font-size:0.6em;
+  font-size:0.70em;
   color: rgba(255, 255, 255, 0.75);
+}
+*/
+
+/* New dynamic class */
+.note-field-light {
+  padding: 12px 8px 18px 8px;
+  height: 82px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-bottom: 1px solid rgb(209, 201, 201);
+  background-color: rgb(252,252,252);
+  color: rgb(57,57,57);
+}
+
+.note-field > div {
+  padding: 12px 8px 18px 8px;
+  height: 82px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-bottom: 1px solid rgb(209, 201, 201);
+  background-color: rgb(61, 59, 59);
+}
+.note-field .note-title, .note-field-light .note-title {
+  padding-left: 10px;
+  padding-top: 5px;
+  margin-bottom: 8px;
+  height: 20px;
+  font-size: 0.85em; 
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.note-field .note-title {
+  color: rgb(255,255,255);
+  text-shadow: 0.5px 0.5px 0 rgb(57,57,57);  
+}
+.note-field-light .note-title {
+  color: rgb(57,57,57);  
+  font-weight: 600;
+}
+
+.note-field .note-content, .note-field-light .note-content{
+  box-sizing: border-box;
+  padding-left: 10px;
+  padding-top:2px;
+  height:25px;
+  font-size:0.75em;
+  overflow: hidden;
+  white-space: nowrap;  
+}
+.note-field .note-content {
+  color: rgba(255, 255, 255, 0.75);
+}
+.note-field-light .note-content {
+  color: rgba(57,57,57);
+}
+
+.note-field .note-created, .note-field-light .note-created {
+  padding-left: 10px;
+  padding-top: 10px;
+  height:10px;
+  font-size:0.70em;  
+}
+.note-field .note-created {
+  color: rgba(255, 255, 255, 0.75);
+}
+.note-field-light .note-created {
+  color: rgba(57,57,57);
+  text-shadow: 0.5px 0.5px 0 rgb(242,242,242);  
 }
 
 /* TOP TITLE AND SEARCH FIELD */
@@ -129,24 +195,33 @@ li {
 #noteSearch { 
   display: inline;
   padding: 8px;
-  margin-left: 20px;
+  margin-left: 18px;
   border: 1px solid rgb(224,224,224);
   border-radius: 8px;
 }
-#noteTitle { 
-  display: inline;
-  padding: 8px;
-  margin-right: 20px;
-  border: 1px solid rgb(224,224,224);
-  border-radius: 8px;
-  margin-right: 38px;
+
+.top-title-field {
+  margin: 14px 12px 12px 12px;
+}
+.note-title-top {  
+  display: inline;  
+  font-size: 1.1em;
+  padding: 8px;  
+  /*border: 1px solid rgb(224,224,224);    
+  border-radius: 8px;*/
+}
+#noteTitle {
+  font-size: 1.1em;
+  opacity: 0.9;
+  border: none;
+  margin-left: 10px;
 }
 
 #searchInput, #titleInput {
   padding: 8px 12px;
   border: none;
   width: auto; 
-  min-width: 228px;
+  min-width: 212px;
   font-size: 0.85em;
 }
 
@@ -159,7 +234,7 @@ li {
 }
 
 #noteTitle:active, #noteTitle:focus {
-  outline: none;
+  outline: none;  
 }
 
 /* Moitrayee edit */
@@ -199,46 +274,52 @@ li {
 
 /*** NAV-BAR FIELD ***/
 
+<<<<<<< HEAD
 #navBar {  
   width:150px;       
   /* background-color: rgb(134, 135, 189); */
   /*background-color:rgb(46, 45, 45);*/
   
+=======
+#navBar {         
+  background-color:rgb(46, 45, 45);;
+>>>>>>> b891823213c8af4dba7a233e346927456c101726
 }
 
 #logo {
   font-family: 'Libre Baskerville', serif;
-  font-size: 30px;
+  font-size: 32px;
   color: rgba(255, 255, 255, 0.75);
 }
-#logo:hover {
-  color: #ffffff; 
-  cursor: pointer; 
-  }
 #logoShortVer {
   display: none;     
   font-family: 'Libre Baskerville', serif;
-  text-align: center;
-  font-size: 52px;
-  color: rgba(255, 255, 255, 0.75);  
+  font-size: 48px;
+  text-align: center;  
+  color: rgba(255, 255, 255, 0.75);
 }
 
+.nav-ul a:hover, #logo:hover, #logoShortVer:hover  {
+  color: rgba(255,255,255, 0.95); 
+  cursor: pointer; 
+}
 .nav-ul {
   padding: 0;
 }
 .nav-ul li {
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
 .nav-ul li a {
-  font-size: 0.9em;
+  font-size: 0.95em;
   letter-spacing: 1px;
   font-weight: 600;
-  color: rgb(234, 230, 230);
+  /*color: rgb(234, 230, 230);*/
+  color: rgba(255,255,255, 0.75);
   padding: 10px;
   text-decoration: none;
 }
 .nav-ul li a:hover {
-  opacity: 0.9;
+  /*opacity: 0.9;*/
   padding-left: 8px;
   transition: all 0.3s ease-in-out;
 }
@@ -456,14 +537,24 @@ background-color:rgb(46, 45, 45);
   }
 
   .top-title-field {
-    margin: 2px 12px 20px 0;
+    padding: 4px;
+    margin: 6px;
   }
-  #noteTitle {
+  .note-title-top {
     display: block;
+    font-size: 1.25em;
+    padding: 8px 12px;
+    border: none;    
+  }
+
+  #noteTitle {
+    /*display: block;*/
+    padding: 4px 6px;    
   }
 
   #noteSearchHd {
     display: block;    
+    display: none;
     padding: 4px;
     margin: 12px 10px 10px 10px;
     border: 1px solid rgb(224,224,224);
@@ -471,6 +562,22 @@ background-color:rgb(46, 45, 45);
   }
   #noteSearch {  
     display: none;
+  }
+  #noteSearch {  
+    display: inline-block;
+  }
+  #searchInput {
+    min-width: 120px;;
+    max-width: 132px;
+    /*padding: 6px 12px;*/
+  }
+  .fa-search {
+    font-size: 0.8em;
+  }
+
+  .ql-toolbar.ql-snow .ql-formats {
+    padding: 4px 2px !important;
+    margin-right: 15px;
   }
 
   /*
