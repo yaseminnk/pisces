@@ -268,14 +268,22 @@ li {
   border: 1px solid rgb(187,187,187);  
 }*/
 #editor {
-  background-color: rgb(252, 252, 252);
+  /*background-color: rgb(252, 252, 252);*/
+  /*height:800px;*/
 }
-
 
 /*** NAV-BAR FIELD ***/
 
+<<<<<<< HEAD
+#navBar {  
+  width:150px;       
+  /* background-color: rgb(134, 135, 189); */
+  /*background-color:rgb(46, 45, 45);*/
+  
+=======
 #navBar {         
   background-color:rgb(46, 45, 45);;
+>>>>>>> b891823213c8af4dba7a233e346927456c101726
 }
 
 #logo {
@@ -331,6 +339,77 @@ li {
   display: none;
 }
 
+/* Change THEME*/
+/*standardTheme*/
+.stand{
+background-color:rgb(46, 45, 45);
+}
+.xstand{
+  background-color:lightgrey;
+}
+/*#greenTheme*/
+.green {
+  background-color: rgb(125, 185, 125);
+  font-style: inherit;
+  font-family:'Times New Roman', Times, serif;
+  letter-spacing: 1px;
+}
+.xgreen{
+  background-color:rgb(212, 241, 221);
+  color:white;
+}
+
+/*#blueTheme */
+.blue
+{
+  background-color: rgb(135, 180, 240);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-style: oblique;
+}
+.xblue{
+  background-color:lightblue;
+}
+.yblue{
+  color:black !important;
+}
+
+/*#pinkTheme*/ 
+.pink
+{
+  background-color: rgb(228, 152, 196);
+  font-style:initial;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.xpink{
+  background-color:rgb(243, 211, 232);
+}
+/*dropdown menu*/
+.dropdown-container {
+  display: none;
+  padding-left: 8px;
+}
+
+.drop{
+  display:block;
+  text-decoration: none;
+  /*color:white;*/
+  font-size:0,9em;
+  padding:5px;
+  color:white;
+  margin-left:10px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+}
+.active {
+  /*background-color: grey;*/
+  /*color:white;*/
+  text-decoration: none;
+}
+
+
 /* #div_btnSaveDelta {
   display: flex;
   justify-content: flex-end;
@@ -372,7 +451,7 @@ li {
 @media screen and (min-width: 769px) and (max-width: 991px) {  
   #noteTitle {
     width: 42%;
-  }  
+  }
   #searchInput {
     min-width: 160px;
   }
@@ -508,7 +587,7 @@ li {
     margin: 10px;
   }
   */
-  .note-fav-container .header-notes {
+  .note-fav-container #header-notes {
     text-align: center;
   }
 }
