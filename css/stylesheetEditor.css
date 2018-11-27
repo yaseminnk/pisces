@@ -194,7 +194,7 @@ li {
 }*/
 #editor {
   /*background-color: rgb(252, 252, 252);*/
-  /*height:600px;*/
+  /*height:800px;*/
 }
 
 /*** NAV-BAR FIELD ***/
@@ -268,34 +268,39 @@ background-color:rgb(46, 45, 45);
 }
 /*#greenTheme*/
 .green {
-  background-color: rgb(37, 71, 37);
+  background-color: rgb(125, 185, 125);
   font-style: inherit;
   font-family:'Times New Roman', Times, serif;
+  letter-spacing: 1px;
 }
 .xgreen{
-  background-color:lightgreen;
+  background-color:rgb(212, 241, 221);
   color:white;
 }
 
 /*#blueTheme */
 .blue
 {
-  background-color: blue;
+  background-color: rgb(135, 180, 240);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-style: oblique;
 }
 .xblue{
   background-color:lightblue;
+}
+.yblue{
+  color:black !important;
 }
 
 /*#pinkTheme*/ 
 .pink
 {
-  background-color: rgb(134, 37, 97);
+  background-color: rgb(228, 152, 196);
   font-style:initial;
   font-family: Arial, Helvetica, sans-serif;
 }
 .xpink{
-  background-color:lightpink;
+  background-color:rgb(243, 211, 232);
 }
 /*dropdown menu*/
 .dropdown-container {
@@ -307,9 +312,12 @@ background-color:rgb(46, 45, 45);
   display:block;
   text-decoration: none;
   /*color:white;*/
-  font-size: 12px;
+  font-size:0,9em;
   padding:5px;
+  color:white;
+  margin-left:10px;
 }
+
 /* Optional: Style the caret down icon */
 .fa-caret-down {
   float: right;
@@ -472,7 +480,7 @@ background-color:rgb(46, 45, 45);
     margin: 10px;
   }
   */
-  .note-fav-container .header-notes {
+  .note-fav-container #header-notes {
     text-align: center;
   }
 }

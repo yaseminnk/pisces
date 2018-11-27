@@ -70,6 +70,20 @@
             }
         }
     }
+    window.saveDummyNotes = function () {
+
+        notes = [];
+        var note = {
+            id: 1,
+            title: "untitled",
+            contentText: "no content...",
+            contentHtml: "",
+            created: new Date().toLocaleString()
+        };
+        notes.push(note);
+
+        localStorage.setItem("notes", JSON.stringify(notes));
+    }
 
 
     // -----**** enable/disable edit mode **** ------ 

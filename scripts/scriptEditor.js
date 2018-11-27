@@ -115,8 +115,14 @@ function addTheme() {
 }*/
 
 
-var editor = document.querySelector('#editor')
+var editor = document.querySelector('#editor');
 var navBar = document.querySelector('#navBar');
+var navNewNote = document.querySelector('#navNewNote');
+var navNotes = document.querySelector('#navNotes');
+var navFavorites = document.querySelector('#navFavorites');
+var navSave = document.querySelector('#navSave');
+var navTrash = document.querySelector('#navTrash');
+var favContainer = document.querySelector('.note-fav-container');
 
 var stand = document.getElementById('standard');
 var green = document.getElementById('greentheme');
@@ -132,29 +138,41 @@ pink.addEventListener('click', switchTheme);
 
 	function switchTheme(ev) {		
         navBar.setAttribute('class', '');	
-        editor.setAttribute('class','');
-        //noteContainer.setAttribute('class','');
+        //editor.setAttribute('class','');
+        navNewNote.setAttribute('class','');
+        navNotes.setAttribute('class','');
+        navFavorites.setAttribute('class','');
+        navSave.setAttribute('class','');
+        navTrash.setAttribute('class','');
+        favContainer.setAttribute('class','');
 		var themeId = this.id;  // if ev.id don't work
 				
 		if( themeId === 'standard') {
+            //setAttribute('class','')
+
             navBar.classList.toggle('stand')
-            editor.classList.toggle('xstand');	
-            //noteContainer.classList.toggle('ystand');		
+            //editor.classList.toggle('xstand');
+            navTrash.classList.toggle('ystand');				
 		}
 		else if( themeId === 'greentheme' ) {
             navBar.classList.toggle('green');	
-            editor.classList.toggle('xgreen');	
-            //notesContainer.classList.toggle('ygreen');	
+            //editor.classList.toggle('xgreen');	
+            navTrash.classList.toggle('ygreen');
+            favContainer.classList.toggle('green');	
 		}
 		else if( themeId === 'bluetheme' ) {
             navBar.classList.toggle('blue');
-            editor.classList.toggle('xblue');	
-            //notesContainer.classList.toggle('yblue');		
+            //editor.classList.toggle('xblue');	
+            navNewNote.classList.toggle('yblue');	
+            navNotes.classList.toggle('yblue');
+            navFavorites.classList.toggle('yblue');
+            navSave.classList.toggle('yblue');	
+            navTrash.classList.toggle('yblue');		
         }
         else if (themeId === 'pinktheme') {
             navBar.classList.toggle('pink');
-            editor.classList.toggle('xpink');
-            //notesContainer.classList.toggle('ypink');	
+           // editor.classList.toggle('xpink');
+            navTrash.classList.toggle('ypink');	
         }
     }
     
@@ -171,6 +189,7 @@ for (i = 0; i < dropdown.length; i++) {
       dropdownContent.style.display = "none";
     } else {
       dropdownContent.style.display = "block";
+      navBar.style.padding = "0 22px";
     }
   });
 }
