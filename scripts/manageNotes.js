@@ -24,7 +24,6 @@
                      isFavorite : false
                     };
         document.getElementById('noteTitle').value = note.title;
-        // document.getElementsByClassName('ql-editor')[0].innerHTML = "";
         quill.setContents(""); // setting an empty editor for writing new note.
         notes.unshift(note); //add notes to beginning of the Array, push() add item in the end of the array.
        //notes.push(note);
@@ -40,27 +39,23 @@
 
 
     // -----**** Saving notes **** ------
-    var saveNote = document.getElementById('navSave'); // selecting anchor tag save
+    var saveNote = document.getElementsByClassName('save')[0]; 
     saveNote.addEventListener('click', saveAllNotes);
-    var saveAllNotes = function () {
-        // var noteContentHtml = document.getElementsByClassName('ql-editor')[0].innerHTML; 
+    function saveAllNotes() {
         var noteContentHtml = quill.root.innerHTML; // getting content from editor
         var noteContentText = quill.getText(); // getting text without HTML
-        
         for (var i = 0; i < notes.length; i++) {
             if (notes[i].id == currentNoteId )
             {
                 notes[i].contentHtml = noteContentHtml; // adding content with html to notes array
                 notes[i].contentText = noteContentText; // adding content without html to notes array
-                notes[i].title = document.getElementsByClassName('note-title')[i].innerHTML;// adding title to notes title
+                notes[i].title = document.getElementById('noteTitle').value;// adding title to notes title
                 
                 localStorage.setItem("notes", JSON.stringify(notes));  //storing array in "notes" array in local storage 
                 showAllNotes();
                 break;
             }
         }
-
-            
     };
 
     // -----**** Selecting a specific note to display on editor **** ------  
@@ -80,38 +75,22 @@
 
 ///Kristian
 
-    window.saveDummyNotes = function () {
+    // window.saveDummyNotes = function () {
 
-        notes = [];
-        var note = {
-            id: 1,
-            title: "untitled",
-            contentText: "no content...",
-            contentHtml: "",
-            created: new Date().toLocaleString()
-        };
-        notes.push(note);
+    //     notes = [];
+    //     var note = {
+    //         id: 1,
+    //         title: "untitled",
+    //         contentText: "no content...",
+    //         contentHtml: "",
+    //         created: new Date().toLocaleString()
+    //     };
+    //     notes.push(note);
 
-        localStorage.setItem("notes", JSON.stringify(notes));
-    }
+    //     localStorage.setItem("notes", JSON.stringify(notes));
+    // }
 
     ///Kristian
-
-
-    // -----**** enable/disable edit mode **** ------ 
-    //{
-        // create/add a edit option.
-    //}
-
-    // -----**** delete note **** ------  
-    document.getElementById('navDelete').addEventListener('click', function () {
-
-        for (var i = 0; i< notes.length; i++){
-           
-        }
-    });
-
-    
 
     // -----**** Updates All notes view **** ------    
     function showAllNotes()
@@ -163,10 +142,7 @@
         showAllNotes();
     });
 
-
-
 // -----**** Showing favorite notes  **** ------ 
-
     var favorite = document.getElementById('navFavorites');
     favorite.addEventListener ('click', myFavorite );
     function myFavorite() {
@@ -191,7 +167,21 @@
         }
     };
     
-    
+     // -----**** delete note **** ------ 
+    var deleteNote = document.getElementsByClassName('nav-delete')[0];
+    deleteNote.addEventListener('click', noteDelete);
+    function noteDelete () {
+        for(var i = 0; i < notes.length; i++) {
+           var noteId = currentNoteId; 
+            if (notes[i].id === noteId) {
+              notes.splice(i,1);
+              document.getElementById('noteTitle').value = "";
+              quill.setContents("");
+              localStorage.setItem("notes", JSON.stringify(notes));
+              showAllNotes();
+            }
+        }
+    };
 
     
 
