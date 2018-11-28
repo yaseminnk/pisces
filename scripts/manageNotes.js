@@ -77,6 +77,9 @@
             }
         }
     }
+
+///Kristian
+
     window.saveDummyNotes = function () {
 
         notes = [];
@@ -91,6 +94,8 @@
 
         localStorage.setItem("notes", JSON.stringify(notes));
     }
+
+    ///Kristian
 
 
     // -----**** enable/disable edit mode **** ------ 
@@ -115,7 +120,7 @@
           for(i=0; i< notes.length; i++){
             var favIconActiveClass = null;
             if (notes[i].isFavorite == true){
-                favIconActiveClass = "active";
+                favIconActiveClass = "active-favorite";
             } else {
                 favIconActiveClass = "";
             } 
@@ -131,7 +136,7 @@
         //   allNotehtmlContent += '<div class="note-item"><div class="note-title">'+ item.title +'</div><div class="note-content">'+ item.content +'</div><div class="note-created">'+ item.created +'</div></div>';
         // });
     
-        var allNote = document.getElementsByClassName('note-field')[0];
+        var allNote = document.getElementsByClassName('note-lists')[0];
         allNote.innerHTML = allNotehtmlContent;
     }
     
@@ -170,7 +175,7 @@
         for (var i = 0; i < notes.length; i++) {
             var favIconActiveClass = null;
             if (notes[i].isFavorite == true){
-                favIconActiveClass = "active";
+                favIconActiveClass = "active-favorite";
                 allNotehtmlContent += 
                 '<div id="'+ notes[i].id +'" class="note-item" onClick="selectNote(\''+ notes[i].id +'\')">' +
                 '<div class="note-title">'+ notes[i].title +'<i class="fas fa-star favorite-icon ' + favIconActiveClass + '" onClick="favoriteNoteManager(\''+ notes[i].id +'\')"></i></div>' +
@@ -178,7 +183,7 @@
                 '<div class="note-created">'+ notes[i].created +'</div>' +
                 '</div>';
 
-                var favNote = document.getElementsByClassName('note-field')[0];
+                var favNote = document.getElementsByClassName('note-lists')[0];
                 favNote.innerHTML = allNotehtmlContent;
             } else {
                 continue;
