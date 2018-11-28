@@ -9,7 +9,6 @@ var logoShort = document.getElementById('logoShortVer');
 var menuToggler = document.getElementById('menu-toggler');
 var collapsedMenu = document.getElementById("collapseTarget");
 var cM = collapsedMenu;
-
 var navNewNote = document.getElementById('navNewNote');
 //var navNotes = document.getElementById('navNotes');
 var navFavorites = document.getElementById('navFavorites');
@@ -131,14 +130,14 @@ function addTheme() {
 }*/
 
 
-var editor = document.querySelector('#editor');
-var navBar = document.querySelector('#navBar');
-var navNewNote = document.querySelector('#navNewNote');
-var navNotes = document.querySelector('#navNotes');
-var navFavorites = document.querySelector('#navFavorites');
-var navSave = document.querySelector('#navSave');
-var navTrash = document.querySelector('#navTrash');
-var favContainer = document.querySelector('.note-fav-container');
+// var editor = document.querySelector('#editor');
+// var navBar = document.querySelector('#navBar');
+// var navNewNote = document.querySelector('#navNewNote');
+// var navNotes = document.querySelector('#navNotes');
+// var navFavorites = document.querySelector('#navFavorites');
+// var navSave = document.querySelector('#navSave');
+// var navDelete = document.querySelector('#navDelete');
+// var favContainer = document.querySelector('.note-fav-container');
 
 var stand = document.getElementById('standard');
 var green = document.getElementById('greentheme');
@@ -159,7 +158,7 @@ pink.addEventListener('click', switchTheme);
         navNotes.setAttribute('class','');
         navFavorites.setAttribute('class','');
         navSave.setAttribute('class','');
-        navTrash.setAttribute('class','');
+        navDelete.setAttribute('class','');
         favContainer.setAttribute('class','');
 		var themeId = this.id;  // if ev.id don't work
 				
@@ -168,12 +167,12 @@ pink.addEventListener('click', switchTheme);
 
             navBar.classList.toggle('stand')
             //editor.classList.toggle('xstand');
-            navTrash.classList.toggle('ystand');				
+            navDelete.classList.toggle('ystand');				
 		}
 		else if( themeId === 'greentheme' ) {
             navBar.classList.toggle('green');	
             //editor.classList.toggle('xgreen');	
-            navTrash.classList.toggle('ygreen');
+            navDelete.classList.toggle('ygreen');
             favContainer.classList.toggle('green');	
 		}
 		else if( themeId === 'bluetheme' ) {
@@ -183,12 +182,12 @@ pink.addEventListener('click', switchTheme);
             navNotes.classList.toggle('yblue');
             navFavorites.classList.toggle('yblue');
             navSave.classList.toggle('yblue');	
-            navTrash.classList.toggle('yblue');		
+            navDelete.classList.toggle('yblue');		
         }
         else if (themeId === 'pinktheme') {
             navBar.classList.toggle('pink');
            // editor.classList.toggle('xpink');
-            navTrash.classList.toggle('ypink');	
+            navDelete.classList.toggle('ypink');	
         }
     }
     
@@ -198,14 +197,14 @@ var dropdown = document.getElementsByClassName("dropdown-btn");
 var i;
 
 for (i = 0; i < dropdown.length; i++) {
-  dropdown[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var dropdownContent = this.nextElementSibling;
-    if (dropdownContent.style.display === "block") {
-      dropdownContent.style.display = "none";
-    } else {
-      dropdownContent.style.display = "block";
-      navBar.style.padding = "0 22px";
-    }
-  });
+    dropdown[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var dropdownContent = this.nextElementSibling;
+        if (dropdownContent.style.display === "block") {
+            dropdownContent.style.display = "none";
+        } else {
+            dropdownContent.style.display = "block";
+            navBar.style.padding = "0 22px";
+        }
+    });
 }
