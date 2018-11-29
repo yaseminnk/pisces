@@ -77,7 +77,11 @@ var navSave = document.querySelector('#navSave');
 var navTrash = document.querySelector('#navTrash');
 var noteItem= document.querySelectorAll('note-item');
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+// Theme id:s
+>>>>>>> ec0c2d5a35bf3e3a047047cf817756fa0656701f
 =======
 // Theme id:s
 >>>>>>> ec0c2d5a35bf3e3a047047cf817756fa0656701f
