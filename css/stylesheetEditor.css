@@ -44,10 +44,15 @@ li {
 .dropdown-btn {
   font-size: 1em;
   padding: 2px;
+  margin-left: 8px;
+  margin-bottom: 8px;
 }
 .dropdown-btn .fa-caret-down {
   padding: 2px;
   margin-left: 8px;
+}
+.dropdown-container .drop {
+  font-size: 0.9em;
 }
 
 /* DISPLAY CONTAINER */
@@ -325,7 +330,7 @@ li {
   margin-bottom: 28px;
 }
 .nav-ul li a {
-  font-size: 0.95em;
+  font-size: 0.9em;
   font-weight: 600;
   /*color: rgb(234, 230, 230);*/
   color: rgba(255,255,255, 0.75);
@@ -365,10 +370,9 @@ li {
 .drop{
   display:block;
   text-decoration: none;
-  /*color:white;*/
-  font-size:0,9em;
+  font-size: 0.85em;
   padding:5px;
-  color:white;
+  color:rgb(255,255,255);
   margin-left:10px;
 }
 
