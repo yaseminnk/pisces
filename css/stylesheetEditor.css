@@ -230,9 +230,7 @@ li {
 .note-title-top {  
   display: inline;  
   font-size: 1.1em;
-  padding: 8px;  
-  /*border: 1px solid rgb(224,224,224);    
-  border-radius: 8px;*/
+  padding: 8px;    
 }
 #noteTitle {
   font-size: 1.1em;
@@ -261,8 +259,6 @@ li {
   outline: none;  
 }
 
-/* Moitrayee edit */
-
 .note-field,
 .favorit-field {
   padding: 0;
@@ -287,21 +283,9 @@ li {
   border: none !important;
   border-top: 1px solid rgb(187,187,187) !important;
 }
-/*
-.container-workfield {
-  border: 1px solid rgb(187,187,187);  
-}*/
-/* #editor {
-  background-color: rgb(252, 252, 252);
-  height:800px;
-} */
+
 
 /*** NAV-BAR FIELD ***/
-
-/*
-#navBar {         
-  background-color:rgb(46, 45, 45);
-}*/
 
 #logo {
   font-family: 'Libre Baskerville', serif;
@@ -339,7 +323,6 @@ li {
 }
 .nav-ul li a:hover {
   opacity: 0.5;
-  /* padding-left: 8px; */
   transition: all 0.3s ease-in-out;
 }
 
@@ -365,7 +348,6 @@ li {
   display: none;
   padding-left: 8px;
 }
-
 .drop{
   display:block;
   text-decoration: none;
@@ -374,7 +356,6 @@ li {
   color:rgb(255,255,255);
   margin-left:10px;
 }
-
 /* Optional: Style the caret down icon */
 .fa-caret-down {
   float: right;
@@ -395,10 +376,8 @@ li {
     background-color: rgb(125, 185, 125);
     font-style: inherit;
     font-family:'Times New Roman', Times, serif;
-    letter-spacing: 1px;
-  }
-  
-  
+    /*letter-spacing: 1px;*/
+  }  
   /*#blueTheme */
   .blue{
     background-color: rgb(135, 180, 240);
@@ -408,8 +387,7 @@ li {
   }
   .blue .nav-ul a{
     color:black;
-  }
-  
+  }  
   /*#pinkTheme*/ 
   .pink
   {
@@ -418,17 +396,6 @@ li {
     font-family: Arial, Helvetica, sans-serif;
   }
   
-
-/* #div_btnSaveDelta {
-  display: flex;
-  justify-content: flex-end;
-}
-#btnSaveDelta {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-} */
-
 
 /*** MEDIA QUERIES ***/
 
@@ -466,8 +433,13 @@ li {
   }
   .container-navfield {
     flex-basis: 7%;
-    min-width: 90px;
+    min-width: 128px;
+  /*  padding: 12px 24px;*/
   }
+  #navBar {
+    padding: 22px;
+  }
+
   #logo {
     display: none;
   }
@@ -489,7 +461,7 @@ li {
   .flex-container {
     height: auto;            
   }
-
+  
   #logoBrand {
     display: block;
     width: 100%;
@@ -499,6 +471,11 @@ li {
     font-family: 'Libre Baskerville', serif;    
     color: rgba(255, 255, 255, 0.75);
     text-align: center;    
+  }
+
+  #themeField {
+    width: 100%;
+    padding: 6px;
   }
 
   #navBar {
@@ -541,7 +518,6 @@ li {
   }
 
   .note-fav-container {
-    /*display: none;*/
     width: 100%;
   }
 
@@ -557,7 +533,6 @@ li {
   }
 
   #noteTitle {
-    /*display: block;*/
     padding: 4px 6px;    
   }
 
@@ -578,7 +553,6 @@ li {
   #searchInput {
     min-width: 120px;;
     max-width: 132px;
-    /*padding: 6px 12px;*/
   }
   .fa-search {
     font-size: 0.8em;
