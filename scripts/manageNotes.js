@@ -12,7 +12,7 @@
         
 
     // -----**** Creating new note and adding to the array **** ------
-    var newNote = document.querySelector('.nav-newNote');
+    var newNote = document.querySelectorAll('.nav-newNote');
     newNote.addEventListener('click',function(){
         var newId = uniqueID();
         var note = {
