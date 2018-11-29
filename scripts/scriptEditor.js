@@ -24,7 +24,7 @@ logo.addEventListener('click', takeMeHome);
 logoShort.addEventListener('click', takeMeHome);
 menuToggler.addEventListener('click', toggleMenu);
 navNewNote.addEventListener('click', focusOnTitle);
-navNotes.addEventListener('click', showNotesField);
+//navNotes.addEventListener('click', showNotesField);
 //navFavorites.addEventListener('click', showNotesField);
 noteField.addEventListener('click', modNoteField);
 
@@ -60,7 +60,7 @@ function toggleMenu() {
 
 // Field for my notes and favorite notes
  function showNotesField() {
-     notesContainer.classList.toggle('data-container-hd');
+     //notesContainer.classList.toggle('data-container-hd');
     
   }
 
