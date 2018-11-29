@@ -100,7 +100,6 @@ elIconTitle.setAttribute('title','Title');
  qlToolbar.appendChild(elFormSearch);
 
   
-<<<<<<< HEAD
 var navBar = document.querySelector('#navBar');
 var navNewNote = document.querySelector('#navNewNote');
 var navNotes = document.querySelector('#navNotes');
@@ -108,46 +107,6 @@ var navFavorites = document.querySelector('#navFavorites');
 var navSave = document.querySelector('#navSave');
 var navTrash = document.querySelector('#navTrash');
 var noteItem= document.querySelectorAll('note-item');
-=======
-/*document.getElementById("theme").addEventListener("click", switchTheme);
-
-function switchTheme() {
-    document.getElementById("navBar").style.backgroundColor = "green"; 
-    document.getElementById("navBar").style.fontFamily = "arial";
-    document.getElementById("navBar").style.fontStyle = "italic";
-    document.getElementById("editor").style.backgroundColor = "lightgreen"; 
- 
-}*/
-
-        /////////////////////////////////////////////////
-/*document.getElementById("greentheme").addEventListener("click", switchTheme);
-function switchTheme() {
-    document.getElementById("navBar").setAttribute("id", "greenTheme"); 
-    document.getElementById("editor").setAttribute("id", "green");
-}
-
-document.getElementById("bluetheme").addEventListener("click", changeTheme);
-function changeTheme() {
-    document.getElementById("navBar").setAttribute("id", "blueTheme"); 
-    document.getElementById("editor").setAttribute("id", "blue");
-}
-
-document.getElementById("pinktheme").addEventListener("click", addTheme);
-function addTheme() {
-    document.getElementById("navBar").setAttribute("id", "pinkTheme"); 
-    document.getElementById("editor").setAttribute("id", "pink");
-}*/
-
-
-// var editor = document.querySelector('#editor');
-// var navBar = document.querySelector('#navBar');
-// var navNewNote = document.querySelector('#navNewNote');
-// var navNotes = document.querySelector('#navNotes');
-// var navFavorites = document.querySelector('#navFavorites');
-// var navSave = document.querySelector('#navSave');
-// var navDelete = document.querySelector('#navDelete');
-// var favContainer = document.querySelector('.note-fav-container');
->>>>>>> a4eed67404876df8fc191b2e94fc3c60af04b79b
 
 var stand = document.getElementById('standard');
 var green = document.getElementById('green');
