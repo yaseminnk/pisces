@@ -105,7 +105,7 @@ for (i = 0; i < dropdown.length; i++) {
             dropdownContent.style.display = "none";
         } else {
             dropdownContent.style.display = "block";
-            navBar.style.padding = "22px";
+            navBar.style.padding = "0 22px";
         }
     });
 }
