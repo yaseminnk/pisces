@@ -289,7 +289,11 @@ li {
 /*** NAV-BAR FIELD ***/
 
 #navBar {         
+<<<<<<< HEAD
+  /*background-color:rgb(46, 45, 45);;*/
+=======
   background-color:rgb(46, 45, 45);
+>>>>>>> a4eed67404876df8fc191b2e94fc3c60af04b79b
 }
 
 #logo {
@@ -350,48 +354,7 @@ li {
 
 /* Change THEME*/
 /*standardTheme*/
-.stand{
-background-color:rgb(46, 45, 45);
-}
-.xstand{
-  background-color:lightgrey;
-}
-/*#greenTheme*/
-.green {
-  background-color: rgb(125, 185, 125);
-  font-style: inherit;
-  font-family:'Times New Roman', Times, serif;
-  letter-spacing: 1px;
-}
-.xgreen{
-  background-color:rgb(212, 241, 221);
-  color:white;
-}
 
-/*#blueTheme */
-.blue
-{
-  background-color: rgb(135, 180, 240);
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-style: oblique;
-}
-.xblue{
-  background-color:lightblue;
-}
-.yblue{
-  color:black !important;
-}
-
-/*#pinkTheme*/ 
-.pink
-{
-  background-color: rgb(228, 152, 196);
-  font-style:initial;
-  font-family: Arial, Helvetica, sans-serif;
-}
-.xpink{
-  background-color:rgb(243, 211, 232);
-}
 /*dropdown menu*/
 .dropdown-container {
   display: none;
@@ -417,7 +380,40 @@ background-color:rgb(46, 45, 45);
   /*color:white;*/
   text-decoration: none;
 }
-
+.standard{
+  background-color:rgb(46, 45, 45);
+  }
+  .xstand{
+    background-color:lightgrey;
+  }
+  /*#greenTheme*/
+  .green {
+    background-color: rgb(125, 185, 125);
+    font-style: inherit;
+    font-family:'Times New Roman', Times, serif;
+    letter-spacing: 1px;
+  }
+  
+  
+  /*#blueTheme */
+  .blue{
+    background-color: rgb(135, 180, 240);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: oblique;
+    color:black !important;
+  }
+  .blue .nav-ul a{
+    color:black;
+  }
+  
+  /*#pinkTheme*/ 
+  .pink
+  {
+    background-color: rgb(228, 152, 196);
+    font-style:initial;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
 
 /* #div_btnSaveDelta {
   display: flex;

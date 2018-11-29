@@ -12,7 +12,7 @@
         
 
     // -----**** Creating new note and adding to the array **** ------
-    var newNote = document.getElementById('navNewNote');
+    var newNote = document.querySelector('.nav-newNote');
     newNote.addEventListener('click',function(){
         var newId = uniqueID();
         var note = {
@@ -39,8 +39,10 @@
 
 
     // -----**** Saving notes **** ------
-    var saveNote = document.getElementsByClassName('save')[0]; 
-    saveNote.addEventListener('click', saveAllNotes);
+    var saveNote = document.getElementsByClassName('save');
+    for(let i = 0; i < saveNote.length; i++) {
+        saveNote[i].addEventListener('click', saveAllNotes);
+    } 
     function saveAllNotes() {
         var noteContentHtml = quill.root.innerHTML; // getting content from editor
         var noteContentText = quill.getText(); // getting text without HTML
@@ -137,13 +139,13 @@
     }
 
     // -----**** Added new eventListener and closed the toggle view **** ------ 
-    var myNotes = document.getElementById('navNotes');
+    var myNotes = document.querySelector('.nav-notes');
     myNotes.addEventListener('click', function() {
         showAllNotes();
     });
 
 // -----**** Showing favorite notes  **** ------ 
-    var favorite = document.getElementById('navFavorites');
+    var favorite = document.querySelector('.nav-favorites');
     favorite.addEventListener ('click', myFavorite );
     function myFavorite() {
         //show only favoties
@@ -168,8 +170,10 @@
     };
     
      // -----**** delete note **** ------ 
-    var deleteNote = document.getElementsByClassName('nav-delete')[0];
-    deleteNote.addEventListener('click', noteDelete);
+    var deleteNote = document.querySelector('.nav-delete');
+    for(let i = 0; i < deleteNote.length; i++) {
+        deleteNote[i].addEventListener('click', noteDelete);
+    }
     function noteDelete () {
         for(var i = 0; i < notes.length; i++) {
            var noteId = currentNoteId; 

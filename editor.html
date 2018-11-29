@@ -28,34 +28,6 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="css/stylesheetEditor.css">
 
-<style>
-#myPrecious:Before {
-  color: lightsteelblue;
-  content: "Delta (Aka precious content) with .getContents() :\A\A";
-}
-
-#myPrecious {
-  padding: 20px;
-  height: 120px;
-  background-color: #444;
-  color: orange;
-  white-space: pre-wrap;
-  /* css-3 */
-  white-space: -moz-pre-wrap;
-  /* Mozilla, since 1999 */
-  white-space: -pre-wrap;
-  /* Opera 4-6 */
-  white-space: -o-pre-wrap;
-  /* Opera 7 */
-  word-wrap: break-word;
-  /* Internet Explorer 5.5+ */
-  border-radius: 5px;
-  overflow: auto;
-  border: 10px solid #444;
-}
-
-</style>
-
 </head>
 
 <body>
@@ -65,7 +37,7 @@
         <div id="logoBrand">
             <h1>QUIRE</h1>
         </div><br>
-        <div id="navBar" class="flex-item container-navfield stand">
+        <div id="navBar" class="flex-item container-navfield standard">
 
             <div class="menu-burger">
                 <button id="menu-toggler" class="menu-toggler" data-toggle="collapse" data-target="#collapseTarget">
@@ -77,43 +49,41 @@
                 <h1 id="logo">QUIRE</h1><br>
                 <h1 id="logoShortVer">Q</h1><br>
                 <ul class="nav-ul">
-                    <li id="newNote"><a id="navNewNote" href="#">NEW NOTE</a></li>
-                    <li id="newNoteHd"><a id="navNewNote" title="Open new note"><i class="far fa-envelope-open"></i></a></li>
+                    <li id="newNote"><a class="nav-newNote" href="#">NEW NOTE</a></li>
+                    <li id="newNoteHd"><a class="nav-newNote" title="Open new note"><i class="far fa-envelope-open"></i></a></li>
 
-                    <li id="myNotes"><a id="navNotes" href="#">MY NOTES</a></li>
-                    <li id="myNotesHd"><a id="navNotes" title="My notes"><i class="far fa-file"></i></a></li>
+                    <li id="myNotes"><a class="nav-notes" href="#">MY NOTES</a></li>
+                    <li id="myNotesHd"><a class="nav-notes" title="My notes"><i class="far fa-file"></i></a></li>
 
-                    <li id="favNotes"><a id="navFavorites" href="#">FAVORITES</a></li>
-                    <li id="favNotesHd"><a id="navFavorites" title="My favorites"><i class="far fa-star"></i></a></li>
+                    <li id="favNotes"><a class="nav-favorites" href="#">FAVORITES</a></li>
+                    <li id="favNotesHd"><a class="nav-favorites" title="My favorites"><i class="far fa-star"></i></a></li>
 
-                    <li id="saveNote"><a id="navSave" class="save" href="#">SAVE</a></li>
-                    <li id="saveNoteHd"><a id="navSave" title="Save note"><i class="far fa-save"></i></a></li>
+                    <li id="saveNote"><a class="nav-save save" href="#">SAVE</a></li>
+                    <li id="saveNoteHd"><a class="nav-save save" title="Save note"><i class="far fa-save"></i></a></li>
 
-                    <li id="deleteNote"><a id="navDelete" class="nav-delete" href="#">DELETE</a></li>  <!--Moitrayee-->
+<<<<<<< HEAD
+                    <li id="trashNote"><a id="navTrash" href="#">TRASH</a></li>
                     <li id="trashNoteHd"><a id="navTrash" title="Trash note"><i class="fas fa-trash"></i></a></li>
+=======
+                    <li id="deleteNote"><a class="nav-delete" href="#">DELETE</a></li>  <!--Moitrayee-->
+                    <li id="trashNoteHd"><a class="nav-delete" title="Delete note"><i class="fas fa-trash"></i></a></li>
                     <!--<button id="standard">Standard</button><br>
 	                <button id="greentheme">Green</button><br>
                     <button id="bluetheme">Blue</button><br>
                     <button id="pinktheme">pink</button><br>-->
 
                     <!--<li id="theme"><a id="navTheme" href="#">THEME</a></li>-->
+>>>>>>> a4eed67404876df8fc191b2e94fc3c60af04b79b
 
                     <button class="dropdown-btn">THEME 
                             <i class="fa fa-caret-down"></i>
                           </button>
                           <div class="dropdown-container">
                             <a class="drop" id="standard" href="#">DEFAULT</a>
-                            <a class="drop" id="greentheme" href="#">GREEN</a>
-                            <a class="drop" id="bluetheme" href="#">BLUE</a>
-                            <a class="drop" id="pinktheme" href="#">PINK</a>
+                            <a class="drop" id="green" href="#">GREEN</a>
+                            <a class="drop" id="blue" href="#">BLUE</a>
+                            <a class="drop" id="pink" href="#">PINK</a>
                           </div>
-                    <!--<li id="theme">
-                        <select>
-                            <option id="green" value="green">Green</option>
-                            <option id="red" value="red">Red</option>
-                            <option id="pink" value="pink">Pink</option>
-                          </select>
-                    </li> -->
                 </ul>
             </div>
         </div>
@@ -154,8 +124,8 @@
                     </label>
                 </form>
             </div>
-
-            <!--<div id="toolbar"></div>-->
+               
+            </div>
             <div id="editor">
             </div>
            
