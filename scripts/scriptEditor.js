@@ -10,13 +10,13 @@ var menuToggler = document.getElementById('menu-toggler');
 var collapsedMenu = document.getElementById("collapseTarget");
 var cM = collapsedMenu;
 var navNewNote = document.getElementById('navNewNote');
-//var navNotes = document.getElementById('navNotes');
+var navNotes = document.getElementById('navNotes');
 var navFavorites = document.getElementById('navFavorites');
 var noteTitle = document.getElementById('noteTitle');
 var noteField = document.querySelector('.note-field');
 
 var noteSearch = document.getElementById('searchInput');
-//var notesContainer = document.querySelector('.note-fav-container');
+var notesContainer = document.querySelector('.note-fav-container');
 
 
 // EVENT LISTENERS 
@@ -24,7 +24,7 @@ logo.addEventListener('click', takeMeHome);
 logoShort.addEventListener('click', takeMeHome);
 menuToggler.addEventListener('click', toggleMenu);
 navNewNote.addEventListener('click', focusOnTitle);
-//navNotes.addEventListener('click', showNotesField);
+navNotes.addEventListener('click', showNotesField);
 //navFavorites.addEventListener('click', showNotesField);
 noteField.addEventListener('click', modNoteField);
 
@@ -60,7 +60,7 @@ function toggleMenu() {
 
 // Field for my notes and favorite notes
  function showNotesField() {
-//      notesContainer.classList.toggle('data-container-hd');
+     notesContainer.classList.toggle('data-container-hd');
     
   }
 
