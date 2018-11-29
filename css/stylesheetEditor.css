@@ -18,30 +18,37 @@ li {
 
 /*** EDITOR RESPONSIVE LAYOUT ***/
 
+.flex-container {
+  display: flex;            
+  flex-wrap: wrap;
+  height: 100vh;
+  padding: 0;
+  margin: 0 0 22px 0;
+  overflow: hidden;
+}
+.container-navfield {
+  flex-basis: 8%;
+  min-width: 152px; 
+  padding: 0 22px;
+  margin: 0;
+  outline: none;
+}
 #navBar {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   outline: none;
-  /* background-color: black; */
 }
 #logoBrand {
   display: none;
 }
 
-.flex-container {
-  display: flex;            
-  flex-wrap: wrap;
-  height: 100vh;
-  margin: 0 0 22px 0;      
-  padding: 0;
-  overflow: hidden;
+.dropdown-btn {
+  font-size: 1em;
+  padding: 2px;
 }
-.container-navfield {
-  flex-basis: 8%;
-  /* min-width: 140px; */
-  padding: 0 22px;
-  outline: none;
+.dropdown-btn .fa-caret-down {
+  padding: 2px;
+  margin-left: 8px;
 }
-
 
 /* DISPLAY CONTAINER */
 .note-fav-container {
@@ -51,8 +58,6 @@ li {
     padding: 0;
     margin: 0;
 }
-
-/* Moitrayee edit */
 
 .data-container-hd {
     display: none; 
@@ -288,13 +293,10 @@ li {
 
 /*** NAV-BAR FIELD ***/
 
+/*
 #navBar {         
-<<<<<<< HEAD
-  /*background-color:rgb(46, 45, 45);;*/
-=======
   background-color:rgb(46, 45, 45);
->>>>>>> a4eed67404876df8fc191b2e94fc3c60af04b79b
-}
+}*/
 
 #logo {
   font-family: 'Libre Baskerville', serif;
@@ -323,8 +325,7 @@ li {
   margin-bottom: 28px;
 }
 .nav-ul li a {
-  font-size: 0.8em;
-  /* letter-spacing: 1px; */
+  font-size: 0.95em;
   font-weight: 600;
   /*color: rgb(234, 230, 230);*/
   color: rgba(255,255,255, 0.75);
@@ -338,7 +339,7 @@ li {
 }
 
 /* Hidden nav icons */
-#newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #trashNoteHd {
+#newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #deleteNoteHd {
   display: none;
   cursor: pointer;
   font-size: 1.45em;
@@ -380,7 +381,7 @@ li {
   /*color:white;*/
   text-decoration: none;
 }
-.standard{
+.standard {
   background-color:rgb(46, 45, 45);
   }
   .xstand{
@@ -474,7 +475,7 @@ li {
   #newNote, #myNotes, #favNotes, #saveNote, #deleteNote {
     display: none;
   }  
-  #newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #trashNoteHd {
+  #newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #deleteNoteHd {
     display: block;    
   }  
 
