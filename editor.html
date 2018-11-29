@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
 <!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
 <!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!-->
-<!-- <html class="no-js" lang="en"> -->
+<html class="no-js" lang="en">
 <!--<![endif]-->
 
 <head>
@@ -27,64 +26,65 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
         crossorigin="anonymous">
     <link rel="stylesheet" href="css/stylesheetEditor.css">
-
 </head>
 
 <body>
 
     <div class="flex-container">
-
+        
         <div id="logoBrand">
             <h1>QUIRE</h1>
         </div><br>
-        <div id="navBar" class="flex-item container-navfield standard">
+        
+        <div id="themeField" class="standard">
+            <div id="navBar" class="flex-item container-navfield">
 
-            <div class="menu-burger">
-                <button id="menu-toggler" class="menu-toggler" data-toggle="collapse" data-target="#collapseTarget">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
+                <div class="menu-burger">
+                    <button id="menu-toggler" class="menu-toggler" data-toggle="collapse" data-target="#collapseTarget">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
 
-            <div id="collapseTarget" class="menu-collapse">
-                <h1 id="logo">QUIRE</h1><br>
-                <h1 id="logoShortVer">Q</h1><br>
-                <ul class="nav-ul">
-                    <li id="newNote"><a class="nav-newNote" href="#">NEW NOTE</a></li>
-                    <li id="newNoteHd"><a class="nav-newNote" title="Open new note"><i class="far fa-envelope-open"></i></a></li>
+                <div id="collapseTarget" class="menu-collapse">
+                    <h1 id="logo">QUIRE</h1>
+                    <h1 id="logoShortVer">Q</h1><br>
+                    <ul class="nav-ul">
+                        <li id="newNote"><a class="nav-newNote" href="#">NEW NOTE</a></li>
+                        <li id="newNoteHd"><a class="nav-newNote" title="Open new note">
+                                <i class="far fa-envelope-open"></i></a></li>
 
-                    <li id="myNotes"><a class="nav-notes" href="#">MY NOTES</a></li>
-                    <li id="myNotesHd"><a class="nav-notes" title="My notes"><i class="far fa-file"></i></a></li>
+                        <li id="myNotes"><a class="nav-notes" href="#">MY NOTES</a></li>
+                        <li id="myNotesHd"><a class="nav-notes" title="My notes">
+                                <i class="far fa-file"></i></a></li>
 
-                    <li id="favNotes"><a class="nav-favorites" href="#">FAVORITES</a></li>
-                    <li id="favNotesHd"><a class="nav-favorites" title="My favorites"><i class="far fa-star"></i></a></li>
+                        <li id="favNotes"><a class="nav-favorites" href="#">FAVORITES</a></li>
+                        <li id="favNotesHd"><a class="nav-favorites" title="My favorites">
+                                <i class="far fa-star"></i></a>
+                        </li>
 
-                    <li id="saveNote"><a class="nav-save save" href="#">SAVE</a></li>
-                    <li id="saveNoteHd"><a class="nav-save save" title="Save note"><i class="far fa-save"></i></a></li>
+                        <li id="saveNote"><a class="nav-save" href="#">SAVE</a></li>
+                        <li id="saveNoteHd"><a class="nav-save" title="Save note">
+                                <i class="far fa-save"></i></a>
+                        </li>
 
-<<<<<<< HEAD
-                    <li id="trashNote"><a id="navTrash" href="#">TRASH</a></li>
-                    <li id="trashNoteHd"><a id="navTrash" title="Trash note"><i class="fas fa-trash"></i></a></li>
-=======
-                    <li id="deleteNote"><a class="nav-delete" href="#">DELETE</a></li>  <!--Moitrayee-->
-                    <li id="trashNoteHd"><a class="nav-delete" title="Delete note"><i class="fas fa-trash"></i></a></li>
-                    <!--<button id="standard">Standard</button><br>
-	                <button id="greentheme">Green</button><br>
-                    <button id="bluetheme">Blue</button><br>
-                    <button id="pinktheme">pink</button><br>-->
+                        <li id="deleteNote"><a class="delete-save" href="#">DELETE</a></li>
+                        <li id="deleteNoteHd"><a class="delete-save" title="Delete note">
+                                <i class="fas fa-trash"></i></a>
+                        </li>
 
-                    <!--<li id="theme"><a id="navTheme" href="#">THEME</a></li>-->
->>>>>>> a4eed67404876df8fc191b2e94fc3c60af04b79b
-
-                    <button class="dropdown-btn">THEME 
-                            <i class="fa fa-caret-down"></i>
-                          </button>
-                          <div class="dropdown-container">
-                            <a class="drop" id="standard" href="#">DEFAULT</a>
-                            <a class="drop" id="green" href="#">GREEN</a>
-                            <a class="drop" id="blue" href="#">BLUE</a>
-                            <a class="drop" id="pink" href="#">PINK</a>
-                          </div>
-                </ul>
+                        <li>
+                            <button class="dropdown-btn">THEME 
+                                <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown-container">
+                                <a class="drop" id="standard" href="#">STANDARD</a>
+                                <a class="drop" id="green" href="#">GREEN</a>
+                                <a class="drop" id="blue" href="#">BLUE</a>
+                                <a class="drop" id="pink" href="#">PINK</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
 
@@ -93,18 +93,7 @@
             <div class="header-notes">
                 My Notes
             </div>
-              
-            <div class="note-lists note-field note-field-hd">
-                <!-- <div id="noteUniqueidNote01" class="note-item" > 
-                    <div class="note-title">Note01</div>
-                    <div class="note-content">content....</div> 
-                    <div class="note-created">2018-11-14</div> 
-                </div>
-                <div id="noteUniqueidNote02" class="note-item" >
-                    <div class="note-title">Note02</div>
-                    <div class="note-content">content....</div> 
-                    <div class="note-created">2018-11-14</div> 
-                </div> -->
+            <div class="note-field note-field-hd">               
             </div>
 
             <div class="favorite-field favorite-field-hd">
@@ -124,18 +113,15 @@
                     </label>
                 </form>
             </div>
-               
-            </div>
-            <div id="editor">
-            </div>
-           
+
+            <div id="editor"></div>
         </div>
     </div>
 
     <script src="scripts/quill.js"></script>
     <script src="scripts/scriptEditor.js"></script>
     <script src="scripts/manageNotes.js"></script>
-        
+
 </body>
 
 </html>
