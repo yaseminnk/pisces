@@ -37,7 +37,7 @@ li {
 }
 .container-navfield {
   flex-basis: 8%;
-  min-width: 150px;
+  /* min-width: 140px; */
   padding: 0 22px;
   outline: none;
 }
@@ -46,7 +46,7 @@ li {
 /* DISPLAY CONTAINER */
 .note-fav-container {
     flex-basis: auto;
-    min-width: 168px;
+    /* min-width: 168px; */
     background-color: rgb(32, 32, 32);
     padding: 0;
     margin: 0;
@@ -55,7 +55,8 @@ li {
 /* Moitrayee edit */
 
 .data-container-hd {
-    display: none; 
+    /* display: none;  */
+    width: 150px; /* moitrayee*/
     background-color: rgb(61, 59, 59);
     overflow-x: auto;
 }
@@ -73,7 +74,15 @@ li {
   background-color: rgb(61, 59, 59);
 }
 
-/*
+.note-item .note-title i {
+  padding-left: 10px;
+}
+
+.active-favorite {
+  color: #F5CC27 !important;
+}
+
+
 .note-item{  
   padding: 12px 8px 18px 8px;
   height: 82px;
@@ -106,15 +115,18 @@ li {
   padding-left: 10px;
   padding-top: 10px;
   height:10px;
-  font-size:0.70em;
+  font-size:0.60em;
   color: rgba(255, 255, 255, 0.75);
 }
-*/
+
 
 /* New dynamic class */
-.note-field-light {
+
+/* Philip note-field-light */
+
+/* .note-field-light {
   padding: 12px 8px 18px 8px;
-  height: 82px;
+  height: 80px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   border-bottom: 1px solid rgb(209, 201, 201);
   background-color: rgb(252,252,252);
@@ -123,7 +135,7 @@ li {
 
 .note-field > div {
   padding: 12px 8px 18px 8px;
-  height: 82px;
+  height: 80px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   border-bottom: 1px solid rgb(209, 201, 201);
   background-color: rgb(61, 59, 59);
@@ -144,7 +156,7 @@ li {
 }
 .note-field-light .note-title {
   color: rgb(57,57,57);  
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .note-field .note-content, .note-field-light .note-content{
@@ -167,7 +179,7 @@ li {
   padding-left: 10px;
   padding-top: 10px;
   height:10px;
-  font-size:0.70em;  
+  font-size:0.60em;  
 }
 .note-field .note-created {
   color: rgba(255, 255, 255, 0.75);
@@ -175,7 +187,9 @@ li {
 .note-field-light .note-created {
   color: rgba(57,57,57);
   text-shadow: 0.5px 0.5px 0 rgb(242,242,242);  
-}
+} */
+
+/* Philip note-field-light */
 
 /* TOP TITLE AND SEARCH FIELD */
 
@@ -267,21 +281,27 @@ li {
 .container-workfield {
   border: 1px solid rgb(187,187,187);  
 }*/
-#editor {
-  /*background-color: rgb(252, 252, 252);*/
-  /*height:800px;*/
-}
+/* #editor {
+  background-color: rgb(252, 252, 252);
+  height:800px;
+} */
 
 /*** NAV-BAR FIELD ***/
 
 #navBar {         
+<<<<<<< HEAD
   /*background-color:rgb(46, 45, 45);;*/
+=======
+  background-color:rgb(46, 45, 45);
+>>>>>>> a4eed67404876df8fc191b2e94fc3c60af04b79b
 }
 
 #logo {
   font-family: 'Libre Baskerville', serif;
   font-size: 32px;
+  font-weight: 700;
   color: rgba(255, 255, 255, 0.75);
+  padding-top: 15px;
 }
 #logoShortVer {
   display: none;     
@@ -297,13 +317,14 @@ li {
 }
 .nav-ul {
   padding: 0;
+
 }
 .nav-ul li {
   margin-bottom: 28px;
 }
 .nav-ul li a {
-  font-size: 0.95em;
-  letter-spacing: 1px;
+  font-size: 0.8em;
+  /* letter-spacing: 1px; */
   font-weight: 600;
   /*color: rgb(234, 230, 230);*/
   color: rgba(255,255,255, 0.75);
@@ -311,8 +332,8 @@ li {
   text-decoration: none;
 }
 .nav-ul li a:hover {
-  /*opacity: 0.9;*/
-  padding-left: 8px;
+  opacity: 0.5;
+  /* padding-left: 8px; */
   transition: all 0.3s ease-in-out;
 }
 
@@ -450,7 +471,7 @@ li {
     display: block;    
     margin: 2px 0 20px 0;
   }
-  #newNote, #myNotes, #favNotes, #saveNote, #trashNote {
+  #newNote, #myNotes, #favNotes, #saveNote, #deleteNote {
     display: none;
   }  
   #newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #trashNoteHd {
