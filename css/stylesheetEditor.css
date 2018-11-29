@@ -45,8 +45,8 @@ li {
 
 /* DISPLAY CONTAINER */
 .note-fav-container {
-    flex-basis: auto;
-    /* min-width: 168px; */
+    flex-basis: 8%;
+    min-width: 168px;
     background-color: rgb(32, 32, 32);
     padding: 0;
     margin: 0;
@@ -55,7 +55,7 @@ li {
 /* Moitrayee edit */
 
 .data-container-hd {
-    /* display: none;  */
+    display: none; 
     width: 150px; /* moitrayee*/
     background-color: rgb(61, 59, 59);
     overflow-x: auto;
