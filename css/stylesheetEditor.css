@@ -4,6 +4,57 @@
 /*************************/
 
 /*** GENERICS ***/
+  /* Set dropdown font-families */
+/* Set default font-family */
+#editor-container {
+  font-family: "Roboto";
+  font-size: 18px;
+  height: 375px;
+}
+
+/* Set dropdown font-families */
+#toolbar-container .ql-font span[data-label="Roboto"]::before {
+  font-family: "Roboto";
+}
+#toolbar-container .ql-font span[data-label="Mirza"]::before {
+  font-family: "Mirza";
+}
+#toolbar-container .ql-font span[data-label="Aref Ruqaa"]::before {
+  font-family: "Aref Ruqaa";
+}
+#toolbar-container .ql-font span[data-label="Noto Serif JP"]::before {
+  font-family: "Noto Serif JP";
+}
+#toolbar-container .ql-font span[data-label="Lobster"]::before {
+  font-family: "Lobster";
+}
+#toolbar-container .ql-font span[data-label="Lora"]::before {
+  font-family: "Lora";
+}
+
+/* Set content font-families */
+.ql-font-mirza {
+  font-family: "Mirza";
+}
+.ql-font-aref-ruqaa {
+  font-family: "Aref Ruqaa";
+}
+.ql-font-noto-serif-jp {
+  font-family: "Noto Serif JP";
+}
+.ql-font-lobster {
+  font-family: "Lobster";
+}
+.ql-font-lora {
+  font-family: "Lora";
+}
+/* We do not set Roboto since it is the default font */
+
+
+
+
+
+
 
 * {
   outline: none;
@@ -18,54 +69,44 @@ li {
 
 /*** EDITOR RESPONSIVE LAYOUT ***/
 
-.flex-container {
-  display: flex;            
-  flex-wrap: wrap;
-  height: 100vh;
-  padding: 0;
-  margin: 0 0 22px 0;
-  overflow: hidden;
-}
-.container-navfield {
-  flex-basis: 8%;
-  min-width: 152px; 
-  padding: 0 22px;
-  margin: 0;
-  outline: none;
-}
 #navBar {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   outline: none;
+  /* background-color: black; */
 }
 #logoBrand {
   display: none;
 }
 
-.dropdown-btn {
-  font-size: 1em;
-  padding: 2px;
-  margin-left: 8px;
-  margin-bottom: 8px;
+.flex-container {
+  display: flex;            
+  flex-wrap: wrap;
+  height: 100vh;
+  margin: 0 0 22px 0;      
+  padding: 0;
+  overflow: hidden;
 }
-.dropdown-btn .fa-caret-down {
-  padding: 2px;
-  margin-left: 8px;
+.container-navfield {
+  flex-basis: 8%;
+  /* min-width: 140px; */
+  padding: 0 22px;
+  outline: none;
 }
-.dropdown-container .drop {
-  font-size: 0.9em;
-}
+
 
 /* DISPLAY CONTAINER */
 .note-fav-container {
-    flex-basis: 8%;
-    min-width: 168px;
+    flex-basis: auto;
+    /* min-width: 168px; */
     background-color: rgb(32, 32, 32);
     padding: 0;
     margin: 0;
 }
 
+/* Moitrayee edit */
+
 .data-container-hd {
-    display: none; 
+    /* display: none;  */
     width: 150px; /* moitrayee*/
     background-color: rgb(61, 59, 59);
     overflow-x: auto;
@@ -291,17 +332,16 @@ li {
 .container-workfield {
   border: 1px solid rgb(187,187,187);  
 }*/
-/* #editor {
-  background-color: rgb(252, 252, 252);
-  height:800px;
-} */
+#editor {
+  /*background-color: rgb(252, 252, 252);*/
+  /*height:800px;*/
+}
 
 /*** NAV-BAR FIELD ***/
 
-/*
 #navBar {         
-  background-color:rgb(46, 45, 45);
-}*/
+  /*background-color:rgb(46, 45, 45);*/
+}
 
 #logo {
   font-family: 'Libre Baskerville', serif;
@@ -330,7 +370,8 @@ li {
   margin-bottom: 28px;
 }
 .nav-ul li a {
-  font-size: 0.9em;
+  font-size: 0.8em;
+  /* letter-spacing: 1px; */
   font-weight: 600;
   /*color: rgb(234, 230, 230);*/
   color: rgba(255,255,255, 0.75);
@@ -344,7 +385,7 @@ li {
 }
 
 /* Hidden nav icons */
-#newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #deleteNoteHd {
+#newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #trashNoteHd {
   display: none;
   cursor: pointer;
   font-size: 1.45em;
@@ -358,7 +399,39 @@ li {
   display: none;
 }
 
-/* CHANGE THEME*/
+/* Change THEME*/
+/*standardTheme*/
+.stand{
+background-color:rgb(46, 45, 45);
+}
+
+/*#greenTheme*/
+.green {
+  background-color: rgb(125, 185, 125);
+  font-style: inherit;
+  font-family:'Times New Roman', Times, serif;
+  letter-spacing: 1px;
+}
+
+
+/*#blueTheme */
+.blue
+{
+  background-color: rgb(135, 180, 240);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-style: oblique;
+}
+.yblue{
+  color:black !important;
+}
+
+/*#pinkTheme*/ 
+.pink
+{
+  background-color: rgb(228, 152, 196);
+  font-style:initial;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
 /*dropdown menu*/
 .dropdown-container {
@@ -369,9 +442,10 @@ li {
 .drop{
   display:block;
   text-decoration: none;
-  font-size: 0.85em;
+  /*color:white;*/
+  font-size:0,9em;
   padding:5px;
-  color:rgb(255,255,255);
+  color:white;
   margin-left:10px;
 }
 
@@ -384,40 +458,7 @@ li {
   /*color:white;*/
   text-decoration: none;
 }
-.standard {
-  background-color:rgb(46, 45, 45);
-  }
-  .xstand{
-    background-color:lightgrey;
-  }
-  /*#greenTheme*/
-  .green {
-    background-color: rgb(125, 185, 125);
-    font-style: inherit;
-    font-family:'Times New Roman', Times, serif;
-    letter-spacing: 1px;
-  }
-  
-  
-  /*#blueTheme */
-  .blue{
-    background-color: rgb(135, 180, 240);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-style: oblique;
-    color:black !important;
-  }
-  .blue .nav-ul a{
-    color:black;
-  }
-  
-  /*#pinkTheme*/ 
-  .pink
-  {
-    background-color: rgb(228, 152, 196);
-    font-style:initial;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
+
 
 /* #div_btnSaveDelta {
   display: flex;
@@ -478,7 +519,7 @@ li {
   #newNote, #myNotes, #favNotes, #saveNote, #deleteNote {
     display: none;
   }  
-  #newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #deleteNoteHd {
+  #newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #trashNoteHd {
     display: block;    
   }  
 
