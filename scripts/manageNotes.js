@@ -13,7 +13,10 @@
 
     // -----**** Creating new note and adding to the array **** ------
     var newNote = document.querySelectorAll('.nav-newNote');
-    newNote.addEventListener('click',function(){
+    for(let i = 0; i < newNote.length; i++) {
+        newNote[i].addEventListener('click', createNewNote);
+    }
+   function createNewNote() {
         var newId = uniqueID();
         var note = {
                      id : newId,
@@ -29,7 +32,7 @@
        //notes.push(note);
         showAllNotes();
         currentNoteId = note.id;
-    });
+    };
 
     // -----**** Changing note title **** ------
      document.getElementById('noteTitle').addEventListener('change', function() {   
@@ -39,7 +42,7 @@
 
 
     // -----**** Saving notes **** ------
-    var saveNote = document.getElementsByClassName('save');
+    var saveNote = document.querySelectorAll('.nav-save');
     for(let i = 0; i < saveNote.length; i++) {
         saveNote[i].addEventListener('click', saveAllNotes);
     } 
@@ -87,7 +90,9 @@
             } else {
                 favIconActiveClass = "";
             } 
-            allNotehtmlContent += 
+            // try to do above with ternary operator
+            
+            allNotehtmlContent += // TODO with create element
            '<div id="'+ notes[i].id +'" class="note-item" onClick="selectNote(\''+ notes[i].id +'\')">' +
               '<div class="note-title">'+ notes[i].title +'<i class="fas fa-star favorite-icon ' + favIconActiveClass + '" onClick="favoriteNoteManager(\''+ notes[i].id +'\')"></i></div>' +
               '<div class="note-content">'+ notes[i].contentText +'</div>' +
@@ -127,8 +132,11 @@
     });
 
 // -----**** Showing favorite notes  **** ------ 
-    var favorite = document.querySelector('.nav-favorites');
-    favorite.addEventListener ('click', myFavorite );
+    var favorite = document.querySelectorAll('.nav-favorites');
+    for (var i= 0; i < favorite.length; i++) {
+        favorite[i].addEventListener ('click', myFavorite );
+    }
+    
     function myFavorite() {
         //show only favoties
         var allNotehtmlContent = "";
@@ -152,7 +160,7 @@
     };
     
      // -----**** delete note **** ------ 
-    var deleteNote = document.querySelector('.nav-delete');
+    var deleteNote = document.querySelectorAll('.delete-note');
     for(let i = 0; i < deleteNote.length; i++) {
         deleteNote[i].addEventListener('click', noteDelete);
     }
@@ -173,7 +181,7 @@
 
     // -----**** GetUnique Id **** ------ 
     //https://gist.github.com/gordonbrander/2230317
-    var uniqueID = function () {
+     function uniqueID() {
         return Math.random().toString(36).substr(2, 9);
       };
 
