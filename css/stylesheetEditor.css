@@ -69,44 +69,54 @@ li {
 
 /*** EDITOR RESPONSIVE LAYOUT ***/
 
+.flex-container {
+  display: flex;            
+  flex-wrap: wrap;
+  height: 100vh;
+  padding: 0;
+  margin: 0 0 22px 0;
+  overflow: hidden;
+}
+.container-navfield {
+  flex-basis: 8%;
+  min-width: 152px; 
+  padding: 0 22px;
+  margin: 0;
+  outline: none;
+}
 #navBar {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   outline: none;
-  /* background-color: black; */
 }
 #logoBrand {
   display: none;
 }
 
-.flex-container {
-  display: flex;            
-  flex-wrap: wrap;
-  height: 100vh;
-  margin: 0 0 22px 0;      
-  padding: 0;
-  overflow: hidden;
+.dropdown-btn {
+  font-size: 1em;
+  padding: 2px;
+  margin-left: 8px;
+  margin-bottom: 8px;
 }
-.container-navfield {
-  flex-basis: 8%;
-  /* min-width: 140px; */
-  padding: 0 22px;
-  outline: none;
+.dropdown-btn .fa-caret-down {
+  padding: 2px;
+  margin-left: 8px;
 }
-
+.dropdown-container .drop {
+  font-size: 0.9em;
+}
 
 /* DISPLAY CONTAINER */
 .note-fav-container {
-    flex-basis: auto;
-    /* min-width: 168px; */
+    flex-basis: 8%;
+    min-width: 168px;
     background-color: rgb(32, 32, 32);
     padding: 0;
     margin: 0;
 }
 
-/* Moitrayee edit */
-
 .data-container-hd {
-    /* display: none;  */
+    display: none; 
     width: 150px; /* moitrayee*/
     background-color: rgb(61, 59, 59);
     overflow-x: auto;
@@ -271,9 +281,7 @@ li {
 .note-title-top {  
   display: inline;  
   font-size: 1.1em;
-  padding: 8px;  
-  /*border: 1px solid rgb(224,224,224);    
-  border-radius: 8px;*/
+  padding: 8px;    
 }
 #noteTitle {
   font-size: 1.1em;
@@ -302,8 +310,6 @@ li {
   outline: none;  
 }
 
-/* Moitrayee edit */
-
 .note-field,
 .favorit-field {
   padding: 0;
@@ -328,6 +334,7 @@ li {
   border: none !important;
   border-top: 1px solid rgb(187,187,187) !important;
 }
+<<<<<<< HEAD
 /*
 .container-workfield {
   border: 1px solid rgb(187,187,187);  
@@ -336,12 +343,17 @@ li {
   /*background-color: rgb(252, 252, 252);*/
   /*height:800px;*/
 }
+=======
+>>>>>>> 37db2af490256b34076b588100c85f2f1643cce4
 
-/*** NAV-BAR FIELD ***/
 
+<<<<<<< HEAD
 #navBar {         
   /*background-color:rgb(46, 45, 45);*/
 }
+=======
+/*** NAV-BAR FIELD ***/
+>>>>>>> 37db2af490256b34076b588100c85f2f1643cce4
 
 #logo {
   font-family: 'Libre Baskerville', serif;
@@ -370,8 +382,7 @@ li {
   margin-bottom: 28px;
 }
 .nav-ul li a {
-  font-size: 0.8em;
-  /* letter-spacing: 1px; */
+  font-size: 0.9em;
   font-weight: 600;
   /*color: rgb(234, 230, 230);*/
   color: rgba(255,255,255, 0.75);
@@ -380,12 +391,11 @@ li {
 }
 .nav-ul li a:hover {
   opacity: 0.5;
-  /* padding-left: 8px; */
   transition: all 0.3s ease-in-out;
 }
 
 /* Hidden nav icons */
-#newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #trashNoteHd {
+#newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #deleteNoteHd {
   display: none;
   cursor: pointer;
   font-size: 1.45em;
@@ -399,6 +409,7 @@ li {
   display: none;
 }
 
+<<<<<<< HEAD
 /* Change THEME*/
 /*standardTheme*/
 .stand{
@@ -432,23 +443,23 @@ background-color:rgb(46, 45, 45);
   font-style:initial;
   font-family: Arial, Helvetica, sans-serif;
 }
+=======
+/* CHANGE THEME*/
+>>>>>>> 37db2af490256b34076b588100c85f2f1643cce4
 
 /*dropdown menu*/
 .dropdown-container {
   display: none;
   padding-left: 8px;
 }
-
 .drop{
   display:block;
   text-decoration: none;
-  /*color:white;*/
-  font-size:0,9em;
+  font-size: 0.85em;
   padding:5px;
-  color:white;
+  color:rgb(255,255,255);
   margin-left:10px;
 }
-
 /* Optional: Style the caret down icon */
 .fa-caret-down {
   float: right;
@@ -458,18 +469,41 @@ background-color:rgb(46, 45, 45);
   /*color:white;*/
   text-decoration: none;
 }
+<<<<<<< HEAD
 
-
-/* #div_btnSaveDelta {
-  display: flex;
-  justify-content: flex-end;
-}
-#btnSaveDelta {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-} */
-
+=======
+.standard {
+  background-color:rgb(46, 45, 45);
+  }
+  .xstand{
+    background-color:lightgrey;
+  }
+  /*#greenTheme*/
+  .green {
+    background-color: rgb(125, 185, 125);
+    font-style: inherit;
+    font-family:'Times New Roman', Times, serif;
+    /*letter-spacing: 1px;*/
+  }  
+  /*#blueTheme */
+  .blue{
+    background-color: rgb(135, 180, 240);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: oblique;
+    color:black !important;
+  }
+  .blue .nav-ul a{
+    color:black;
+  }  
+  /*#pinkTheme*/ 
+  .pink
+  {
+    background-color: rgb(228, 152, 196);
+    font-style:initial;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+>>>>>>> 37db2af490256b34076b588100c85f2f1643cce4
 
 /*** MEDIA QUERIES ***/
 
@@ -507,8 +541,13 @@ background-color:rgb(46, 45, 45);
   }
   .container-navfield {
     flex-basis: 7%;
-    min-width: 90px;
+    min-width: 128px;
+  /*  padding: 12px 24px;*/
   }
+  #navBar {
+    padding: 22px;
+  }
+
   #logo {
     display: none;
   }
@@ -519,7 +558,7 @@ background-color:rgb(46, 45, 45);
   #newNote, #myNotes, #favNotes, #saveNote, #deleteNote {
     display: none;
   }  
-  #newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #trashNoteHd {
+  #newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #deleteNoteHd {
     display: block;    
   }  
 
@@ -530,7 +569,7 @@ background-color:rgb(46, 45, 45);
   .flex-container {
     height: auto;            
   }
-
+  
   #logoBrand {
     display: block;
     width: 100%;
@@ -540,6 +579,11 @@ background-color:rgb(46, 45, 45);
     font-family: 'Libre Baskerville', serif;    
     color: rgba(255, 255, 255, 0.75);
     text-align: center;    
+  }
+
+  #themeField {
+    width: 100%;
+    padding: 6px;
   }
 
   #navBar {
@@ -582,7 +626,6 @@ background-color:rgb(46, 45, 45);
   }
 
   .note-fav-container {
-    /*display: none;*/
     width: 100%;
   }
 
@@ -598,7 +641,6 @@ background-color:rgb(46, 45, 45);
   }
 
   #noteTitle {
-    /*display: block;*/
     padding: 4px 6px;    
   }
 
@@ -619,7 +661,6 @@ background-color:rgb(46, 45, 45);
   #searchInput {
     min-width: 120px;;
     max-width: 132px;
-    /*padding: 6px 12px;*/
   }
   .fa-search {
     font-size: 0.8em;

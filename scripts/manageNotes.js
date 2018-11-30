@@ -12,7 +12,11 @@
         
 
     // -----**** Creating new note and adding to the array **** ------
+<<<<<<< HEAD
     var newNote = document.getElementById('navNewNote');
+=======
+    var newNote = document.querySelectorAll('.nav-newNote');
+>>>>>>> 37db2af490256b34076b588100c85f2f1643cce4
     newNote.addEventListener('click',function(){
         var newId = uniqueID();
         var note = {

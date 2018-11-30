@@ -9,23 +9,33 @@ var logoShort = document.getElementById('logoShortVer');
 var menuToggler = document.getElementById('menu-toggler');
 var collapsedMenu = document.getElementById("collapseTarget");
 var cM = collapsedMenu;
+<<<<<<< HEAD
 var navNewNote = document.getElementById('navNewNote');
 //var navNotes = document.getElementById('navNotes');
 var navFavorites = document.getElementById('navFavorites');
+=======
+var navNewNote = document.querySelectorAll('.nav-newNote');
+var navNotes = document.querySelectorAll('.nav-notes');
+var navFavorites = document.querySelectorAll('.nav-favorites');
+var navSaves = document.querySelectorAll('.nav-saves');
+var navDeleteNote = document.querySelectorAll('.nav-delete');
+
+>>>>>>> 37db2af490256b34076b588100c85f2f1643cce4
 var noteTitle = document.getElementById('noteTitle');
 var noteField = document.querySelector('.note-field');
-
 var noteSearch = document.getElementById('searchInput');
-//var notesContainer = document.querySelector('.note-fav-container');
-
+var notesContainer = document.querySelector('.note-fav-container');
 
 // EVENT LISTENERS 
 logo.addEventListener('click', takeMeHome);
 logoShort.addEventListener('click', takeMeHome);
 menuToggler.addEventListener('click', toggleMenu);
-navNewNote.addEventListener('click', focusOnTitle);
-//navNotes.addEventListener('click', showNotesField);
-//navFavorites.addEventListener('click', showNotesField);
+
+for(let i = 0; i < navNewNote.length; i++) {
+    navNewNote[i].addEventListener('click', focusOnTitle);
+    navNotes[i].addEventListener('click', showNotesField);
+}
+
 noteField.addEventListener('click', modNoteField);
 
 // CALLBACKS
@@ -59,47 +69,11 @@ function toggleMenu() {
 }
 
 // Field for my notes and favorite notes
- function showNotesField() {
-//      notesContainer.classList.toggle('data-container-hd');
-    
-  }
-
-
-// NEW ELEMENTS CREATED AND ADDED TO THE TOOLBAR 
-
- var qlToolbar = document.querySelector('.ql-toolbar');         
- var elFormTitle = document.createElement('form');
- var elFormSearch = document.createElement('form'); 
- var elInputTitle = document.createElement('input');
- var elInputSearch = document.createElement('input');
- 
- var elIconTitle = document.createElement('i');
- var elIcon = document.createElement('i');
- 
- // ADD ATTRIBUTES TO NEW ELEMENTS
- elFormSearch.setAttribute('id','noteSearch');
- elIcon.setAttribute('class', 'fas fa-search');
- elInputSearch.setAttribute('id','searchInput');
- elIcon.setAttribute('title','Search');  
- elInputSearch.setAttribute('placeholder','Search');
-
- /*
-elIconTitle.setAttribute('class', 'fas fa-file-signature');
-elIconTitle.setAttribute('title','Title');
- elFormTitle.setAttribute('id','noteTitle');
- elInputTitle.setAttribute('id','titleInput'); 
- elInputTitle.setAttribute('placeholder','Title');
-*/
- // APPEND NEW ELEMENTS TO THE DOM
- //elFormTitle.appendChild(elIconTitle);
- //elFormTitle.appendChild(elInputTitle);
- elFormSearch.appendChild(elIcon);
- elFormSearch.appendChild(elInputSearch);
+function showNotesField() {
+    notesContainer.classList.toggle('data-container-hd');    
+}
   
- //qlToolbar.insertBefore(elFormTitle, qlToolbar.childNodes[0]);
- qlToolbar.appendChild(elFormSearch);
-
-  
+<<<<<<< HEAD
 /*document.getElementById("theme").addEventListener("click", switchTheme);
 
 function switchTheme() {
@@ -139,30 +113,39 @@ function addTheme() {
 // var navDelete = document.querySelector('#navDelete');
 // var favContainer = document.querySelector('.note-fav-container');
 var navBar = document.querySelector('#navBar');
+=======
+var navBar = document.querySelector('#navBar');
+var themeField = document.querySelector('#themeField');
+
+>>>>>>> 37db2af490256b34076b588100c85f2f1643cce4
 var navNewNote = document.querySelector('#navNewNote');
 var navNotes = document.querySelector('#navNotes');
 var navFavorites = document.querySelector('#navFavorites');
 var navSave = document.querySelector('#navSave');
 var navTrash = document.querySelector('#navTrash');
 var noteItem= document.querySelectorAll('note-item');
+<<<<<<< HEAD
 
 var stand = document.getElementById('stand');
+=======
+// Theme id:s
+var stand = document.getElementById('standard');
+>>>>>>> 37db2af490256b34076b588100c85f2f1643cce4
 var green = document.getElementById('green');
 var blue = document.getElementById('blue');
 var pink = document.getElementById('pink');
 
-
+// EVENT LISTENERS
 stand.addEventListener('click', switchTheme); 
 green.addEventListener('click', switchTheme); 
 blue.addEventListener('click', switchTheme); 
 pink.addEventListener('click', switchTheme); 
 
-function switchTheme() {            
-    navBar.setAttribute('class', '');        
-    navBar.classList.toggle(this.id);
-    console.log(this.id);
-    
+function switchTheme() {     
+    themeField.setAttribute('class', ''); 
+    themeField.classList.toggle(this.id);   
 }
+<<<<<<< HEAD
 
 /*var stand = document.getElementById('standard');
 var green = document.getElementById('greentheme');
@@ -216,6 +199,8 @@ pink.addEventListener('click', switchTheme);
         }
     }*/
     
+=======
+>>>>>>> 37db2af490256b34076b588100c85f2f1643cce4
 
 //dropdown menu
 var dropdown = document.getElementsByClassName("dropdown-btn");
