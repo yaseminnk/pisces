@@ -4,57 +4,6 @@
 /*************************/
 
 /*** GENERICS ***/
-  /* Set dropdown font-families */
-/* Set default font-family */
-#editor-container {
-  font-family: "Roboto";
-  font-size: 18px;
-  height: 375px;
-}
-
-/* Set dropdown font-families */
-#toolbar-container .ql-font span[data-label="Roboto"]::before {
-  font-family: "Roboto";
-}
-#toolbar-container .ql-font span[data-label="Mirza"]::before {
-  font-family: "Mirza";
-}
-#toolbar-container .ql-font span[data-label="Aref Ruqaa"]::before {
-  font-family: "Aref Ruqaa";
-}
-#toolbar-container .ql-font span[data-label="Noto Serif JP"]::before {
-  font-family: "Noto Serif JP";
-}
-#toolbar-container .ql-font span[data-label="Lobster"]::before {
-  font-family: "Lobster";
-}
-#toolbar-container .ql-font span[data-label="Lora"]::before {
-  font-family: "Lora";
-}
-
-/* Set content font-families */
-.ql-font-mirza {
-  font-family: "Mirza";
-}
-.ql-font-aref-ruqaa {
-  font-family: "Aref Ruqaa";
-}
-.ql-font-noto-serif-jp {
-  font-family: "Noto Serif JP";
-}
-.ql-font-lobster {
-  font-family: "Lobster";
-}
-.ql-font-lora {
-  font-family: "Lora";
-}
-/* We do not set Roboto since it is the default font */
-
-
-
-
-
-
 
 * {
   outline: none;
@@ -334,26 +283,9 @@ li {
   border: none !important;
   border-top: 1px solid rgb(187,187,187) !important;
 }
-<<<<<<< HEAD
-/*
-.container-workfield {
-  border: 1px solid rgb(187,187,187);  
-}*/
-#editor {
-  /*background-color: rgb(252, 252, 252);*/
-  /*height:800px;*/
-}
-=======
->>>>>>> 37db2af490256b34076b588100c85f2f1643cce4
 
 
-<<<<<<< HEAD
-#navBar {         
-  /*background-color:rgb(46, 45, 45);*/
-}
-=======
 /*** NAV-BAR FIELD ***/
->>>>>>> 37db2af490256b34076b588100c85f2f1643cce4
 
 #logo {
   font-family: 'Libre Baskerville', serif;
@@ -409,43 +341,7 @@ li {
   display: none;
 }
 
-<<<<<<< HEAD
-/* Change THEME*/
-/*standardTheme*/
-.stand{
-background-color:rgb(46, 45, 45);
-}
-
-/*#greenTheme*/
-.green {
-  background-color: rgb(125, 185, 125);
-  font-style: inherit;
-  font-family:'Times New Roman', Times, serif;
-  letter-spacing: 1px;
-}
-
-
-/*#blueTheme */
-.blue
-{
-  background-color: rgb(135, 180, 240);
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-style: oblique;
-}
-.yblue{
-  color:black !important;
-}
-
-/*#pinkTheme*/ 
-.pink
-{
-  background-color: rgb(228, 152, 196);
-  font-style:initial;
-  font-family: Arial, Helvetica, sans-serif;
-}
-=======
 /* CHANGE THEME*/
->>>>>>> 37db2af490256b34076b588100c85f2f1643cce4
 
 /*dropdown menu*/
 .dropdown-container {
@@ -469,9 +365,6 @@ background-color:rgb(46, 45, 45);
   /*color:white;*/
   text-decoration: none;
 }
-<<<<<<< HEAD
-
-=======
 .standard {
   background-color:rgb(46, 45, 45);
   }
@@ -503,7 +396,6 @@ background-color:rgb(46, 45, 45);
     font-family: Arial, Helvetica, sans-serif;
   }
   
->>>>>>> 37db2af490256b34076b588100c85f2f1643cce4
 
 /*** MEDIA QUERIES ***/
 

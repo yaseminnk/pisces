@@ -9,18 +9,12 @@ var logoShort = document.getElementById('logoShortVer');
 var menuToggler = document.getElementById('menu-toggler');
 var collapsedMenu = document.getElementById("collapseTarget");
 var cM = collapsedMenu;
-<<<<<<< HEAD
-var navNewNote = document.getElementById('navNewNote');
-//var navNotes = document.getElementById('navNotes');
-var navFavorites = document.getElementById('navFavorites');
-=======
 var navNewNote = document.querySelectorAll('.nav-newNote');
 var navNotes = document.querySelectorAll('.nav-notes');
 var navFavorites = document.querySelectorAll('.nav-favorites');
 var navSaves = document.querySelectorAll('.nav-saves');
 var navDeleteNote = document.querySelectorAll('.nav-delete');
 
->>>>>>> 37db2af490256b34076b588100c85f2f1643cce4
 var noteTitle = document.getElementById('noteTitle');
 var noteField = document.querySelector('.note-field');
 var noteSearch = document.getElementById('searchInput');
@@ -73,64 +67,17 @@ function showNotesField() {
     notesContainer.classList.toggle('data-container-hd');    
 }
   
-<<<<<<< HEAD
-/*document.getElementById("theme").addEventListener("click", switchTheme);
-
-function switchTheme() {
-    document.getElementById("navBar").style.backgroundColor = "green"; 
-    document.getElementById("navBar").style.fontFamily = "arial";
-    document.getElementById("navBar").style.fontStyle = "italic";
-    document.getElementById("editor").style.backgroundColor = "lightgreen"; 
- 
-}*/
-
-        /////////////////////////////////////////////////
-/*document.getElementById("greentheme").addEventListener("click", switchTheme);
-function switchTheme() {
-    document.getElementById("navBar").setAttribute("id", "greenTheme"); 
-    document.getElementById("editor").setAttribute("id", "green");
-}
-
-document.getElementById("bluetheme").addEventListener("click", changeTheme);
-function changeTheme() {
-    document.getElementById("navBar").setAttribute("id", "blueTheme"); 
-    document.getElementById("editor").setAttribute("id", "blue");
-}
-
-document.getElementById("pinktheme").addEventListener("click", addTheme);
-function addTheme() {
-    document.getElementById("navBar").setAttribute("id", "pinkTheme"); 
-    document.getElementById("editor").setAttribute("id", "pink");
-}*/
-
-
-// var editor = document.querySelector('#editor');
-// var navBar = document.querySelector('#navBar');
-// var navNewNote = document.querySelector('#navNewNote');
-// var navNotes = document.querySelector('#navNotes');
-// var navFavorites = document.querySelector('#navFavorites');
-// var navSave = document.querySelector('#navSave');
-// var navDelete = document.querySelector('#navDelete');
-// var favContainer = document.querySelector('.note-fav-container');
-var navBar = document.querySelector('#navBar');
-=======
 var navBar = document.querySelector('#navBar');
 var themeField = document.querySelector('#themeField');
 
->>>>>>> 37db2af490256b34076b588100c85f2f1643cce4
 var navNewNote = document.querySelector('#navNewNote');
 var navNotes = document.querySelector('#navNotes');
 var navFavorites = document.querySelector('#navFavorites');
 var navSave = document.querySelector('#navSave');
 var navTrash = document.querySelector('#navTrash');
 var noteItem= document.querySelectorAll('note-item');
-<<<<<<< HEAD
-
-var stand = document.getElementById('stand');
-=======
 // Theme id:s
 var stand = document.getElementById('standard');
->>>>>>> 37db2af490256b34076b588100c85f2f1643cce4
 var green = document.getElementById('green');
 var blue = document.getElementById('blue');
 var pink = document.getElementById('pink');
@@ -145,62 +92,6 @@ function switchTheme() {
     themeField.setAttribute('class', ''); 
     themeField.classList.toggle(this.id);   
 }
-<<<<<<< HEAD
-
-/*var stand = document.getElementById('standard');
-var green = document.getElementById('greentheme');
-var blue = document.getElementById('bluetheme');
-var pink = document.getElementById('pinktheme');
-
-stand.addEventListener('click', switchTheme); 
-green.addEventListener('click', switchTheme); 
-blue.addEventListener('click', switchTheme); 
-pink.addEventListener('click', switchTheme); 
-
-// CALLBACKS
-
-	function switchTheme(ev) {		
-        navBar.setAttribute('class', '');	
-        //editor.setAttribute('class','');
-        navNewNote.setAttribute('class','');
-        navNotes.setAttribute('class','');
-        navFavorites.setAttribute('class','');
-        navSave.setAttribute('class','');
-        navDelete.setAttribute('class','');
-        favContainer.setAttribute('class','');
-		var themeId = this.id;  // if ev.id don't work
-				
-		if( themeId === 'standard') {
-            //setAttribute('class','')
-
-            navBar.classList.toggle('stand')
-            //editor.classList.toggle('xstand');
-            navDelete.classList.toggle('ystand');				
-		}
-		else if( themeId === 'greentheme' ) {
-            navBar.classList.toggle('green');	
-            //editor.classList.toggle('xgreen');	
-            navDelete.classList.toggle('ygreen');
-            favContainer.classList.toggle('green');	
-		}
-		else if( themeId === 'bluetheme' ) {
-            navBar.classList.toggle('blue');
-            //editor.classList.toggle('xblue');	
-            navNewNote.classList.toggle('yblue');	
-            navNotes.classList.toggle('yblue');
-            navFavorites.classList.toggle('yblue');
-            navSave.classList.toggle('yblue');	
-            navDelete.classList.toggle('yblue');		
-        }
-        else if (themeId === 'pinktheme') {
-            navBar.classList.toggle('pink');
-           // editor.classList.toggle('xpink');
-            navDelete.classList.toggle('ypink');	
-        }
-    }*/
-    
-=======
->>>>>>> 37db2af490256b34076b588100c85f2f1643cce4
 
 //dropdown menu
 var dropdown = document.getElementsByClassName("dropdown-btn");
