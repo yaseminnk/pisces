@@ -4,58 +4,6 @@
 /*************************/
 
 /*** GENERICS ***/
-.ql-font{
-  padding-right:15px;
-  padding-top:2px;
-}
-#editor #toolbar-container .ql-container .ql-editor .ql-snow{
-  font-family: "Roboto";
-  
-}
-
-/* Set dropdown font-families */
-#toolbar-container .ql-font span[data-label="Roboto"]::before {
-  font-family: "Roboto";
-}
-#toolbar-container .ql-font span[data-label="Mirza"]::before {
-  font-family: "Mirza";
-}
-#toolbar-container .ql-font span[data-label="Aref Ruqaa"]::before {
-  font-family: "Aref Ruqaa";
-}
-#toolbar-container .ql-font span[data-label="Noto Serif JP"]::before {
-  font-family: "Noto Serif JP";
-}
-#toolbar-container .ql-font span[data-label="Lobster"]::before {
-  font-family: "Lobster";
-}
-#toolbar-container .ql-font span[data-label="Lora"]::before {
-  font-family: "Lora";
-}
-
-/* Set content font-families */
-.ql-font-mirza {
-  font-family: "Mirza";
-}
-.ql-font-aref-ruqaa {
-  font-family: "Aref Ruqaa";
-}
-.ql-font-noto-serif-jp {
-  font-family: "Noto Serif JP";
-}
-.ql-font-lobster {
-  font-family: "Lobster";
-}
-.ql-font-lora {
-  font-family: "Lora";
-}
-/* We do not set Roboto since it is the default font */
-
-
-
-
-
-
 
 * {
   outline: none;
@@ -144,7 +92,6 @@ li {
 .active-favorite {
   color: #F5CC27 !important;
 }
-
 
 .note-item{  
   padding: 12px 8px 18px 8px;
@@ -317,25 +264,77 @@ li {
   padding: 0;
   margin: 0;
 }
-/*
-.note-field-hd,
- .favorite-field-hd {
- display: hidden;
-}
-*/
+
 .container-workfield {
   flex-basis: 68%;
   flex-grow: 1;
 }          
   
 /*** WORK FIELD ***/
-       
+      
+
 .ql-toolbar, .ql-snow {
   background: rgb(255,255,255);            
-  padding: 10px 20px !important;
+  /*padding: 10px 20px !important;*/
+  padding: 10px 0 !important;
   border: none !important;
+  border-bottom: 1px solid rgb(187,187,187) !important;    
+}
+
+#toolbar-container {
   border-top: 1px solid rgb(187,187,187) !important;
 }
+
+
+/*** Toolbar google fonts ***/
+.ql-font{
+  padding-right:15px;
+  padding-top:2px;
+  margin: 8px 10px;
+}
+
+#editor #toolbar-container .ql-container .ql-editor .ql-snow{
+  font-family: "Roboto";  
+}
+
+/* Set dropdown font-families */
+#toolbar-container .ql-font span[data-label="Roboto"]::before {
+  font-family: "Roboto";
+}
+#toolbar-container .ql-font span[data-label="Mirza"]::before {
+  font-family: "Mirza";
+}
+#toolbar-container .ql-font span[data-label="Aref Ruqaa"]::before {
+  font-family: "Aref Ruqaa";
+}
+#toolbar-container .ql-font span[data-label="Noto Serif JP"]::before {
+  font-family: "Noto Serif JP";
+}
+#toolbar-container .ql-font span[data-label="Lobster"]::before {
+  font-family: "Lobster";
+}
+#toolbar-container .ql-font span[data-label="Lora"]::before {
+  font-family: "Lora";
+}
+
+/* Set content font-families */
+.ql-font-mirza {
+  font-family: "Mirza";
+}
+.ql-font-aref-ruqaa {
+  font-family: "Aref Ruqaa";
+}
+.ql-font-noto-serif-jp {
+  font-family: "Noto Serif JP";
+}
+.ql-font-lobster {
+  font-family: "Lobster";
+}
+.ql-font-lora {
+  font-family: "Lora";
+}
+/* We do not set Roboto since it is the default font */
+
 
 
 /*** NAV-BAR FIELD ***/
@@ -600,9 +599,7 @@ li {
   #noteSearch {  
     display: none;
   }
-  #noteSearch {  
-    display: inline-block;
-  }
+  
   #searchInput {
     min-width: 120px;;
     max-width: 132px;
