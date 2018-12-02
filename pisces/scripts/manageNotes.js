@@ -6,7 +6,7 @@
   
     if ( storedNotes !== null){
         notes= storedNotes;// Get the saved note from localStorage and return them as object
-        showNotes(false); //showNotes(true) only to show favorite notes
+        showAllNotes();
     } else {
         }
         
@@ -30,7 +30,7 @@
         quill.setContents(""); // setting an empty editor for writing new note.
         notes.unshift(note); //add notes to beginning of the Array, push() add item in the end of the array.
        //notes.push(note);
-        showNotes(false);
+        showAllNotes();
         currentNoteId = note.id;
     };
 
@@ -57,17 +57,17 @@
                 notes[i].title = document.getElementById('noteTitle').value;// adding title to notes title
                 
                 localStorage.setItem("notes", JSON.stringify(notes));  //storing array in "notes" array in local storage 
-                showNotes(false);
-                document.getElementById('noteTitle').value = "";
-                quill.setContents("");
+                showAllNotes();
                 break;
             }
         }
     };
 
     // -----**** Selecting a specific note to display on editor **** ------  
-    function selectNote (noteId) {
+    window.selectNote = function  (noteId) {
+        //set noteId as currentNoteId
         currentNoteId = noteId;
+        //select note by Id from notes Array
         for (var i = 0; i < notes.length; i++) {
             if (notes[i].id == noteId )
             {
@@ -78,81 +78,38 @@
         }
     }
 
-    // notes.forEach(function(item){
-    //   allNotehtmlContent += '<div class="note-item"><div class="note-title">'+ item.title +'</div><div class="note-content">'+ item.content +'</div><div class="note-created">'+ item.created +'</div></div>';
-    // });
+
     // -----**** Updates All notes view **** ------    
-    function showNotes(showOnlyFavorites)
-    {   
-        var noteList = document.getElementsByClassName('note-lists')[0];
-        noteList.innerHTML = "";
-        for(i=0; i< notes.length; i++){
-            if(showOnlyFavorites){
-                if (notes[i].isFavorite == true){
-                    noteList.append(noteElement(notes[i])); 
-                }  
-            }
-            else{
-                noteList.append(noteElement(notes[i]));
-            }
-        }
+    function showAllNotes()
+    {
+        var allNotehtmlContent = "";
+          for(i=0; i< notes.length; i++){
+            var favIconActiveClass = null;
+            if (notes[i].isFavorite == true){
+                favIconActiveClass = "active-favorite";
+            } else {
+                favIconActiveClass = "";
+            } 
+            // try to do above with ternary operator
+            
+            allNotehtmlContent += // TODO with create element
+           '<div id="'+ notes[i].id +'" class="note-item" onClick="selectNote(\''+ notes[i].id +'\')">' +
+              '<div class="note-title">'+ notes[i].title +'<i class="fas fa-star favorite-icon ' + favIconActiveClass + '" onClick="favoriteNoteManager(\''+ notes[i].id +'\')"></i></div>' +
+              '<div class="note-content">'+ notes[i].contentText +'</div>' +
+              '<div class="note-created">'+ notes[i].created +'</div>' +
+           '</div>';
+          }
 
-        if(showOnlyFavorites){
-            document.getElementsByClassName('header-notes')[0].innerText = "Favorite Notes";  
-        } else {
-            document.getElementsByClassName('header-notes')[0].innerText = "My Notes"; 
-        }
-
+        // notes.forEach(function(item){
+        //   allNotehtmlContent += '<div class="note-item"><div class="note-title">'+ item.title +'</div><div class="note-content">'+ item.content +'</div><div class="note-created">'+ item.created +'</div></div>';
+        // });
+    
+        var allNote = document.getElementsByClassName('note-lists')[0];
+        allNote.innerHTML = allNotehtmlContent;
     }
     
-    //show only favoties
-    // function myFavorite() {
-    //     var favNote = document.getElementsByClassName('note-lists')[0];
-    //     favNote.innerHTML = "";
-    //     for (var i = 0; i < notes.length; i++) {
-    //         if (notes[i].isFavorite == true){
-    //             favNote.append(noteElement(notes[i])); 
-    //         } 
-    //     }
-    // };
-
-
-    function  noteElement(note) {
-        var divNoteItem = document.createElement("div");
-        divNoteItem.id = note.id;
-        divNoteItem.className = "note-item";
-        divNoteItem.onclick = function() { selectNote(note.id); };
-
-        var divNoteTitle  = document.createElement("div");
-        divNoteTitle.className = "note-title";
-        divNoteTitle.textContent  = note.title; 
-
-        var iconNoteFavorite = document.createElement('i');
-        if (note.isFavorite == true) {
-            iconNoteFavorite.className = "fas fa-star favorite-icon active-favorite"; 
-        } else {
-            iconNoteFavorite.className = "fas fa-star favorite-icon"; 
-        }
-        iconNoteFavorite.onclick = function() { favoriteNoteManager(note.id); }; 
-
-        var divNoteContent = document.createElement("div");
-        divNoteContent.className = "note-content";
-        divNoteContent.textContent = note.contentText; 
-
-        var divNoteCreated = document.createElement("div");
-        divNoteCreated.className = "note-created";
-        divNoteCreated.textContent =  note.created;
-        
-        divNoteTitle.appendChild(iconNoteFavorite);
-        divNoteItem.appendChild(divNoteTitle);
-        divNoteItem.appendChild(divNoteContent);
-        divNoteItem.appendChild(divNoteCreated);
-        
-        return divNoteItem;
-    };
-
    // -----**** Mark notes as FAVORITE **** ------  
-    function favoriteNoteManager (noteId)
+    window.favoriteNoteManager = function(noteId)
     {
         for( var i = 0; i< notes.length; i++) {
             if ( notes[i].id == noteId){
@@ -162,7 +119,7 @@
                     notes[i].isFavorite = true;
                 }        
                 localStorage.setItem("notes", JSON.stringify(notes));  //storing array in "notes" array in local storage 
-                showNotes(false);
+                showAllNotes();
                 break;
             }
         }
@@ -171,16 +128,36 @@
     // -----**** Added new eventListener and closed the toggle view **** ------ 
     var myNotes = document.querySelector('.nav-notes');
     myNotes.addEventListener('click', function() {
-        showNotes(false);
+        showAllNotes();
     });
 
 // -----**** Showing favorite notes  **** ------ 
     var favorite = document.querySelectorAll('.nav-favorites');
     for (var i= 0; i < favorite.length; i++) {
-        //favorite[i].addEventListener ('click', showNotes(true) );
-        favorite[i].onclick = function() {  showNotes(true); };
+        favorite[i].addEventListener ('click', myFavorite );
     }
     
+    function myFavorite() {
+        //show only favoties
+        var allNotehtmlContent = "";
+        for (var i = 0; i < notes.length; i++) {
+            var favIconActiveClass = null;
+            if (notes[i].isFavorite == true){
+                favIconActiveClass = "active-favorite";
+                allNotehtmlContent += 
+                '<div id="'+ notes[i].id +'" class="note-item" onClick="selectNote(\''+ notes[i].id +'\')">' +
+                '<div class="note-title">'+ notes[i].title +'<i class="fas fa-star favorite-icon ' + favIconActiveClass + '" onClick="favoriteNoteManager(\''+ notes[i].id +'\')"></i></div>' +
+                '<div class="note-content">'+ notes[i].contentText +'</div>' +
+                '<div class="note-created">'+ notes[i].created +'</div>' +
+                '</div>';
+
+                var favNote = document.getElementsByClassName('note-lists')[0];
+                favNote.innerHTML = allNotehtmlContent;
+            } else {
+                continue;
+            } 
+        }
+    };
     
      // -----**** delete note **** ------ 
     var deleteNote = document.querySelectorAll('.delete-note');
@@ -195,11 +172,11 @@
               document.getElementById('noteTitle').value = "";
               quill.setContents("");
               localStorage.setItem("notes", JSON.stringify(notes));
-              showNotes(false);
+              showAllNotes();
             }
         }
     };
-   
+
     
 
     // -----**** GetUnique Id **** ------ 

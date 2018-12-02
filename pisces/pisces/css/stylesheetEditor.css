@@ -18,55 +18,44 @@ li {
 
 /*** EDITOR RESPONSIVE LAYOUT ***/
 
-.flex-container {
-  display: flex;            
-  flex-wrap: wrap;
-  height: 100vh;
-  padding: 0;
-  margin: 0 0 22px 0;
-  overflow: hidden;
-}
-.container-navfield {
-  flex-basis: 8%;
-  min-width: 152px; 
-  padding: 0 22px;
-  margin: 0;
-  outline: none;
-}
 #navBar {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   outline: none;
+  /* background-color: black; */
 }
 #logoBrand {
   display: none;
 }
 
-.dropdown-btn {
-  font-size: 1em;
-  padding: 2px;
-  margin-left: 8px;
-  margin-bottom: 8px;
+.flex-container {
+  display: flex;            
+  flex-wrap: wrap;
+  height: 100vh;
+  margin: 0 0 22px 0;      
+  padding: 0;
+  overflow: hidden;
 }
-.dropdown-btn .fa-caret-down {
-  padding: 2px;
-  margin-left: 8px;
+.container-navfield {
+  flex-basis: 8%;
+  /* min-width: 140px; */
+  padding: 0 22px;
+  outline: none;
 }
-.dropdown-container .drop {
-  font-size: 0.9em;
-}
+
 
 /* DISPLAY CONTAINER */
 .note-fav-container {
-    flex-basis: 8%;
-    min-width: 168px;
-    background-color:  rgb(61, 59, 59);
+    flex-basis: auto;
+    /* min-width: 168px; */
+    background-color: rgb(32, 32, 32);
     padding: 0;
     margin: 0;
-    overflow-x: auto;
 }
 
+/* Moitrayee edit */
+
 .data-container-hd {
-    display: none; 
+    /* display: none;  */
     width: 150px; /* moitrayee*/
     background-color: rgb(61, 59, 59);
     overflow-x: auto;
@@ -92,6 +81,7 @@ li {
 .active-favorite {
   color: #F5CC27 !important;
 }
+
 
 .note-item{  
   padding: 12px 8px 18px 8px;
@@ -230,7 +220,9 @@ li {
 .note-title-top {  
   display: inline;  
   font-size: 1.1em;
-  padding: 8px;    
+  padding: 8px;  
+  /*border: 1px solid rgb(224,224,224);    
+  border-radius: 8px;*/
 }
 #noteTitle {
   font-size: 1.1em;
@@ -259,85 +251,46 @@ li {
   outline: none;  
 }
 
+/* Moitrayee edit */
+
 .note-field,
 .favorit-field {
   padding: 0;
   margin: 0;
 }
-
+/*
+.note-field-hd,
+ .favorite-field-hd {
+ display: hidden;
+}
+*/
 .container-workfield {
   flex-basis: 68%;
   flex-grow: 1;
 }          
   
 /*** WORK FIELD ***/
-      
-
+       
 .ql-toolbar, .ql-snow {
   background: rgb(255,255,255);            
-  /*padding: 10px 20px !important;*/
-  padding: 10px 0 !important;
+  padding: 10px 20px !important;
   border: none !important;
-  border-bottom: 1px solid rgb(187,187,187) !important;    
-}
-
-#toolbar-container {
   border-top: 1px solid rgb(187,187,187) !important;
 }
-
-
-/*** Toolbar google fonts ***/
-.ql-font{
-  padding-right:15px;
-  padding-top:2px;
-  margin: 8px 10px;
+/*
+.container-workfield {
+  border: 1px solid rgb(187,187,187);  
+}*/
+#editor {
+  /*background-color: rgb(252, 252, 252);*/
+  /*height:800px;*/
 }
-
-#editor #toolbar-container .ql-container .ql-editor .ql-snow{
-  font-family: "Roboto";  
-}
-
-/* Set dropdown font-families */
-#toolbar-container .ql-font span[data-label="Roboto"]::before {
-  font-family: "Roboto";
-}
-#toolbar-container .ql-font span[data-label="Mirza"]::before {
-  font-family: "Mirza";
-}
-#toolbar-container .ql-font span[data-label="Aref Ruqaa"]::before {
-  font-family: "Aref Ruqaa";
-}
-#toolbar-container .ql-font span[data-label="Noto Serif JP"]::before {
-  font-family: "Noto Serif JP";
-}
-#toolbar-container .ql-font span[data-label="Lobster"]::before {
-  font-family: "Lobster";
-}
-#toolbar-container .ql-font span[data-label="Lora"]::before {
-  font-family: "Lora";
-}
-
-/* Set content font-families */
-.ql-font-mirza {
-  font-family: "Mirza";
-}
-.ql-font-aref-ruqaa {
-  font-family: "Aref Ruqaa";
-}
-.ql-font-noto-serif-jp {
-  font-family: "Noto Serif JP";
-}
-.ql-font-lobster {
-  font-family: "Lobster";
-}
-.ql-font-lora {
-  font-family: "Lora";
-}
-/* We do not set Roboto since it is the default font */
-
-
 
 /*** NAV-BAR FIELD ***/
+
+#navBar {         
+  background-color:rgb(46, 45, 45);
+}
 
 #logo {
   font-family: 'Libre Baskerville', serif;
@@ -366,7 +319,8 @@ li {
   margin-bottom: 28px;
 }
 .nav-ul li a {
-  font-size: 0.9em;
+  font-size: 0.8em;
+  /* letter-spacing: 1px; */
   font-weight: 600;
   /*color: rgb(234, 230, 230);*/
   color: rgba(255,255,255, 0.75);
@@ -375,11 +329,12 @@ li {
 }
 .nav-ul li a:hover {
   opacity: 0.5;
+  /* padding-left: 8px; */
   transition: all 0.3s ease-in-out;
 }
 
 /* Hidden nav icons */
-#newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #deleteNoteHd {
+#newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #trashNoteHd {
   display: none;
   cursor: pointer;
   font-size: 1.45em;
@@ -393,21 +348,66 @@ li {
   display: none;
 }
 
-/* CHANGE THEME*/
+/* Change THEME*/
+/*standardTheme*/
+.stand{
+background-color:rgb(46, 45, 45);
+}
+.xstand{
+  background-color:lightgrey;
+}
+/*#greenTheme*/
+.green {
+  background-color: rgb(125, 185, 125);
+  font-style: inherit;
+  font-family:'Times New Roman', Times, serif;
+  letter-spacing: 1px;
+}
+.xgreen{
+  background-color:rgb(212, 241, 221);
+  color:white;
+}
 
+/*#blueTheme */
+.blue
+{
+  background-color: rgb(135, 180, 240);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-style: oblique;
+}
+.xblue{
+  background-color:lightblue;
+}
+.yblue{
+  color:black !important;
+}
+
+/*#pinkTheme*/ 
+.pink
+{
+  background-color: rgb(228, 152, 196);
+  font-style:initial;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.xpink{
+  background-color:rgb(243, 211, 232);
+}
 /*dropdown menu*/
 .dropdown-container {
   display: none;
   padding-left: 8px;
 }
+
 .drop{
   display:block;
   text-decoration: none;
-  font-size: 0.85em;
+  /*color:white;*/
+  font-size:0,9em;
   padding:5px;
-  color:rgb(255,255,255);
+  color:white;
   margin-left:10px;
 }
+
 /* Optional: Style the caret down icon */
 .fa-caret-down {
   float: right;
@@ -417,37 +417,18 @@ li {
   /*color:white;*/
   text-decoration: none;
 }
-.standard {
-  background-color:rgb(46, 45, 45);
-  }
-  .xstand{
-    background-color:lightgrey;
-  }
-  /*#greenTheme*/
-  .green {
-    background-color: rgb(125, 185, 125);
-    font-style: inherit;
-    font-family:'Times New Roman', Times, serif;
-    /*letter-spacing: 1px;*/
-  }  
-  /*#blueTheme */
-  .blue{
-    background-color: rgb(135, 180, 240);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-style: oblique;
-    color:black !important;
-  }
-  .blue .nav-ul a{
-    color:black;
-  }  
-  /*#pinkTheme*/ 
-  .pink
-  {
-    background-color: rgb(228, 152, 196);
-    font-style:initial;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
+
+
+/* #div_btnSaveDelta {
+  display: flex;
+  justify-content: flex-end;
+}
+#btnSaveDelta {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+} */
+
 
 /*** MEDIA QUERIES ***/
 
@@ -485,13 +466,8 @@ li {
   }
   .container-navfield {
     flex-basis: 7%;
-    min-width: 128px;
-  /*  padding: 12px 24px;*/
+    min-width: 90px;
   }
-  #navBar {
-    padding: 22px;
-  }
-
   #logo {
     display: none;
   }
@@ -502,7 +478,7 @@ li {
   #newNote, #myNotes, #favNotes, #saveNote, #deleteNote {
     display: none;
   }  
-  #newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #deleteNoteHd {
+  #newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #trashNoteHd {
     display: block;    
   }  
 
@@ -513,7 +489,7 @@ li {
   .flex-container {
     height: auto;            
   }
-  
+
   #logoBrand {
     display: block;
     width: 100%;
@@ -523,11 +499,6 @@ li {
     font-family: 'Libre Baskerville', serif;    
     color: rgba(255, 255, 255, 0.75);
     text-align: center;    
-  }
-
-  #themeField {
-    width: 100%;
-    padding: 6px;
   }
 
   #navBar {
@@ -570,6 +541,7 @@ li {
   }
 
   .note-fav-container {
+    /*display: none;*/
     width: 100%;
   }
 
@@ -585,6 +557,7 @@ li {
   }
 
   #noteTitle {
+    /*display: block;*/
     padding: 4px 6px;    
   }
 
@@ -599,10 +572,13 @@ li {
   #noteSearch {  
     display: none;
   }
-  
+  #noteSearch {  
+    display: inline-block;
+  }
   #searchInput {
     min-width: 120px;;
     max-width: 132px;
+    /*padding: 6px 12px;*/
   }
   .fa-search {
     font-size: 0.8em;
@@ -628,15 +604,5 @@ li {
 @media screen and (max-width: 479px) {
   /* FUTURE STYLING FOR MOBILES */
 }
-@media print{
-  
-  #themeField,
-  .note-fav-container,
-  .header-notes,
-  .top-title-field,
-  .ql-toolbar{
-  display:none;
-    }
-  }
  
   
