@@ -9,11 +9,16 @@
   outline: none;
 }
 body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   padding: 0;
   margin: 0;
 }
 li {
   list-style-type: none;
+}
+a {
+  color: rgb(54,54,54);
+  text-decoration: none;
 }
 
 /*** EDITOR RESPONSIVE LAYOUT ***/
@@ -199,18 +204,6 @@ li {
   text-shadow: 0.5px 0.5px 0 rgb(242,242,242);  
 } */
 
-/* Philip note-field-light */
-
-/* TOP TITLE AND SEARCH FIELD */
-
-/*
-#noteTitle {
-  width: 54%;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  padding: 14px 18px 18px 18px;
-  font-size: 1.35em;
-  border: 0px;
-}*/
 
 #noteSearchHd {
   display: none;
@@ -224,14 +217,100 @@ li {
   border-radius: 8px;
 }
 
-.top-title-field {
+.note-field-top {
+  display: flex;
+  font-size: 1.1em;
+  padding: 6px;    
   margin: 14px 12px 12px 12px;
 }
-.note-title-top, .note-tags-top  {  
-  display: inline;  
-  font-size: 1.1em;
-  padding: 8px;    
+
+.note-title-top, .note-tags-top, .note-theme-top {
+  flex-basis: 22%;
+  padding: 0 10px;
 }
+
+.note-theme-top {
+  flex-basis: 30%;
+}
+
+.note-theme-top h4 {
+  color: rgb(107,107,107);
+  margin-right: 22px;
+}
+
+.btn-theme {
+  padding: 6px 12px;
+  background-color: rgb(134,134,134);  
+  border-radius: 4%;
+}
+.btn-theme a {
+  color: rgb(255,255,255);
+}
+.btn-earth {
+  background-color: rgb(114,114,114);  
+  color: rgb(255,255,255);
+}
+.btn-sky {
+  background-color: rgb(44,44,254);
+  font-family: serif;
+  background-color: rgb(114,114,114);  
+  color: rgb(255,255,255);
+}
+.btn-fantasy {
+  font-family: fantasy;
+  background-color: rgb(254,44,44);
+  background-color: rgb(114,114,114);  
+  color: rgb(255,255,255);
+}
+
+
+/*** STYLING DROP DOWN THEME SELECTION ***/
+
+.btn-drop {
+  background-color: #3498DB;
+  background-color: rgb(79,79,79);
+  color: rgb(252,252,252);
+  padding: 8px 12px;
+  font-size: 0.8em;
+  /*border: none;*/
+  border-radius: 4px;
+  cursor: pointer;
+}
+.btn-drop:hover, .btn-drop:focus {           
+  background-color: rgb(77,77,77);
+}
+.btn-drop i {
+  margin-left: 10px;
+  margin-top: 1px
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: rgb(12,12,12);
+  font-size: 0.8em;
+  padding: 10px 12px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {
+  background-color:rgb(221,221,221);
+}    
+.show {
+  display:block;
+}
+/****************************************/
+
+
 #noteTitle {
   font-size: 1.1em;
   opacity: 0.9;
@@ -600,7 +679,7 @@ i .fas .fa-tags {
     width: 100%;
   }
 
-  .top-title-field {
+  .note-title-top {
     padding: 4px;
     margin: 6px;
   }
@@ -660,7 +739,7 @@ i .fas .fa-tags {
   #themeField,
   .note-fav-container,
   .header-notes,
-  .top-title-field,
+  .note-title-top,
   .ql-toolbar{
   display:none;
     }
