@@ -227,7 +227,7 @@ li {
 .top-title-field {
   margin: 14px 12px 12px 12px;
 }
-.note-title-top {  
+.note-title-top, .note-tags-top  {  
   display: inline;  
   font-size: 1.1em;
   padding: 8px;    
@@ -238,8 +238,28 @@ li {
   border: none;
   margin-left: 10px;
 }
+#tagInput{
+  padding: 5px 12px !important;
+  border: 1px solid lightgrey !important;
+  border-radius: 8px;
+}
 
-#searchInput, #titleInput {
+.tag-holder {
+  display: inline;
+  min-width: 20px;
+  font-size: 1.1em;
+  margin-right: 10px;
+}
+
+.icon-remove {
+  padding-left: 2px;
+  padding-right: 10px;
+  margin-top: 5px !important;
+  font-size: .8em;
+  opacity: .3;
+}
+
+#searchInput, #titleInput ,#tagInput {
   padding: 8px 12px;
   border: none;
   width: auto; 
@@ -247,12 +267,19 @@ li {
   font-size: 0.85em;
 }
 
+#tagInput {
+  min-width: 100px;
+}
+
 #searchInput:focus {
   outline: none;
   border: none;
 }
-.fa-search, .fa-file-signature {
+.fa-search, .fa-file-signature, .fa-tags {
   opacity: 0.5;
+}
+i .fas .fa-tags {
+  padding-top: 5px;
 }
 
 #noteTitle:active, #noteTitle:focus {

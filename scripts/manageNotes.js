@@ -12,22 +12,25 @@
         
 
     // -----**** Creating new note and adding to the array **** ------
-    var newNote = document.querySelectorAll('.nav-newNote');
-    for(let i = 0; i < newNote.length; i++) {
-        newNote[i].addEventListener('click', createNewNote);
-    }
-   function createNewNote() {
+    // var newNote = document.querySelectorAll('.nav-newNote');
+    // for(let i = 0; i < newNote.length; i++) {
+    //     newNote[i].addEventListener('click', createNewNote);
+    // }
+    document.querySelector('.nav-newNote').addEventListener('click', createNewNote);
+    function createNewNote() {
         var newId = uniqueID();
         var note = {
-                     id : newId,
-                     title : "untitled", 
-                     contentText : "no content...", 
-                     contentHtml : "",  
-                     created : new Date().toLocaleString(),
-                     isFavorite : false
-                    };
+                id : newId,
+                title : "untitled", 
+                contentText : "no content...", 
+                contentHtml : "",  
+                created : new Date().toLocaleString(),
+                isFavorite : false,
+                tags : []
+            };
         document.getElementById('noteTitle').value = note.title;
         quill.setContents(""); // setting an empty editor for writing new note.
+        document.getElementById('tagInput').value = "";
         notes.unshift(note); //add notes to beginning of the Array, push() add item in the end of the array.
        //notes.push(note);
         showNotes(false);
@@ -35,10 +38,30 @@
     };
 
     // -----**** Changing note title **** ------
-     document.getElementById('noteTitle').addEventListener('change', function() {   
+    document.getElementById('noteTitle').addEventListener('change', function() {   
          document.getElementById(currentNoteId).getElementsByClassName('note-title')[0].innerText = this.value;
          saveAllNotes();
      });
+
+    // -----**** Adding tag **** ------
+    function addTag (noteId) {
+        for (var i = 0; i < notes.length; i++) {
+            if (notes[i].id == noteId) {
+                if (notes[i].tags == undefined){    // if there is no tags property, it creates the property.
+                    notes[i].tags = [];  
+                } 
+                var tagInput = document.getElementById('tagInput');
+                var tagText = tagInput.value;
+                notes[i].tags.push(tagText);
+                saveAllNotes();
+                selectNote(noteId);
+            }  
+        }
+    } 
+    document.getElementById('tagInput').addEventListener('change', function() {   
+        addTag(currentNoteId);
+    });
+    
 
 
     // -----**** Saving notes **** ------
@@ -46,6 +69,7 @@
     for(let i = 0; i < saveNote.length; i++) {
         saveNote[i].addEventListener('click', saveAllNotes);
     } 
+
     function saveAllNotes() {
         var noteContentHtml = quill.root.innerHTML; // getting content from editor
         var noteContentText = quill.getText(); // getting text without HTML
@@ -58,29 +82,24 @@
                 
                 localStorage.setItem("notes", JSON.stringify(notes));  //storing array in "notes" array in local storage 
                 showNotes(false);
-                document.getElementById('noteTitle').value = "";
-                quill.setContents("");
+                //document.getElementById('noteTitle').value = "";
+                //quill.setContents("");
                 break;
             }
         }
     };
 
-    // -----**** Selecting a specific note to display on editor **** ------  
-    function selectNote (noteId) {
-        currentNoteId = noteId;
-        for (var i = 0; i < notes.length; i++) {
-            if (notes[i].id == noteId )
-            {
-                document.getElementById('noteTitle').value =  notes[i].title ; //set title to Title field
-                quill.root.innerHTML = notes[i].contentHtml; //set contentHtml to quill editor
-                break;
-            }
-        }
-    }
 
     // notes.forEach(function(item){
     //   allNotehtmlContent += '<div class="note-item"><div class="note-title">'+ item.title +'</div><div class="note-content">'+ item.content +'</div><div class="note-created">'+ item.created +'</div></div>';
     // });
+
+    // -----**** Added new eventListener and closed the toggle view **** ------ 
+    var myNotes = document.querySelector('.nav-notes');
+    myNotes.addEventListener('click', function() {
+        showNotes(false);
+    });
+
     // -----**** Updates All notes view **** ------    
     function showNotes(showOnlyFavorites)
     {   
@@ -116,7 +135,50 @@
     //     }
     // };
 
+    // -----**** Selecting a specific note to display on editor **** ------  
+    function selectNote (noteId) {
+    currentNoteId = noteId;
+        for (var i = 0; i < notes.length; i++) {
+            if (notes[i].id == noteId )
+            {
+                document.getElementById('noteTitle').value =  notes[i].title ; //set title to Title field
+                quill.root.innerHTML = notes[i].contentHtml; //set contentHtml to quill editor
 
+                var tagHolder = document.getElementsByClassName('tag-holder')[0];
+                tagHolder.innerHTML = "";
+                // Creating two span for showing tag value and remove icon
+                for(var j= 0; j < notes[i].tags.length; j++) {
+                    var tagContainer = document.createElement("SPAN");
+                    tagContainer.setAttribute("class", "tag-container");
+
+                    var tagValueSpan = document.createElement("SPAN");
+                    tagValueSpan.setAttribute("class", "tag-value");
+                    tagValueSpan.innerHTML = notes[i].tags[j];
+
+                    var iconTagRemove = document.createElement('i');
+                    iconTagRemove.className = "fas fa-times icon-remove"; 
+                    //iconTagRemove.onclick = function() { removeTag(); };
+
+                    tagContainer.appendChild(tagValueSpan);
+                    tagContainer.appendChild(iconTagRemove);
+
+                    tagHolder.appendChild(tagContainer);
+                }
+                document.getElementById('tagInput').value = "";
+                break;
+            }
+        }
+    }
+
+    // -----****Removing specific tag **** ------  
+    // function removeTag() {
+
+    // }
+
+
+
+
+    // -----**** Dynamically creating notes view **** ------  
     function  noteElement(note) {
         var divNoteItem = document.createElement("div");
         divNoteItem.id = note.id;
@@ -151,9 +213,14 @@
         return divNoteItem;
     };
 
+    // -----**** Showing favorite notes  **** ------ 
+    var favorite = document.querySelectorAll('.nav-favorites');
+    for (var i= 0; i < favorite.length; i++) {
+        favorite[i].onclick = function() {  showNotes(true); };
+    }
+
    // -----**** Mark notes as FAVORITE **** ------  
-    function favoriteNoteManager (noteId)
-    {
+    function favoriteNoteManager (noteId){
         for( var i = 0; i< notes.length; i++) {
             if ( notes[i].id == noteId){
                 if (notes[i].isFavorite == true) {
@@ -167,22 +234,8 @@
             }
         }
     }
-
-    // -----**** Added new eventListener and closed the toggle view **** ------ 
-    var myNotes = document.querySelector('.nav-notes');
-    myNotes.addEventListener('click', function() {
-        showNotes(false);
-    });
-
-// -----**** Showing favorite notes  **** ------ 
-    var favorite = document.querySelectorAll('.nav-favorites');
-    for (var i= 0; i < favorite.length; i++) {
-        //favorite[i].addEventListener ('click', showNotes(true) );
-        favorite[i].onclick = function() {  showNotes(true); };
-    }
     
-    
-     // -----**** delete note **** ------ 
+    // -----**** delete note **** ------ 
     var deleteNote = document.querySelectorAll('.delete-note');
     for(let i = 0; i < deleteNote.length; i++) {
         deleteNote[i].addEventListener('click', noteDelete);
@@ -194,6 +247,8 @@
               notes.splice(i,1);
               document.getElementById('noteTitle').value = "";
               quill.setContents("");
+              document.getElementsByClassName('tag-holder')[0].innerHTML = "";
+              document.getElementById('tagInput').value= "";
               localStorage.setItem("notes", JSON.stringify(notes));
               showNotes(false);
             }
