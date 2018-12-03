@@ -34,6 +34,7 @@ noteField.addEventListener('click', modNoteField);
 
 // CALLBACKS
 function takeMeHome() {
+    delete_cookie("visitedQuire");
     window.open('index.html','_self');
 }
 
@@ -109,3 +110,6 @@ for (i = 0; i < dropdown.length; i++) {
         }
     });
 }
+function delete_cookie( name ) {
+    document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+  }
