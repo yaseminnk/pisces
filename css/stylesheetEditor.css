@@ -268,8 +268,8 @@ a {
 
 .btn-drop {
   background-color: #3498DB;
-  background-color: rgb(79,79,79);
-  color: rgb(252,252,252);
+  background-color: rgb(84,84,84);
+  color: rgb(248,248,248);
   padding: 8px 12px;
   font-size: 0.8em;
   /*border: none;*/
@@ -277,7 +277,8 @@ a {
   cursor: pointer;
 }
 .btn-drop:hover, .btn-drop:focus {           
-  background-color: rgb(77,77,77);
+  background-color: rgb(74,74,74); 
+  color: rgb(255,255,255);
 }
 .btn-drop i {
   margin-left: 10px;
