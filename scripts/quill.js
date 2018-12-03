@@ -17,7 +17,7 @@ var toolbarOptions = [
 
 ];
 
-var Font = Quill.import('formats/font');
+/*var Font = Quill.import('formats/font');
 // We do not add Aref Ruqaa since it is the default
 Font.whitelist = ['Mirza', 'Roboto','Noto Serif JP','Lobster', 'Lora'];
 Quill.register(Font, true);
@@ -27,7 +27,7 @@ modules: {
   toolbar: '#toolbar-container'
 },
 theme: 'snow'
-});
+});*/
   
   
   
