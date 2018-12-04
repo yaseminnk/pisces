@@ -31,11 +31,11 @@
 <body>
 
     <div class="flex-container">
-        
+
         <div id="logoBrand">
             <h1>QUIRE</h1>
         </div><br>
-        
+
         <div id="themeField" class="standard">
             <div id="navBar" class="flex-item container-navfield">
 
@@ -59,7 +59,7 @@
 
                         <li id="favNotes"><a class="nav-favorites" href="#">FAVORITES</a></li>
                         <li id="favNotesHd"><a class="nav-favorites" title="My favorites">
-                                <i class="far fa-star"></i></a>
+                                <i class="far fa-star" title="Mark as favorite"></i></a>
                         </li>
 
                         <li id="saveNote"><a class="nav-save" href="#">SAVE</a></li>
@@ -71,8 +71,12 @@
                         <li id="deleteNoteHd"><a class="delete-note" title="Delete note">
                                 <i class="fas fa-trash"></i></a>
                         </li>
+<<<<<<< HEAD
                             <li><button onclick="myFunction()">Print</button></li>
 
+=======
+                        <!--
+>>>>>>> 9ede62f930a9d6c7fc7d42d7f75b28a313c06b31
                         <li>
                             <button class="dropdown-btn">THEME 
                                 <i class="fa fa-caret-down"></i>
@@ -84,6 +88,7 @@
                                 <a class="drop" id="pink" href="#">PINK</a>
                             </div>
                         </li>
+                        -->
                     </ul>
                 </div>
             </div>
@@ -94,7 +99,7 @@
             <div class="header-notes">
                 My Notes
             </div>
-            <div class="note-lists note-field note-field-hd">               
+            <div class="note-lists note-field note-field-hd">
             </div>
 
             <div class="favorite-field favorite-field-hd">
@@ -102,16 +107,38 @@
         </div>
 
         <div class="flex-item container-workfield">
-            <div class="top-title-field">
-                    <div class="note-title-top" title="Enter title">
-                            <i class="fas fa-file-signature"></i>
-                            <input id="noteTitle" type="text" name="title"  placeholder="Untitled">
-                        </div>
+
+            <div class="note-field-top">
+                <div class="note-title-top" title="Enter title">
+                    <i class="fas fa-file-signature"></i>
+                    <input id="noteTitle" type="text" name="title" placeholder="Untitled">
+                </div>
                 <div class="note-tags-top">
-                        <i class="fas fa-tags" title="tags"></i>
-                        <span class= "tag-holder" ></span>
-                        <input id="tagInput"  type="text" name="tags"  placeholder="add tags here">
+                    <i class="fas fa-tags" title="tags"></i>
+                    <span class="tag-holder"></span>
+                    <input id="tagInput" type="text" name="tags" placeholder="add tags here">
+                </div>
+
+                <div class="note-theme-top" style="position: relative">
+                    <!--
+                    <h4 style="display: inline">Choose a Theme</h4>
+                    <button class="btn-theme btn-earth"><a id="standard" href="#">EARTH</a></button>
+                    <button class="btn-theme btn-sky"><a id="blue" href="#">SKY</a></button>
+                    <button class="btn-theme btn-fantasy"><a id="pink" href="#">FANTASY</a></button>
+                    -->
+
+                    <div class="dropdown">
+                        <button class="btn-drop">
+                            Choose Template
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <a href="#">Business</a>
+                            <a href="#">Party</a>
+                            <a href="#">Fantasy</a>
+                        </div>
                     </div>
+                </div>
                 <!-- <form id="noteSearch">
                     <label>
                         <i class="fas fa-search" title="Search"></i>
@@ -119,29 +146,28 @@
                     </label>
                 </form> -->
             </div>
-			
+
             <div id="toolbar-container" class="ql-container ql-snow">
-                    
-                   <!-- <select class="ql-font">
+                <!-- <select class="ql-font">
                         <option selected>Roboto</option>
                         <option value="Mirza">Mirza</option>
                         <option value="Aref Ruqaa">Aref Ruqaa</option>
                         <option value="Noto Serif JP">Noto Serif JP</option>
                         <option value="Lobster">Lobster</option>
                         <option value="Lora">Lora</option>
-                    </select>-->               
-				
-                    <div id="editor">                        
-					   <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum itaque explicabo vero tempore commodi illum eaque architecto officiis asperiores distinctio, deserunt illo fugiat aliquid nobis. Exercitationem distinctio cum soluta consequatur!</p>
-					</div>           
-			</div>           
+                    </select>-->
+                <div id="editor">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum itaque explicabo vero tempore
+                        commodi illum eaque architecto officiis asperiores distinctio, deserunt illo fugiat aliquid
+                        nobis. Exercitationem distinctio cum soluta consequatur!</p>
+                </div>
+            </div>
         </div>
     </div>
 
     <script src="scripts/quill.js"></script>
     <script src="scripts/scriptEditor.js"></script>
     <script src="scripts/manageNotes.js"></script>
-
 </body>
 
 </html>
