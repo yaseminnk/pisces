@@ -331,12 +331,37 @@ a {
   margin-right: 10px;
 }
 
-.icon-remove {
+.icon-tag-remove {
   padding-left: 2px;
-  padding-right: 10px;
+  padding-right: 3px;
   margin-top: 5px !important;
-  font-size: .8em;
+  /* font-size: .9em; */
   opacity: .3;
+}
+
+.note-tags { /*2018/12/04*/
+  color: rgba(255, 255, 255,0.75);
+  text-shadow: 0.5px 0.5px 0 rgb(57,57,57);
+  font-size: 1em;
+  font-weight: 500;
+  padding: 5px 15px;
+  /* border-bottom: 1px solid rgba(158, 154, 154, 0.555); */
+  cursor: pointer;
+ 
+}
+
+.note-tags:hover { /*2018/12/04*/
+  opacity: .5;
+  transition: all 0.3s ease-in-out;
+}
+
+span.tag-container { /*2018/12/04*/
+  border: 1px solid;
+  border-radius: 3px;
+  margin: 2px;
+  padding-left: 3px;
+  font-size: 0.8em;
+  background-color: whitesmoke;
 }
 
 #searchInput, #titleInput ,#tagInput {
@@ -356,6 +381,7 @@ a {
 }
 i .fas .fa-tags {
   padding-top: 5px;
+  
 }
 
 #noteTitle:active, #noteTitle:focus {
@@ -492,7 +518,7 @@ i .fas .fa-tags {
 }
 
 /* Hidden nav icons */
-#newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #deleteNoteHd, #printNoteHd {
+#newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #deleteNoteHd, #printNoteHd, #allTagHd {
   display: none;
   cursor: pointer;
   font-size: 1.45em;
@@ -612,10 +638,10 @@ i .fas .fa-tags {
     display: block;    
     margin: 2px 0 20px 0;
   }
-  #newNote, #myNotes, #favNotes, #saveNote, #deleteNote, #printNote {
+  #newNote, #myNotes, #favNotes, #saveNote, #deleteNote, #printNote, #allTags  {
     display: none;
   }  
-  #newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #deleteNoteHd, #printNoteHd {
+  #newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #deleteNoteHd, #printNoteHd, #allTagHd{
     display: block;    
   }
 }

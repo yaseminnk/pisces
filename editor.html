@@ -54,8 +54,8 @@
                         <li id="myNotesHd"><a class="nav-notes" title="My notes">
                                 <i class="far fa-file"></i></a></li>
 
-                        <li id="favNotes"><a class="nav-favorites" href="#">FAVORITES</a></li>
-                        <li id="favNotesHd"><a class="nav-favorites" title="My favorites">
+                        <li id="favNotes" onclick="showNotesField()"><a class="nav-favorites" href="#">FAVORITES</a></li>
+                        <li id="favNotesHd" onclick="showNotesField()"><a class="nav-favorites" title="My favorites">
                                 <i class="far fa-star" title="Mark as favorite"></i></a>
                         </li>
 
@@ -68,6 +68,12 @@
                         <li id="deleteNoteHd"><a class="delete-note" title="Delete note">
                                 <i class="fas fa-trash"></i></a>
                         </li>
+
+                        <li id="allTags" onclick="showNotesField()"><a class="all-tags" href="#">TAGS</a></li>  <!--/*2018/12/04*/-->
+                        <li id="allTagHd" onclick="showNotesField()" ><a class="all-tags" title="All tags">
+                            <i class="fas fa-tag" title="All tags"></i></a>
+                        </li>
+                        
                         <li id="printNote"><a class="print-note" href="#">PRINT</a></li>
                         <li id="printNoteHd"><a class="print-note" title="Print note">
                                 <i class="fas fa-print"></i></a>
