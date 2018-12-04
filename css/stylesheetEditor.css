@@ -9,11 +9,16 @@
   outline: none;
 }
 body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   padding: 0;
   margin: 0;
 }
 li {
   list-style-type: none;
+}
+a {
+  color: rgb(54,54,54);
+  text-decoration: none;
 }
 
 /*** EDITOR RESPONSIVE LAYOUT ***/
@@ -39,20 +44,6 @@ li {
 }
 #logoBrand {
   display: none;
-}
-
-.dropdown-btn {
-  font-size: 1em;
-  padding: 2px;
-  margin-left: 8px;
-  margin-bottom: 8px;
-}
-.dropdown-btn .fa-caret-down {
-  padding: 2px;
-  margin-left: 8px;
-}
-.dropdown-container .drop {
-  font-size: 0.9em;
 }
 
 /* DISPLAY CONTAINER */
@@ -199,19 +190,6 @@ li {
   text-shadow: 0.5px 0.5px 0 rgb(242,242,242);  
 } */
 
-/* Philip note-field-light */
-
-/* TOP TITLE AND SEARCH FIELD */
-
-/*
-#noteTitle {
-  width: 54%;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  padding: 14px 18px 18px 18px;
-  font-size: 1.35em;
-  border: 0px;
-}*/
-
 #noteSearchHd {
   display: none;
 }
@@ -224,14 +202,117 @@ li {
   border-radius: 8px;
 }
 
-.top-title-field {
-  margin: 14px 12px 12px 12px;
+.note-field-top {  
+  font-size: 1em;
+  margin: 11px 8px 7px 8px;
 }
-.note-title-top, .note-tags-top  {  
-  display: inline;  
-  font-size: 1.1em;
-  padding: 8px;    
+
+.note-title-top, .note-tags-top, .note-theme-top {
+  display: inline-block;
+  width: 28%;
+  white-space: nowrap;
 }
+
+.note-title-top, .note-tags-top {
+  padding: 6px 10px;
+}
+
+.note-theme-top {
+  min-width: 150px;
+  margin-left: 22px;
+}
+.note-theme-top h4 {
+  color: rgb(107,107,107);
+  margin-right: 22px;
+}
+
+.btn-theme {
+  padding: 6px 12px;
+  background-color: rgb(134,134,134);  
+  border-radius: 4%;
+}
+.btn-theme a {
+  color: rgb(255,255,255);
+}
+.btn-earth {
+  background-color: rgb(114,114,114);  
+  color: rgb(255,255,255);
+}
+.btn-sky {
+  background-color: rgb(44,44,254);
+  font-family: serif;
+  background-color: rgb(114,114,114);  
+  color: rgb(255,255,255);
+}
+.btn-fantasy {
+  font-family: fantasy;
+  background-color: rgb(254,44,44);
+  background-color: rgb(114,114,114);  
+  color: rgb(255,255,255);
+}
+
+
+/*** STYLING DROP DOWN THEME SELECTION ***/
+.dropdown-btn {
+  font-size: 1em;
+  padding: 2px;
+  margin-left: 8px;
+  margin-bottom: 8px;
+}
+.dropdown-btn .fa-caret-down {
+  padding: 2px;
+  margin-left: 8px;
+}
+.dropdown-container .drop {
+  font-size: 0.9em;
+}
+
+.btn-drop {
+  background-color: #3498DB;
+  background-color: rgb(84,84,84);
+  color: rgb(248,248,248);
+  padding: 8px 12px;
+  font-size: 0.8em;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn-drop:hover, .btn-drop:focus {           
+  background-color: rgb(74,74,74); 
+  color: rgb(255,255,255);
+}
+.btn-drop i {
+  margin-left: 10px;
+  margin-top: 1px
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: rgb(12,12,12);
+  font-size: 0.8em;
+  padding: 10px 12px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {
+  background-color:rgb(221,221,221);
+}    
+.show {
+  display: block;
+}
+/****************************************/
+
+
 #noteTitle {
   font-size: 1.1em;
   opacity: 0.9;
@@ -395,7 +476,6 @@ i .fas .fa-tags {
 .nav-ul li a {
   font-size: 0.9em;
   font-weight: 600;
-  /*color: rgb(234, 230, 230);*/
   color: rgba(255,255,255, 0.75);
   padding: 10px;
   text-decoration: none;
@@ -406,7 +486,7 @@ i .fas .fa-tags {
 }
 
 /* Hidden nav icons */
-#newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #deleteNoteHd {
+#newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #deleteNoteHd, #printNoteHd {
   display: none;
   cursor: pointer;
   font-size: 1.45em;
@@ -526,13 +606,12 @@ i .fas .fa-tags {
     display: block;    
     margin: 2px 0 20px 0;
   }
-  #newNote, #myNotes, #favNotes, #saveNote, #deleteNote {
+  #newNote, #myNotes, #favNotes, #saveNote, #deleteNote, #printNote {
     display: none;
   }  
-  #newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #deleteNoteHd {
+  #newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #deleteNoteHd, #printNoteHd {
     display: block;    
-  }  
-
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -552,11 +631,14 @@ i .fas .fa-tags {
     text-align: center;    
   }
 
-  #themeField {
+  #menuField {
     width: 100%;
-    padding: 6px;
+    padding: 6px 12px;
   }
-
+  .note-theme-top {
+    float: right;
+  }
+  
   #navBar {
     flex-grow: 1;
     flex-basis: 100%;
@@ -600,7 +682,7 @@ i .fas .fa-tags {
     width: 100%;
   }
 
-  .top-title-field {
+  .note-title-top {
     padding: 4px;
     margin: 6px;
   }
@@ -640,13 +722,6 @@ i .fas .fa-tags {
     margin-right: 15px;
   }
 
-  /*
-  #noteSearch {  
-    display: block;
-    padding: 8px;
-    margin: 10px;
-  }
-  */
   .note-fav-container #header-notes {
     text-align: center;
   }
@@ -660,7 +735,7 @@ i .fas .fa-tags {
   #themeField,
   .note-fav-container,
   .header-notes,
-  .top-title-field,
+  .note-title-top,
   .ql-toolbar{
   display:none;
     }

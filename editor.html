@@ -31,12 +31,12 @@
 <body>
 
     <div class="flex-container">
-        
+
         <div id="logoBrand">
             <h1>QUIRE</h1>
         </div><br>
-        
-        <div id="themeField" class="standard">
+
+        <div id="menuField" class="standard">
             <div id="navBar" class="flex-item container-navfield">
 
                 <div class="menu-burger">
@@ -59,7 +59,7 @@
 
                         <li id="favNotes"><a class="nav-favorites" href="#">FAVORITES</a></li>
                         <li id="favNotesHd"><a class="nav-favorites" title="My favorites">
-                                <i class="far fa-star"></i></a>
+                                <i class="far fa-star" title="Mark as favorite"></i></a>
                         </li>
 
                         <li id="saveNote"><a class="nav-save" href="#">SAVE</a></li>
@@ -71,7 +71,13 @@
                         <li id="deleteNoteHd"><a class="delete-note" title="Delete note">
                                 <i class="fas fa-trash"></i></a>
                         </li>
+                        <li id="printNote"><a class="print-note" href="#">PRINT</a></li>
+                        <li id="printNoteHd"><a class="print-note" title="Print note">
+                                <i class="fas fa-print"></i></a>
+                        </li>
+                        <!--<button id="btnPrint">Print</button></li>-->
 
+                        <!--
                         <li>
                             <button class="dropdown-btn">THEME 
                                 <i class="fa fa-caret-down"></i>
@@ -83,6 +89,7 @@
                                 <a class="drop" id="pink" href="#">PINK</a>
                             </div>
                         </li>
+                        -->
                     </ul>
                 </div>
             </div>
@@ -93,7 +100,7 @@
             <div class="header-notes">
                 My Notes
             </div>
-            <div class="note-lists note-field note-field-hd">               
+            <div class="note-lists note-field note-field-hd">
             </div>
 
             <div class="favorite-field favorite-field-hd">
@@ -101,24 +108,37 @@
         </div>
 
         <div class="flex-item container-workfield">
-            <div class="top-title-field">
-                    <div class="note-title-top" title="Enter title">
-                            <i class="fas fa-file-signature"></i>
-                            <input id="noteTitle" type="text" name="title"  placeholder="Untitled">
+
+            <div class="note-field-top">
+                <div class="note-title-top" title="Enter title">
+                    <i class="fas fa-file-signature"></i>
+                    <input id="noteTitle" type="text" name="title" placeholder="Untitled">
+                </div>
+                
+                <div class="note-tags-top" title="Give your note a tag">
+                    <i class="fas fa-tags"></i>
+                    <span class="tag-holder"></span>
+                    <input id="tagInput" type="text" name="tags" placeholder="add tags here">
+                </div>
+
+                <div class="note-theme-top">                    
+                    <div class="dropdown" title="Choose a template">
+                        <button class="btn-drop">
+                            Choose Template
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <a href="#">Business</a>
+                            <a href="#">Party</a>
+                            <a href="#">Fantasy</a>
                         </div>
-                <div class="note-tags-top">
-                        <i class="fas fa-tags" title="tags"></i>
-                        <span class= "tag-holder" ></span>
-                        <input id="tagInput"  type="text" name="tags"  placeholder="add tags here">
                     </div>
-                <!-- <form id="noteSearch">
-                    <label>
-                        <i class="fas fa-search" title="Search"></i>
-                        <input id="searchInput" type="text" name="search-title" placeholder=" Search">
-                    </label>
-                </form> -->
+                </div>                
             </div>
-			
+
+            <div id="editor">
+            </div>
+            <!--
             <div id="toolbar-container" class="ql-container ql-snow">
                     
                    <!-- <select class="ql-font">
@@ -140,7 +160,6 @@
     <script src="scripts/quill.js"></script>
     <script src="scripts/scriptEditor.js"></script>
     <script src="scripts/manageNotes.js"></script>
-
 </body>
 
 </html>

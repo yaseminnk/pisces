@@ -84,6 +84,7 @@ var blue = document.getElementById('blue');
 var pink = document.getElementById('pink');
 
 // EVENT LISTENERS
+/*
 stand.addEventListener('click', switchTheme); 
 green.addEventListener('click', switchTheme); 
 blue.addEventListener('click', switchTheme); 
@@ -93,7 +94,7 @@ function switchTheme() {
     themeField.setAttribute('class', ''); 
     themeField.classList.toggle(this.id);   
 }
-
+*/
 //dropdown menu
 var dropdown = document.getElementsByClassName("dropdown-btn");
 var i;
@@ -110,6 +111,61 @@ for (i = 0; i < dropdown.length; i++) {
         }
     });
 }
+
+/*var qlContainer = document.querySelector('.ql-container');
+
+var italic = document.getElementById('italic');
+var inherit = document.getElementById('inherit');
+
+italic.addEventListener('click', changeTemplate );
+inherit.addEventListener('click', changeTemplate);
+
+function changeTemplate() {     
+    qlContainer.setAttribute('class', ''); 
+    qlContainer.classList.toggle(this.id);  
+   console.log('hej på dig');
+}*/
+
+var btnPrint = document.getElementById('printNote');
+var btnPrintHd = document.getElementById('printNoteHd');
+
+btnPrint.addEventListener('click', printContent);
+btnPrintHd.addEventListener('click', printContent);
+
+function printContent() {
+    window.print();
+}
+
 function delete_cookie( name ) {
     document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
   }
+
+
+/*** DROPDOWN MENU THEME SELECTION ***/
+
+    // ANCHOR
+    var btnDrop = document.querySelector('.btn-drop');
+
+    
+    // LISTENERS
+    btnDrop.addEventListener('click', showDropTheme);
+
+
+    // CALLBACKS
+    function showDropTheme() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+    // Close the dropdown menu if the user clicks outside of it
+    window.onclick = function (event) {
+        if (!event.target.matches('.btn-drop')) {
+
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
