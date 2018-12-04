@@ -20,6 +20,7 @@ var noteField = document.querySelector('.note-field');
 var noteSearch = document.getElementById('searchInput');
 var notesContainer = document.querySelector('.note-fav-container');
 
+
 // EVENT LISTENERS 
 logo.addEventListener('click', takeMeHome);
 logoShort.addEventListener('click', takeMeHome);
@@ -126,9 +127,32 @@ function changeTemplate() {
    console.log('hej på dig');
 }*/
 
+
+/*** We add a print icon to the toolbar ***/
+var qlContainer = document.querySelector('.ql-toolbar');
+var elSpan = document.createElement('span');
+var elAtag = document.createElement('a');
+var elIcon = document.createElement('i');
+
+// Set attributes
+elIcon.setAttribute('class', 'fas fa-print');
+elIcon.classList.add('toolbar-print-icon');
+elAtag.setAttribute('class', 'print-note');
+elAtag.setAttribute('title', 'Print note');
+elAtag.id = "toolbarPrintNote";
+
+// We append all childs
+elAtag.appendChild(elIcon);
+elSpan.appendChild(elAtag);
+qlContainer.appendChild(elSpan);
+
+
+// CALLBACK PRINT FUNCTION
+var toolPrint = document.getElementById('toolbarPrintNote');
 var btnPrint = document.getElementById('printNote');
 var btnPrintHd = document.getElementById('printNoteHd');
 
+toolPrint.addEventListener('click', printContent);
 btnPrint.addEventListener('click', printContent);
 btnPrintHd.addEventListener('click', printContent);
 
@@ -145,6 +169,7 @@ function delete_cookie(name) {
 
 // ANCHORS
 var btnDrop = document.querySelector('.btn-drop');
+var tmpDef = document.getElementById('tmpDefault');
 var tmpBus = document.getElementById('tmpBusiness');
 var tmpParty = document.getElementById('tmpParty');
 var tmpFan = document.getElementById('tmpFantasy');
@@ -152,6 +177,7 @@ var dynStyle = document.getElementById('dynamicStylesheet');
 
 // LISTENERS
 btnDrop.addEventListener('click', showDropTheme);
+tmpDef.addEventListener('click', changeTemplate);
 tmpBus.addEventListener('click', changeTemplate);
 tmpParty.addEventListener('click', changeTemplate);
 tmpFan.addEventListener('click', changeTemplate);
@@ -184,7 +210,10 @@ function changeTemplate() {
     dynStyle.setAttribute('href', '');
     var elId = this.id;
 
-    if (elId === 'tmpBusiness') {
+    if (elId === 'tmpDeafult') {
+        dynStyle.setAttribute('href', '#');        
+    }
+    else if (elId === 'tmpBusiness') {
         dynStyle.setAttribute('href', 'css/stylesheetBusiness.css');        
     }
 }      
