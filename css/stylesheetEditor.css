@@ -209,7 +209,6 @@ a {
 
 .note-title-top, .note-tags-top, .note-theme-top {
   display: inline-block;
-  width: 28%;
   white-space: nowrap;
 }
 
@@ -344,12 +343,8 @@ a {
   padding: 8px 12px;
   border: none;
   width: auto; 
-  min-width: 212px;
+  min-width: 140px;
   font-size: 0.85em;
-}
-
-#tagInput {
-  min-width: 100px;
 }
 
 #searchInput:focus {
@@ -381,6 +376,7 @@ i .fas .fa-tags {
 /*** WORK FIELD ***/
       
 
+/* CHECK THIS FURTHER!!! */
 .ql-toolbar, .ql-snow {
   background: rgb(255,255,255);            
   /*padding: 10px 20px !important;*/
@@ -399,6 +395,16 @@ i .fas .fa-tags {
   padding-right:15px;
   padding-top:2px;
   margin: 8px 10px;
+}
+
+.ql-editor {
+  padding: 22px;
+}
+.toolbar-print-icon {
+  font-size: 1.2em;
+  color: rgb(59,59,59);
+  margin-left: 4px;
+  cursor: pointer;
 }
 
 #editor #toolbar-container .ql-container .ql-editor .ql-snow{
@@ -727,12 +733,13 @@ i .fas .fa-tags {
   }
 }
 
-@media screen and (max-width: 479px) {
-  /* FUTURE STYLING FOR MOBILES */
-}
 @media print{
   
-  #themeField,
+  meta,
+  #menuField,
+  .note-field-top,
+  .note-tags-top,
+  .note-theme-top,
   .note-fav-container,
   .header-notes,
   .note-title-top,
