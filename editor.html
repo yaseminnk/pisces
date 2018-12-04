@@ -36,7 +36,7 @@
             <h1>QUIRE</h1>
         </div><br>
 
-        <div id="themeField" class="standard">
+        <div id="menuField" class="standard">
             <div id="navBar" class="flex-item container-navfield">
 
                 <div class="menu-burger">
@@ -71,12 +71,13 @@
                         <li id="deleteNoteHd"><a class="delete-note" title="Delete note">
                                 <i class="fas fa-trash"></i></a>
                         </li>
-<<<<<<< HEAD
-                            <li><button onclick="myFunction()">Print</button></li>
+                        <li id="printNote"><a class="print-note" href="#">PRINT</a></li>
+                        <li id="printNoteHd"><a class="print-note" title="Print note">
+                                <i class="fas fa-print"></i></a>
+                        </li>
+                        <!--<button id="btnPrint">Print</button></li>-->
 
-=======
                         <!--
->>>>>>> 9ede62f930a9d6c7fc7d42d7f75b28a313c06b31
                         <li>
                             <button class="dropdown-btn">THEME 
                                 <i class="fa fa-caret-down"></i>
@@ -113,21 +114,15 @@
                     <i class="fas fa-file-signature"></i>
                     <input id="noteTitle" type="text" name="title" placeholder="Untitled">
                 </div>
-                <div class="note-tags-top">
-                    <i class="fas fa-tags" title="tags"></i>
+                
+                <div class="note-tags-top" title="Give your note a tag">
+                    <i class="fas fa-tags"></i>
                     <span class="tag-holder"></span>
                     <input id="tagInput" type="text" name="tags" placeholder="add tags here">
                 </div>
 
-                <div class="note-theme-top" style="position: relative">
-                    <!--
-                    <h4 style="display: inline">Choose a Theme</h4>
-                    <button class="btn-theme btn-earth"><a id="standard" href="#">EARTH</a></button>
-                    <button class="btn-theme btn-sky"><a id="blue" href="#">SKY</a></button>
-                    <button class="btn-theme btn-fantasy"><a id="pink" href="#">FANTASY</a></button>
-                    -->
-
-                    <div class="dropdown">
+                <div class="note-theme-top">                    
+                    <div class="dropdown" title="Choose a template">
                         <button class="btn-drop">
                             Choose Template
                             <i class="fa fa-caret-down"></i>
@@ -138,30 +133,20 @@
                             <a href="#">Fantasy</a>
                         </div>
                     </div>
-                </div>
-                <!-- <form id="noteSearch">
-                    <label>
-                        <i class="fas fa-search" title="Search"></i>
-                        <input id="searchInput" type="text" name="search-title" placeholder=" Search">
-                    </label>
-                </form> -->
+                </div>                
             </div>
 
+            <div id="editor">
+            </div>
+            <!--
             <div id="toolbar-container" class="ql-container ql-snow">
-                <!-- <select class="ql-font">
-                        <option selected>Roboto</option>
-                        <option value="Mirza">Mirza</option>
-                        <option value="Aref Ruqaa">Aref Ruqaa</option>
-                        <option value="Noto Serif JP">Noto Serif JP</option>
-                        <option value="Lobster">Lobster</option>
-                        <option value="Lora">Lora</option>
-                    </select>-->
                 <div id="editor">
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum itaque explicabo vero tempore
                         commodi illum eaque architecto officiis asperiores distinctio, deserunt illo fugiat aliquid
                         nobis. Exercitationem distinctio cum soluta consequatur!</p>
                 </div>
             </div>
+            -->
         </div>
     </div>
 

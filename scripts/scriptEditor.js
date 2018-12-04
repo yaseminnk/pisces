@@ -111,7 +111,6 @@ for (i = 0; i < dropdown.length; i++) {
         }
     });
 }
-<<<<<<< HEAD
 
 /*var qlContainer = document.querySelector('.ql-container');
 
@@ -127,10 +126,16 @@ function changeTemplate() {
    console.log('hej på dig');
 }*/
 
-function myFunction() {
+var btnPrint = document.getElementById('printNote');
+var btnPrintHd = document.getElementById('printNoteHd');
+
+btnPrint.addEventListener('click', printContent);
+btnPrintHd.addEventListener('click', printContent);
+
+function printContent() {
     window.print();
 }
-=======
+
 function delete_cookie( name ) {
     document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
   }
@@ -164,4 +169,3 @@ function delete_cookie( name ) {
             }
         }
     }
->>>>>>> 9ede62f930a9d6c7fc7d42d7f75b28a313c06b31
