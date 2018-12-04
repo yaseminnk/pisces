@@ -1,0 +1,10 @@
+
+
+.ql-editor {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(222,222,222);
+}
+
+.ql-editor p {
+    font-size: 2em;
+}

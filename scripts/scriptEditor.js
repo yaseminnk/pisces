@@ -25,7 +25,7 @@ logo.addEventListener('click', takeMeHome);
 logoShort.addEventListener('click', takeMeHome);
 menuToggler.addEventListener('click', toggleMenu);
 
-for(let i = 0; i < navNewNote.length; i++) {
+for (let i = 0; i < navNewNote.length; i++) {
     navNewNote[i].addEventListener('click', focusOnTitle);
     navNotes[i].addEventListener('click', showNotesField);
 }
@@ -35,10 +35,10 @@ noteField.addEventListener('click', modNoteField);
 // CALLBACKS
 function takeMeHome() {
     delete_cookie("visitedQuire");
-    window.open('index.html','_self');
+    window.open('index.html', '_self');
 }
 
-function focusOnTitle() {    
+function focusOnTitle() {
     noteTitle.focus();
     noteTitle.setAttribute('placeholder', '');
     noteTitle.innerHTML = "";
@@ -65,9 +65,9 @@ function toggleMenu() {
 
 // Field for my notes and favorite notes
 function showNotesField() {
-    notesContainer.classList.toggle('data-container-hd');    
+    notesContainer.classList.toggle('data-container-hd');
 }
-  
+
 var navBar = document.querySelector('#navBar');
 var themeField = document.querySelector('#themeField');
 
@@ -76,7 +76,7 @@ var navNotes = document.querySelector('#navNotes');
 var navFavorites = document.querySelector('#navFavorites');
 var navSave = document.querySelector('#navSave');
 var navTrash = document.querySelector('#navTrash');
-var noteItem= document.querySelectorAll('note-item');
+var noteItem = document.querySelectorAll('note-item');
 // Theme id:s
 var stand = document.getElementById('standard');
 var green = document.getElementById('green');
@@ -100,7 +100,7 @@ var dropdown = document.getElementsByClassName("dropdown-btn");
 var i;
 
 for (i = 0; i < dropdown.length; i++) {
-    dropdown[i].addEventListener("click", function() {
+    dropdown[i].addEventListener("click", function () {
         this.classList.toggle("active");
         var dropdownContent = this.nextElementSibling;
         if (dropdownContent.style.display === "block") {
@@ -136,36 +136,57 @@ function printContent() {
     window.print();
 }
 
-function delete_cookie( name ) {
+function delete_cookie(name) {
     document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-  }
+}
 
 
 /*** DROPDOWN MENU THEME SELECTION ***/
 
-    // ANCHOR
-    var btnDrop = document.querySelector('.btn-drop');
+// ANCHORS
+var btnDrop = document.querySelector('.btn-drop');
+var tmpBus = document.getElementById('tmpBusiness');
+var tmpParty = document.getElementById('tmpParty');
+var tmpFan = document.getElementById('tmpFantasy');
+var dynStyle = document.getElementById('dynamicStylesheet');
 
-    
-    // LISTENERS
-    btnDrop.addEventListener('click', showDropTheme);
+// LISTENERS
+btnDrop.addEventListener('click', showDropTheme);
+tmpBus.addEventListener('click', changeTemplate);
+tmpParty.addEventListener('click', changeTemplate);
+tmpFan.addEventListener('click', changeTemplate);
 
 
-    // CALLBACKS
-    function showDropTheme() {
-        document.getElementById("myDropdown").classList.toggle("show");
-    }
-    // Close the dropdown menu if the user clicks outside of it
-    window.onclick = function (event) {
-        if (!event.target.matches('.btn-drop')) {
+// CALLBACKS
 
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains('show')) {
-                    openDropdown.classList.remove('show');
-                }
+function showDropTheme() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function (event) {
+    if (!event.target.matches('.btn-drop')) {
+
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
             }
         }
     }
+}
+
+/*** Change template - change dynamic stylesheet ***/
+
+function changeTemplate() {
+    
+    dynStyle.setAttribute('href', '');
+    var elId = this.id;
+
+    if (elId === 'tmpBusiness') {
+        dynStyle.setAttribute('href', 'css/stylesheetBusiness.css');        
+    }
+}      
+
+

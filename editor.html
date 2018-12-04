@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
-<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
 <html class="no-js" lang="en">
-<!--<![endif]-->
 
 <head>
     <meta charset="UTF-8">
@@ -26,6 +22,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
         crossorigin="anonymous">
     <link rel="stylesheet" href="css/stylesheetEditor.css">
+    <link id="dynamicStylesheet" rel="stylesheet" title="#">
 </head>
 
 <body>
@@ -75,8 +72,7 @@
                         <li id="printNoteHd"><a class="print-note" title="Print note">
                                 <i class="fas fa-print"></i></a>
                         </li>
-                        <!--<button id="btnPrint">Print</button></li>-->
-
+                        
                         <!--
                         <li>
                             <button class="dropdown-btn">THEME 
@@ -128,17 +124,14 @@
                             <i class="fa fa-caret-down"></i>
                         </button>
                         <div id="myDropdown" class="dropdown-content">
-                            <a href="#">Business</a>
-                            <a href="#">Party</a>
-                            <a href="#">Fantasy</a>
+                            <a id="tmpBusiness" href="#">Business</a>
+                            <a id="tmpParty" href="#">Party</a>
+                            <a id="tmpFantasy" href="#">Fantasy</a>
                         </div>
                     </div>
                 </div>                
             </div>
-
-            <div id="editor">
-            </div>
-            <!--
+            
             <div id="toolbar-container" class="ql-container ql-snow">
                 <div id="editor">
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum itaque explicabo vero tempore
@@ -146,7 +139,7 @@
                         nobis. Exercitationem distinctio cum soluta consequatur!</p>
                 </div>
             </div>
-            -->
+
         </div>
     </div>
 
