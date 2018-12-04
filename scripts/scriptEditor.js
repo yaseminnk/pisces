@@ -109,3 +109,21 @@ for (i = 0; i < dropdown.length; i++) {
         }
     });
 }
+
+/*var qlContainer = document.querySelector('.ql-container');
+
+var italic = document.getElementById('italic');
+var inherit = document.getElementById('inherit');
+
+italic.addEventListener('click', changeTemplate );
+inherit.addEventListener('click', changeTemplate);
+
+function changeTemplate() {     
+    qlContainer.setAttribute('class', ''); 
+    qlContainer.classList.toggle(this.id);  
+   console.log('hej på dig');
+}*/
+
+function myFunction() {
+    window.print();
+}
