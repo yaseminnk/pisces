@@ -89,7 +89,6 @@
         }
     };
 
-
     // notes.forEach(function(item){
     //   allNotehtmlContent += '<div class="note-item"><div class="note-title">'+ item.title +'</div><div class="note-content">'+ item.content +'</div><div class="note-created">'+ item.created +'</div></div>';
     // });
