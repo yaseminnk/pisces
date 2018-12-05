@@ -105,7 +105,7 @@
     {   
         var noteList = document.getElementsByClassName('note-lists')[0];
         noteList.innerHTML = "";
-        for(i=0; i< notes.length; i++){
+        for(var i=0; i< notes.length; i++){
              //showOnlyFavorites:true - only showing favorite notes 
              if(showOnlyFavorites){
                 if (notes[i].isFavorite == true){
