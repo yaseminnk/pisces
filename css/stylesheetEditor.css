@@ -28,7 +28,7 @@ a {
   flex-wrap: wrap;
   height: 100vh;
   padding: 0;
-  margin: 0 0 22px 0;
+  margin: 0;
   overflow: hidden;
 }
 .container-navfield {
@@ -408,7 +408,10 @@ i .fas .fa-tags {
   /*padding: 10px 20px !important;*/
   padding: 10px 0 !important;
   border: none !important;
-  border-bottom: 1px solid rgb(187,187,187) !important;    
+  /* border-bottom: 1px solid rgb(187,187,187) !important;     */
+}
+.ql-toolbar {
+  border-bottom: 1px solid rgb(187,187,187) !important; 
 }
 
 #toolbar-container {
