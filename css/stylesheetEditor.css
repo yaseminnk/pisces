@@ -570,21 +570,7 @@ i .fas .fa-tags {
   }
 }
 
-@media screen and (min-width: 769px) and (max-width: 991px) {  
-  #noteTitle {
-    width: 42%;
-  }
-  #searchInput {
-    min-width: 160px;
-  }
-  .container-navfield {
-    flex-basis: 7%;
-    min-width: 128px;
-  /*  padding: 12px 24px;*/
-  }
-  #navBar {
-    padding: 22px;
-  }
+@media screen and (min-width: 769px) and (max-width: 1099px) {
 
   #logo {
     display: none;
@@ -592,7 +578,11 @@ i .fas .fa-tags {
   #logoShortVer {
     display: block;    
     margin: 2px 0 20px 0;
-  }
+  }  
+  #navBar {
+    padding: 22px;
+  }  
+
   #newNote, #myNotes, #favNotes, #saveNote, #deleteNote, #printNote, #allTags  {
     display: none;
   }  
@@ -601,12 +591,30 @@ i .fas .fa-tags {
   }
 }
 
+@media screen and (min-width: 769px) and (max-width: 991px) {  
+  #noteTitle {
+    width: 42%;
+  }
+  #searchInput {
+    min-width: 160px;
+  }
+  .note-title-top {
+    margin-left: 4px;
+  }
+  .note-template-top {   
+    margin: 12px 0 10px 10px;
+  }
+  .container-navfield {
+    flex-basis: 7%;
+    min-width: 128px;
+  }   
+}
+
 @media screen and (max-width: 768px) {
 
   .flex-container {
     height: auto;            
-  }
-  
+  }  
   #logoBrand {
     display: block;
     width: 100%;
@@ -631,8 +639,17 @@ i .fas .fa-tags {
     flex-basis: 100%;
     height: auto;               
     overflow: hidden;
-    padding: 8px;
+    padding: 8px;    
   }
+  #themeSelection {
+    max-width: 120px;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: rgb(172,172,172);
+    padding: 8px 6px;
+    margin: 0 auto;
+  }  
+
   .container-workfield {
     flex-grow: 1;
     flex-basis: 100%;
@@ -668,7 +685,6 @@ i .fas .fa-tags {
   .note-fav-container {
     width: 100%;
   }
-
   .note-title-top {
     padding: 4px;
     margin: 6px;
@@ -679,11 +695,9 @@ i .fas .fa-tags {
     padding: 8px 12px;
     border: none;    
   }
-
   #noteTitle {
     padding: 4px 6px;    
   }
-
   #noteSearchHd {
     display: block;    
     display: none;
@@ -711,6 +725,21 @@ i .fas .fa-tags {
 
   .note-fav-container #header-notes {
     text-align: center;
+  }
+}
+
+
+@media screen and (min-width: 0px) and (max-width: 479px) {
+
+  #newNote, #myNotes, #favNotes, #saveNote, #deleteNote, #printNote, #allTags  {
+    display: none;
+  }  
+  #newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #deleteNoteHd, #printNoteHd, #allTagHd{
+    display: block;    
+  }
+  .note-template-top {
+    float: none;
+    margin: 14px 0 10px 10px;
   }
 }
 
