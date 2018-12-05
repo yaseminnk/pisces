@@ -214,12 +214,11 @@ let earth = document.getElementById('earth');
 let sky = document.getElementById('sky');
 let themeSet = document.getElementById('themeFieldset');
 let btnDrop = document.querySelector('.btn-drop');
-//let warm = document.getElementById('warm');
+let logoBrand = document.getElementById('logoBrand');
 
 // EVENT LISTENERS
 earth.addEventListener('click', changeStylesheet);
 sky.addEventListener('click', changeStylesheet);
-//warm.addEventListener('click', changeStylesheet);
 
 // CALLBACKS
 function changeStylesheet() {
@@ -230,15 +229,14 @@ function changeStylesheet() {
         menuField.setAttribute('class','earthBg');
         themeSet.style.borderColor = "rgb(102,102,102)";
         btnDrop.style.backgroundColor = "rgb(92,92,92)";
+        logoBrand.style.backgroundColor = "rgb(46,45,45)";
     } 
     else if(elId === 'sky') {
         menuField.setAttribute('class','skyBg');
         themeSet.style.borderColor = "rgb(182,182,182)";
         btnDrop.style.backgroundColor = "rgb(23, 117, 171)";
+        logoBrand.style.backgroundColor = "rgb(16, 113, 167)";
     }
-    /*
-    else if( elId === 'warm' ) {
-        menuField.setAttribute('class','warmBg');
-    }*/
+
 }		
 }
