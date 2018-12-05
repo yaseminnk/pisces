@@ -33,7 +33,7 @@
             <h1>QUIRE</h1>
         </div><br>
 
-        <div id="menuField" class="standard">
+        <div id="menuField" class="earthBg">
             <div id="navBar" class="flex-item container-navfield">
 
                 <div class="menu-burger">
@@ -79,19 +79,15 @@
                                 <i class="fas fa-print"></i></a>
                         </li>
                         
-                        <!--
-                        <li>
-                            <button class="dropdown-btn">THEME 
-                                <i class="fa fa-caret-down"></i>
-                            </button>
-                            <div class="dropdown-container">
-                                <a class="drop" id="standard" href="#">STANDARD</a>
-                                <a class="drop" id="green" href="#">GREEN</a>
-                                <a class="drop" id="blue" href="#">BLUE</a>
-                                <a class="drop" id="pink" href="#">PINK</a>
-                            </div>
-                        </li>
-                        -->
+                        <form id="themeSelection">
+                            <fieldset id="themeFieldset">
+                                <legend>THEMES</legend>						
+                                <label><input id="earth" type="radio" name="qTheme" value="earth" checked="checked"> Earth</label><br>
+                                <label><input id="sky" type="radio" name="qTheme" value="sky"> Sky</label><br>
+                                <!--<label><input id="warm" type="radio" name="qTheme" value="warm"> Warm</label>-->			
+                            </fieldset>	
+                        </form>
+                        
                     </ul>
                 </div>
             </div>
@@ -121,7 +117,7 @@
                     <input id="tagInput" type="text" name="tags" placeholder="add tags here">
                 </div>
 
-                <div class="note-theme-top">                    
+                <div class="note-template-top">                    
                     <div class="dropdown" title="Choose a template">
                         <button class="btn-drop">
                             Choose Template
