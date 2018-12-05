@@ -69,10 +69,12 @@ function showNotesField() {
     notesContainer.classList.toggle('data-container-hd');
 }
 
+// ANCHORS
+/*
 var navBar = document.querySelector('#navBar');
 var themeField = document.querySelector('#themeField');
 
-var navNewNote = document.querySelector('#navNewNote');
+var navNewNote = document.querySelector('#navNewNote'); 
 var navNotes = document.querySelector('#navNotes');
 var navFavorites = document.querySelector('#navFavorites');
 var navSave = document.querySelector('#navSave');
@@ -83,7 +85,7 @@ var stand = document.getElementById('standard');
 var green = document.getElementById('green');
 var blue = document.getElementById('blue');
 var pink = document.getElementById('pink');
-
+*/
 // EVENT LISTENERS
 /*
 stand.addEventListener('click', switchTheme); 
@@ -112,20 +114,6 @@ for (i = 0; i < dropdown.length; i++) {
         }
     });
 }
-
-/*var qlContainer = document.querySelector('.ql-container');
-
-var italic = document.getElementById('italic');
-var inherit = document.getElementById('inherit');
-
-italic.addEventListener('click', changeTemplate );
-inherit.addEventListener('click', changeTemplate);
-
-function changeTemplate() {     
-    qlContainer.setAttribute('class', ''); 
-    qlContainer.classList.toggle(this.id);  
-   console.log('hej på dig');
-}*/
 
 
 /*** We add a print icon to the toolbar ***/
@@ -165,7 +153,7 @@ function delete_cookie(name) {
 }
 
 
-/*** DROPDOWN MENU THEME SELECTION ***/
+/*** DROPDOWN MENU TEMPLATE SELECTION ***/
 
 // ANCHORS
 var btnDrop = document.querySelector('.btn-drop');
@@ -205,8 +193,7 @@ window.onclick = function (event) {
 
 /*** Change template - change dynamic stylesheet ***/
 
-function changeTemplate() {
-    
+function changeTemplate() {    
     dynStyle.setAttribute('href', '');
     var elId = this.id;
 
@@ -218,4 +205,40 @@ function changeTemplate() {
     }
 }      
 
+/*** THEME SELECTION ***/
 
+{
+// ANCHORS
+let menuField = document.querySelector('#menuField');
+let earth = document.getElementById('earth');
+let sky = document.getElementById('sky');
+let themeSet = document.getElementById('themeFieldset');
+let btnDrop = document.querySelector('.btn-drop');
+//let warm = document.getElementById('warm');
+
+// EVENT LISTENERS
+earth.addEventListener('click', changeStylesheet);
+sky.addEventListener('click', changeStylesheet);
+//warm.addEventListener('click', changeStylesheet);
+
+// CALLBACKS
+function changeStylesheet() {
+    menuField.setAttribute('class', '');
+    var elId = this.id;
+
+    if(elId === 'earth') {        
+        menuField.setAttribute('class','earthBg');
+        themeSet.style.borderColor = "rgb(102,102,102)";
+        btnDrop.style.backgroundColor = "rgb(92,92,92)";
+    } 
+    else if(elId === 'sky') {
+        menuField.setAttribute('class','skyBg');
+        themeSet.style.borderColor = "rgb(182,182,182)";
+        btnDrop.style.backgroundColor = "rgb(23, 117, 171)";
+    }
+    /*
+    else if( elId === 'warm' ) {
+        menuField.setAttribute('class','warmBg');
+    }*/
+}		
+}

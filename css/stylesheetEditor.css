@@ -21,6 +21,50 @@ a {
   text-decoration: none;
 }
 
+
+/*** BASIC STYLE ***/
+/* Theme selection*/
+.earthBg {
+  background-color:rgb(46, 45, 45);
+}
+.skyBg {
+  background-color:rgb(16, 113, 167);
+  color: rgb(247,247,247);
+}
+.warmBg {
+  background-color:rgb(247, 163, 37);
+  color: rgb(247,247,247);
+}
+
+  .xstand{
+    background-color:lightgrey;
+  }
+  /*#greenTheme*/
+  .green {
+    background-color: rgb(125, 185, 125);
+    font-style: inherit;
+    font-family:'Times New Roman', Times, serif;
+    /*letter-spacing: 1px;*/
+  }  
+  /*#blueTheme */
+  .blue{
+    background-color: rgb(135, 180, 240);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: oblique;
+    color:black !important;
+  }
+  .blue .nav-ul a{
+    color:black;
+  }  
+  /*#pinkTheme*/ 
+  .pink
+  {
+    background-color: rgb(228, 152, 196);
+    font-style:initial;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+
 /*** EDITOR RESPONSIVE LAYOUT ***/
 
 .flex-container {
@@ -46,7 +90,84 @@ a {
   display: none;
 }
 
-/* DISPLAY CONTAINER */
+
+
+/*** NAV-BAR FIELD ***/
+
+#logo {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.75);
+  padding-top: 15px;
+}
+#logoShortVer {
+  display: none;     
+  font-family: 'Libre Baskerville', serif;
+  font-size: 48px;
+  text-align: center;  
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.nav-ul a:hover, #logo:hover, #logoShortVer:hover  {
+  color: rgba(255,255,255, 0.95); 
+  cursor: pointer; 
+}
+.nav-ul {
+  padding: 0;
+}
+.nav-ul li {
+  margin-bottom: 28px;
+}
+.nav-ul li a {
+  font-size: 0.9em;
+  font-weight: 600;
+  color: rgba(255,255,255, 0.75);
+  padding: 10px;
+  text-decoration: none;
+}
+.nav-ul li a:hover {
+  opacity: 0.5;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hidden nav icons */
+#newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #deleteNoteHd, #printNoteHd, #allTagHd {
+  display: none;
+  cursor: pointer;
+  font-size: 1.45em;
+  text-align: center;
+}
+
+.fa-bars {
+  color: rgb(254,254,254);
+}        
+.menu-toggler {
+  display: none;
+}
+/* Radio theme selection */
+#themeSelection {
+  font-size: 0.85em;
+  font-weight: 600;
+  color: rgb(172,172,172);
+  padding: 8px 6px;
+}
+#themeFieldset {  
+  padding: 4px 10px;  
+  border: 2px solid rgb(102,102,102);
+}
+#themeFieldset legend {  
+  padding: 2px 4px;
+}
+#themeSelection label {
+  cursor: pointer;
+}
+#themeSelection input {
+  margin: 6px 2px;  
+}
+
+
+/*** NOTE DISPLAY CONTAINER ***/
 .note-fav-container {
     flex-basis: 8%;
     min-width: 168px;
@@ -120,76 +241,7 @@ a {
   color: rgba(255, 255, 255, 0.75);
 }
 
-
-/* New dynamic class */
-
-/* Philip note-field-light */
-
-/* .note-field-light {
-  padding: 12px 8px 18px 8px;
-  height: 80px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  border-bottom: 1px solid rgb(209, 201, 201);
-  background-color: rgb(252,252,252);
-  color: rgb(57,57,57);
-}
-
-.note-field > div {
-  padding: 12px 8px 18px 8px;
-  height: 80px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  border-bottom: 1px solid rgb(209, 201, 201);
-  background-color: rgb(61, 59, 59);
-}
-.note-field .note-title, .note-field-light .note-title {
-  padding-left: 10px;
-  padding-top: 5px;
-  margin-bottom: 8px;
-  height: 20px;
-  font-size: 0.85em; 
-  font-weight: 500;
-  cursor: pointer;
-}
-
-.note-field .note-title {
-  color: rgb(255,255,255);
-  text-shadow: 0.5px 0.5px 0 rgb(57,57,57);  
-}
-.note-field-light .note-title {
-  color: rgb(57,57,57);  
-  font-weight: 500;
-}
-
-.note-field .note-content, .note-field-light .note-content{
-  box-sizing: border-box;
-  padding-left: 10px;
-  padding-top:2px;
-  height:25px;
-  font-size:0.75em;
-  overflow: hidden;
-  white-space: nowrap;  
-}
-.note-field .note-content {
-  color: rgba(255, 255, 255, 0.75);
-}
-.note-field-light .note-content {
-  color: rgba(57,57,57);
-}
-
-.note-field .note-created, .note-field-light .note-created {
-  padding-left: 10px;
-  padding-top: 10px;
-  height:10px;
-  font-size:0.60em;  
-}
-.note-field .note-created {
-  color: rgba(255, 255, 255, 0.75);
-}
-.note-field-light .note-created {
-  color: rgba(57,57,57);
-  text-shadow: 0.5px 0.5px 0 rgb(242,242,242);  
-} */
-
+/*
 #noteSearchHd {
   display: none;
 }
@@ -201,13 +253,15 @@ a {
   border: 1px solid rgb(224,224,224);
   border-radius: 8px;
 }
+*/
 
+/*** TOP WORKSPACE FIELD ***/
 .note-field-top {  
   font-size: 1em;
   margin: 11px 8px 7px 8px;
 }
 
-.note-title-top, .note-tags-top, .note-theme-top {
+.note-title-top, .note-tags-top, .note-template-top {
   display: inline-block;
   white-space: nowrap;
 }
@@ -216,40 +270,14 @@ a {
   padding: 6px 10px;
 }
 
-.note-theme-top {
+.note-template-top {
   min-width: 150px;
   margin-left: 22px;
 }
-.note-theme-top h4 {
+.note-template-top h4 {
   color: rgb(107,107,107);
   margin-right: 22px;
 }
-
-.btn-theme {
-  padding: 6px 12px;
-  background-color: rgb(134,134,134);  
-  border-radius: 4%;
-}
-.btn-theme a {
-  color: rgb(255,255,255);
-}
-.btn-earth {
-  background-color: rgb(114,114,114);  
-  color: rgb(255,255,255);
-}
-.btn-sky {
-  background-color: rgb(44,44,254);
-  font-family: serif;
-  background-color: rgb(114,114,114);  
-  color: rgb(255,255,255);
-}
-.btn-fantasy {
-  font-family: fantasy;
-  background-color: rgb(254,44,44);
-  background-color: rgb(114,114,114);  
-  color: rgb(255,255,255);
-}
-
 
 /*** STYLING DROP DOWN THEME SELECTION ***/
 .dropdown-btn {
@@ -268,7 +296,7 @@ a {
 
 .btn-drop {
   background-color: #3498DB;
-  background-color: rgb(84,84,84);
+  background-color: rgb(92,92,92);
   color: rgb(248,248,248);
   padding: 8px 12px;
   font-size: 0.8em;
@@ -277,7 +305,7 @@ a {
   white-space: nowrap;
 }
 .btn-drop:hover, .btn-drop:focus {           
-  background-color: rgb(74,74,74); 
+  background-color: rgb(77,77,77); 
   color: rgb(255,255,255);
 }
 .btn-drop i {
@@ -309,8 +337,32 @@ a {
 .show {
   display: block;
 }
+
+/*dropdown menu*/
+.dropdown-container {
+  display: none;
+  padding-left: 8px;
+}
+.drop{
+  display:block;
+  text-decoration: none;
+  font-size: 0.85em;
+  padding:5px;
+  color:rgb(255,255,255);
+  margin-left:10px;
+}
 /****************************************/
 
+/*
+.btn-earth {
+  background-color: rgb(46,45,45);  
+  color: rgba(255,255,255, 0.75)
+}
+.btn-sky {
+  background-color: rgb(85, 85, 240);
+  color: rgb(247,247,247);
+}
+*/
 
 #noteTitle {
   font-size: 1.1em;
@@ -323,7 +375,6 @@ a {
   border: 1px solid lightgrey !important;
   border-radius: 8px;
 }
-
 .tag-holder {
   display: inline;
   min-width: 20px;
@@ -380,8 +431,7 @@ span.tag-container { /*2018/12/04*/
   opacity: 0.5;
 }
 i .fas .fa-tags {
-  padding-top: 5px;
-  
+  padding-top: 5px;  
 }
 
 #noteTitle:active, #noteTitle:focus {
@@ -405,8 +455,7 @@ i .fas .fa-tags {
 /* CHECK THIS FURTHER!!! */
 .ql-toolbar, .ql-snow {
   background: rgb(255,255,255);            
-  /*padding: 10px 20px !important;*/
-  padding: 10px 0 !important;
+  /*padding: 10px 20px !important */ 
   border: none !important;
   /* border-bottom: 1px solid rgb(187,187,187) !important;     */
 }
@@ -435,7 +484,11 @@ i .fas .fa-tags {
   margin-left: 4px;
   cursor: pointer;
 }
+.toolbar-print-icon:hover {
+  opacity: 0.8;
+}
 
+/*** GOOGLE FONTS ***/
 #editor #toolbar-container .ql-container .ql-editor .ql-snow{
   font-family: "Roboto";  
 }
@@ -477,118 +530,17 @@ i .fas .fa-tags {
   font-family: "Lora";
 }
 /* We do not set Roboto since it is the default font */
+/*****************************************************/
 
 
-
-/*** NAV-BAR FIELD ***/
-
-#logo {
-  font-family: 'Libre Baskerville', serif;
-  font-size: 32px;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.75);
-  padding-top: 15px;
-}
-#logoShortVer {
-  display: none;     
-  font-family: 'Libre Baskerville', serif;
-  font-size: 48px;
-  text-align: center;  
-  color: rgba(255, 255, 255, 0.75);
-}
-
-.nav-ul a:hover, #logo:hover, #logoShortVer:hover  {
-  color: rgba(255,255,255, 0.95); 
-  cursor: pointer; 
-}
-.nav-ul {
-  padding: 0;
-
-}
-.nav-ul li {
-  margin-bottom: 28px;
-}
-.nav-ul li a {
-  font-size: 0.9em;
-  font-weight: 600;
-  color: rgba(255,255,255, 0.75);
-  padding: 10px;
-  text-decoration: none;
-}
-.nav-ul li a:hover {
-  opacity: 0.5;
-  transition: all 0.3s ease-in-out;
-}
-
-/* Hidden nav icons */
-#newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #deleteNoteHd, #printNoteHd, #allTagHd {
-  display: none;
-  cursor: pointer;
-  font-size: 1.45em;
-  text-align: center;
-}
-
-.fa-bars {
-  color: rgb(255,255,255);
-}        
-.menu-toggler {
-  display: none;
-}
-
-/* CHANGE THEME*/
-
-/*dropdown menu*/
-.dropdown-container {
-  display: none;
-  padding-left: 8px;
-}
-.drop{
-  display:block;
-  text-decoration: none;
-  font-size: 0.85em;
-  padding:5px;
-  color:rgb(255,255,255);
-  margin-left:10px;
-}
 /* Optional: Style the caret down icon */
 .fa-caret-down {
   float: right;
 }
 .active {
-  /*background-color: grey;*/
-  /*color:white;*/
   text-decoration: none;
 }
-.standard {
-  background-color:rgb(46, 45, 45);
-  }
-  .xstand{
-    background-color:lightgrey;
-  }
-  /*#greenTheme*/
-  .green {
-    background-color: rgb(125, 185, 125);
-    font-style: inherit;
-    font-family:'Times New Roman', Times, serif;
-    /*letter-spacing: 1px;*/
-  }  
-  /*#blueTheme */
-  .blue{
-    background-color: rgb(135, 180, 240);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-style: oblique;
-    color:black !important;
-  }
-  .blue .nav-ul a{
-    color:black;
-  }  
-  /*#pinkTheme*/ 
-  .pink
-  {
-    background-color: rgb(228, 152, 196);
-    font-style:initial;
-    font-family: Arial, Helvetica, sans-serif;
-  }
+
   
 
 /*** MEDIA QUERIES ***/
@@ -670,7 +622,7 @@ i .fas .fa-tags {
     width: 100%;
     padding: 6px 12px;
   }
-  .note-theme-top {
+  .note-template-top {
     float: right;
   }
   
@@ -768,7 +720,7 @@ i .fas .fa-tags {
   #menuField,
   .note-field-top,
   .note-tags-top,
-  .note-theme-top,
+  .note-template-top,
   .note-fav-container,
   .header-notes,
   .note-title-top,
