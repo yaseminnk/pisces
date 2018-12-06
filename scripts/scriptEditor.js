@@ -190,7 +190,7 @@
     function showDropTheme() {
         document.getElementById("myDropdown").classList.toggle("show");
     }
-    // Close the dropdown menu if the user clicks outside of it
+    // Close the dropdown menu if the user clicks outside of
     window.onclick = function (event) {
         if (!event.target.matches('.btn-drop')) {
 
@@ -280,3 +280,6 @@ var quill = new Quill('#editor', {
     }
 });
 */
+
+
+

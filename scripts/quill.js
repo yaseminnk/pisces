@@ -38,7 +38,31 @@ theme: 'snow'
     placeholder: 'write here...',
     theme: 'snow'
   });
+  var Delta = Quill.import('delta');
 
+// quill.clipboard.addMatcher(Node.TEXT_NODE, function(node, delta) {
+//   //console.log(node.data);
+//   var converter = new showdown.Converter(),
+//   text      = node.data,
+//   html      = converter.makeHtml(text);
+//   quill.root.innerHTML = html;
+//   //quill.clipboard.dangerouslyPasteHTML(5, html)
+//   return delta.compose(new Delta().retain(delta.length(), { bold: true }));
+// });
+
+function pasteMarkdown () {
+  navigator.clipboard.readText()
+  .then(text => {
+    console.log('Pasted content: ', text);
+  })
+  .catch(err => {
+    console.error('Failed to read clipboard contents: ', err);
+  });
+  var converter = new showdown.Converter(),
+  text      = '',
+  html      = converter.makeHtml(text);
+  quill.root.innerHTML = html;
+}
 
 
 

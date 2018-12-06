@@ -79,7 +79,7 @@ body {
 .container-navfield {
   flex-basis: 8%;
   min-width: 102px; 
-  padding: 0 20px;
+  /* padding: 0 20px; */
   margin: 0;
   outline: none;
 }
@@ -788,6 +788,10 @@ i .fas .fa-tags {
   .ql-toolbar{
   display:none;
     }
+   .ql-editor {
+     margin: 5%;
+ 
+   } 
   }
  
   
