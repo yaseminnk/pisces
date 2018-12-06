@@ -2,9 +2,15 @@
 
 .ql-editor {
     font-family: 'Courier New', Courier, monospace;
-    background-color: rgb(222,222,222);
+    line-height: 2em;
+    background-color: rgb(242,242,242);
+    padding: 36px 98px;    
 }
 
+.ql-editor h1, .ql-editor h2, .ql-editor h3, .ql-editor h4 {
+    color: rgb(77,77,77);
+    box-shadow: 1px 1px 0.5 rgb(102,102,102);
+} 
 .ql-editor p {
-    font-size: 2em;
+    font-size: 1.1em;
 }

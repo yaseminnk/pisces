@@ -35,7 +35,7 @@
             <h1>QUIRE</h1>
         </div><br>
 
-        <div id="menuField" class="standard">
+        <div id="menuField" class="earthBg">
             <div id="navBar" class="flex-item container-navfield">
 
                 <div class="menu-burger">
@@ -56,8 +56,8 @@
                         <li id="myNotesHd"><a class="nav-notes" title="My notes">
                                 <i class="far fa-file"></i></a></li>
 
-                        <li id="favNotes"><a class="nav-favorites" href="#">FAVORITES</a></li>
-                        <li id="favNotesHd"><a class="nav-favorites" title="My favorites">
+                        <li id="favNotes" onclick="showNotesField()"><a class="nav-favorites" href="#">FAVORITES</a></li>
+                        <li id="favNotesHd" onclick="showNotesField()"><a class="nav-favorites" title="My favorites">
                                 <i class="far fa-star" title="Mark as favorite"></i></a>
                         </li>
 
@@ -70,37 +70,35 @@
                         <li id="deleteNoteHd"><a class="delete-note" title="Delete note">
                                 <i class="fas fa-trash"></i></a>
                         </li>
+
+                        <li id="allTags" onclick="showNotesField()"><a class="all-tags" href="#">TAGS</a></li>  <!--/*2018/12/04*/-->
+                        <li id="allTagHd" onclick="showNotesField()" ><a class="all-tags" title="All tags">
+                            <i class="fas fa-tag" title="All tags"></i></a>
+                        </li>
+                        
                         <li id="printNote"><a class="print-note" href="#">PRINT</a></li>
                         <li id="printNoteHd"><a class="print-note" title="Print note">
                                 <i class="fas fa-print"></i></a>
                         </li>
-                        
-                        <!--
-                        <li>
-                            <button class="dropdown-btn">THEME 
-                                <i class="fa fa-caret-down"></i>
-                            </button>
-                            <div class="dropdown-container">
-                                <a class="drop" id="standard" href="#">STANDARD</a>
-                                <a class="drop" id="green" href="#">GREEN</a>
-                                <a class="drop" id="blue" href="#">BLUE</a>
-                                <a class="drop" id="pink" href="#">PINK</a>
-                            </div>
-                        </li>
-                        -->
-                    </ul>
+                        </ul>
+                        <form id="themeSelection">
+                            <fieldset id="themeFieldset">
+                                <legend>THEMES</legend>						
+                                <label><input id="earth" type="radio" name="qTheme" value="earth" checked="checked"> Earth</label><br>
+                                <label><input id="sky" type="radio" name="qTheme" value="sky"> Sky</label><br>
+                                <!--<label><input id="warm" type="radio" name="qTheme" value="warm"> Warm</label>-->			
+                            </fieldset>	
+                        </form>                  
                 </div>
             </div>
         </div>
 
         <div class="note-fav-container data-container-hd">
-
             <div class="header-notes">
                 My Notes
             </div>
             <div class="note-lists note-field note-field-hd">
             </div>
-
             <div class="favorite-field favorite-field-hd">
             </div>
         </div>
@@ -119,13 +117,14 @@
                     <input id="tagInput" type="text" name="tags" placeholder="add tags here">
                 </div>
 
-                <div class="note-theme-top">                    
+                <div class="note-template-top">                    
                     <div class="dropdown" title="Choose a template">
                         <button class="btn-drop">
                             Choose Template
                             <i class="fa fa-caret-down"></i>
                         </button>
                         <div id="myDropdown" class="dropdown-content">
+                            <a id="tmpDefault" href="#">Default</a>
                             <a id="tmpBusiness" href="#">Business</a>
                             <a id="tmpParty" href="#">Party</a>
                             <a id="tmpFantasy" href="#">Fantasy</a>
@@ -143,7 +142,6 @@
                         nobis. Exercitationem distinctio cum soluta consequatur!</p>
                 </div>
             </div>
-
         </div>
     </div>
 

@@ -17,7 +17,7 @@ btnGetStarted.addEventListener('click', function() {
 
 
 // check if there are cookies and if so redirect the user to the editor
-/*
+
 var values = document.cookie;
 
 if( values.indexOf("visitedQuire=") === -1 ) {
@@ -28,4 +28,4 @@ if( values.indexOf("visitedQuire=") === -1 ) {
     //document.cookie = "visitedQuire=false"; // setting cookie
     window.open('editor.html', '_self');
  }
- */
+

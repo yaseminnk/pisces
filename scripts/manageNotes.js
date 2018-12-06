@@ -89,7 +89,6 @@
         }
     };
 
-
     // notes.forEach(function(item){
     //   allNotehtmlContent += '<div class="note-item"><div class="note-title">'+ item.title +'</div><div class="note-content">'+ item.content +'</div><div class="note-created">'+ item.created +'</div></div>';
     // });
@@ -101,79 +100,142 @@
     });
 
     // -----**** Updates All notes view **** ------    
-    function showNotes(showOnlyFavorites)
+    function showNotes(showOnlyFavorites,selectedTag) // -----**** 2018/12704  **** ------ 
     {   
         var noteList = document.getElementsByClassName('note-lists')[0];
         noteList.innerHTML = "";
         for(i=0; i< notes.length; i++){
-            if(showOnlyFavorites){
+             //showOnlyFavorites:true - only showing favorite notes 
+             if(showOnlyFavorites){
                 if (notes[i].isFavorite == true){
                     noteList.append(noteElement(notes[i])); 
                 }  
             }
             else{
-                noteList.append(noteElement(notes[i]));
+                //selectedTag:value - only showing notes tagged with value 
+                if(selectedTag)
+                {
+                    if(notes[i].tags.indexOf(selectedTag) !== -1)
+                    {
+                        noteList.append(noteElement(notes[i]));
+                    }
+                }
+                //selectedTag:undefined - showing all notes
+                else
+                {
+                    noteList.append(noteElement(notes[i]));
+                }
             }
         }
 
         if(showOnlyFavorites){
             document.getElementsByClassName('header-notes')[0].innerText = "Favorite Notes";  
         } else {
-            document.getElementsByClassName('header-notes')[0].innerText = "My Notes"; 
+            if(selectedTag) {
+                document.getElementsByClassName('header-notes')[0].innerText = "Notes Tagged With " + selectedTag;
+            } 
+            else {
+                document.getElementsByClassName('header-notes')[0].innerText = "My Notes"; 
+            }
+            
         }
 
     }
-    
-    //show only favoties
-    // function myFavorite() {
-    //     var favNote = document.getElementsByClassName('note-lists')[0];
-    //     favNote.innerHTML = "";
-    //     for (var i = 0; i < notes.length; i++) {
-    //         if (notes[i].isFavorite == true){
-    //             favNote.append(noteElement(notes[i])); 
-    //         } 
-    //     }
-    // };
 
     // -----**** Selecting a specific note to display on editor **** ------  
     function selectNote (noteId) {
-    currentNoteId = noteId;
-        for (var i = 0; i < notes.length; i++) {
-            if (notes[i].id == noteId )
-            {
-                document.getElementById('noteTitle').value =  notes[i].title ; //set title to Title field
-                quill.root.innerHTML = notes[i].contentHtml; //set contentHtml to quill editor
-
-                var tagHolder = document.getElementsByClassName('tag-holder')[0];
-                tagHolder.innerHTML = "";
-                // Creating two span for showing tag value and remove icon
-                for(var j= 0; j < notes[i].tags.length; j++) {
-                    var tagContainer = document.createElement("SPAN");
-                    tagContainer.setAttribute("class", "tag-container");
-
-                    var tagValueSpan = document.createElement("SPAN");
-                    tagValueSpan.setAttribute("class", "tag-value");
-                    tagValueSpan.innerHTML = notes[i].tags[j];
-
-                    var iconTagRemove = document.createElement('i');
-                    iconTagRemove.className = "fas fa-times icon-remove"; 
-                    //iconTagRemove.onclick = function() { removeTag(); };
-
-                    tagContainer.appendChild(tagValueSpan);
-                    tagContainer.appendChild(iconTagRemove);
-
-                    tagHolder.appendChild(tagContainer);
+        currentNoteId = noteId;
+            for (let i = 0; i < notes.length; i++) {
+                if (notes[i].id == noteId )
+                {
+                    document.getElementById('noteTitle').value =  notes[i].title ; //set title to Title field
+                    quill.root.innerHTML = notes[i].contentHtml; //set contentHtml to quill editor
+    
+                    var tagHolder = document.getElementsByClassName('tag-holder')[0];
+                    tagHolder.innerHTML = "";
+                    // Creating two span for showing tag value and remove icon
+                    for(let j= 0; j < notes[i].tags.length; j++) {
+                        var tagContainer = document.createElement("SPAN");
+                        tagContainer.setAttribute("class", "tag-container");
+    
+                        var tagValueSpan = document.createElement("SPAN");
+                        tagValueSpan.setAttribute("class", "tag-value");
+                        tagValueSpan.innerHTML = notes[i].tags[j];
+    
+                        var iconTagRemove = document.createElement('i');
+                        iconTagRemove.setAttribute("class", "fas fa-times icon-tag-remove"); 
+                        iconTagRemove.onclick = function() { removeTag(currentNoteId,notes[i].tags[j]); };
+                       
+    
+                        tagContainer.appendChild(tagValueSpan);
+                        tagContainer.appendChild(iconTagRemove);
+    
+                        tagHolder.appendChild(tagContainer);
+                    }
+                    document.getElementById('tagInput').value = "";
+                    break;
                 }
-                document.getElementById('tagInput').value = "";
-                break;
             }
         }
+    
+
+    // -----****Removing specific tag **** ------ 
+    // -----**** 2018/12/04  **** ------
+    function removeTag(noteId,tagValue) {
+        
+        for (var i = 0; i < notes.length; i++) {
+            if(notes[i].id == noteId){
+                var tagLength = notes[i].tags.length;
+                for (var j = 0; j < tagLength; j++){
+                    if(notes[i].tags[j] === tagValue){
+                        notes[i].tags.splice(j,1);
+                        break;
+                    }
+                }
+                saveAllNotes();
+                selectNote(noteId);
+                break;
+            }
+            
+        }
+    }
+    
+
+    // -----****Showing all tags **** ------ 
+
+    document.getElementById('allTags').addEventListener('click', showAllTags);
+
+    function showAllTags() {
+        
+        var allTags = [];
+        for(var i = 0; i < notes.length; i++){
+            for( var j = 0; j < notes[i].tags.length; j++) {
+                var tagValue = notes[i].tags[j];
+                if(allTags.indexOf(tagValue) === -1){
+                    allTags.push(tagValue);
+                }
+            }
+        }
+        allTags.sort();
+
+        var list = document.getElementsByClassName('note-lists')[0];
+        list.innerHTML = "";
+        for(let i = 0; i < allTags.length; i++){
+            var divTagItem = document.createElement('div');
+            divTagItem.setAttribute("class", "note-tags");
+            divTagItem.onclick = function() { showNotesWithSpecificTag(allTags[i]); };
+            divTagItem.append(allTags[i]);
+
+            list.append(divTagItem);
+        }
+        document.getElementsByClassName('header-notes')[0].innerText = "All Tags";
     }
 
-    // -----****Removing specific tag **** ------  
-    // function removeTag() {
-
-    // }
+    // -----**** Showing all notes with a specific tag **** ------  
+    
+    function showNotesWithSpecificTag(tagName) {
+        showNotes(false,tagName);
+    }
 
 
 
