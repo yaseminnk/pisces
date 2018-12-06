@@ -36,25 +36,23 @@
     }
     noteField.addEventListener('click', modNoteField);
 
-    // we need to calculate a dynamic max-width for the editor depending on the window prop inner width
+    // We calculate max-width for the editor using the window prop innerWidth
     window.onload = adjustWidth;
+    window.addEventListener('resize', adjustWidth);
+
     function adjustWidth() {
-        let foo = document.querySelector('.container-workfield');
-        let InnerW = window.innerWidth;
-        let bar = InnerW + "px";
-        console.log(InnerW);
+        let conWorkfield = document.querySelector('.container-workfield');
+        let innerW = window.innerWidth;
+        let adjustedInnerWidthSm = (innerW - 18) + "px";
+        let adjustedInnerWidthLg = (innerW - 146) + "px";
         
-        // we check if certain class property is true
-        // if so we adjust width
-        /*
-        if() {
-
-        }
-        */
-
-        foo.style.maxWidth = bar;        
+        if( innerWidth <= 769 ) {
+            conWorkfield.style.maxWidth = adjustedInnerWidthSm;   
+        } else {
+            conWorkfield.style.maxWidth = adjustedInnerWidthLg;
+        }              
     }
-
+    
     // function to count and display keypresses
     var characters = 0;
 
@@ -149,7 +147,7 @@
 
     let toolPrint = document.getElementById('toolbarPrintNote');
     //let btnPrint = document.getElementById('printNote');
-    //let btnPrintHd = document.getElementById('printNoteHd');
+    let btnPrintHd = document.getElementById('printNoteHd');
 
     toolPrint.addEventListener('click', printContent);
     //btnPrint.addEventListener('click', printContent);

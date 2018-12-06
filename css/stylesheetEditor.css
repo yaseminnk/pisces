@@ -79,9 +79,8 @@ body {
 .container-navfield {
   flex-basis: 8%;
   min-width: 102px; 
-  padding: 0 20px;
+  padding: 0 12px;
   margin: 0;
-  outline: none;
 }
 
 
@@ -449,8 +448,8 @@ i .fas .fa-tags {
 }
 
 .container-workfield {
-  width: auto !important;
-  max-width: 1528px;
+  width: auto;
+  /*max-width: 1528px;*/
   flex-basis: 68%;
   flex-grow: 1;
   /*border-right: 1px solid rgb(142,142,142);*/
@@ -493,7 +492,8 @@ i .fas .fa-tags {
 }
 
 .ql-editor {
-  padding: 22px;
+  padding: 32px 42px 32px 32px;
+  height: -webkit-fill-available;
 }
 .toolbar-print-icon {
   font-size: 1.2em;
