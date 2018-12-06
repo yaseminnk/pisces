@@ -1,0 +1,36 @@
+.ql-editor {
+    font-family:'Times New Roman', Times, serif;
+    background-color: aqua;
+}
+
+.ql-editor p {
+    font-family: 'crafty girls';
+    color: rgb(129, 90, 236);
+    font-size: 3em;
+}
+.ql-snow .ql-editor h1{
+    font-style: inherit;
+    font-weight: bold;
+    font-family: 'crafty girls';
+    font-weight: bold;
+    color:rgb(230, 79, 230);
+    font-size:6em;
+}
+.ql-snow .ql-editor h2{
+    color:rgb(46, 106, 216);
+    font-weight: bold;
+    font-family: 'crafty girls';
+    font-size:4em;
+}
+.ql-snow .ql-editor h3{
+    font-weight: bold;
+    color:green;
+    font-family: 'crafty girls';
+    font-size:2em;
+}
+.ql-snow .ql-editor h4{
+    font-weight: bold;
+    color:rgb(255, 94, 0);
+    font-family: 'crafty girls';
+    font-size:2em;
+}

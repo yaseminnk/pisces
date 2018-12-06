@@ -215,6 +215,15 @@
         else if (elId === 'tmpBusiness') {
             dynStyle.setAttribute('href', 'css/stylesheetBusiness.css');
         }
+        else if (elId === 'tmpParty') {
+            dynStyle.setAttribute('href', 'css/stylesheetParty.css');
+        }
+        else if (elId === 'tmpFantasy') {
+            dynStyle.setAttribute('href', 'css/stylesheetFantasy.css');
+        }
+        else if (elId === 'tmpPlayful') {
+            dynStyle.setAttribute('href', 'css/stylesheetPlayful.css');
+        }
     }
 }
 
@@ -278,6 +287,9 @@ var quill = new Quill('#editor', {
     }
 });
 */
-
-
+var statistic = document.querySelector('.all-stat');
+statistic.addEventListener('click', countNotes);
+function countNotes() {
+   alert(notes.length);
+}
 

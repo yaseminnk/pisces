@@ -1,0 +1,26 @@
+.ql-editor {
+    font-family:'Rationale';
+ 
+}
+.ql-editor p {
+    font-family: 'Rationale';
+    font-size: 3em;
+}
+.ql-snow .ql-editor h1{
+    font-style: inherit;
+    font-weight: bold;
+    font-family: 'Rationale';
+    font-size:6em;
+}
+.ql-snow .ql-editor h2{
+    color:black;
+    font-family: 'Rationale';
+    font-size:3em;
+}
+.ql-snow .ql-editor h3{
+    color:black;
+    font-family: "Rationale";
+    font-size:2em;
+}
+
+
