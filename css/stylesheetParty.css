@@ -1,0 +1,25 @@
+.ql-editor {
+    font-family:'Times New Roman', Times, serif;
+    background-color:black;
+}
+
+.ql-editor p {
+    font-family: 'Charmonman';
+    color: white;
+    font-size: 3em;
+}
+.ql-snow .ql-editor h1{
+    color:rgb(205, 72, 218);
+    font-family: 'Lemon';
+    font-size:6em;
+}
+.ql-snow .ql-editor h2{
+    color:rgb(205, 72, 218);
+    font-family: 'Lemon';
+    font-size:3em;
+}
+.ql-snow .ql-editor h3{
+    color:black;
+    font-family: "Lemon";
+    font-size:2em;
+}
