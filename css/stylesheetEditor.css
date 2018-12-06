@@ -24,6 +24,9 @@ a {
 
 /*** BASIC STYLE ***/
 /* Theme selection*/
+body {
+  background-color:rgb(46, 45, 45);
+}
 .earthBg {
   background-color:rgb(46, 45, 45);
 }
@@ -67,19 +70,20 @@ a {
 /*** EDITOR RESPONSIVE LAYOUT ***/
 
 .flex-container {
-  display: flex;            
+  display: flex;   
+  background-color: rgb(255,255,255);         
   /*flex-wrap: wrap;*/
-  height: 100vh;
+  height: 100%;
   width: auto;
   width: -webkit-fill-available;  
   padding: 0;
   margin: 0 0 22px 0;
-  /*overflow: hidden;*/
+  border-right: 1px solid rgb(182,182,182);
 }
 .container-navfield {
   flex-basis: 8%;
-  min-width: 152px; 
-  padding: 0 22px;
+  min-width: 102px; 
+  padding: 0 20px;
   margin: 0;
   outline: none;
 }
@@ -132,8 +136,8 @@ a {
 }
 
 /* Hidden nav icons */
-#newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #deleteNoteHd, #printNoteHd, #allTagHd {
-  display: none;
+#newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #deleteNoteHd, #printNoteHd, #allTagsHd, #allStatHd {
+  /*display: none;*/
   cursor: pointer;
   font-size: 1.45em;
   text-align: center;
@@ -147,7 +151,7 @@ a {
 }
 /* Radio theme selection */
 #themeSelection {
-  max-width: 102px;
+  max-width: 98px;
   font-size: 0.85em;
   font-weight: 600;
   color: rgb(172,172,172);
@@ -450,18 +454,29 @@ i .fas .fa-tags {
   max-width: 1528px;
   flex-basis: 68%;
   flex-grow: 1;
+<<<<<<< HEAD
   border-right: 1px solid rgb(142,142,142);
+=======
+  /*border-right: 1px solid rgb(142,142,142);*/
+>>>>>>> aa6bc544c673ceac37ff40847b06a22933f50da3
 }          
   
 /*** WORK FIELD ***/
-      
 
 /* CHECK THIS FURTHER!!! */
+<<<<<<< HEAD
 .ql-toolbar, .ql-snow {  
+=======
+/*.ql-toolbar, .ql-snow {  
+>>>>>>> aa6bc544c673ceac37ff40847b06a22933f50da3
   background: rgb(255,255,255);            
   border: none !important;
   border-bottom: 1px solid rgb(187,187,187) !important;    
+} */
+.ql-formats {
+  padding: 2px;
 }
+<<<<<<< HEAD
 .ql-formats {
   padding: 2px;
 }
@@ -473,6 +488,24 @@ i .fas .fa-tags {
 }
 #editor {
   box-sizing: border-box;
+=======
+/*
+.ql-contain {
+  width: auto !important;
+}*/
+#toolbar-container {
+  border-top: 1px solid rgb(187,187,187) !important;
+}
+/*** Editor ***/
+.ql-container.ql-snow {
+  border: none !important;
+}
+
+
+#editor {
+  box-sizing: border-box;
+  height: fit-content;
+>>>>>>> aa6bc544c673ceac37ff40847b06a22933f50da3
 }
 
 /*** Toolbar google fonts ***/
@@ -496,7 +529,11 @@ i .fas .fa-tags {
 }
 
 /*** GOOGLE FONTS ***/
+<<<<<<< HEAD
 #editor #toolbar-container .ql-container .ql-editor .ql-snow{
+=======
+#editor #toolbar-container .ql-container .ql-editor .ql-snow {
+>>>>>>> aa6bc544c673ceac37ff40847b06a22933f50da3
   font-family: "Roboto";  
 }
 
@@ -562,7 +599,6 @@ i .fas .fa-tags {
     padding: 0 4px 0 10px;
     margin: 14px 0 8px 0;
   }
-
   #searchInput {
     min-width: 200px;
   }
@@ -592,12 +628,20 @@ i .fas .fa-tags {
   #navBar {
     padding: 22px 10px;
   }  
+<<<<<<< HEAD
+=======
+  /*
+>>>>>>> aa6bc544c673ceac37ff40847b06a22933f50da3
   #newNote, #myNotes, #favNotes, #saveNote, #deleteNote, #printNote, #allTags  {
     display: none;
   }  
   #newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #deleteNoteHd, #printNoteHd, #allTagHd{
     display: block;    
   }
+<<<<<<< HEAD
+=======
+  */
+>>>>>>> aa6bc544c673ceac37ff40847b06a22933f50da3
   #themeSelection {   
     padding: 8px 16px;
   }
@@ -751,13 +795,21 @@ i .fas .fa-tags {
 
 
 @media screen and (min-width: 0px) and (max-width: 479px) {
+<<<<<<< HEAD
 
+=======
+  /*
+>>>>>>> aa6bc544c673ceac37ff40847b06a22933f50da3
   #newNote, #myNotes, #favNotes, #saveNote, #deleteNote, #printNote, #allTags  {
     display: none;
   }  
   #newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #deleteNoteHd, #printNoteHd, #allTagHd{
     display: block;    
   }
+<<<<<<< HEAD
+=======
+  */
+>>>>>>> aa6bc544c673ceac37ff40847b06a22933f50da3
   .note-template-top {
     float: none;
     margin: 14px 0 10px 10px;
@@ -765,7 +817,10 @@ i .fas .fa-tags {
 }
 
 @media print{
+<<<<<<< HEAD
   
+=======
+>>>>>>> aa6bc544c673ceac37ff40847b06a22933f50da3
   meta,
   #menuField,
   .note-field-top,

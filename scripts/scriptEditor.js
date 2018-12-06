@@ -3,6 +3,10 @@
 /**************************/
 
 // NEW SCOPE ***//
+<<<<<<< HEAD
+=======
+{
+>>>>>>> master
     // ANCHORS 
     let logo = document.getElementById('logo');
     let logoShort = document.getElementById('logoShortVer');
@@ -25,7 +29,7 @@
     // EVENT LISTENERS 
     //edt.addEventListener('keypress', charCounter);
 
-    logo.addEventListener('click', takeMeHome);
+    //logo.addEventListener('click', takeMeHome);
     logoShort.addEventListener('click', takeMeHome);
     menuToggler.addEventListener('click', toggleMenu);
 
@@ -36,8 +40,22 @@
     noteField.addEventListener('click', modNoteField);
 
     // we need to calculate a dynamic max-width for the editor depending on the window prop inner width
-    function doStuff() {
-        //
+    window.onload = adjustWidth;
+    function adjustWidth() {
+        let foo = document.querySelector('.container-workfield');
+        let InnerW = window.innerWidth;
+        let bar = InnerW + "px";
+        console.log(InnerW);
+        
+        // we check if certain class property is true
+        // if so we adjust width
+        /*
+        if() {
+
+        }
+        */
+
+        foo.style.maxWidth = bar;        
     }
 
     // function to count and display keypresses
@@ -57,7 +75,6 @@
             .filter(function (n) { return n != '' })
             .length;
     }
-
 
     // CALLBACKS
     function takeMeHome() {
@@ -110,7 +127,7 @@
             }
         });
     }
-
+}
 
 /*** NEW SCOPE ***/
 {
@@ -133,12 +150,12 @@
     qlContainer.appendChild(elSpan);
 
     let toolPrint = document.getElementById('toolbarPrintNote');
-    let btnPrint = document.getElementById('printNote');
-    let btnPrintHd = document.getElementById('printNoteHd');
+    //let btnPrint = document.getElementById('printNote');
+    //let btnPrintHd = document.getElementById('printNoteHd');
 
     toolPrint.addEventListener('click', printContent);
-    btnPrint.addEventListener('click', printContent);
-    btnPrintHd.addEventListener('click', printContent);
+    //btnPrint.addEventListener('click', printContent);
+    //btnPrintHd.addEventListener('click', printContent);
 
     // CALLBACK PRINT FUNCTION
     function printContent() {
@@ -151,7 +168,6 @@
 }
 
 
-
 /*** NEW SCOPE ***/
 {
     // ANCHORS
@@ -160,9 +176,7 @@
     let tmpBus = document.getElementById('tmpBusiness');
     let tmpParty = document.getElementById('tmpParty');
     let tmpFan = document.getElementById('tmpFantasy');
-    let tmpPlay = document.getElementById('tmpPlayful');
     let dynStyle = document.getElementById('dynamicStylesheet');
-
 
 
     // LISTENERS
@@ -172,6 +186,29 @@
     tmpParty.addEventListener('click', changeTemplate);
     tmpFan.addEventListener('click', changeTemplate);
     tmpPlay.addEventListener('click', changeTemplate);
+
+    function changeTemplate() {
+        dynStyle.setAttribute('href', '');
+        var elId = this.id;
+
+        if (elId === 'tmpDeafult') {
+            dynStyle.setAttribute('href', '#');
+        }
+        else if (elId === 'tmpBusiness') {
+            dynStyle.setAttribute('href', 'css/stylesheetBusiness.css');
+        }
+        else if (elId === 'tmpParty'){
+            dynStyle.setAttribute('href', 'css/stylesheetParty.css');
+        }
+        else if (elId === 'tmpFantasy'){
+            dynStyle.setAttribute('href', 'css/stylesheetFantasy.css');
+        }
+        else if (elId === 'tmpPlayful'){
+            dynStyle.setAttribute('href', 'css/stylesheetPlayful.css');
+        }
+    }
+
+
 
 
 
@@ -196,6 +233,7 @@
         }
     }
 
+<<<<<<< HEAD
     function changeTemplate() {
         dynStyle.setAttribute('href', '');
         var elId = this.id;
@@ -221,10 +259,13 @@
 
 
 
+=======
+>>>>>>> master
 
 /*** NEW SCOPE ***/
 {
     // ANCHORS
+    let bd = document.querySelector('body');
     let menuField = document.querySelector('#menuField');
     let earth = document.getElementById('earth');
     let sky = document.getElementById('sky');
@@ -250,6 +291,7 @@
             themeSet.style.borderColor = "rgb(102,102,102)";
             btnDrop.style.backgroundColor = "rgb(92,92,92)";
             logoBrand.style.backgroundColor = "rgb(46,45,45)";
+            bd.style.backgroundColor = "rgb(92,92,92)";
         }
         else if (elId === 'sky') {
             menuField.setAttribute('class', 'skyBg');
@@ -260,6 +302,8 @@
         }
     }
 }
+    
+
 
 
 // Implement and register module
@@ -288,7 +332,29 @@ var quill = new Quill('#editor', {
     else if (elId === 'tmpPlayful'){
         dynStyle.setAttribute('href', 'css/stylesheetPlayful.css');
     }
-} */
-     
+}*/
 
+var counter = document.getElementById('counter');
+counter.addEventListener('click', countNotes);
+function countNotes() {
+   alert(notes.length);
+}
 
+// Implement and register module
+/*
+Quill.register('modules/counter', function (quill, options) {
+    var container = document.querySelector('#counter');
+    quill.on('text-change', function () {
+        var text = quill.getText();
+        // There are a couple issues with counting words
+        // this way but we'll fix these later
+        container.innerText = text.split(/\s+/).length;
+    });
+});
+
+// We can now initialize Quill with something like this:
+var quill = new Quill('#editor', {
+    modules: {
+        counter: true
+    }
+});*/

@@ -104,28 +104,28 @@
     {   
         var noteList = document.getElementsByClassName('note-lists')[0];
         noteList.innerHTML = "";
-        for(i=0; i< notes.length; i++){
-             //showOnlyFavorites:true - only showing favorite notes 
-             if(showOnlyFavorites){
-                if (notes[i].isFavorite == true){
-                    noteList.append(noteElement(notes[i])); 
-                }  
-            }
-            else{
-                //selectedTag:value - only showing notes tagged with value 
-                if(selectedTag)
-                {
-                    if(notes[i].tags.indexOf(selectedTag) !== -1)
+        for(var i=0; i< notes.length; i++){
+                //showOnlyFavorites:true - only showing favorite notes 
+                if(showOnlyFavorites){
+                    if (notes[i].isFavorite == true){
+                        noteList.append(noteElement(notes[i])); 
+                    }  
+                }
+                else{
+                    //selectedTag:value - only showing notes tagged with value 
+                    if(selectedTag)
+                    {
+                        if(notes[i].tags.indexOf(selectedTag) !== -1)
+                        {
+                            noteList.append(noteElement(notes[i]));
+                        }
+                    }
+                    //selectedTag:undefined - showing all notes
+                    else
                     {
                         noteList.append(noteElement(notes[i]));
                     }
                 }
-                //selectedTag:undefined - showing all notes
-                else
-                {
-                    noteList.append(noteElement(notes[i]));
-                }
-            }
         }
 
         if(showOnlyFavorites){
@@ -202,8 +202,8 @@
     
 
     // -----****Showing all tags **** ------ 
-
-    document.getElementById('allTags').addEventListener('click', showAllTags);
+    
+    document.getElementById('allTagsHd').addEventListener('click', showAllTags);
 
     function showAllTags() {
         
