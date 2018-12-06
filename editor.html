@@ -25,13 +25,12 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
         crossorigin="anonymous">
     <link rel="stylesheet" href="css/stylesheetEditor.css">
-    <link id="dynamicStylesheet" rel="stylesheet" title="#">
+    
 </head>
 
 <body>
 
     <div class="flex-container">
-
         <div id="logoBrand">
             <h1>QUIRE</h1>
         </div><br>
@@ -46,51 +45,56 @@
                 </div>
 
                 <div id="collapseTarget" class="menu-collapse">
-                    <h1 id="logo">QUIRE</h1>
+                    <!--<h1 id="logo">QUIRE</h1>-->
                     <h1 id="logoShortVer">Q</h1><br>
                     <ul class="nav-ul">
-                        <li id="newNote"><a class="nav-newNote" href="#">NEW NOTE</a></li>
-                        <li id="newNoteHd"><a class="nav-newNote" title="Open new note">
-                                <i class="far fa-envelope-open"></i></a></li>
+                        <!--<li id="newNote"><a class="nav-newNote" href="#">NEW NOTE</a></li>-->
+                        <li id="newNoteHd"><a class="nav-newNote" title="Create new note">
+                                <!-- <i class="far fa-envelope-open"></i></a></li> -->
+                                <i class="fas fa-edit"></i>
 
-                        <li id="myNotes"><a class="nav-notes" href="#">MY NOTES</a></li>
+                        <!--<li id="myNotes"><a class="nav-notes" href="#">MY NOTES</a></li>-->
                         <li id="myNotesHd"><a class="nav-notes" title="My notes">
                                 <i class="far fa-file"></i></a></li>
 
-                        <li id="favNotes" onclick="showNotesField()"><a class="nav-favorites" href="#">FAVORITES</a></li>
+                        <!--<li id="favNotes" onclick="showNotesField()"><a class="nav-favorites" href="#">FAVORITES</a></li>-->
                         <li id="favNotesHd" onclick="showNotesField()"><a class="nav-favorites" title="My favorites">
-                                <i class="far fa-star" title="Mark as favorite"></i></a>
+                                <i class="far fa-star"></i></a>
                         </li>
 
-                        <li id="saveNote"><a class="nav-save" href="#">SAVE</a></li>
+                        <!--<li id="saveNote"><a class="nav-save" href="#">SAVE</a></li>-->
                         <li id="saveNoteHd"><a class="nav-save" title="Save note">
                                 <i class="far fa-save"></i></a>
                         </li>
 
-                        <li id="deleteNote"><a class="delete-note" href="#">DELETE</a></li>
+                        <!--<li id="deleteNote"><a class="delete-note" href="#">DELETE</a></li>-->
                         <li id="deleteNoteHd"><a class="delete-note" title="Delete note">
                                 <i class="fas fa-trash"></i></a>
                         </li>
 
-                        <li id="allTags" onclick="showNotesField()"><a class="all-tags" href="#">TAGS</a></li>  <!--/*2018/12/04*/-->
-                        <li id="allTagHd" onclick="showNotesField()" ><a class="all-tags" title="All tags">
+                        <!--<li id="allTags" onclick="showTagsField()"><a class="all-tags" href="#">TAGS</a></li>-->
+                        <li id="allTagsHd" onclick="showTagsField()" ><a class="all-tags" title="All tags">
                             <i class="fas fa-tag" title="All tags"></i></a>
                         </li>
-                        
-                        <li id="printNote"><a class="print-note" href="#">PRINT</a></li>
-                        <li id="printNoteHd"><a class="print-note" title="Print note">
-                                <i class="fas fa-print"></i></a>
+
+                        <!--<li id="stat"><a class="all-tags" href="#">STAT</a></li>-->  
+                        <li id="allStatHd"><a class="all-stat" title="Statisitc">
+                            <i class="fas fa-chart-bar"></i></a>
                         </li>
-                        <button id="counter">AntalNotes</button>
+                        
+                        <!--<li id="printNote"><a class="print-note" href="#">PRINT</a></li>-->
+                        <!-- <li id="printNoteHd"><a class="print-note" title="Print note">
+                                <i class="fas fa-print"></i></a>
+                        </li> -->
                         </ul>
                         <form id="themeSelection">
                             <fieldset id="themeFieldset">
                                 <legend>THEMES</legend>						
                                 <label><input id="earth" type="radio" name="qTheme" value="earth" checked="checked"> Earth</label><br>
                                 <label><input id="sky" type="radio" name="qTheme" value="sky"> Sky</label><br>
-                                <!--<label><input id="warm" type="radio" name="qTheme" value="warm"> Warm</label>-->			
                             </fieldset>	
-                        </form>                  
+                        </form> 
+                        <br>                 
                 </div>
             </div>
         </div>
@@ -110,7 +114,7 @@
             <div class="note-field-top">
                 <div class="note-title-top" title="Enter title">
                     <i class="fas fa-file-signature"></i>
-                    <input id="noteTitle" type="text" name="title" placeholder="Untitled">
+                    <input id="noteTitle" type="text" name="title" placeholder="Title">
                 </div>
                 
                 <div class="note-tags-top" title="Give your note a tag">
@@ -137,6 +141,8 @@
                 </div>                
             </div>
             
+            <div id="editor"></div>
+            <!--
             <div id="toolbar-container" class="ql-container ql-snow">
                 <div id="editor">
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum itaque explicabo vero tempore
