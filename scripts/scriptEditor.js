@@ -278,3 +278,9 @@ var quill = new Quill('#editor', {
     }
 });
 */
+var statistic = document.querySelector('.all-stat');
+statistic.addEventListener('click', countNotes);
+function countNotes() {
+   alert(notes.length);
+}
+
