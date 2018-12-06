@@ -149,11 +149,11 @@
 
     let toolPrint = document.getElementById('toolbarPrintNote');
     //let btnPrint = document.getElementById('printNote');
-    let btnPrintHd = document.getElementById('printNoteHd');
+    //let btnPrintHd = document.getElementById('printNoteHd');
 
     toolPrint.addEventListener('click', printContent);
     //btnPrint.addEventListener('click', printContent);
-    btnPrintHd.addEventListener('click', printContent);
+    //btnPrintHd.addEventListener('click', printContent);
 
     // CALLBACK PRINT FUNCTION
     function printContent() {
