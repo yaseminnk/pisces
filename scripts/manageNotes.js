@@ -52,7 +52,9 @@
                 } 
                 var tagInput = document.getElementById('tagInput');
                 var tagText = tagInput.value;
-                notes[i].tags.push(tagText);
+                if(notes[i].tags.indexOf(tagText) === -1) { //add only unique tag
+                    notes[i].tags.push(tagText);
+                }
                 saveAllNotes();
                 selectNote(noteId);
             }  

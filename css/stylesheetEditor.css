@@ -77,9 +77,9 @@ body {
   border-right: 1px solid rgb(182,182,182);
 }
 .container-navfield {
-  flex-basis: 8%;
-  min-width: 102px; 
-  padding: 0 12px;
+  flex-basis: 7%;
+  min-width: 90px; 
+  /* padding: 0 12px; */
   margin: 0;
 }
 
@@ -107,6 +107,7 @@ body {
   /*display: none;*/     
   font-family: 'Libre Baskerville', serif;
   font-size: 48px;
+  font-weight: 700;
   text-align: center;  
   color: rgba(255, 255, 255, 0.8);
 }
@@ -117,9 +118,10 @@ body {
 }
 .nav-ul {
   padding: 0;
+  margin-top: 0;
 }
 .nav-ul li {
-  margin-bottom: 28px;
+  margin-bottom: 20px;
 }
 .nav-ul li a {
   font-size: 0.9em;
@@ -173,31 +175,34 @@ body {
 /*** NOTE DISPLAY CONTAINER ***/
 .note-fav-container {
     flex-basis: 8%;
-    min-width: 174px;
-    background-color:  rgb(61, 59, 59);
+    min-width: 190px;
+    /* background-color:  rgb(61, 59, 59); */
+    background-color: whitesmoke;
     padding: 0;
     margin: 0;
     overflow-x: auto;
+    box-shadow: 2px 0px 5px lightgray;
 }
 
 .data-container-hd {
-    display: none; 
+    /* display: none;  */
     width: 150px; /* moitrayee*/
-    background-color: rgb(61, 59, 59);
+    /* background-color: rgb(61, 59, 59); */
+    background-color: whitesmoke;
     overflow-x: auto;
 }
 
 .note-fav-container .header-notes {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   padding-top: 40px;
-  padding-bottom:40px;
+  padding-bottom:48px;
   padding-left: 18px;
   font-size: 1.2em;
   border-bottom: 1px solid rgb(209, 201, 201);
   font-weight: 600;
-  color: rgb(247, 239, 239);
-  text-shadow: 1px 1px 0.5px rgb(44,44,44);
-  background-color: rgb(61, 59, 59);
+  color:  rgb(44,44,44);
+  /* text-shadow: 1px 1px 0.5px rgb(44,44,44); */
+  background-color:whitesmoke;
 }
 
 .note-item .note-title i {
@@ -213,10 +218,10 @@ body {
   height: 82px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   border-bottom: 1px solid rgb(209, 201, 201);
-  background-color: rgb(61, 59, 59);
+  background-color: whitesmoke;
 }
 .note-item .note-title{
-  color: rgb(255,255,255);
+  color:  rgb(44,44,44);
   text-shadow: 0.5px 0.5px 0 rgb(57,57,57);
   padding-left: 10px;
   padding-top: 5px;
@@ -234,14 +239,14 @@ body {
   font-size:0.75em;
   overflow: hidden;
   white-space: nowrap;
-  color: rgba(255, 255, 255, 0.78);
+  color: rgb(44,44,44);
 }
 .note-item .note-created{
   padding-left: 10px;
   padding-top: 10px;
   height:10px;
   font-size:0.60em;
-  color: rgba(255, 255, 255, 0.78);
+  color: rgb(44,44,44);
 }
 
 /*
@@ -384,7 +389,7 @@ body {
 }
 
 .note-tags { /*2018/12/04*/
-  color: rgba(255, 255, 255,0.75);
+  color: rgb(44, 44, 44);
   text-shadow: 0.5px 0.5px 0 rgb(57,57,57);
   font-size: 1em;
   font-weight: 500;
@@ -478,6 +483,10 @@ i .fas .fa-tags {
 }
 .toolbar-print-icon:hover {
   opacity: 0.8;
+}
+.ql-toolbar .ql-snow {
+  border-top: 1px solid #ccc !important;
+  border-bottom: 1px solid #ccc !important;
 }
 
 /*** GOOGLE FONTS ***/
@@ -744,6 +753,7 @@ i .fas .fa-tags {
   /* Toolbar */
   .ql-toolbar.ql-snow {
     padding: 4px 2px !important;
+   
   }
   .ql-editor {
     padding: 32px 42px 32px 32px;    

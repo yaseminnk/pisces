@@ -44,7 +44,7 @@
         let conWorkfield = document.querySelector('.container-workfield');
         let innerW = window.innerWidth;
         let adjustedInnerWidthSm = (innerW - 18) + "px";
-        let adjustedInnerWidthLg = (innerW - 146) + "px";
+        let adjustedInnerWidthLg = (innerW - 148) + "px";
         
         if( innerWidth <= 769 ) {
             conWorkfield.style.maxWidth = adjustedInnerWidthSm;   
@@ -104,7 +104,7 @@
 
     // Field for my notes and favorite notes
     function showNotesField() {
-        notesContainer.classList.toggle('data-container-hd');
+        //notesContainer.classList.toggle('data-container-hd');
     }
 
     //dropdown menu
