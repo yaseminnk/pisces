@@ -79,9 +79,8 @@ body {
 .container-navfield {
   flex-basis: 8%;
   min-width: 102px; 
-  /* padding: 0 20px; */
+  padding: 0 12px;
   margin: 0;
-  outline: none;
 }
 
 
@@ -357,16 +356,6 @@ body {
 }
 /****************************************/
 
-/*
-.btn-earth {
-  background-color: rgb(46,45,45);  
-  color: rgba(255,255,255, 0.75)
-}
-.btn-sky {
-  background-color: rgb(85, 85, 240);
-  color: rgb(247,247,247);
-}
-*/
 
 #noteTitle {
   font-size: 1.1em;
@@ -404,7 +393,6 @@ body {
   cursor: pointer;
  
 }
-
 .note-tags:hover { /*2018/12/04*/
   opacity: .5;
   transition: all 0.3s ease-in-out;
@@ -449,8 +437,7 @@ i .fas .fa-tags {
 }
 
 .container-workfield {
-  width: auto !important;
-  max-width: 1528px;
+  width: auto;
   flex-basis: 68%;
   flex-grow: 1;
   /*border-right: 1px solid rgb(142,142,142);*/
@@ -458,27 +445,14 @@ i .fas .fa-tags {
   
 /*** WORK FIELD ***/
 
-/* CHECK THIS FURTHER!!! */
-/*.ql-toolbar, .ql-snow {  
-  background: rgb(255,255,255);            
-  border: none !important;
-  border-bottom: 1px solid rgb(187,187,187) !important;    
-} */
 .ql-formats {
-  padding: 2px;
+  padding: 2px 2px 12px 2px;
 }
-/*
-.ql-contain {
-  width: auto !important;
-}*/
-#toolbar-container {
-  border-top: 1px solid rgb(187,187,187) !important;
-}
+
 /*** Editor ***/
 .ql-container.ql-snow {
   border: none !important;
 }
-
 
 #editor {
   box-sizing: border-box;
@@ -493,10 +467,11 @@ i .fas .fa-tags {
 }
 
 .ql-editor {
-  padding: 22px;
+  padding: 42px 52px 42px 42px;
+  height: -webkit-fill-available;
 }
 .toolbar-print-icon {
-  font-size: 1.2em;
+  font-size: 1.15em;
   color: rgb(59,59,59);
   margin-left: 4px;
   cursor: pointer;
@@ -567,6 +542,7 @@ i .fas .fa-tags {
     flex-basis: 52%;     
     flex-grow: 1;
   }  
+  /*
   #noteSearch {
     display: inline-block;
     padding: 0 4px 0 10px;
@@ -575,12 +551,15 @@ i .fas .fa-tags {
   #searchInput {
     min-width: 200px;
   }
+  */
 }
 
 @media screen and (min-width: 992px) and (max-width: 1099px) {
+  /*
   .container-workfield {
     max-width: 82%;
   }
+  */
   #noteTitle {
     width: 46%;
   }
@@ -590,28 +569,29 @@ i .fas .fa-tags {
 }
 
 @media screen and (min-width: 769px) and (max-width: 1099px) {
-
+/*
   #logo {
     display: none;
-  }
+  }  
   #logoShortVer {
     display: block;    
     margin: 2px 0 20px 0;
-  }  
+  }    
   #navBar {
     padding: 22px 10px;
   }  
+  */
   /*
   #newNote, #myNotes, #favNotes, #saveNote, #deleteNote, #printNote, #allTags  {
     display: none;
   }  
   #newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #deleteNoteHd, #printNoteHd, #allTagHd{
     display: block;    
-  }
-  */
+  }  
   #themeSelection {   
     padding: 8px 16px;
   }
+  */
 }
 
 @media screen and (min-width: 769px) and (max-width: 991px) {  
@@ -628,10 +608,12 @@ i .fas .fa-tags {
   .note-template-top {   
     margin: 12px 0 10px 10px;
   }
+  /*
   .container-navfield {    
     flex-basis: 7%;
     min-width: 128px;
-  }   
+  } 
+  */  
 }
 
 @media screen and (max-width: 768px) {
@@ -647,20 +629,30 @@ i .fas .fa-tags {
     height: 100%;
     margin: 0;
   }
-  
+  /*
   #logo {
     display: none;
   }
+  */
+  
+  #logoShortVer {
+    display: none;    
+  }   
   #logoBrand {
     display: block;
     width: 100%;
     background-color:  rgb(46, 45, 45);   
-  }
+    cursor: pointer;
+  }  
   #logoBrand h1 {
     font-family: 'Libre Baskerville', serif;    
     color: rgba(255, 255, 255, 0.75);
     text-align: center;    
   }
+  #logoBrand h1:hover {
+    color: rgb(254,254,254);
+  }
+
   #menuField {
     width: 100%;
     padding: 6px 12px;
@@ -684,6 +676,27 @@ i .fas .fa-tags {
   .nav-ul li {
     text-align: center;
   }  
+
+  /*
+  #noteSearchHd {
+    display: block;    
+    display: none;
+    padding: 4px;
+    margin: 12px 10px 10px 10px;
+    border: 1px solid rgb(224,224,224);
+    border-radius: 8px;
+  }
+  #noteSearch {  
+    display: none;
+  }  
+  #searchInput {
+    min-width: 120px;;
+    max-width: 132px;
+  }
+  .fa-search {
+    font-size: 0.8em;
+  }
+*/  
   #navBar {
     flex-grow: 1;
     flex-basis: 100%;
@@ -691,25 +704,7 @@ i .fas .fa-tags {
     overflow: hidden;
     padding: 8px;    
   }  
-  #themeSelection {
-    max-width: 120px;
-    font-size: 0.85em;
-    font-weight: 600;
-    color: rgb(172,172,172);
-    padding: 8px 6px;
-    margin: 0 auto;
-  }  
-  /*
-  #editor {
-    min-height: 344px;
-  }
-  */
-  .ql-formats {
-    padding: 6px 2px;
-  }
-  .ql-toolbar.ql-snow {
-    padding: 4px 2px !important;
-  }
+
   .note-fav-container {
     width: 100%;
   }
@@ -737,27 +732,22 @@ i .fas .fa-tags {
     float: right;
     padding: 4px 10px;
   }  
+  #themeSelection {
+    max-width: 120px;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: rgb(172,172,172);
+    padding: 8px 6px;
+    margin: 0 auto;
+  } 
 
-  /*
-  #noteSearchHd {
-    display: block;    
-    display: none;
-    padding: 4px;
-    margin: 12px 10px 10px 10px;
-    border: 1px solid rgb(224,224,224);
-    border-radius: 8px;
+  /* Toolbar */
+  .ql-toolbar.ql-snow {
+    padding: 4px 2px !important;
   }
-  #noteSearch {  
-    display: none;
-  }  
-  #searchInput {
-    min-width: 120px;;
-    max-width: 132px;
+  .ql-editor {
+    padding: 32px 42px 32px 32px;    
   }
-  .fa-search {
-    font-size: 0.8em;
-  }
-*/  
 }
 
 
