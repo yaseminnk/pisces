@@ -22,11 +22,10 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
         crossorigin="anonymous">
     <link rel="stylesheet" href="css/stylesheetEditor.css">
-    <link id="dynamicStylesheet" rel="stylesheet" title="#">
+    <link id="dynamicStylesheet" rel="stylesheet" title="#" href="#">
 </head>
 
 <body>
-
     <div class="flex-container">
         <div id="logoBrand">
             <h1>QUIRE</h1>
@@ -69,33 +68,33 @@
                         </li>
 
                         <!--<li id="allTags" onclick="showTagsField()"><a class="all-tags" href="#">TAGS</a></li>-->
-                        <li id="allTagsHd" onclick="showTagsField()" ><a class="all-tags" title="All tags">
-                            <i class="fas fa-tag" title="All tags"></i></a>
+                        <li id="allTagsHd" onclick="showTagsField()"><a class="all-tags" title="All tags">
+                                <i class="fas fa-tag" title="All tags"></i></a>
                         </li>
 
-                        <!--<li id="stat"><a class="all-tags" href="#">STAT</a></li>-->  
-                        <li id="allStatHd"><a class="all-stat" title="Statisitc">
-                            <i class="fas fa-chart-bar"></i></a>
+                        <!--<li id="stat"><a class="all-tags" href="#">STAT</a></li>-->
+                        <li id="allStatHd"><a class="all-stat" title="Statistic">
+                                <i class="fas fa-chart-bar"></i></a>
                         </li>
-                        
+
                         <!--<li id="printNote"><a class="print-note" href="#">PRINT</a></li>-->
-                        <li id="printNoteHd"><a class="print-note" title="Print note">
+                        <!--<li id="printNoteHd"><a class="print-note" title="Print note">
                                 <i class="fas fa-print"></i></a>
-                        </li>
-                        </ul>
-                        <form id="themeSelection">
-                            <fieldset id="themeFieldset">
-                                <legend>THEMES</legend>						
-                                <label><input id="earth" type="radio" name="qTheme" value="earth" checked="checked"> Earth</label><br>
-                                <label><input id="sky" type="radio" name="qTheme" value="sky"> Sky</label><br>
-                            </fieldset>	
-                        </form> 
-                        <br>                 
+                        </li>-->
+                    </ul>
+                    <form id="themeSelection">
+                        <fieldset id="themeFieldset">
+                            <legend>THEMES</legend>
+                            <label><input id="earth" type="radio" name="qTheme" value="earth" checked="checked"> Earth</label><br>
+                            <label><input id="sky" type="radio" name="qTheme" value="sky"> Sky</label><br>
+                        </fieldset>
+                    </form>
+                    <br>
                 </div>
             </div>
         </div>
 
-        <div class="note-fav-container data-container-hd">
+        <div id="notesContainer" class="note-fav-container data-container-hd">
             <div class="header-notes">
                 My Notes
             </div>
@@ -112,14 +111,14 @@
                     <i class="fas fa-file-signature"></i>
                     <input id="noteTitle" type="text" name="title" placeholder="Untitled">
                 </div>
-                
+
                 <div class="note-tags-top" title="Give your note a tag">
                     <i class="fas fa-tags"></i>
                     <span class="tag-holder"></span>
                     <input id="tagInput" type="text" name="tags" placeholder="add tags here">
                 </div>
 
-                <div class="note-template-top">                    
+                <div class="note-template-top">
                     <div class="dropdown" title="Choose a template">
                         <button class="btn-drop">
                             Choose Template
@@ -132,9 +131,9 @@
                             <a id="tmpFantasy" href="#">Fantasy</a>
                         </div>
                     </div>
-                </div>                
+                </div>
             </div>
-            
+
             <div id="editor"></div>
             <!--
             <div id="toolbar-container" class="ql-container ql-snow">
@@ -146,7 +145,42 @@
             </div>-->
         </div>
     </div>
+    <script>
 
+        var ed = document.getElementById('editor');
+        var cnWorkField = document.querySelector('.container-workfield');
+
+        newSpan = document.createElement('span');
+
+        // function to count and display keypresses
+        var characters = 0;
+
+        function charCounter() {
+            characters++;
+            return characters;
+        }
+        function showCharacters() {
+            console.log(charCounter());
+        }
+
+
+
+        newText = document.createTextNode("test");
+        newSpan.appendChild(newText);
+
+        //ed.appendChild(newSpan);
+        newSpan.style.position = "fixed";
+        newSpan.style.bottom = "2%";
+        newSpan.style.right = "2%";
+        newSpan.style.color = "rgb(132,132,132);";
+        newSpan.style.padding = "4px 10px";
+        newSpan.style.backgroundColor = "white";
+        newSpan.style.border = "1px solid gold";
+        
+
+        cnWorkField.appendChild(newSpan);
+
+    </script>
     <script src="scripts/quill.js"></script>
     <script src="scripts/scriptEditor.js"></script>
     <script src="scripts/manageNotes.js"></script>
