@@ -174,6 +174,29 @@
     tmpFan.addEventListener('click', changeTemplate);
     tmpPlay.addEventListener('click', changeTemplate);
 
+    function changeTemplate() {
+        dynStyle.setAttribute('href', '');
+        var elId = this.id;
+
+        if (elId === 'tmpDeafult') {
+            dynStyle.setAttribute('href', '#');
+        }
+        else if (elId === 'tmpBusiness') {
+            dynStyle.setAttribute('href', 'css/stylesheetBusiness.css');
+        }
+        else if (elId === 'tmpParty'){
+            dynStyle.setAttribute('href', 'css/stylesheetParty.css');
+        }
+        else if (elId === 'tmpFantasy'){
+            dynStyle.setAttribute('href', 'css/stylesheetFantasy.css');
+        }
+        else if (elId === 'tmpPlayful'){
+            dynStyle.setAttribute('href', 'css/stylesheetPlayful.css');
+        }
+    }
+
+
+
 
 
     // CALLBACKS
@@ -198,26 +221,16 @@
     }
 
 
-
-
-        if (elId === 'tmpDeafult') {
-            dynStyle.setAttribute('href', '#');
-        }
-        else if (elId === 'tmpBusiness') {
-            dynStyle.setAttribute('href', 'css/stylesheetBusiness.css');
-        }
-    }
-
-
+    
 
 /*** NEW SCOPE ***/
-{
+
     // ANCHORS
     let menuField = document.querySelector('#menuField');
     let earth = document.getElementById('earth');
     let sky = document.getElementById('sky');
     let themeSet = document.getElementById('themeFieldset');
-    let btnDrop = document.querySelector('.btn-drop');
+    
     let logoBrand = document.getElementById('logoBrand');
 
     // EVENT LISTENERS
@@ -245,6 +258,8 @@
         }
     }
 }
+    
+
 
 
 // Implement and register module
@@ -273,7 +288,12 @@ var quill = new Quill('#editor', {
     else if (elId === 'tmpPlayful'){
         dynStyle.setAttribute('href', 'css/stylesheetPlayful.css');
     }
-} */
-     
+}*/
+
+var counter = document.getElementById('counter');
+counter.addEventListener('click', countNotes);
+function countNotes() {
+   alert(notes.length);
+}
 
 
