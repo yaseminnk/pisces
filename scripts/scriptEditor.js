@@ -148,6 +148,7 @@ var btnDrop = document.querySelector('.btn-drop');
 var tmpBus = document.getElementById('tmpBusiness');
 var tmpParty = document.getElementById('tmpParty');
 var tmpFan = document.getElementById('tmpFantasy');
+var tmpPlay = document.getElementById('tmpPlayful');
 var dynStyle = document.getElementById('dynamicStylesheet');
 
 // LISTENERS
@@ -155,6 +156,7 @@ btnDrop.addEventListener('click', showDropTheme);
 tmpBus.addEventListener('click', changeTemplate);
 tmpParty.addEventListener('click', changeTemplate);
 tmpFan.addEventListener('click', changeTemplate);
+tmpPlay.addEventListener('click', changeTemplate);
 
 
 // CALLBACKS
@@ -186,6 +188,15 @@ function changeTemplate() {
 
     if (elId === 'tmpBusiness') {
         dynStyle.setAttribute('href', 'css/stylesheetBusiness.css');        
+    }
+    else if (elId === 'tmpParty'){
+        dynStyle.setAttribute('href', 'css/stylesheetParty.css');
+    }
+    else if (elId === 'tmpFantasy'){
+        dynStyle.setAttribute('href', 'css/stylesheetFantasy.css');
+    }
+    else if (elId === 'tmpPlayful'){
+        dynStyle.setAttribute('href', 'css/stylesheetPlayful.css');
     }
 }      
 

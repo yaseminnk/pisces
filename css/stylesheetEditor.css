@@ -732,11 +732,14 @@ i .fas .fa-tags {
 }
 @media print{
   
-  #themeField,
+  #menuField,
   .note-fav-container,
   .header-notes,
   .note-title-top,
-  .ql-toolbar{
+  .ql-toolbar,
+  .fa-tags,
+  #tagInput,
+  .btn-drop{
   display:none;
     }
   }
