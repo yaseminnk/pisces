@@ -24,15 +24,14 @@ a {
 
 /*** BASIC STYLE ***/
 /* Theme selection*/
+body {
+  background-color:rgb(46, 45, 45);
+}
 .earthBg {
   background-color:rgb(46, 45, 45);
 }
 .skyBg {
   background-color:rgb(16, 113, 167);
-  color: rgb(247,247,247);
-}
-.warmBg {
-  background-color:rgb(247, 163, 37);
   color: rgb(247,247,247);
 }
 
@@ -67,19 +66,20 @@ a {
 /*** EDITOR RESPONSIVE LAYOUT ***/
 
 .flex-container {
-  display: flex;            
+  display: flex;   
+  background-color: rgb(255,255,255);         
   /*flex-wrap: wrap;*/
-  height: 100vh;
+  height: 100%;
   width: auto;
   width: -webkit-fill-available;  
   padding: 0;
   margin: 0 0 22px 0;
-  /*overflow: hidden;*/
+  border-right: 1px solid rgb(182,182,182);
 }
 .container-navfield {
   flex-basis: 8%;
-  min-width: 152px; 
-  padding: 0 22px;
+  min-width: 102px; 
+  padding: 0 20px;
   margin: 0;
   outline: none;
 }
@@ -87,6 +87,9 @@ a {
 
 /*** NAV-BAR FIELD ***/
 
+#menufield {
+  height: auto;  
+}
 #navBar {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   outline: none;
@@ -102,7 +105,7 @@ a {
   padding-top: 15px;
 }
 #logoShortVer {
-  display: none;     
+  /*display: none;*/     
   font-family: 'Libre Baskerville', serif;
   font-size: 48px;
   text-align: center;  
@@ -132,8 +135,8 @@ a {
 }
 
 /* Hidden nav icons */
-#newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #deleteNoteHd, #printNoteHd, #allTagHd {
-  display: none;
+#newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #deleteNoteHd, #printNoteHd, #allTagsHd, #allStatHd {
+  /*display: none;*/
   cursor: pointer;
   font-size: 1.45em;
   text-align: center;
@@ -147,7 +150,7 @@ a {
 }
 /* Radio theme selection */
 #themeSelection {
-  max-width: 102px;
+  max-width: 98px;
   font-size: 0.85em;
   font-weight: 600;
   color: rgb(172,172,172);
@@ -450,32 +453,36 @@ i .fas .fa-tags {
   max-width: 1528px;
   flex-basis: 68%;
   flex-grow: 1;
-  border-right: 1px solid rgb(142,142,142);
+  /*border-right: 1px solid rgb(142,142,142);*/
 }          
   
 /*** WORK FIELD ***/
-      
 
 /* CHECK THIS FURTHER!!! */
-.ql-toolbar, .ql-snow {  
+/*.ql-toolbar, .ql-snow {  
   background: rgb(255,255,255);            
   border: none !important;
-  /* border-bottom: 1px solid rgb(187,187,187) !important;     */
-}
-.ql-toolbar {
-  border-bottom: 1px solid rgb(187,187,187) !important; 
-}
+  border-bottom: 1px solid rgb(187,187,187) !important;    
+} */
 .ql-formats {
   padding: 2px;
 }
+/*
 .ql-contain {
   width: auto !important;
-}
+}*/
 #toolbar-container {
   border-top: 1px solid rgb(187,187,187) !important;
 }
+/*** Editor ***/
+.ql-container.ql-snow {
+  border: none !important;
+}
+
+
 #editor {
   box-sizing: border-box;
+  height: fit-content;
 }
 
 /*** Toolbar google fonts ***/
@@ -499,7 +506,7 @@ i .fas .fa-tags {
 }
 
 /*** GOOGLE FONTS ***/
-#editor #toolbar-container .ql-container .ql-editor .ql-snow{
+#editor #toolbar-container .ql-container .ql-editor .ql-snow {
   font-family: "Roboto";  
 }
 
@@ -565,7 +572,6 @@ i .fas .fa-tags {
     padding: 0 4px 0 10px;
     margin: 14px 0 8px 0;
   }
-
   #searchInput {
     min-width: 200px;
   }
@@ -595,12 +601,14 @@ i .fas .fa-tags {
   #navBar {
     padding: 22px 10px;
   }  
+  /*
   #newNote, #myNotes, #favNotes, #saveNote, #deleteNote, #printNote, #allTags  {
     display: none;
   }  
   #newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #deleteNoteHd, #printNoteHd, #allTagHd{
     display: block;    
   }
+  */
   #themeSelection {   
     padding: 8px 16px;
   }
@@ -754,13 +762,14 @@ i .fas .fa-tags {
 
 
 @media screen and (min-width: 0px) and (max-width: 479px) {
-
+  /*
   #newNote, #myNotes, #favNotes, #saveNote, #deleteNote, #printNote, #allTags  {
     display: none;
   }  
   #newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #deleteNoteHd, #printNoteHd, #allTagHd{
     display: block;    
   }
+  */
   .note-template-top {
     float: none;
     margin: 14px 0 10px 10px;
@@ -768,7 +777,6 @@ i .fas .fa-tags {
 }
 
 @media print{
-  
   meta,
   #menuField,
   .note-field-top,

@@ -202,8 +202,8 @@
     
 
     // -----****Showing all tags **** ------ 
-
-    document.getElementById('allTags').addEventListener('click', showAllTags);
+    
+    document.getElementById('allTagsHd').addEventListener('click', showAllTags);
 
     function showAllTags() {
         
@@ -230,6 +230,7 @@
         }
         document.getElementsByClassName('header-notes')[0].innerText = "All Tags";
     }
+    
 
     // -----**** Showing all notes with a specific tag **** ------  
     

@@ -26,7 +26,7 @@
     // EVENT LISTENERS 
     //edt.addEventListener('keypress', charCounter);
 
-    logo.addEventListener('click', takeMeHome);
+    //logo.addEventListener('click', takeMeHome);
     logoShort.addEventListener('click', takeMeHome);
     menuToggler.addEventListener('click', toggleMenu);
 
@@ -37,8 +37,22 @@
     noteField.addEventListener('click', modNoteField);
 
     // we need to calculate a dynamic max-width for the editor depending on the window prop inner width
-    function doStuff() {
-        //
+    window.onload = adjustWidth;
+    function adjustWidth() {
+        let foo = document.querySelector('.container-workfield');
+        let InnerW = window.innerWidth;
+        let bar = InnerW + "px";
+        console.log(InnerW);
+        
+        // we check if certain class property is true
+        // if so we adjust width
+        /*
+        if() {
+
+        }
+        */
+
+        foo.style.maxWidth = bar;        
     }
 
     // function to count and display keypresses
@@ -134,11 +148,11 @@
     qlContainer.appendChild(elSpan);
 
     let toolPrint = document.getElementById('toolbarPrintNote');
-    let btnPrint = document.getElementById('printNote');
+    //let btnPrint = document.getElementById('printNote');
     let btnPrintHd = document.getElementById('printNoteHd');
 
     toolPrint.addEventListener('click', printContent);
-    btnPrint.addEventListener('click', printContent);
+    //btnPrint.addEventListener('click', printContent);
     btnPrintHd.addEventListener('click', printContent);
 
     // CALLBACK PRINT FUNCTION
@@ -150,7 +164,6 @@
         document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
     }
 }
-
 
 
 /*** NEW SCOPE ***/
@@ -211,6 +224,7 @@
 /*** NEW SCOPE ***/
 {
     // ANCHORS
+    let bd = document.querySelector('body');
     let menuField = document.querySelector('#menuField');
     let earth = document.getElementById('earth');
     let sky = document.getElementById('sky');
@@ -234,12 +248,14 @@
             themeSet.style.borderColor = "rgb(102,102,102)";
             btnDrop.style.backgroundColor = "rgb(92,92,92)";
             logoBrand.style.backgroundColor = "rgb(46,45,45)";
+            bd.style.backgroundColor = "rgb(92,92,92)";
         }
         else if (elId === 'sky') {
             menuField.setAttribute('class', 'skyBg');
             themeSet.style.borderColor = "rgb(182,182,182)";
             btnDrop.style.backgroundColor = "rgb(23, 117, 171)";
             logoBrand.style.backgroundColor = "rgb(16, 113, 167)";
+            bd.style.backgroundColor = "rgb(36, 133, 197)";
         }
     }
 }
