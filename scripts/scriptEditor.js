@@ -57,9 +57,9 @@
 
     function focusOnTitle() {
         noteTitle.focus();
-        noteTitle.setAttribute('placeholder', '');
-        noteTitle.innerHTML = "";
+        noteTitle.setSelectionRange(0, 0);        
     }
+
     function focusOnSearch() {
         noteSearch.focus();
     }
@@ -151,8 +151,8 @@
     qlContainer.appendChild(elSpan);
 
     let toolPrint = document.getElementById('toolbarPrintNote');
+    //let btnPrint = document.getElementById('printNoteHd');
     //let btnPrint = document.getElementById('printNote');
-    let btnPrintHd = document.getElementById('printNoteHd');
 
     toolPrint.addEventListener('click', printContent);
     //btnPrint.addEventListener('click', printContent);
@@ -254,14 +254,14 @@
         var elId = this.id;
 
         if (elId === 'earth') {
-            menuField.setAttribute('class', 'earthBg');
+            menuField.setAttribute('class', 'earth-theme');
             themeSet.style.borderColor = "rgb(102,102,102)";
             btnDrop.style.backgroundColor = "rgb(92,92,92)";
             logoBrand.style.backgroundColor = "rgb(46,45,45)";
             bd.style.backgroundColor = "rgb(92,92,92)";
         }
         else if (elId === 'sky') {
-            menuField.setAttribute('class', 'skyBg');
+            menuField.setAttribute('class', 'sky-theme');
             themeSet.style.borderColor = "rgb(182,182,182)";
             btnDrop.style.backgroundColor = "rgb(23, 117, 171)";
             logoBrand.style.backgroundColor = "rgb(16, 113, 167)";

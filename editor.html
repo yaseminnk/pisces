@@ -25,18 +25,20 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
         crossorigin="anonymous">
     <link rel="stylesheet" href="css/stylesheetEditor.css">
-    <link id="dynamicStylesheet" rel="stylesheet" href="#">
-    
+    <link id="dynamicStylesheet" rel="stylesheet" href="#">    
 </head>
 
 <body>
 
     <div class="flex-container">
+
+        <!-- LOGO and NAV FIELD -->
         <div id="logoBrand">
             <h1>QUIRE</h1>
         </div><br>
 
-        <div id="menuField" class="earthBg">
+        <!-- MAIN NAV FIELD -->
+        <div id="menuField" class="earth-theme">
             <div id="navBar" class="flex-item container-navfield">
 
                 <div class="menu-burger">
@@ -49,42 +51,42 @@
                     <!--<h1 id="logo">QUIRE</h1>-->
                     <h1 id="logoShortVer">Q</h1><br>
                     <ul class="nav-ul">
-                        <!--<li id="newNote"><a class="nav-newNote" href="#">NEW NOTE</a></li>-->
-                        <li id="newNoteHd"><a class="nav-newNote" title="Create new note">
+                        <!--<li id="newNoteHd"><a class="nav-newNote" href="#">NEW NOTE</a></li>-->
+                        <li id="newNote"><a class="nav-newNote" title="Create new note">
                                 <!-- <i class="far fa-envelope-open"></i></a></li> -->
                                 <i class="fas fa-edit"></i>
 
-                        <!--<li id="myNotes"><a class="nav-notes" href="#">MY NOTES</a></li>-->
-                        <li id="myNotesHd"><a class="nav-notes" title="My notes">
+                        <!--<li id="myNotesHd"><a class="nav-notes" href="#">MY NOTES</a></li>-->
+                        <li id="myNotes"><a class="nav-notes" title="My notes">
                                 <i class="far fa-file"></i></a></li>
 
-                        <!--<li id="favNotes" onclick="showNotesField()"><a class="nav-favorites" href="#">FAVORITES</a></li>-->
-                        <li id="favNotesHd" onclick="showNotesField()"><a class="nav-favorites" title="My favorites">
+                        <!--<li id="favNotesHd" onclick="showNotesField()"><a class="nav-favorites" href="#">FAVORITES</a></li>-->
+                        <li id="favNotes" onclick="showNotesField()"><a class="nav-favorites" title="My favorites">
                                 <i class="far fa-star"></i></a>
                         </li>
 
-                        <!--<li id="saveNote"><a class="nav-save" href="#">SAVE</a></li>-->
-                        <li id="saveNoteHd"><a class="nav-save" title="Save note">
+                        <!--<li id="saveNoteHd"><a class="nav-save" href="#">SAVE</a></li>-->
+                        <li id="saveNote"><a class="nav-save" title="Save note">
                                 <i class="far fa-save"></i></a>
                         </li>
 
-                        <!--<li id="deleteNote"><a class="delete-note" href="#">DELETE</a></li>-->
-                        <li id="deleteNoteHd"><a class="delete-note" title="Delete note">
+                        <!--<li id="deleteNoteHd"><a class="delete-note" href="#">DELETE</a></li>-->
+                        <li id="deleteNote"><a class="delete-note" title="Delete note">
                                 <i class="fas fa-trash"></i></a>
                         </li>
 
-                        <!--<li id="allTags" onclick="showTagsField()"><a class="all-tags" href="#">TAGS</a></li>-->
-                        <li id="allTagsHd"  ><a class="all-tags" title="All tags">
+                        <!--<li id="allTagsHd" onclick="showTagsField()"><a class="all-tags" href="#">TAGS</a></li>-->
+                        <li id="allTags"  ><a class="all-tags" title="All tags">
                             <i class="fas fa-tag" title="All tags"></i></a>
                         </li>
 
-                        <!--<li id="stat"><a class="all-stat" href="#">STAT</a></li>-->  
-                        <li id="allStatHd"><a class="all-stat" title="Statistik">
+                        <!--<li id="stat"><a class="all-tags" href="#">STAT</a></li>-->  
+                        <li id="allStat"><a class="all-stat" title="Statistik">
                             <i class="fas fa-chart-bar"></i></a>
                         </li>
                         
-                        <!--<li id="printNote"><a class="print-note" href="#">PRINT</a></li>-->
-                        <!-- <li id="printNoteHd"><a class="print-note" title="Print note">
+                        <!--<li id="printNoteHd"><a class="print-note" href="#">PRINT</a></li>-->
+                        <!-- <li id="printNote"><a class="print-note" title="Print note">
                                 <i class="fas fa-print"></i></a>
                         </li> -->
                         </ul>
@@ -100,7 +102,8 @@
             </div>
         </div>
 
-        <div class="note-fav-container data-container-hd">
+        <!-- NOTE FIELD -->
+        <div class="note-container">
             <div class="header-notes">
                 My Notes
             </div>
@@ -110,12 +113,13 @@
             </div>
         </div>
 
+        <!-- WORK FIELD -->
         <div class="flex-item container-workfield">
 
             <div class="note-field-top">
                 <div class="note-title-top" title="Enter title">
                     <i class="fas fa-file-signature"></i>
-                    <input id="noteTitle" type="text" name="title" placeholder="Title">
+                    <input id="noteTitle" type="text" name="title" placeholder="Untitled">
                 </div>
                 
                 <div class="note-tags-top" title="Give your note a tag">
@@ -140,6 +144,7 @@
                 </div>                
             </div>
             
+            <!-- EDITOR -->
             <div id="editor"></div>
             <!--
             <div id="toolbar-container" class="ql-container ql-snow">
@@ -152,6 +157,7 @@
         </div>
     </div>
 
+    <!-- SCRIPTS -->
     <script src="scripts/quill.js"></script>
     <script src="scripts/scriptEditor.js"></script>
     <script src="scripts/manageNotes.js"></script>
