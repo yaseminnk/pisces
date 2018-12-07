@@ -51,7 +51,7 @@
 
                 <div id="collapseTarget" class="menu-collapse">
                     <!--<h1 id="logo">QUIRE</h1>-->
-                    <h1 id="logoShortVer">Q</h1><br>
+                    <h1 id="logoShortVer" title="Quire">Q</h1><br>
                     <ul class="nav-ul">
                         <!--<li id="newNoteHd"><a class="nav-newNote" href="#">NEW NOTE</a></li>-->
                         <li id="newNote"><a class="nav-newNote" title="Create new note">
@@ -108,22 +108,26 @@
 
         <!-- NOTE FIELD -->
         <!--<div class="note-container">-->
-        <div class="flex-item note-container">
+        <div class="note-container">
+                
+            <div id="test-sc">
             <div class="header-notes">
-                My Notes                
+                My Notes
             </div>
             
-            <form id="noteSearch">
-                <label>
-                    <i class="fas fa-search" title="Search"></i>
-                    <input id="searchInput" type="text" name="search-title" placeholder=" Search">
-                </label>
-            </form>
+                <form id="noteSearch">
+                    <label>
+                        <i class="fas fa-search" title="Search"></i>
+                        <input id="searchInput" type="text" name="search-title" placeholder=" Search">
+                    </label>
+                </form>
+            </div>
 
-            <div class="note-lists note-field note-field-hd">
-            </div>
-            <div class="favorite-field favorite-field-hd">
-            </div>
+                <div class="note-lists note-field note-flex">
+                </div>
+
+                <div class="favorite-field note-flex">
+                </div>            
         </div>
 
         <!-- WORK FIELD -->
