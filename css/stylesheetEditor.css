@@ -79,7 +79,7 @@ body {
 .container-navfield {
   flex-basis: 7%;
   min-width: 90px; 
-  /* padding: 0 12px; */
+  padding: 0 8px; 
   margin: 0;
 }
 
@@ -253,7 +253,6 @@ body {
 #noteSearchHd {
   display: none;
 }
-
 #noteSearch { 
   display: inline;
   padding: 8px;
@@ -472,7 +471,7 @@ i .fas .fa-tags {
 }
 
 .ql-editor {
-  padding: 42px 52px 42px 42px;
+  padding: 42px 92px 42px 82px;
   height: -webkit-fill-available;
 }
 .toolbar-print-icon {
@@ -623,6 +622,9 @@ i .fas .fa-tags {
     min-width: 128px;
   } 
   */  
+  .ql-editor {
+    padding: 32px 48px 32px 42px;    
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -756,7 +758,7 @@ i .fas .fa-tags {
    
   }
   .ql-editor {
-    padding: 32px 42px 32px 32px;    
+    padding: 32px 42px 32px 36px;    
   }
 }
 

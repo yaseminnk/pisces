@@ -2,30 +2,25 @@
 /***    SCRIPT EDITOR   ***/
 /**************************/
 
-// NEW SCOPE ***//
+// NAVBAR LOGIC ***//
 {
     // ANCHORS 
-    let logo = document.getElementById('logo');
     let logoShort = document.getElementById('logoShortVer');
     let menuToggler = document.getElementById('menu-toggler');
     let collapsedMenu = document.getElementById("collapseTarget");
     let cM = collapsedMenu;
     let navNewNote = document.querySelectorAll('.nav-newNote');
     let navNotes = document.querySelectorAll('.nav-notes');
-    let navFavorites = document.querySelectorAll('.nav-favorites');
-    let navSaves = document.querySelectorAll('.nav-saves');
-    let navDeleteNote = document.querySelectorAll('.nav-delete');
     let noteTitle = document.getElementById('noteTitle');
     let noteField = document.querySelector('.note-field');
     let noteSearch = document.getElementById('searchInput');
-    let notesContainer = document.querySelector('.note-fav-container');
+    //let navFavorites = document.querySelectorAll('.nav-favorites');
+    //let navSaves = document.querySelectorAll('.nav-saves');
+    //let navDeleteNote = document.querySelectorAll('.nav-delete');
+    //let notesContainer = document.querySelector('.note-fav-container');
 
-    //let edt = document.getElementById('editor');
-    //let edWidth = window.innerWidth;
 
     // EVENT LISTENERS 
-    //edt.addEventListener('keypress', charCounter);
-
     //logo.addEventListener('click', takeMeHome);
     logoShort.addEventListener('click', takeMeHome);
     menuToggler.addEventListener('click', toggleMenu);
@@ -44,31 +39,13 @@
         let conWorkfield = document.querySelector('.container-workfield');
         let innerW = window.innerWidth;
         let adjustedInnerWidthSm = (innerW - 18) + "px";
-        let adjustedInnerWidthLg = (innerW - 148) + "px";
-        
-        if( innerWidth <= 769 ) {
-            conWorkfield.style.maxWidth = adjustedInnerWidthSm;   
+        let adjustedInnerWidthLg = (innerW - 328) + "px";
+
+        if (innerWidth <= 769) {
+            conWorkfield.style.maxWidth = adjustedInnerWidthSm;
         } else {
             conWorkfield.style.maxWidth = adjustedInnerWidthLg;
-        }              
-    }
-    
-    // function to count and display keypresses
-    var characters = 0;
-
-    function charCounter() {
-        characters++;
-        return characters;
-    }
-    function showCharacters() {
-        console.log(charCounter());
-    }
-
-    // Counts words in editor - we need an eventlistner
-    function wordCounts(str) {
-        return str.split(' ')
-            .filter(function (n) { return n != '' })
-            .length;
+        }
     }
 
 
@@ -125,7 +102,35 @@
     }
 }
 
-/*** NEW SCOPE ***/
+
+/*** WE ADD TITLES TO TOOLBAR ICONS ***/
+{
+    // ANCHORS
+    let qlToolBar = document.querySelector('.ql-toolbar');
+    let OList = document.querySelector('.ql-list');
+    let UList = document.querySelectorAll('.ql-list')[1];
+    let heading = document.querySelector('.ql-header');
+    let alignText = document.querySelector('.ql-align');
+    let insertlink = document.querySelector('.ql-link');
+    let insertImage = document.querySelector('.ql-image');
+    let leftIndent = document.querySelector('.ql-indent');
+    let rightIndent = document.querySelectorAll('.ql-indent')[1];
+    let fontSize = document.querySelector('.ql-size');
+
+    // Set title attributes
+    OList.setAttribute('title', 'Toggle Ordered list');
+    UList.setAttribute('title', 'Toggle Unordered list');
+    heading.setAttribute('title', 'Heading');
+    alignText.setAttribute('title', 'Align text');
+    insertlink.setAttribute('title', 'Insert link');
+    insertImage.setAttribute('title', 'Insert image');
+    leftIndent.setAttribute('title', 'Indent left');
+    rightIndent.setAttribute('title', 'Indent right');
+    fontSize.setAttribute('title', 'Fontsize');
+}
+
+
+/*** PRINT NOTE LOGIC ***/
 {
     // ANCHORS
     let qlContainer = document.querySelector('.ql-toolbar');
@@ -133,7 +138,7 @@
     let elAtag = document.createElement('a');
     let elIcon = document.createElement('i');
 
-    /*** We add a print icon to the toolbar ***/    
+    /*** We add a print icon to the toolbar ***/
     elSpan.setAttribute('class', 'ql-formats');
     elIcon.setAttribute('class', 'fas fa-print');
     elIcon.classList.add('toolbar-print-icon');
@@ -164,7 +169,7 @@
 }
 
 
-/*** NEW SCOPE ***/
+/*** TEMPLATE LOGIC ***/
 {
     // ANCHORS
     let btnDrop = document.querySelector('.btn-drop');
@@ -183,7 +188,6 @@
 
 
     // CALLBACKS
-    
     /*** DROPDOWN MENU TEMPLATE SELECTION ***/
     function showDropTheme() {
         document.getElementById("myDropdown").classList.toggle("show");
@@ -204,7 +208,6 @@
     }
 
     /*** Change template - change dynamic stylesheet ***/
-
     function changeTemplate() {
         dynStyle.setAttribute('href', '');
         var elId = this.id;
@@ -228,7 +231,7 @@
 }
 
 
-/*** NEW SCOPE ***/
+/*** THEME(COLOR) LOGIC ***/
 {
     // ANCHORS
     let bd = document.querySelector('body');
@@ -287,9 +290,50 @@ var quill = new Quill('#editor', {
     }
 });
 */
-var statistic = document.querySelector('.all-stat');
-statistic.addEventListener('click', countNotes);
-function countNotes() {
-   alert(notes.length);
+
+
+/*** STATISTIC LOGIC */
+{
+    // function to count and display keypresses
+    var characters = 0;
+
+    function charCounter() {
+        characters++;
+        return characters;
+    }
+    function showCharacters() {
+        console.log(charCounter());
+    }
+
+    // Counts words in editor - we need an eventlistner
+    function wordCounts(str) {
+        return str.split(' ')
+            .filter(function (n) { return n != '' })
+            .length;
+    }
+
+    var statistic = document.querySelector('.all-stat');
+    statistic.addEventListener('click', countNotes);
+    function countNotes() {
+        alert(notes.length);
+    }
+
+    let ed = document.querySelector('.ql-editor');
+
+    //ed.addEventListener('keydown', function(e){ e.preventDefault() });
+
+    ed.addEventListener('keydown', check);
+
+    function check(e) {
+        var map = {};
+        onkeydown = onkeyup = function (ek) {
+            map[ek.keyCode] = ek.type == 'keydown';
+            if (map[17] && map[83]) { // CTRL+S
+                e.preventDefault();
+                console.log('Control S');
+                return false;
+            }
+        }
+    }
 }
 
