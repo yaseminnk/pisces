@@ -205,7 +205,7 @@
 
     // -----****Showing all tags **** ------ 
     
-    document.getElementById('allTagsHd').addEventListener('click', showAllTags);
+    document.getElementById('allTags').addEventListener('click', showAllTags);
 
     function showAllTags() {
         

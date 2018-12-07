@@ -9,6 +9,7 @@
   outline: none;
 }
 body {
+  background-color:rgb(46, 45, 45);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   padding: 0;
   margin: 0;
@@ -24,27 +25,29 @@ a {
 
 /*** BASIC STYLE ***/
 /* Theme selection*/
-body {
+
+.earth-theme {
   background-color:rgb(46, 45, 45);
 }
-.earthBg {
-  background-color:rgb(46, 45, 45);
-}
-.skyBg {
+.sky-theme {
   background-color:rgb(16, 113, 167);
   color: rgb(247,247,247);
 }
-
+/*
   .xstand{
     background-color:lightgrey;
   }
+  */
   /*#greenTheme*/
+  /*
   .green {
     background-color: rgb(125, 185, 125);
     font-style: inherit;
     font-family:'Times New Roman', Times, serif;  
   }  
+  */
   /*#blueTheme */
+  /*
   .blue{
     background-color: rgb(135, 180, 240);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -54,14 +57,16 @@ body {
   .blue .nav-ul a{
     color:black;
   }  
+  */
   /*#pinkTheme*/ 
+  /*
   .pink
   {
     background-color: rgb(228, 152, 196);
     font-style:initial;
     font-family: Arial, Helvetica, sans-serif;
   }
-
+*/
 
 /*** EDITOR RESPONSIVE LAYOUT ***/
 
@@ -104,7 +109,6 @@ body {
   padding-top: 15px;
 }
 #logoShortVer {
-  /*display: none;*/     
   font-family: 'Libre Baskerville', serif;
   font-size: 48px;
   font-weight: 700;
@@ -137,7 +141,10 @@ body {
 
 /* Hidden nav icons */
 #newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #deleteNoteHd, #printNoteHd, #allTagsHd, #allStatHd {
-  /*display: none;*/
+  display: none;
+}
+
+#newNote, #myNotes, #favNotes, #saveNote, #deleteNote, #printNote, #allTags, #allStat {
   cursor: pointer;
   font-size: 1.45em;
   text-align: center;
@@ -173,26 +180,23 @@ body {
 
 
 /*** NOTE DISPLAY CONTAINER ***/
-.note-fav-container {
+.note-container {
     flex-basis: 8%;
     min-width: 190px;
+    max-height: 1032px;
     /* background-color:  rgb(61, 59, 59); */
-    background-color: whitesmoke;
+    background-color: whitesmoke;        
+    background-color: rgb(239, 239, 239);
     padding: 0;
     margin: 0;
     overflow-x: auto;
     box-shadow: 2px 0px 5px lightgray;
+    z-index: 999;
 }
-
-.data-container-hd {
-    /* display: none;  */
-    width: 150px; /* moitrayee*/
-    /* background-color: rgb(61, 59, 59); */
-    background-color: whitesmoke;
-    overflow-x: auto;
+.note-container-sky {   
+    background-color: #bfc4ca;    
 }
-
-.note-fav-container .header-notes {
+.note-container .header-notes {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   padding-top: 40px;
   padding-bottom:48px;
@@ -272,7 +276,6 @@ body {
   display: inline-block;
   white-space: nowrap;
 }
-
 .note-title-top, .note-tags-top {
   padding: 6px 10px;
 }
@@ -600,6 +603,8 @@ i .fas .fa-tags {
     padding: 8px 16px;
   }
   */
+  .ql-editor {
+    padding: 32px 82px 32px 72px;
 }
 
 @media screen and (min-width: 769px) and (max-width: 991px) {  
@@ -716,10 +721,10 @@ i .fas .fa-tags {
     padding: 8px;    
   }  
 
-  .note-fav-container {
+  .note-container {
     width: 100%;
   }
-  .note-fav-container #header-notes {
+  .note-container #header-notes {
     text-align: center;
   }
 
@@ -766,10 +771,10 @@ i .fas .fa-tags {
 @media screen and (min-width: 0px) and (max-width: 479px) {
   /*
   #newNote, #myNotes, #favNotes, #saveNote, #deleteNote, #printNote, #allTags  {
-    display: none;
+    display: block;
   }  
   #newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #deleteNoteHd, #printNoteHd, #allTagHd{
-    display: block;    
+    display: none;    
   }
   */
   .note-template-top {
