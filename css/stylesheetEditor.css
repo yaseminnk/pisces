@@ -81,13 +81,13 @@ a {
   margin: 0 0 22px 0;
   border-right: 1px solid rgb(182,182,182);
 }
-.container-navfield {
-  flex-basis: 7%;
+
+#menuField {
+  flex-basis: 5%;
   min-width: 90px; 
   padding: 0 8px; 
   margin: 0;
 }
-
 
 /*** NAV-BAR FIELD ***/
 
@@ -162,7 +162,6 @@ a {
   font-size: 0.85em;
   font-weight: 600;
   color: rgb(172,172,172);
-  padding: 8px 6px;
 }
 #themeFieldset {  
   padding: 4px 4px 6px 10px;  
@@ -178,11 +177,10 @@ a {
   margin: 6px 2px;  
 }
 
-
 /*** NOTE DISPLAY CONTAINER ***/
 .note-container {
     flex-basis: 8%;
-    min-width: 190px;
+    min-width: 212px;
     max-height: 1032px;
     /* background-color:  rgb(61, 59, 59); */
     background-color: whitesmoke;        
@@ -196,10 +194,32 @@ a {
 .note-container-sky {   
     background-color: #bfc4ca;    
 }
+
+/*** Search input field ***/
+#noteSearch {
+  display: inline-block; 
+  width: 100%;
+  padding: 16px 4px 12px 18px;    
+  border-bottom: 1px solid rgb(227,227,227);    
+  /*background-color: rgb(46,45,45);*/
+}
+#searchInput {
+  max-width: 146px;
+  padding: 4px 2px;
+  border-radius: 4px;
+}
+#searchInput:focus {
+  outline: none;
+}
+.fa-search, .fa-file-signature, .fa-tags {
+  opacity: 0.5;
+}
+/***************************************/
+
 .note-container .header-notes {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   padding-top: 40px;
-  padding-bottom:48px;
+  padding-bottom: 20px;
   padding-left: 18px;
   font-size: 1.2em;
   border-bottom: 1px solid rgb(209, 201, 201);
@@ -208,7 +228,6 @@ a {
   /* text-shadow: 1px 1px 0.5px rgb(44,44,44); */
   background-color:whitesmoke;
 }
-
 .note-item .note-title i {
   padding-left: 10px;
 }
@@ -253,25 +272,29 @@ a {
   color: rgb(44,44,44);
 }
 
-/*
-#noteSearchHd {
-  display: none;
-}
-#noteSearch { 
-  display: inline;
-  padding: 8px;
-  margin-left: 18px;
-  border: 1px solid rgb(224,224,224);
-  border-radius: 8px;
-}
-*/
 
-/*** TOP WORKSPACE FIELD ***/
+
+/*** WORK FIELD ***/
+
+.container-workfield {
+  width: auto;
+  flex-basis: 68%;
+  flex-grow: 1;
+  /*border-right: 1px solid rgb(142,142,142);*/
+}      
+
+/*** Top title/theme field ***/
 .note-field-top {  
   font-size: 1em;
   margin: 11px 8px 7px 8px;
 }
 
+#noteTitle {
+  font-size: 1.1em;
+  opacity: 0.9;
+  border: none;
+  margin-left: 10px;
+}
 .note-title-top, .note-tags-top, .note-template-top {
   display: inline-block;
   white-space: nowrap;
@@ -279,7 +302,6 @@ a {
 .note-title-top, .note-tags-top {
   padding: 6px 10px;
 }
-
 .note-template-top {
   min-width: 150px;
   margin-left: 22px;
@@ -287,6 +309,29 @@ a {
 .note-template-top h4 {
   color: rgb(107,107,107);
   margin-right: 22px;
+}
+
+#titleInput ,#tagInput {
+  padding: 8px 12px;
+  border: none;
+  width: auto; 
+  min-width: 140px;
+  font-size: 0.85em;
+}
+.fa-search, .fa-file-signature, .fa-tags {
+  opacity: 0.5;
+}
+i .fas .fa-tags {
+  padding-top: 5px;  
+}
+
+#noteTitle:active, #noteTitle:focus {
+  outline: none;  
+}
+.note-field,
+.favorit-field {
+  padding: 0;
+  margin: 0;
 }
 
 /*** STYLING DROP DOWN THEME SELECTION ***/
@@ -361,15 +406,8 @@ a {
   color:rgb(255,255,255);
   margin-left:10px;
 }
-/****************************************/
 
-
-#noteTitle {
-  font-size: 1.1em;
-  opacity: 0.9;
-  border: none;
-  margin-left: 10px;
-}
+/*** Tag field ***/
 #tagInput{
   padding: 5px 12px !important;
   border: 1px solid lightgrey !important;
@@ -381,7 +419,6 @@ a {
   font-size: 1.1em;
   margin-right: 10px;
 }
-
 .icon-tag-remove {
   padding-left: 2px;
   padding-right: 3px;
@@ -389,7 +426,6 @@ a {
   /* font-size: .9em; */
   opacity: .3;
 }
-
 .note-tags { /*2018/12/04*/
   color: rgb(44, 44, 44);
   text-shadow: 0.5px 0.5px 0 rgb(57,57,57);
@@ -397,14 +433,12 @@ a {
   font-weight: 500;
   padding: 5px 15px;
   /* border-bottom: 1px solid rgba(158, 154, 154, 0.555); */
-  cursor: pointer;
- 
+  cursor: pointer; 
 }
 .note-tags:hover { /*2018/12/04*/
   opacity: .5;
   transition: all 0.3s ease-in-out;
 }
-
 span.tag-container { /*2018/12/04*/
   border: 1px solid;
   border-radius: 3px;
@@ -414,59 +448,8 @@ span.tag-container { /*2018/12/04*/
   background-color: whitesmoke;
 }
 
-#searchInput, #titleInput ,#tagInput {
-  padding: 8px 12px;
-  border: none;
-  width: auto; 
-  min-width: 140px;
-  font-size: 0.85em;
-}
 
-#searchInput:focus {
-  outline: none;
-  border: none;
-}
-.fa-search, .fa-file-signature, .fa-tags {
-  opacity: 0.5;
-}
-i .fas .fa-tags {
-  padding-top: 5px;  
-}
-
-#noteTitle:active, #noteTitle:focus {
-  outline: none;  
-}
-
-.note-field,
-.favorit-field {
-  padding: 0;
-  margin: 0;
-}
-
-.container-workfield {
-  width: auto;
-  flex-basis: 68%;
-  flex-grow: 1;
-  /*border-right: 1px solid rgb(142,142,142);*/
-}          
-  
-/*** WORK FIELD ***/
-
-.ql-formats {
-  padding: 2px 2px 12px 2px;
-}
-
-/*** Editor ***/
-.ql-container.ql-snow {
-  border: none !important;
-}
-
-#editor {
-  box-sizing: border-box;
-  height: fit-content;
-}
-
-/*** Toolbar google fonts ***/
+/*** Toolbar ***/
 .ql-font{
   padding-right:15px;
   padding-top:2px;
@@ -490,6 +473,19 @@ i .fas .fa-tags {
   border-top: 1px solid #ccc !important;
   border-bottom: 1px solid #ccc !important;
 }
+.ql-formats {
+  padding: 2px 2px 12px 2px;
+}
+
+/*** Editor ***/
+#editor {
+  box-sizing: border-box;
+  height: fit-content;
+}
+.ql-container.ql-snow {
+  border: none !important;
+}
+
 
 /*** GOOGLE FONTS ***/
 #editor #toolbar-container .ql-container .ql-editor .ql-snow {
@@ -535,7 +531,6 @@ i .fas .fa-tags {
 /* We do not set Roboto since it is the default font */
 /*****************************************************/
 
-
 /* Optional: Style the caret down icon */
 .fa-caret-down {
   float: right;
@@ -552,17 +547,7 @@ i .fas .fa-tags {
   .container-workfield {
     flex-basis: 52%;     
     flex-grow: 1;
-  }  
-  /*
-  #noteSearch {
-    display: inline-block;
-    padding: 0 4px 0 10px;
-    margin: 14px 0 8px 0;
-  }
-  #searchInput {
-    min-width: 200px;
-  }
-  */
+  }    
 }
 
 @media screen and (min-width: 992px) and (max-width: 1099px) {
@@ -573,10 +558,7 @@ i .fas .fa-tags {
   */
   #noteTitle {
     width: 46%;
-  }
-  #searchInput {
-    min-width: 180px;
-  }
+  }  
 }
 
 @media screen and (min-width: 769px) and (max-width: 1099px) {
@@ -605,15 +587,13 @@ i .fas .fa-tags {
   */
   .ql-editor {
     padding: 32px 82px 32px 72px;
+  }
 }
 
 @media screen and (min-width: 769px) and (max-width: 991px) {  
   
   #noteTitle {
     width: 42%;
-  }
-  #searchInput {
-    min-width: 160px;
   }
   .note-title-top {
     margin-left: 4px;
@@ -645,11 +625,6 @@ i .fas .fa-tags {
     height: 100%;
     margin: 0;
   }
-  /*
-  #logo {
-    display: none;
-  }
-  */
   
   #logoShortVer {
     display: none;    
@@ -671,8 +646,9 @@ i .fas .fa-tags {
 
   #menuField {
     width: 100%;
-    padding: 6px 12px;
-  }
+    flex-basis: 100%;
+  }  
+
   .menu-collapse {
     display: none;
   }
@@ -693,27 +669,7 @@ i .fas .fa-tags {
     text-align: center;
   }  
 
-  /*
-  #noteSearchHd {
-    display: block;    
-    display: none;
-    padding: 4px;
-    margin: 12px 10px 10px 10px;
-    border: 1px solid rgb(224,224,224);
-    border-radius: 8px;
-  }
-  #noteSearch {  
-    display: none;
-  }  
-  #searchInput {
-    min-width: 120px;;
-    max-width: 132px;
-  }
-  .fa-search {
-    font-size: 0.8em;
-  }
-*/  
-  #navBar {
+  #menuField {
     flex-grow: 1;
     flex-basis: 100%;
     height: auto;               
@@ -792,13 +748,13 @@ i .fas .fa-tags {
   .note-fav-container,
   .header-notes,
   .note-title-top,
-  .ql-toolbar{
-  display:none;
-    }
-   .ql-editor {
-     margin: 5%;
- 
-   } 
+  .ql-toolbar {
+    display: none;
   }
+  .ql-editor {
+     margin: 5%; 
+  } 
+}
+
  
 }

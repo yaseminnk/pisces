@@ -16,7 +16,8 @@
 
     <!-- *** Google fonts *** -->
     <link href="https://fonts.googleapis.com/css?family=Charmonman" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Codystar|Crafty+Girls|Happy+Monkey|Lemon|Monoton|Rationale|Satisfy" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Codystar|Crafty+Girls|Happy+Monkey|Lemon|Monoton|Rationale|Satisfy"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
     <!-- Theme included stylesheets -->
@@ -25,7 +26,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
         crossorigin="anonymous">
     <link rel="stylesheet" href="css/stylesheetEditor.css">
-    <link id="dynamicStylesheet" rel="stylesheet" href="#">    
+    <link id="dynamicStylesheet" rel="stylesheet" href="#">
 </head>
 
 <body>
@@ -38,7 +39,8 @@
         </div><br>
 
         <!-- MAIN NAV FIELD -->
-        <div id="menuField" class="earth-theme">
+        <!--<div id="menuField" class="earth-theme">-->
+        <div id="menuField" class="flex-item earth-theme">
             <div id="navBar" class="flex-item container-navfield">
 
                 <div class="menu-burger">
@@ -54,11 +56,13 @@
                         <!--<li id="newNoteHd"><a class="nav-newNote" href="#">NEW NOTE</a></li>-->
                         <li id="newNote"><a class="nav-newNote" title="Create new note">
                                 <!-- <i class="far fa-envelope-open"></i></a></li> -->
-                                <i class="fas fa-edit"></i>
+                                <i class="fas fa-edit"></i></a>
+                        </li>
 
                         <!--<li id="myNotesHd"><a class="nav-notes" href="#">MY NOTES</a></li>-->
                         <li id="myNotes"><a class="nav-notes" title="My notes">
-                                <i class="far fa-file"></i></a></li>
+                                <i class="far fa-file"></i></a>
+                        </li>
 
                         <!--<li id="favNotesHd" onclick="showNotesField()"><a class="nav-favorites" href="#">FAVORITES</a></li>-->
                         <li id="favNotes" onclick="showNotesField()"><a class="nav-favorites" title="My favorites">
@@ -76,37 +80,46 @@
                         </li>
 
                         <!--<li id="allTagsHd" onclick="showTagsField()"><a class="all-tags" href="#">TAGS</a></li>-->
-                        <li id="allTags"  ><a class="all-tags" title="All tags">
-                            <i class="fas fa-tag" title="All tags"></i></a>
+                        <li id="allTags"><a class="all-tags" title="All tags">
+                                <i class="fas fa-tag" title="All tags"></i></a>
                         </li>
 
-                        <!--<li id="stat"><a class="all-tags" href="#">STAT</a></li>-->  
+                        <!--<li id="stat"><a class="all-tags" href="#">STAT</a></li>-->
                         <li id="allStat"><a class="all-stat" title="Statistik">
-                            <i class="fas fa-chart-bar"></i></a>
+                                <i class="fas fa-chart-bar"></i></a>
                         </li>
-                        
+
                         <!--<li id="printNoteHd"><a class="print-note" href="#">PRINT</a></li>-->
                         <!-- <li id="printNote"><a class="print-note" title="Print note">
                                 <i class="fas fa-print"></i></a>
                         </li> -->
-                        </ul>
-                        <form id="themeSelection">
-                            <fieldset id="themeFieldset">
-                                <legend>THEMES</legend>						
-                                <label><input id="earth" type="radio" name="qTheme" value="earth" checked="checked"> Earth</label><br>
-                                <label><input id="sky" type="radio" name="qTheme" value="sky"> Sky</label><br>
-                            </fieldset>	
-                        </form> 
-                        <br>                 
+                    </ul>
+                    <form id="themeSelection">
+                        <fieldset id="themeFieldset">
+                            <legend>THEMES</legend>
+                            <label><input id="earth" type="radio" name="qTheme" value="earth" checked="checked"> Earth</label><br>
+                            <label><input id="sky" type="radio" name="qTheme" value="sky"> Sky</label><br>
+                        </fieldset>
+                    </form>
+                    <br>
                 </div>
             </div>
         </div>
 
         <!-- NOTE FIELD -->
-        <div class="note-container">
+        <!--<div class="note-container">-->
+        <div class="flex-item note-container">
             <div class="header-notes">
-                My Notes
+                My Notes                
             </div>
+            
+            <form id="noteSearch">
+                <label>
+                    <i class="fas fa-search" title="Search"></i>
+                    <input id="searchInput" type="text" name="search-title" placeholder=" Search">
+                </label>
+            </form>
+
             <div class="note-lists note-field note-field-hd">
             </div>
             <div class="favorite-field favorite-field-hd">
@@ -121,14 +134,14 @@
                     <i class="fas fa-file-signature"></i>
                     <input id="noteTitle" type="text" name="title" placeholder="Untitled">
                 </div>
-                
+
                 <div class="note-tags-top" title="Give your note a tag">
                     <i class="fas fa-tags"></i>
                     <span class="tag-holder"></span>
                     <input id="tagInput" type="text" name="tags" placeholder="add tags here">
                 </div>
 
-                <div class="note-template-top">                    
+                <div class="note-template-top">
                     <div class="dropdown" title="Choose a template">
                         <button class="btn-drop">
                             Choose Template
@@ -141,9 +154,9 @@
                             <a id="tmpFantasy" href="#">Fantasy</a>
                         </div>
                     </div>
-                </div>                
+                </div>
             </div>
-            
+
             <!-- EDITOR -->
             <div id="editor"></div>
             <!--
