@@ -303,28 +303,28 @@ a {
 
 .note-item {
   position: relative;
-  min-height: 82px;
+  min-height: 90px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   background-color: rgb(63, 61, 61);
   color: rgb(247,247,247);
-  padding: 20px 10px 10px 20px;  
+  padding: 10px 10px 10px 20px;  
   border-bottom: 1px solid rgba(158, 156, 156, 0.596);    
 }
 .note-item .note-title{
   height: 20px;
-  font-size: 0.85em; 
+  font-size: 0.9em; 
   font-weight: 500;  
   color: rgb(247,247,247);
   cursor: pointer;
   text-shadow: 0.5px 0.5px 0 rgb(57,57,57);
-  /* padding-left: 10px;
-  padding-top: 5px;*/
+  /* padding-left: 10px;*/
+  padding-top: 5px;
   margin-bottom: 8px;  
 }
 .note-item .note-content{
   box-sizing: border-box;
-  /*padding-left: 10px;
-  padding-top:2px;*/
+  /*padding-left: 10px;*/
+  padding-top:50px; 
   /*height: 25px;*/
   font-size: 0.75em;
   overflow: hidden;
@@ -335,11 +335,19 @@ a {
   /*padding-left: 10px;
   padding-top: 10px;*/
   position: absolute;
-  bottom: 14px;
+  top: 45px;
   left: 20px;
-  color: rgba(206, 203, 203, 0.637);
+  color: rgb(209, 208, 208);
   /*height:10px;*/
-  font-size: 0.6em;  
+  font-size: 0.65em;  
+}
+
+.note-item .note-modified{
+  position: absolute;
+  top: 65px;
+  left: 20px;
+  color: rgb(209, 208, 208);
+  font-size: 0.65em;  
 }
 
 
@@ -548,6 +556,7 @@ span.tag-container { /*2018/12/04*/
   box-sizing: border-box;
   height: -webkit-fill-available;
   border-right: none !important;
+  border-bottom: none !important;
 }
 .ql-editor {  
   padding: 44px 52px;
