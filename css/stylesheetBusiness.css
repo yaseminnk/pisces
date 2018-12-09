@@ -1,4 +1,4 @@
-
+/*** STYLESHEET BUSINESS TEMPLATE ***/
 
 .ql-editor {
     font-family: 'Courier New', Courier, monospace;
@@ -13,4 +13,12 @@
 } 
 .ql-editor p {
     font-size: 1.1em;
+}
+.ql-editor img {        
+    display: block;
+    max-width:312px;
+    max-height:164px;
+    width: auto;
+    height: auto;
+    border: 2px solid rgb(147,147,147);
 }

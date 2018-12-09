@@ -241,7 +241,6 @@
     let themeSet = document.getElementById('themeFieldset');
     let btnDrop = document.querySelector('.btn-drop');
     let logoBrand = document.getElementById('logoBrand');
-    let noteCon = document.querySelector('.note-container');
     let searchHeadField = document.querySelector('#searchHeadField');
     let noteSearch = document.querySelector('.note-search');
     let headerNotes = document.querySelector('.header-notes');
