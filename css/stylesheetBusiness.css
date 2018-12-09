@@ -10,10 +10,15 @@
 .ql-editor h1, .ql-editor h2, .ql-editor h3, .ql-editor h4 {
     color: rgb(77,77,77);
     box-shadow: 1px 1px 0.5 rgb(102,102,102);
+    white-space: nowrap;
+    max-width: 73ch;
 } 
 .ql-editor p {
-    font-size: 1.1em;
+    font-size: 1.1em;       
+    /*overflow: hidden;*/
+    max-width: 72ch;
 }
+
 .ql-editor img {        
     display: block;
     max-width:312px;

@@ -249,7 +249,7 @@ a {
 
 #searchHeadField {
   display: inline-block;  
-  min-width: 230px;
+  min-width: 228px;
   height: auto;
   padding-top: 30px;   
 }
@@ -550,7 +550,7 @@ span.tag-container { /*2018/12/04*/
   border-right: none !important;
 }
 .ql-editor {  
-  padding: 42px 102px 42px 82px;
+  padding: 44px 52px;
   height: -webkit-fill-available;
   border: none !important;
 }
