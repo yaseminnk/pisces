@@ -104,7 +104,7 @@
     // -----**** Updates All notes view **** ------    
     function showNotes(showOnlyFavorites,selectedTag) // -----**** 2018/12704  **** ------ 
     {   
-        var noteList = document.getElementsByClassName('note-lists')[0];
+        var noteList = document.getElementsByClassName('note-list')[0];
         noteList.innerHTML = "";
         for(var i=0; i< notes.length; i++){
                 //showOnlyFavorites:true - only showing favorite notes 
@@ -230,7 +230,7 @@
         }
         allTags.sort();
 
-        var list = document.getElementsByClassName('note-lists')[0];
+        var list = document.getElementsByClassName('note-list')[0];
         list.innerHTML = "";
         for(let i = 0; i < allTags.length; i++){
             var divTagItem = document.createElement('div');
@@ -256,7 +256,7 @@
     var search = document.getElementById('search');
     search.addEventListener("click", function searchNote(searchValue) {
         var searchValue = document.getElementById('searchInput').value;
-        var list = document.getElementsByClassName('note-lists')[0];
+        var list = document.getElementsByClassName('note-list')[0];
         list.innerHTML = "";
         
         for (var i = 0; i < notes.length; i++) {
