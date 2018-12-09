@@ -129,19 +129,29 @@
                     }
                 }
         }
+        var div = document.getElementById('test-sc');
+        var headerNotes = document.getElementsByClassName('header-notes')[0];
+        var iconDiv = document.createElement('div');
+        var icon = document.createElement('i');
+        div.append(headerNotes);
 
         if(showOnlyFavorites){
-            document.getElementsByClassName('header-notes')[0].innerText = "Favorite Notes";  
+            headerNotes.innerText = "Favorite Notes";  
+            icon.setAttribute("class", "far fa-file img-notes");
+            iconDiv.appendChild(icon);
+            headerNotes.append(iconDiv);
         } else {
             if(selectedTag) {
-                document.getElementsByClassName('header-notes')[0].innerText = "Notes Tagged With " + selectedTag;
+                headerNotes.innerText = "Notes Tagged With " + selectedTag;
             } 
             else {
-                document.getElementsByClassName('header-notes')[0].innerText = "My Notes"; 
+                headerNotes.innerText = "My Notes"; 
+                icon.setAttribute("class", "far fa-file img-notes");
+                iconDiv.appendChild(icon);
+                headerNotes.append(iconDiv);
+                
             }
-            
         }
-
     }
 
     // -----**** Selecting a specific note to display on editor **** ------  
@@ -230,8 +240,35 @@
 
             list.append(divTagItem);
         }
-        document.getElementsByClassName('header-notes')[0].innerText = "All Tags";
+        var headerNotes = document.getElementsByClassName('header-notes')[0];
+        headerNotes.innerText = "All Tags";
+        var div = document.getElementById('test-sc');
+        var iconDiv = document.createElement('div');
+        var icon = document.createElement('i');
+        div.append(headerNotes);
+        icon.setAttribute("class", "fas fa-tags icon-tags");
+        
+        iconDiv.appendChild(icon);
+        headerNotes.append(iconDiv);
     }
+    
+    // -----**** Search note **** ------ 
+    var search = document.getElementById('search');
+    search.addEventListener("click", function searchNote(searchValue) {
+        var searchValue = document.getElementById('searchInput').value;
+        var list = document.getElementsByClassName('note-lists')[0];
+        list.innerHTML = "";
+        
+        for (var i = 0; i < notes.length; i++) {
+            var notesTitleText = notes[i].title.toLowerCase();
+            var notesContentText = notes[i].contentText.toLowerCase();
+            if ((notesTitleText.indexOf(searchValue) !== -1) || (notesContentText.indexOf(searchValue) !== -1 )) {
+                list.append(noteElement(notes[i]));
+            } 
+        }
+        document.getElementsByClassName('header-notes')[0].innerText = "Searched Notes";
+    });
+
     
 
     // -----**** Showing all notes with a specific tag **** ------  
@@ -299,6 +336,9 @@
             }
         }
     }
+
+
+    
     
     // -----**** delete note **** ------ 
     var deleteNote = document.querySelectorAll('.delete-note');
