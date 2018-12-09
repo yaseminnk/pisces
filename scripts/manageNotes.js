@@ -129,7 +129,7 @@
                     }
                 }
         }
-        var div = document.getElementById('test-sc');
+        var div = document.getElementById('searchHeadField');
         var headerNotes = document.getElementsByClassName('header-notes')[0];
         var iconDiv = document.createElement('div');
         var icon = document.createElement('i');
