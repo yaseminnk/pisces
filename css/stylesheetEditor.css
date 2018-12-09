@@ -184,7 +184,7 @@ a {
 /*** NOTE DISPLAY CONTAINER ***/
 .note-container {
   flex-basis: 8%;
-  min-width: 230px;
+  min-width: 228px;
   max-height: 1200px;  
   background-color: rgb(232, 232, 232); 
   padding: 0;
@@ -206,9 +206,9 @@ a {
 /*** Search input field ***/
 #noteSearch {
   display: inline-block;
-  width: 198px;   
+  width: 196px;   
   padding: 3px 4px;  
-  margin: 10px 12px;    
+  margin: 10px;    
   border-bottom: 1px solid rgba(58,56,56, 0.596);   
   border-radius: 5px;
 }
@@ -220,7 +220,7 @@ a {
 }
 
 #searchInput {
-  max-width: 168px;
+  max-width: 165px;
   padding: 2px;
   color:rgb(219, 215, 215);
   font-size: 1.3em;
@@ -549,12 +549,14 @@ span.tag-container { /*2018/12/04*/
   height: -webkit-fill-available;
   border-right: none !important;
 }
-.ql-editor {
-  padding: 42px 92px 42px 82px;
+.ql-editor {  
+  padding: 42px 102px 42px 82px;
   height: -webkit-fill-available;
   border: none !important;
 }
-
+.ql-tooltip {
+  z-index: 9999 !important;
+}
 
 /*** GOOGLE FONTS ***/
 #editor #toolbar-container .ql-container .ql-editor .ql-snow {

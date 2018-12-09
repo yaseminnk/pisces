@@ -39,7 +39,7 @@
         let conWorkfield = document.querySelector('.container-workfield');
         let innerW = window.innerWidth;
         let adjustedInnerWidthSm = (innerW - 18) + "px";
-        let adjustedInnerWidthLg = (innerW - 328) + "px";
+        let adjustedInnerWidthLg = (innerW - 354) + "px";
 
         if (innerWidth <= 769) {
             conWorkfield.style.maxWidth = adjustedInnerWidthSm;
