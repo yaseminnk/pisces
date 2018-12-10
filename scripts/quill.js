@@ -30,7 +30,6 @@ theme: 'snow'
 });*/
   
   
-  
   quill = new Quill('#editor', {
     modules: {
       toolbar: toolbarOptions,
