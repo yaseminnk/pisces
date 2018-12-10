@@ -177,6 +177,7 @@
     let tmpBus = document.getElementById('tmpBusiness');
     let tmpParty = document.getElementById('tmpParty');
     let tmpFan = document.getElementById('tmpFantasy');
+    let tmpPlay = document.getElementById('tmpPlayful');
     let dynStyle = document.getElementById('dynamicStylesheet');
 
     // LISTENERS
@@ -185,6 +186,7 @@
     tmpBus.addEventListener('click', changeTemplate);
     tmpParty.addEventListener('click', changeTemplate);
     tmpFan.addEventListener('click', changeTemplate);
+    tmpPlay.addEventListener('click',changeTemplate);
 
 
     // CALLBACKS
@@ -312,11 +314,11 @@ var quill = new Quill('#editor', {
             .length;
     }
 
-    var statistic = document.querySelector('.all-stat');
+   /* var statistic = document.querySelector('.all-stat');
     statistic.addEventListener('click', countNotes);
     function countNotes() {
         alert(notes.length);
-    }
+    }*/
 
     let ed = document.querySelector('.ql-editor');
 
@@ -335,5 +337,59 @@ var quill = new Quill('#editor', {
             }
         }
     }
+}
+
+var timer;
+var timerStart;
+var timeSpentOnSite = getTimeSpentOnSite();
+
+function getTimeSpentOnSite(){
+    timeSpentOnSite = parseInt(localStorage.getItem('timeSpentOnSite'));
+    timeSpentOnSite = isNaN(timeSpentOnSite) ? 0 : timeSpentOnSite;
+    return timeSpentOnSite;
+}
+
+function startCounting(){
+    timerStart = Date.now();
+    timer = setInterval(function(){
+        timeSpentOnSite = getTimeSpentOnSite()+(Date.now()-timerStart);
+        localStorage.setItem('timeSpentOnSite',timeSpentOnSite);
+        timerStart = parseInt(Date.now());
+        // Convert to seconds
+        //console.log(parseInt(timeSpentOnSite/1000));
+        document.getElementsByClassName('all-stat')[0].setAttribute('href', 'chart.html?notesLength=' + notes.length + '&time=' + parseInt(timeSpentOnSite/1000));
+    },1000);
+}
+startCounting();
+
+//Stop the timer when the window/tab is inactive:
+
+var stopCountingWhenWindowIsInactive = true; 
+
+if( stopCountingWhenWindowIsInactive ){
+
+    if( typeof document.hidden !== "undefined" ){
+        var hidden = "hidden", 
+        visibilityChange = "visibilitychange", 
+        visibilityState = "visibilityState";
+    }else if ( typeof document.msHidden !== "undefined" ){
+        var hidden = "msHidden", 
+        visibilityChange = "msvisibilitychange", 
+        visibilityState = "msVisibilityState";
+    }
+    var documentIsHidden = document[hidden];
+
+    document.addEventListener(visibilityChange, function() {
+        if(documentIsHidden != document[hidden]) {
+            if( document[hidden] ){
+                // Window is inactive
+                clearInterval(timer);
+            }else{
+                // Window is active
+                startCounting();
+            }
+            documentIsHidden = document[hidden];
+        }
+    });
 }
 
