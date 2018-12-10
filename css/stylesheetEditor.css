@@ -270,6 +270,7 @@ a {
   color: rgb(247,247,247);
   padding: 10px 10px 10px 20px;  
   border-bottom: 1px solid rgba(158, 156, 156, 0.596);    
+  box-sizing: border-box;
 }
 .note-item .note-title{
   height: 20px;
@@ -289,6 +290,8 @@ a {
   overflow: hidden;
   white-space: nowrap;
   color:  rgba(206, 203, 203, 0.514);
+  text-overflow: ellipsis;
+  max-width: 180px;
 }
 .note-item .note-created{
   /*padding-left: 10px;
