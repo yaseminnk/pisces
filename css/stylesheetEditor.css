@@ -22,10 +22,7 @@ a {
   text-decoration: none;
 }
 
-
-/*** BASIC STYLE ***/
 /* Theme selection*/
-
 .earth-theme {
   background-color:rgb(46, 45, 45);
 }
@@ -33,40 +30,6 @@ a {
   background-color:rgb(16, 113, 167);
   color: rgb(247,247,247);
 }
-/*
-  .xstand{
-    background-color:lightgrey;
-  }
-  */
-  /*#greenTheme*/
-  /*
-  .green {
-    background-color: rgb(125, 185, 125);
-    font-style: inherit;
-    font-family:'Times New Roman', Times, serif;  
-  }  
-  */
-  /*#blueTheme */
-  /*
-  .blue{
-    background-color: rgb(135, 180, 240);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-style: oblique;
-    color:black !important;
-  }
-  .blue .nav-ul a{
-    color:black;
-  }  
-  */
-  /*#pinkTheme*/ 
-  /*
-  .pink
-  {
-    background-color: rgb(228, 152, 196);
-    font-style:initial;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-*/
 
 /*** EDITOR RESPONSIVE LAYOUT ***/
 
@@ -113,8 +76,7 @@ a {
   font-size: 48px;
   font-weight: 700;
   text-align: center;  
-  color: rgba(255, 255, 255, 0.8);
-  /* background-color:  rgb(61, 59, 59); */
+  color: rgba(255, 255, 255, 0.8);  
 }
 
 .nav-ul a:hover, #logo:hover, #logoShortVer:hover  {
@@ -147,7 +109,6 @@ a {
   display: none;
 }
 */
-
 #newNote, #myNotes, #favNotes, #saveNote, #deleteNote, #printNote, #allTags, #allStat {
   cursor: pointer;
   font-size: 1.45em;
@@ -160,6 +121,7 @@ a {
 .menu-toggler {
   display: none;
 }
+
 /* Radio theme selection */
 #themeSelection {
   max-width: 98px;
@@ -184,9 +146,9 @@ a {
 /*** NOTE DISPLAY CONTAINER ***/
 .note-container {
   flex-basis: 8%;
-  min-width: 228px;
+  min-width: 226px;
   max-height: 1200px;  
-  background-color: rgb(232, 232, 232); 
+  background-color: rgb(42,43,43); 
   padding: 0;
   margin: 0;
   overflow-x: auto;
@@ -249,7 +211,7 @@ a {
 
 #searchHeadField {
   display: inline-block;  
-  min-width: 228px;
+  min-width: 226px;
   height: auto;
   padding-top: 30px;   
 }
@@ -271,8 +233,7 @@ a {
   color: rgb(247,247,247);
   /* text-shadow: 1px 1px 0.5px rgb(44,44,44); */
   background-color: rgb(63, 61, 61);
-  text-align: center;
-  /* max-height: 50px; */
+  text-align: center;  
   box-sizing: border-box;
 }
 .note-container .header-notes-sky {
@@ -281,7 +242,7 @@ a {
 
 .img-notes {
   color: rgb(254,254,254) !important;
-  font-size: 2em;
+  font-size: 1.85em;
   font-weight: 200;
   padding-top: 20px;
   display: block;
@@ -303,7 +264,7 @@ a {
 
 .note-item {
   position: relative;
-  min-height: 90px;
+  min-height: 120px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   background-color: rgb(63, 61, 61);
   color: rgb(247,247,247);
@@ -317,7 +278,6 @@ a {
   color: rgb(247,247,247);
   cursor: pointer;
   text-shadow: 0.5px 0.5px 0 rgb(57,57,57);
-  /* padding-left: 10px;*/
   padding-top: 5px;
   margin-bottom: 8px;  
 }
@@ -325,7 +285,6 @@ a {
   box-sizing: border-box;
   /*padding-left: 10px;*/
   padding-top:50px; 
-  /*height: 25px;*/
   font-size: 0.75em;
   overflow: hidden;
   white-space: nowrap;
@@ -358,7 +317,6 @@ a {
   width: auto;
   flex-basis: 68%;
   flex-grow: 1;
-  /*border-right: 1px solid rgb(142,142,142);*/
 }      
 
 /*** Top title/theme field ***/
@@ -500,7 +458,6 @@ i .fas .fa-tags {
   padding-left: 2px;
   padding-right: 3px;
   margin-top: 5px !important;
-  /* font-size: .9em; */
   opacity: .3;
 }
 .note-tags { /*2018/12/04*/
@@ -548,7 +505,7 @@ span.tag-container { /*2018/12/04*/
 }
 
 .ql-formats {
-  padding: 2px 2px 12px 2px;
+  padding: 2px 2px 8px 2px;
 }
 
 /*** Editor ***/
@@ -566,50 +523,19 @@ span.tag-container { /*2018/12/04*/
 .ql-tooltip {
   z-index: 9999 !important;
 }
-
-/*** GOOGLE FONTS ***/
-#editor #toolbar-container .ql-container .ql-editor .ql-snow {
-  font-family: "Roboto";  
+.stat-span {
+  display: inline-block;
+  width: 202px;
+  white-space: nowrap;
+  padding: 3px 4px;
+  margin-left: 6px;
+  border: 1px solid rgb(202,202,202); 
 }
-
-/* Set dropdown font-families */
-#toolbar-container .ql-font span[data-label="Roboto"]::before {
-  font-family: "Roboto";
+.counter-stat {  
+  font-size: 0.9em;
+  padding: 2px;
+  margin-right: 10px;  
 }
-#toolbar-container .ql-font span[data-label="Mirza"]::before {
-  font-family: "Mirza";
-}
-#toolbar-container .ql-font span[data-label="Aref Ruqaa"]::before {
-  font-family: "Aref Ruqaa";
-}
-#toolbar-container .ql-font span[data-label="Noto Serif JP"]::before {
-  font-family: "Noto Serif JP";
-}
-#toolbar-container .ql-font span[data-label="Lobster"]::before {
-  font-family: "Lobster";
-}
-#toolbar-container .ql-font span[data-label="Lora"]::before {
-  font-family: "Lora";
-}
-
-/* Set content font-families */
-.ql-font-mirza {
-  font-family: "Mirza";
-}
-.ql-font-aref-ruqaa {
-  font-family: "Aref Ruqaa";
-}
-.ql-font-noto-serif-jp {
-  font-family: "Noto Serif JP";
-}
-.ql-font-lobster {
-  font-family: "Lobster";
-}
-.ql-font-lora {
-  font-family: "Lora";
-}
-/* We do not set Roboto since it is the default font */
-/*****************************************************/
 
 /* Optional: Style the caret down icon */
 .fa-caret-down {
@@ -620,7 +546,6 @@ span.tag-container { /*2018/12/04*/
 }
 
   
-
 /*** MEDIA QUERIES ***/
 
 @media screen and (max-width: 1226px) {
@@ -631,11 +556,7 @@ span.tag-container { /*2018/12/04*/
 }
 
 @media screen and (min-width: 992px) and (max-width: 1099px) {
-  /*
-  .container-workfield {
-    max-width: 82%;
-  }
-  */
+  
   #noteTitle {
     width: 46%;
   }  

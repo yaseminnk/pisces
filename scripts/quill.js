@@ -1,5 +1,13 @@
 
 
+  let Font = Quill.import('formats/font');
+  Font.whitelist = ['times-new-roman', 'arial','mirza','Aref Ruqaa'];
+  Quill.register(Font, true);
+
+  var Size = Quill.import('attributors/style/size');
+  Size.whitelist = ['14px', '16px', '18px', '24px'];
+  Quill.register(Size, true);
+
 var toolbarOptions = [
   ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
   [{ 'list': 'ordered'}, { 'list': 'bullet' }],
@@ -7,30 +15,18 @@ var toolbarOptions = [
   [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
   [{ 'font': [] }],
   [{ 'align': [] }],
+  [{ 'size': ['14px', '16px', '18px', '24px'] }],
   ['link', 'image'],
+  // NEW
+  [{ 'font': ['', 'times-new-roman', 'arial', 'mirza','Aref-Ruqaa'] }],  
+  /*['clean'],*/
   //[{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
   [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
   [{ 'direction': 'rtl' }],                         // text direction
   [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
-
   ['clean']                                         // remove formatting button
-
 ];
 
-/*var Font = Quill.import('formats/font');
-// We do not add Aref Ruqaa since it is the default
-Font.whitelist = ['Mirza', 'Roboto','Noto Serif JP','Lobster', 'Lora'];
-Quill.register(Font, true);
-
-var quill = new Quill('#editor', {
-modules: {
-  toolbar: '#toolbar-container'
-},
-theme: 'snow'
-});*/
-  
-  
-  
   quill = new Quill('#editor', {
     modules: {
       toolbar: toolbarOptions,
@@ -40,6 +36,8 @@ theme: 'snow'
   });
   var Delta = Quill.import('delta');
 
+/******************/
+  
 // quill.clipboard.addMatcher(Node.TEXT_NODE, function(node, delta) {
 //   //console.log(node.data);
 //   var converter = new showdown.Converter(),
