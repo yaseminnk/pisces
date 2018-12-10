@@ -54,8 +54,7 @@
                     <h1 id="logoShortVer" title="Quire">Q</h1><br>
                     <ul class="nav-ul">
                         <!--<li id="newNoteHd"><a class="nav-newNote" href="#">NEW NOTE</a></li>-->
-                        <li id="newNote"><a class="nav-newNote" title="Create new note">
-                                <!-- <i class="far fa-envelope-open"></i></a></li> -->
+                        <li id="newNote"><a class="nav-newNote" title="Create new note">                             
                                 <i class="fas fa-edit"></i></a>
                         </li>
 
@@ -110,24 +109,21 @@
         <!--<div class="note-container">-->
         <div class="note-container">
                 
-            <div id="test-sc">
-            <div class="header-notes">
-                My Notes
-            </div>
-            
-                <form id="noteSearch">
+            <div id="searchHeadField" class="search-head">
+                <form id="noteSearch" class="note-search ">
                     <label>
-                        <i class="fas fa-search" title="Search"></i>
-                        <input id="searchInput" type="text" name="search-title" placeholder=" Search">
+                        <input id="searchInput" type="text" name="search-title" placeholder=" Find..." maxlength="15">
+                        <i id="search" class="fas fa-search" title="Search"></i>
                     </label>
                 </form>
+                <div class="header-notes"> 
+                    <!-- <div class="list-header">My Notes</div> -->
+                    <div><i class="far fa-file img-notes"></i></div>  
+                </div>
             </div>
 
-                <div class="note-lists note-field note-flex">
-                </div>
-
-                <div class="favorite-field note-flex">
-                </div>            
+            <div class="note-list note-field">
+            </div>                
         </div>
 
         <!-- WORK FIELD -->
@@ -136,13 +132,13 @@
             <div class="note-field-top">
                 <div class="note-title-top" title="Enter title">
                     <i class="fas fa-file-signature"></i>
-                    <input id="noteTitle" type="text" name="title" placeholder="Untitled">
+                    <input id="noteTitle" type="text" name="title" placeholder="Title" maxlength="30">
                 </div>
 
                 <div class="note-tags-top" title="Give your note a tag">
                     <i class="fas fa-tags"></i>
                     <span class="tag-holder"></span>
-                    <input id="tagInput" type="text" name="tags" placeholder="add tags here">
+                    <input id="tagInput" type="text" name="tags" placeholder="add tags here" maxlength="10">
                 </div>
 
                 <div class="note-template-top">

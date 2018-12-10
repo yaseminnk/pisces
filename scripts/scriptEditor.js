@@ -39,7 +39,7 @@
         let conWorkfield = document.querySelector('.container-workfield');
         let innerW = window.innerWidth;
         let adjustedInnerWidthSm = (innerW - 18) + "px";
-        let adjustedInnerWidthLg = (innerW - 328) + "px";
+        let adjustedInnerWidthLg = (innerW - 354) + "px";
 
         if (innerWidth <= 769) {
             conWorkfield.style.maxWidth = adjustedInnerWidthSm;
@@ -243,6 +243,10 @@
     let themeSet = document.getElementById('themeFieldset');
     let btnDrop = document.querySelector('.btn-drop');
     let logoBrand = document.getElementById('logoBrand');
+    let searchHeadField = document.querySelector('#searchHeadField');
+    let noteSearch = document.querySelector('.note-search');
+    let headerNotes = document.querySelector('.header-notes');
+    let searchIcon = document.querySelector('.fa-search');
 
     // EVENT LISTENERS
     earth.addEventListener('click', changeStylesheet);
@@ -256,13 +260,23 @@
         var elId = this.id;
 
         if (elId === 'earth') {
+            headerNotes.classList.remove('header-notes-sky'); 
+            searchHeadField.classList.remove('search-head-sky');
+            noteSearch.classList.remove('note-search-sky');
+            searchIcon.classList.remove('fa-search-sky');
+
             menuField.setAttribute('class', 'earth-theme');
             themeSet.style.borderColor = "rgb(102,102,102)";
             btnDrop.style.backgroundColor = "rgb(92,92,92)";
             logoBrand.style.backgroundColor = "rgb(46,45,45)";
             bd.style.backgroundColor = "rgb(92,92,92)";
         }
-        else if (elId === 'sky') {
+        else if (elId === 'sky') {            
+            headerNotes.classList.toggle('header-notes-sky'); 
+            searchHeadField.classList.toggle('search-head-sky');
+            noteSearch.classList.toggle('note-search-sky');
+            searchIcon.classList.toggle('fa-search-sky');
+
             menuField.setAttribute('class', 'sky-theme');
             themeSet.style.borderColor = "rgb(182,182,182)";
             btnDrop.style.backgroundColor = "rgb(23, 117, 171)";
