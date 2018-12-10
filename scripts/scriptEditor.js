@@ -369,9 +369,9 @@ function startCounting(){
         timeSpentOnSite = getTimeSpentOnSite()+(Date.now()-timerStart);
         localStorage.setItem('timeSpentOnSite',timeSpentOnSite);
         timerStart = parseInt(Date.now());
-        // Convert to seconds
-        //console.log(parseInt(timeSpentOnSite/1000));
-        document.getElementsByClassName('all-stat')[0].setAttribute('href', 'chart.html?notesLength=' + notes.length + '&time=' + parseInt(timeSpentOnSite/1000));
+        // Convert to minutes
+        console.log(parseInt(timeSpentOnSite/(1000*60))%60);
+        document.getElementsByClassName('all-stat')[0].setAttribute('href', 'chart.html?notesLength=' + notes.length + '&time=' + parseInt(timeSpentOnSite/(1000*60)));
     },1000);
 }
 startCounting();
