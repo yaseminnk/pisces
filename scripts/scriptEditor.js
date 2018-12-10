@@ -14,12 +14,7 @@
     let noteTitle = document.getElementById('noteTitle');
     let noteField = document.querySelector('.note-field');
     let noteSearch = document.getElementById('searchInput');
-    //let navFavorites = document.querySelectorAll('.nav-favorites');
-    //let navSaves = document.querySelectorAll('.nav-saves');
-    //let navDeleteNote = document.querySelectorAll('.nav-delete');
-    //let notesContainer = document.querySelector('.note-fav-container');
-
-
+    
     // EVENT LISTENERS 
     //logo.addEventListener('click', takeMeHome);
     logoShort.addEventListener('click', takeMeHome);
@@ -57,7 +52,7 @@
 
     function focusOnTitle() {
         noteTitle.focus();
-        noteTitle.setSelectionRange(0, 0);        
+        noteTitle.setSelectionRange(0, 0);
     }
 
     function focusOnSearch() {
@@ -116,6 +111,7 @@
     let leftIndent = document.querySelector('.ql-indent');
     let rightIndent = document.querySelectorAll('.ql-indent')[1];
     let fontSize = document.querySelector('.ql-size');
+    let fontFam = document.querySelector('.ql-font');
 
     // Set title attributes
     OList.setAttribute('title', 'Toggle Ordered list');
@@ -127,6 +123,7 @@
     leftIndent.setAttribute('title', 'Indent left');
     rightIndent.setAttribute('title', 'Indent right');
     fontSize.setAttribute('title', 'Fontsize');
+    fontFam.setAttribute('title', 'Font name');
 }
 
 
@@ -258,7 +255,7 @@
         var elId = this.id;
 
         if (elId === 'earth') {
-            headerNotes.classList.remove('header-notes-sky'); 
+            headerNotes.classList.remove('header-notes-sky');
             searchHeadField.classList.remove('search-head-sky');
             noteSearch.classList.remove('note-search-sky');
             searchIcon.classList.remove('fa-search-sky');
@@ -269,8 +266,8 @@
             logoBrand.style.backgroundColor = "rgb(46,45,45)";
             bd.style.backgroundColor = "rgb(92,92,92)";
         }
-        else if (elId === 'sky') {            
-            headerNotes.classList.toggle('header-notes-sky'); 
+        else if (elId === 'sky') {
+            headerNotes.classList.toggle('header-notes-sky');
             searchHeadField.classList.toggle('search-head-sky');
             noteSearch.classList.toggle('note-search-sky');
             searchIcon.classList.toggle('fa-search-sky');
@@ -308,20 +305,12 @@ var quill = new Quill('#editor', {
 
 /*** STATISTIC LOGIC */
 {
-    // function to count and display keypresses
-    var characters = 0;
 
-    function charCounter() {
-        characters++;
-        return characters;
-    }
-    function showCharacters() {
-        console.log(charCounter());
-    }
-
-    // Counts words in editor - we need an eventlistner
+    // Counts words in editor
+    // 
+    /*
     function wordCounts(str) {
-        return str.split(' ')
+        return str.trim().split(' ')
             .filter(function (n) { return n != '' })
             .length;
     }
@@ -333,9 +322,10 @@ var quill = new Quill('#editor', {
     }
 
     let ed = document.querySelector('.ql-editor');
-
+    */
     //ed.addEventListener('keydown', function(e){ e.preventDefault() });
 
+    /*
     ed.addEventListener('keydown', check);
 
     function check(e) {
@@ -349,5 +339,47 @@ var quill = new Quill('#editor', {
             }
         }
     }
+    */
+
+    // ANCHORS
+    let statSpan = document.createElement('span');    
+    let qlContainer = document.querySelector('.ql-toolbar');
+    let qlEditor = document.querySelector('.ql-editor');
+
+    // WE CREATE NEW STAT ELEMENTS AND APPEND THESE TO THE DOM
+    let newSpanWords = document.createElement('span');
+    newSpanWords.classList.add('counter-stat');
+    qlContainer.appendChild(newSpanWords);
+    let newSpanChar = document.createElement('span');
+    statSpan.classList.add('stat-span');
+    newSpanChar.classList.add('counter-stat');
+    statSpan.appendChild(newSpanWords);
+    statSpan.appendChild(newSpanChar);
+    qlContainer.appendChild(statSpan);
+
+    function wordCounts(str) {
+        return str.trim().split(' ')
+            .filter(function (n) { return n != '' })
+            .length;
+    }
+
+    // EVENT LISTENERS 
+    quill.on('text-change', function () {
+        newSpanWords.innerText = "Words: " + wordCounts(quill.root.innerText);
+    });
+    qlEditor.addEventListener('keydown', charCounter);
+
+
+    // Count characters
+    
+
+    var characters = 0;
+
+    function charCounter() {
+        //characters++;
+        newSpanChar.innerText = "Characters: " + characters++;
+        //return characters;
+    }
+
 }
 
