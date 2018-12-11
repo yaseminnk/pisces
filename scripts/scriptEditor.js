@@ -98,7 +98,7 @@
 }
 
 
-/*** WE ADD TITLES TO TOOLBAR ICONS ***/
+/*** WE ADD TITLES TO TOOLBAR ***/
 {
     // ANCHORS
     let qlToolBar = document.querySelector('.ql-toolbar');
@@ -127,7 +127,7 @@
 }
 
 
-/*** PRINT NOTE LOGIC ***/
+/*** PRINT NOTES ***/
 {
     // ANCHORS
     let qlContainer = document.querySelector('.ql-toolbar');
@@ -147,26 +147,23 @@
     elSpan.appendChild(elAtag);
     qlContainer.appendChild(elSpan);
 
-    let toolPrint = document.getElementById('toolbarPrintNote');
-    //let btnPrint = document.getElementById('printNoteHd');
-    //let btnPrint = document.getElementById('printNote');
 
+    // LISTENERS
+    let toolPrint = document.getElementById('toolbarPrintNote');   
     toolPrint.addEventListener('click', printContent);
-    //btnPrint.addEventListener('click', printContent);
-    //btnPrintHd.addEventListener('click', printContent);
+    
 
-    // CALLBACK PRINT FUNCTION
+    // CALLBACK PRINT
     function printContent() {
         window.print();
     }
-
     function delete_cookie(name) {
         document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
     }
 }
 
 
-/*** TEMPLATE LOGIC ***/
+/*** TEMPLATES ***/
 {
     // ANCHORS
     let btnDrop = document.querySelector('.btn-drop');
@@ -176,6 +173,7 @@
     let tmpFan = document.getElementById('tmpFantasy');
     let tmpPlay = document.getElementById('tmpPlayful');
     let dynStyle = document.getElementById('dynamicStylesheet');
+
 
     // LISTENERS
     btnDrop.addEventListener('click', showDropTheme);
@@ -230,7 +228,7 @@
 }
 
 
-/*** THEME(COLOR) LOGIC ***/
+/*** THEMES EARTH/BLUE ***/
 {
     // ANCHORS
     let bd = document.querySelector('body');
@@ -245,13 +243,13 @@
     let headerNotes = document.querySelector('.header-notes');
     let searchIcon = document.querySelector('.fa-search');
 
+
     // EVENT LISTENERS
     earth.addEventListener('click', changeStylesheet);
     sky.addEventListener('click', changeStylesheet);
 
-    // CALLBACKS
 
-    /*** THEME SELECTION ***/
+    // CALLBACKS    
     function changeStylesheet() {
         menuField.setAttribute('class', '');
         var elId = this.id;
@@ -307,41 +305,6 @@ var quill = new Quill('#editor', {
 
 /*** STATISTIC LOGIC */
 {
-
-    // Counts words in editor
-    // 
-    /*
-    function wordCounts(str) {
-        return str.trim().split(' ')
-            .filter(function (n) { return n != '' })
-            .length;
-    }
-
-   /* var statistic = document.querySelector('.all-stat');
-    statistic.addEventListener('click', countNotes);
-    function countNotes() {
-        alert(notes.length);
-    }*/
-
-    
-    //ed.addEventListener('keydown', function(e){ e.preventDefault() });
-
-    /*
-    ed.addEventListener('keydown', check);
-
-    function check(e) {
-        var map = {};
-        onkeydown = onkeyup = function (ek) {
-            map[ek.keyCode] = ek.type == 'keydown';
-            if (map[17] && map[83]) { // CTRL+S
-                e.preventDefault();
-                console.log('Control S');
-                return false;
-            }
-        }
-    }
-    */
-
     // ANCHORS
     let statSpan = document.createElement('span');    
     let qlContainer = document.querySelector('.ql-toolbar');
@@ -358,31 +321,29 @@ var quill = new Quill('#editor', {
     statSpan.appendChild(newSpanChar);
     qlContainer.appendChild(statSpan);
 
-    function wordCounts(str) {
-        return str.trim().split(' ')
-            .filter(function (n) { return n != '' })
-            .length;
-    }
 
     // EVENT LISTENERS 
     quill.on('text-change', function () {
-        newSpanWords.innerText = "Words: " + wordCounts(quill.root.innerText);
+        newSpanWords.innerText = "Words: " + wordCounter(quill.root.innerText);
+        newSpanChar.innerText = "Characters: " + charCounter(quill.root.innerText);
     });
     qlEditor.addEventListener('keydown', charCounter);
 
 
-    // Count characters
-    
-
-    var characters = 0;
-
-    function charCounter() {
-        //characters++;
-        newSpanChar.innerText = "Characters: " + characters++;
-        //return characters;
+    // CALLBACKS
+    function wordCounter(str) {
+        return str.trim().split(' ')
+            .filter(function (n) { return n != '' })
+            .length;
     }
-
+    function charCounter(str) {
+        return str.length;
+    }
 }
+
+
+
+/*** STATISTIC ***/
 
 var timer;
 var timerStart;
