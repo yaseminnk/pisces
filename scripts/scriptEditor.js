@@ -306,6 +306,7 @@ var quill = new Quill('#editor', {
 /*** STATISTIC LOGIC */
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     // Counts words in editor
     // 
@@ -343,6 +344,8 @@ var quill = new Quill('#editor', {
 
 =======
 >>>>>>> master
+=======
+>>>>>>> 3671545aabd869e5e729f810d2cd35ebad70aab8
     // ANCHORS
     let statSpan = document.createElement('span');    
     let qlContainer = document.querySelector('.ql-toolbar');
@@ -378,6 +381,7 @@ var quill = new Quill('#editor', {
         return str.length;
     }
 }
+<<<<<<< HEAD
 
 
 
@@ -436,6 +440,12 @@ if( stopCountingWhenWindowIsInactive ){
         }
     });
 }
+=======
+
+
+
+/*** STATISTIC ***/
+>>>>>>> 3671545aabd869e5e729f810d2cd35ebad70aab8
 
 var timer;
 var timerStart;
