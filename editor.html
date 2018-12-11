@@ -4,20 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="quill_200.png">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Quire Editor</title>
     <meta name="description" content="An organized multifunctional notebook that saves your time">
     <meta name="author" content="team-Pisces">
 
     <!-- Main Quill library -->
-    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <!-- <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script> -->
     <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
     <script src="https://cdn.rawgit.com/showdownjs/showdown/1.9.0/dist/showdown.min.js"></script>
-
+    
     <!-- *** Google fonts *** -->
     <link href="https://fonts.googleapis.com/css?family=Charmonman" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Codystar|Crafty+Girls|Happy+Monkey|Lemon|Monoton|Rationale|Satisfy"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Mirza" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Aref+Ruqaa|Mirza" rel="stylesheet">
+
+    <!--<link href="https://fonts.googleapis.com/css?family=Codystar|Crafty+Girls|Happy+Monkey|Lemon|Monoton|Rationale|Satisfy"
+        rel="stylesheet">-->
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
     <!-- Theme included stylesheets -->
@@ -27,10 +31,100 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="css/stylesheetEditor.css">
     <link id="dynamicStylesheet" rel="stylesheet" href="#">
+
+    <style>
+        /* Set droplist names - -item is the currently selected font, -label is the font's appearance in the droplist*/
+        .ql-snow .ql-picker.ql-font .ql-picker-label[data-value='']::before,
+        .ql-snow .ql-picker.ql-font .ql-picker-item[data-value='']::before
+        {
+        content: 'Default';
+        }
+
+        .ql-snow .ql-picker.ql-font .ql-picker-label[data-value='times-new-roman']::before,
+        .ql-snow .ql-picker.ql-font .ql-picker-item[data-value='times-new-roman']::before
+        {
+        content: 'Times New Roman';
+        font-family: 'Times New Roman';
+        }
+
+        .ql-snow .ql-picker.ql-font .ql-picker-label[data-value='arial']::before,
+        .ql-snow .ql-picker.ql-font .ql-picker-item[data-value='arial']::before
+        {
+        content: 'Arial';
+        font-family: 'Arial';
+        }
+
+        .ql-snow .ql-picker.ql-font .ql-picker-label[data-value='mirza']::before,
+        .ql-snow .ql-picker.ql-font .ql-picker-item[data-value='mirza']::before
+        {
+        content: 'Mirza';
+        font-family: 'Mirza';
+        }
+        .ql-snow .ql-picker.ql-font .ql-picker-label[data-value='Aref-Ruqaa']::before,
+        .ql-snow .ql-picker.ql-font .ql-picker-item[data-value='Aref-Ruqaa']::before
+        {
+        content: 'Aref-Ruqaa';
+        font-family: 'Aref-Ruqaa';
+        }
+
+
+        /****************************************************
+        Set the font-family content used for the HTML content.
+        *****************************************************/
+        .ql-font-arial {
+        font-family: 'Arial';
+        }
+        .ql-font-times-new-roman {
+        font-family: 'Times New Roman';
+        }
+        .ql-font-mirza {
+        font-family: "Mirza";
+        }
+        .ql-font-aref-ruqaa {
+        font-family: "Aref Ruqaa";
+        }
+        /*
+        .ql-font-noto-serif-jp {
+        font-family: "Noto Serif JP";
+        }
+        .ql-font-lobster {
+        font-family: "Lobster";
+        }
+        .ql-font-lora {
+        font-family: "Lora";
+        }*/
+
+        /*** GOOGLE FONTS ***/
+        /*#editor #toolbar-container .ql-container .ql-editor .ql-snow {
+        font-family: "Roboto";  
+        }*/
+
+        /* Set dropdown font-families */
+
+        #toolbar-container .ql-font span[data-label="Roboto"]::before {
+        font-family: "Roboto";
+        }
+        #toolbar-container .ql-font span[data-label="Mirza"]::before {
+        font-family: "Mirza";
+        }
+        #toolbar-container .ql-font span[data-label="Aref Ruqaa"]::before {
+        font-family: "Aref Ruqaa";
+        }
+        #toolbar-container .ql-font span[data-label="Noto Serif JP"]::before {
+        font-family: "Noto Serif JP";
+        }
+        #toolbar-container .ql-font span[data-label="Lobster"]::before {
+        font-family: "Lobster";
+        }
+        #toolbar-container .ql-font span[data-label="Lora"]::before {
+        font-family: "Lora";
+        }
+
+    </style>
+    
 </head>
 
 <body>
-
     <div class="flex-container">
 
         <!-- LOGO and NAV FIELD -->
@@ -54,7 +148,7 @@
                     <h1 id="logoShortVer" title="Quire">Q</h1><br>
                     <ul class="nav-ul">
                         <!--<li id="newNoteHd"><a class="nav-newNote" href="#">NEW NOTE</a></li>-->
-                        <li id="newNote"><a class="nav-newNote" title="Create new note">                             
+                        <li id="newNote"><a class="nav-newNote" title="Create new note">
                                 <i class="fas fa-edit"></i></a>
                         </li>
 
@@ -108,7 +202,7 @@
         <!-- NOTE FIELD -->
         <!--<div class="note-container">-->
         <div class="note-container">
-                
+
             <div id="searchHeadField" class="search-head">
                 <form id="noteSearch" class="note-search ">
                     <label>
@@ -116,14 +210,14 @@
                         <i id="search" class="fas fa-search" title="Search"></i>
                     </label>
                 </form>
-                <div class="header-notes"> 
+                <div class="header-notes">
                     <!-- <div class="list-header">My Notes</div> -->
-                    <div><i class="far fa-file img-notes"></i></div>  
+                    <div><i class="far fa-file img-notes"></i></div>
                 </div>
             </div>
 
             <div class="note-list note-field">
-            </div>                
+            </div>
         </div>
 
         <!-- WORK FIELD -->

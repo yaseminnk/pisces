@@ -319,8 +319,7 @@
         divNoteItem.appendChild(divNoteCreated);
         divNoteItem.appendChild(divNoteModified);
         divNoteItem.appendChild(divNoteContent);
-       
-        
+               
         return divNoteItem;
     };
 
@@ -348,8 +347,6 @@
             }
         }
     }
-
-
     
     
     // -----**** delete note **** ------ 
@@ -372,8 +369,7 @@
             }
         }
     };
-   
-    
+       
 
     // -----**** GetUnique Id **** ------ 
     //https://gist.github.com/gordonbrander/2230317
