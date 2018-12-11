@@ -323,8 +323,7 @@ var quill = new Quill('#editor', {
         alert(notes.length);
     }*/
 
-    let ed = document.querySelector('.ql-editor');
-    */
+    
     //ed.addEventListener('keydown', function(e){ e.preventDefault() });
 
     /*
