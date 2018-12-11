@@ -6,19 +6,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD
+=======
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+>>>>>>> master
     <!--<link rel="stylesheet" type="text/css" media="screen" href="chart.css" />-->
     <!--<script src="main.js"></script>-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <style>
+<<<<<<< HEAD
         .box {
             height: 500px;
             width: 500px;
+=======
+        #time{
+            font-size: 25px;
+        text-align: center;
+        }
+        h2{
+            font-size: 30px;
+         text-align: center;
+        }
+        #wrap{
+            padding:20px;
+        }
+        header {
+            height: 150px;
+        }
+
+        .container {
+            padding:0px 50px 0px 50px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .box1 {
+          padding-right: 100px;
+            flex-basis: 40%;
+        }
+        .box2{
+           padding-left: 120px;
+
+        }
+
+        #logo {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: black;
+>>>>>>> master
         }
     </style>
 
 </head>
 
 <body>
+<<<<<<< HEAD
      <header>
 
      </header>
@@ -38,11 +81,31 @@
         </div>
 
 
+=======
+    <div id="wrap">
+    <header>
+        <div id="logo">
+            <h1>QUIRE</h1>
+        </div><br>
+    </header>
+    <div class="container">
+        <div class="box1">
+            <h2>MY NOTES</h2>
+            <canvas id="myChart" heigth="100" width="100"></canvas>
+        </div>
+        <div class="box2">
+            <h2>TIME SPENT ON PAGE</h2>
+            <div id="time"></div>
+        </div>
+    </div>
+    </div>
+>>>>>>> master
 
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const notesLength = urlParams.get('notesLength');
         const totalTime = urlParams.get('time');
+<<<<<<< HEAD
         const hours = Math.trunc(totalTime/60);
         const minutes = totalTime % 60;
         //console.log(notesLength);
@@ -64,10 +127,28 @@
                 // The data for our dataset
                 data: {
                     //labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+=======
+        const hours = Math.trunc(totalTime / 60);
+        const minutes = totalTime % 60;
+        //console.log(notesLength);
+        document.addEventListener('DOMContentLoaded', function () {
+            initChart();
+            //updateChart(notesLength);
+            document.getElementById('time').innerText = hours + ((hours == 1) ? " hour and " : " hours and ") + minutes + " minutes.";
+        });
+        function initChart() {
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var chart = new Chart(ctx, {
+                // The type of chart we want to create
+                type: 'bar',
+                // The data for our dataset
+                data: {
+>>>>>>> master
                     labels: ["Notes"],
                     datasets: [{
                         label: "NOTES",
                         backgroundColor: 'rgb(255, 99, 132)',
+<<<<<<< HEAD
                         //borderColor: 'rgb(255, 99, 132)',
                         backgroundColor: 'blue',
                         data: [notesLength],
@@ -83,20 +164,41 @@
                         }],
                         yAxes:[{
                             stacked:true
+=======
+                        backgroundColor: 'blue',
+                        data: [notesLength],
+
+                    }]
+                },
+                // Configuration options go here
+                options: {
+                    scales: {
+                        xAxes: [{
+                            barPercentage: 0.3
+                        }],
+                        yAxes: [{
+                            stacked: true
+>>>>>>> master
                         }]
                     }
                 }
             });
         }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> master
         function updateChart(notesLength) {
             chart.data.datasets[0].data = notes.notesLength;
             chart.update();
         }
         // function to count and display keypresses
         var characters = 0;
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
         function charCounter() {
             characters++;
             return characters;
@@ -104,20 +206,27 @@
         function showCharacters() {
             console.log(charCounter());
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
         // Counts words in editor - we need an eventlistner
         function wordCounts(str) {
             return str.split(' ')
                 .filter(function (n) { return n != '' })
                 .length;
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
    /* var statistic = document.querySelector('.all-stat');
     statistic.addEventListener('click', countNotes);
     function countNotes() {
         alert(notes.length);
     }*/
 
+<<<<<<< HEAD
 
 //updating chart- Adding or Removing Data
 /*function addData(chart, label, data) {
@@ -187,6 +296,8 @@ function updateScale(chart) {
     chart.update();
 }*/
 
+=======
+>>>>>>> master
     </script>
 </body>
 
