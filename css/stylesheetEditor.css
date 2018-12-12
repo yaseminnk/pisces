@@ -328,8 +328,12 @@ a {
   text-overflow: ellipsis;
   max-width: 180px;
 }
-
-
+.note-item:active {
+  border: 1px solid rgb(182,182,182);  
+}
+.note-active {
+  background-color: rgb(77,77,77);
+}
 
 /*** WORK FIELD ***/
 

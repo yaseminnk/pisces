@@ -395,13 +395,13 @@
     let noteSearch = document.querySelector('.note-search');
     let headerNotes = document.querySelector('.header-notes');
     let searchIcon = document.getElementById('search');
-
+ 
 
     // EVENT LISTENERS
     earth.addEventListener('click', changeStylesheet);
     sky.addEventListener('click', changeStylesheet);
 
-
+   
     // CALLBACKS    
     function changeStylesheet() {
         let noteItems = document.querySelectorAll('.note-item');
@@ -422,6 +422,7 @@
 
             noteItems.forEach( (note)=> {
                 note.classList.remove('note-item-sky');
+
             });
             noteTitles.forEach( (note)=> {
                 note.classList.remove('note-title-sky');                
@@ -471,5 +472,27 @@
             logoBrand.style.backgroundColor = "rgb(16, 113, 167)";
             bd.style.backgroundColor = "rgb(36, 133, 197)";
         }
+    }
+}
+
+{    
+    let activeNotes = document.querySelector('.nav-newNote');    
+    activeNotes.addEventListener('click', setListener);
+
+    function setListener() {
+        let noteItems = document.querySelectorAll('.note-item');
+        console.log(noteItems.length);
+
+        noteItems.forEach( (note)=> {
+            note.addEventListener('click', activeNote);
+        })
+    }
+
+    function activeNote() {
+        let noteItems = document.querySelectorAll('.note-item');
+        noteItems.forEach( (note)=> {
+            note.classList.remove('note-active');
+        })
+        this.classList.toggle('note-active');
     }
 }
