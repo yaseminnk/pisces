@@ -9,7 +9,7 @@
   outline: none;
 }
 body {
-  background-color:rgb(46, 45, 45);
+  /* background-color:rgb(46, 45, 45); */
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   padding: 0;
   margin: 0;
@@ -60,6 +60,7 @@ a {
 #navBar {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   outline: none;
+  
 }
 #logoBrand {
   display: none;
@@ -535,8 +536,9 @@ span.tag-container { /*2018/12/04*/
 }
 .ql-editor {  
   padding: 44px 52px;
-  height: -webkit-fill-available;
+  /* height: -webkit-fill-available; */
   border: none !important;
+  overflow: hidden;
 }
 .ql-editor h1,.ql-editor h2,.ql-editor h3,.ql-editor h4,.ql-editor h5  {
   max-width: 36ch;
