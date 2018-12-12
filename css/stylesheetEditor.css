@@ -273,11 +273,15 @@ a {
   min-height: 120px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   background-color: rgb(63, 61, 61);
-  color: rgb(247,247,247);
+  /*color: rgb(247,247,247);*/
   padding: 10px;  
   border-bottom: 1px solid rgba(158, 156, 156, 0.596);    
   box-sizing: border-box;
 }
+.note-item-sky {
+  background-color: rgb(242,242,242); 
+}
+
 .note-item .note-title{
   height: 20px;
   font-size: 0.95em; 
@@ -288,6 +292,19 @@ a {
   padding-top: 5px;
   margin-bottom: 10px;  
 }
+.note-item .note-title-sky {
+  color: rgb(92,92,92);
+  text-shadow: none;
+}
+.note-item .note-created, .note-item .note-modified {    
+  margin-bottom: 8px;
+  font-size: 0.70em;
+  color: rgb(209, 208, 208);  
+}
+.note-item .note-created-sky, .note-item .note-modified-sky {
+  color: rgb(132,132,132);
+}
+
 .note-item .note-content{
   box-sizing: border-box;  
   padding-top:50px;   
@@ -297,14 +314,16 @@ a {
   text-overflow: ellipsis;
   max-width: 180px;
 }
-.note-item .note-created, .note-item .note-modified {  
-  /*position: absolute;
-  top: 45px;
-  left: 12px;*/
-  margin-bottom: 8px;
-  font-size: 0.70em;
-  color: rgb(209, 208, 208);  
+.note-item .note-content-sky {
+  color: rgb(92,92,92);
+  box-sizing: border-box;  
+  padding-top:50px;   
+  overflow: hidden;
+  white-space: nowrap;  
+  text-overflow: ellipsis;
+  max-width: 180px;
 }
+
 
 
 /*** WORK FIELD ***/
@@ -482,6 +501,7 @@ span.tag-container { /*2018/12/04*/
 
 /*** Toolbar ***/
 .ql-font{
+  width: 154px !important;
   padding-right:15px;
   padding-top:2px;
   margin: 8px 10px;
@@ -551,66 +571,66 @@ span.tag-container { /*2018/12/04*/
 /*** GOOGLE FONTS ***/
 
 /* Set droplist names - -item is the currently selected font, -label is the font's appearance in the droplist*/
-        /*.ql-snow .ql-picker.ql-font .ql-picker-label[data-value='']::before,
-        .ql-snow .ql-picker.ql-font .ql-picker-item[data-value='']::before
+        
+        .ql-snow .ql-picker.ql-font .ql-picker-label[data-value='sans-serif']::before,
+        .ql-snow .ql-picker.ql-font .ql-picker-item[data-value='sans-serif']::before
         {
-        content: 'Default';
-        }*/
-
+        content: 'Sans Serif';
+        font-family: 'Sans Serif';
+        }
         .ql-snow .ql-picker.ql-font .ql-picker-label[data-value='times-new-roman']::before,
         .ql-snow .ql-picker.ql-font .ql-picker-item[data-value='times-new-roman']::before
         {
         content: 'Times New Roman';
         font-family: 'Times New Roman';
         }
-
         .ql-snow .ql-picker.ql-font .ql-picker-label[data-value='arial']::before,
         .ql-snow .ql-picker.ql-font .ql-picker-item[data-value='arial']::before
         {
         content: 'Arial';
         font-family: 'Arial';
         }
-
         .ql-snow .ql-picker.ql-font .ql-picker-label[data-value='mirza']::before,
         .ql-snow .ql-picker.ql-font .ql-picker-item[data-value='mirza']::before
         {
         content: 'Mirza';
         font-family: 'Mirza';
-        }
-        /*
-        .ql-snow .ql-picker.ql-font .ql-picker-label[data-value='Aref-Ruqaa']::before,
-        .ql-snow .ql-picker.ql-font .ql-picker-item[data-value='Aref-Ruqaa']::before
-        {
-        content: 'Aref-Ruqaa';
-        font-family: 'Aref-Ruqaa';
-        }
-        */
+        }          
         .ql-snow .ql-picker.ql-font .ql-picker-label[data-value='Roboto']::before,
         .ql-snow .ql-picker.ql-font .ql-picker-item[data-value='Roboto']::before
         {
         content: 'Roboto';
         font-family: 'Roboto';
         }
+        .ql-snow .ql-picker.ql-font .ql-picker-label[data-value='Aref-Ruqaa']::before,
+        .ql-snow .ql-picker.ql-font .ql-picker-item[data-value='Aref-Ruqaa']::before
+        {
+        content: 'Aref Ruqaa';
+        font-family: 'Aref Ruqaa';
+        }
 
         /****************************************************
         Set the font-family content used for the HTML content.
         *****************************************************/
-        .ql-font-arial {
-          font-family: 'Arial';
+        .ql-font-times-new-roman {
+          font-family: 'Sans serif';
         }
         .ql-font-times-new-roman {
           font-family: 'Times New Roman';
         }
+        .ql-font-arial {
+          font-family: 'Arial';
+        }        
         .ql-font-mirza {
           font-family: "Mirza";
-        }
-        /*
-        .ql-font-aref-ruqaa {
-          font-family: "Aref Ruqaa";
-        } */       
+        }        
         .ql-font-roboto {
           font-family: "Roboto";
         }
+        .ql-font-aref-ruqaa {
+          font-family: "Aref Ruqaa";
+        }        
+        
 
         /*
         .ql-font-noto-serif-jp {
@@ -622,28 +642,24 @@ span.tag-container { /*2018/12/04*/
         */
 
         /*** GOOGLE FONTS ***/
-        /*#editor #toolbar-container .ql-container .ql-editor .ql-snow {
-        font-family: "Roboto";  
-        }*/
+        #editor #toolbar-container .ql-container .ql-editor .ql-snow {
+        font-family: "Sans serif";  
+        }
 
         /* Set dropdown font-families */
-
         #toolbar-container .ql-font span[data-label="Roboto"]::before {
         font-family: "Roboto";
         }
         #toolbar-container .ql-font span[data-label="Mirza"]::before {
         font-family: "Mirza";
-        }
-        /*
+        }        
         #toolbar-container .ql-font span[data-label="Aref Ruqaa"]::before {
         font-family: "Aref Ruqaa";
-        } */
+        } 
         /*       
         #toolbar-container .ql-font span[data-label="Lobster"]::before {
         font-family: "Lobster";
-        }
-        */
-        /*
+        }        
         #toolbar-container .ql-font span[data-label="Noto Serif JP"]::before {
           font-family: "Noto Serif JP";
         }

@@ -236,8 +236,9 @@
     }
 }
 
-
+/* This was moved to manageNotes.js */
 /*** THEMES EARTH/BLUE ***/
+/*
 {
     // ANCHORS
     let bd = document.querySelector('body');
@@ -285,9 +286,9 @@
             noteSearch.classList.toggle('note-search-sky');
             searchIcon.classList.toggle('fa-search-sky');
             menuField.setAttribute('class', 'sky-theme');
-            /*noteItems.forEach( (note)=> {
+            noteItems.forEach( (note)=> {
                 note.style.backgroundColor = "rgb(242,242,242)";
-            });*/
+            });
             noteCon.style.backgroundColor = "rgb(248,249,249)";
             themeSet.style.borderColor = "rgb(182,182,182)";
             btnDrop.style.backgroundColor = "rgb(23, 117, 171)";
@@ -296,7 +297,7 @@
         }
     }
 }
-
+*/
 
 // Implement and register module
 /*

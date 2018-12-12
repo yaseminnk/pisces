@@ -308,7 +308,7 @@
 
         var divNoteModified = document.createElement("div");
         divNoteModified.className = "note-modified";
-        divNoteModified.textContent = "Last modified: "+ note.modified;
+        divNoteModified.textContent = "Modified: "+ note.modified;
 
         var divNoteContent = document.createElement("div");
         divNoteContent.className = "note-content";
@@ -378,3 +378,98 @@
       };
 
 })();
+
+
+
+/*** THEMES EARTH/BLUE ***/
+{
+    // ANCHORS
+    let bd = document.querySelector('body');
+    let menuField = document.querySelector('#menuField');
+    let earth = document.getElementById('earth');
+    let sky = document.getElementById('sky');
+    let themeSet = document.getElementById('themeFieldset');
+    let btnDrop = document.querySelector('.btn-drop');
+    let logoBrand = document.getElementById('logoBrand');
+    let noteContainer = document.querySelector('.note-container');
+    let noteItems = document.querySelectorAll('.note-item');
+    let noteTitles = document.querySelectorAll('.note-title');
+    let noteCreated = document.querySelectorAll('.note-created');
+    let noteMod = document.querySelectorAll('.note-modified');
+    let noteContent = document.querySelectorAll('.note-content');
+    let searchHeadField = document.querySelector('#searchHeadField');
+    let noteSearch = document.querySelector('.note-search');
+    let headerNotes = document.querySelector('.header-notes');
+    let searchIcon = document.getElementById('search');
+
+    // EVENT LISTENERS
+    earth.addEventListener('click', changeStylesheet);
+    sky.addEventListener('click', changeStylesheet);
+
+
+    // CALLBACKS    
+    function changeStylesheet() {
+        menuField.setAttribute('class', '');
+        var elId = this.id;
+
+        if (elId === 'earth') {
+            headerNotes.classList.remove('header-notes-sky');
+            searchHeadField.classList.remove('search-head-sky');
+            noteSearch.classList.remove('note-search-sky');
+            searchIcon.classList.remove('fa-search-sky');
+            menuField.setAttribute('class', 'earth-theme');
+
+            noteItems.forEach( (note)=> {
+                note.classList.remove('note-item-sky');
+            });
+            noteTitles.forEach( (note)=> {
+                note.classList.remove('note-title-sky');                
+            });
+            noteCreated.forEach( (note)=> {
+                note.classList.remove('note-created-sky');
+            });
+            noteMod.forEach( (note)=> {
+                note.classList.remove('note-modified-sky');
+            });
+            noteContent.forEach( (note)=> {
+                note.classList.remove('note-content-sky');
+            });
+
+            noteContainer.style.backgroundColor = "rgb(46,45,45)";
+            themeSet.style.borderColor = "rgb(102,102,102)";
+            btnDrop.style.backgroundColor = "rgb(92,92,92)";
+            logoBrand.style.backgroundColor = "rgb(46,45,45)";
+            bd.style.backgroundColor = "rgb(92,92,92)";
+        }
+        else if (elId === 'sky') {
+            headerNotes.classList.toggle('header-notes-sky');
+            searchHeadField.classList.toggle('search-head-sky');
+            noteSearch.classList.toggle('note-search-sky');
+            searchIcon.classList.toggle('fa-search-sky');
+            menuField.setAttribute('class', 'sky-theme');
+            noteContainer.style.backgroundColor = "rgb(248,249,249)";
+
+            noteItems.forEach( (note)=> {
+                note.classList.toggle('note-item-sky');
+            });
+            noteTitles.forEach( (note)=> {
+                note.classList.toggle('note-title-sky');                
+            });
+            noteCreated.forEach( (note)=> {
+                note.classList.toggle('note-created-sky');
+            });
+            noteMod.forEach( (note)=> {
+                note.classList.toggle('note-modified-sky');
+            });
+            noteContent.forEach( (note)=> {
+                note.classList.toggle('note-content-sky');
+            });
+            
+            themeSet.style.borderColor = "rgb(182,182,182)";
+            btnDrop.style.backgroundColor = "rgb(23, 117, 171)";
+            logoBrand.style.backgroundColor = "rgb(16, 113, 167)";
+            bd.style.backgroundColor = "rgb(36, 133, 197)";
+        }
+    }
+}
+

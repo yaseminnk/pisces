@@ -1,7 +1,7 @@
 
 
   let Font = Quill.import('formats/font');
-  Font.whitelist = ['times-new-roman', 'arial','mirza','Roboto'];
+  Font.whitelist = ['times-new-roman', 'arial','mirza','Roboto','Aref-Ruqaa'];
   Quill.register(Font, true);
 
   /*
@@ -20,7 +20,7 @@ var toolbarOptions = [
   //[{ 'size': ['Small', 'Normal', 'Large', 'Huge'] }],
   ['link', 'image'],
   // NEW
-  [{ 'font': ['', 'times-new-roman', 'arial', 'mirza','Roboto'] }],  
+  [{ 'font': ['sans-serif','times-new-roman','arial','mirza','Roboto','Aref-Ruqaa'] }],  
   /*['clean'],*/
   //[{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
   [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
@@ -63,6 +63,10 @@ function pasteMarkdown () {
   html      = converter.makeHtml(text);
   quill.root.innerHTML = html;
 }
+
+// We add more picker options to fonts
+let ql = document.querySelector('.ql-font span');
+ql.setAttribute('aria-controls', 'ql-picker-options-6');
 
 
 
