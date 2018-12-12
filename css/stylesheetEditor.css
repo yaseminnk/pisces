@@ -8,6 +8,9 @@
 * {
   outline: none;
 }
+html {
+  background-color: rgb(46, 45, 45);
+}
 body {
   /* background-color:rgb(46, 45, 45); */
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -152,7 +155,8 @@ a {
 .note-container {
   flex-basis: 8%;
   min-width: 226px;
-  max-height: 1200px;  
+  /*max-height: 1200px;  */
+  min-height: 1100px;
   background-color: rgb(46,45,45); 
   padding: 0;
   margin: 0;
@@ -531,6 +535,7 @@ span.tag-container { /*2018/12/04*/
 #editor {
   box-sizing: border-box;
   height: -webkit-fill-available;
+  height: auto;
   border-right: none !important;
   border-bottom: none !important;
 }
@@ -538,7 +543,7 @@ span.tag-container { /*2018/12/04*/
   padding: 44px 52px;
   /* height: -webkit-fill-available; */
   border: none !important;
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 .ql-editor h1,.ql-editor h2,.ql-editor h3,.ql-editor h4,.ql-editor h5  {
   max-width: 36ch;
@@ -900,7 +905,7 @@ span.tag-container { /*2018/12/04*/
   }
 }
 
-@media print{
+@media print{  
   meta,
   #menuField,
   .note-container,
@@ -913,9 +918,20 @@ span.tag-container { /*2018/12/04*/
   .ql-toolbar {
     display: none;
   }
+  pre, ol, ul, p, h1, h2, h3, h4, h5 {     
+    page-break-inside: avoid;
+  }
+  * { 
+    border: none !important; 
+  }
+  
   .ql-editor {
      margin: 5%; 
-  } 
+  }
 }
-
- 
+/*
+@page {
+  size: A4;
+  margin: 70px 25px;  
+}
+*/
