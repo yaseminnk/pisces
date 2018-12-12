@@ -22,7 +22,7 @@
 
     for (let i = 0; i < navNewNote.length; i++) {
         navNewNote[i].addEventListener('click', focusOnTitle);
-        navNotes[i].addEventListener('click', showNotesField);
+        //navNotes[i].addEventListener('click', showNotesField);
     }
     noteField.addEventListener('click', modNoteField);
 
@@ -75,9 +75,9 @@
     }
 
     // Field for my notes and favorite notes
-    function showNotesField() {
-        //notesContainer.classList.toggle('data-container-hd');
-    }
+    //function showNotesField() {
+    //notesContainer.classList.toggle('data-container-hd');
+    //}
 
     //dropdown menu
     var dropdown = document.getElementsByClassName("dropdown-btn");
@@ -101,7 +101,8 @@
 /*** WE ADD TITLES TO TOOLBAR ***/
 {
     // ANCHORS
-    let qlToolBar = document.querySelector('.ql-toolbar');
+    //let qlToolBar = document.querySelector('.ql-toolbar');
+    let qlEd = document.querySelector('.ql-editor');
     let OList = document.querySelector('.ql-list');
     let UList = document.querySelectorAll('.ql-list')[1];
     let heading = document.querySelector('.ql-header');
@@ -124,6 +125,29 @@
     rightIndent.setAttribute('title', 'Indent right');
     fontSize.setAttribute('title', 'Fontsize');
     fontFam.setAttribute('title', 'Font name');
+
+    // LISTENERS
+    window.onload = edFocus;
+    //qlEd.addEventListener('blur', edBlur);
+
+    // CALLBACK
+    function edFocus() {
+        qlEd.focus();
+        //quill.root.innerText = "HELLO WORLD!";
+        //qlEd.setAttribute('placeholder', 'Write here: ');
+    }
+
+    // Logic when leaving the editor and note working with an existing note
+    /*
+    function edBlur() {
+        confirm('Do you want to save the note?');
+        if (true) {
+            console.log("true");
+        } else {
+            return false;
+        }
+    }*/
+
 }
 
 

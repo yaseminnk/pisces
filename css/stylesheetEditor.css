@@ -306,11 +306,11 @@ a {
 }
 
 .note-item .note-content{
-  box-sizing: border-box;  
-  /* padding-top:50px;    */
+  box-sizing: border-box;
+  padding: 12px 0;   
   overflow: hidden;
   white-space: nowrap;
-  color:  rgba(206, 203, 203, 0.514);
+  color: rgba(206, 203, 203, 0.514);
   text-overflow: ellipsis;
   max-width: 180px;
 }
