@@ -384,7 +384,7 @@ var quill = new Quill('#editor', {
 
 
 
-/*** STATISTIC ***/
+/*** STATISTIk ***/
 
 {
     var timer;

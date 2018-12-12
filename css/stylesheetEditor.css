@@ -332,9 +332,10 @@ a {
   border: 1px solid rgb(182,182,182);  
 }
 .note-active {
-  background-color: rgb(77,77,77);
+  /* background-color: rgb(77,77,77); */
+  background-color: rgb(247, 240, 240);
+  color: rgb(57,57,57);
 }
-
 /*** WORK FIELD ***/
 
 .container-workfield {
@@ -923,16 +924,31 @@ span.tag-container { /*2018/12/04*/
   .ql-toolbar {
     display: none;
   }
-  pre, ol, ul, p, h1, h2, h3, h4, h5 {     
-    page-break-inside: avoid;
+  
+  /* h2 { 
+    page-break-before: always;
   }
+  h3, h4 {
+    page-break-after: avoid;
+  }
+  pre, blockquote {
+    page-break-inside: avoid;
+  } */
+
+
+
+   pre, ol, ul, p, h1, h2, h3, h4, h5,div {
+    page-break-inside: avoid;
+
+  } 
+  
   * { 
     border: none !important; 
-  }
-  
+  } 
+
   .ql-editor {
-     margin: 5%; 
-  }
+     margin: 5%;
+  } 
 }
 /*
 @page {

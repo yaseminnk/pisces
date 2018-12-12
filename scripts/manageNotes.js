@@ -38,6 +38,8 @@
         currentNoteId = note.id;
     };
 
+    
+
     // -----**** Changing note title **** ------
     document.getElementById('noteTitle').addEventListener('change', function() {   
          document.getElementById(currentNoteId).getElementsByClassName('note-title')[0].innerText = this.value;
@@ -53,7 +55,7 @@
                 } 
                 var tagInput = document.getElementById('tagInput');
                 var tagText = tagInput.value;
-                if(notes[i].tags.indexOf(tagText) === -1) { //add only unique tag
+                if((notes[i].tags.indexOf(tagText) === -1) && (notes[i].tags.length <= 2)) { //add only unique tag
                     notes[i].tags.push(tagText);
                 }
                 saveAllNotes();
@@ -65,6 +67,10 @@
         addTag(currentNoteId);
     });
     
+    // -----**** Saving notes on every-change **** ------
+    quill.on('text-change', function() {
+        saveAllNotes();
+      });
 
 
     // -----**** Saving notes **** ------
@@ -93,6 +99,7 @@
         }
     };
 
+  
     // notes.forEach(function(item){
     //   allNotehtmlContent += '<div class="note-item"><div class="note-title">'+ item.title +'</div><div class="note-content">'+ item.content +'</div><div class="note-created">'+ item.created +'</div></div>';
     // });
@@ -221,7 +228,7 @@
     document.getElementById('allTags').addEventListener('click', showAllTags);
 
     function showAllTags() {
-        
+        isFavoriteView = false;
         var allTags = [];
         for(var i = 0; i < notes.length; i++){
             for( var j = 0; j < notes[i].tags.length; j++) {
@@ -354,19 +361,21 @@
         deleteNote[i].addEventListener('click', noteDelete);
     }
     function noteDelete () {
-        for(var i = 0; i < notes.length; i++) {
-           var noteId = currentNoteId; 
-            if (notes[i].id === noteId) {
-              notes.splice(i,1);
-              document.getElementById('noteTitle').value = "";
-              quill.setContents("");
-              document.getElementsByClassName('tag-holder')[0].innerHTML = "";
-              document.getElementById('tagInput').value= "";
-              localStorage.setItem("notes", JSON.stringify(notes));
-              
-              showNotes(isFavoriteView);
-            }
-        }
+        if (confirm('Are you sure you want to delete this note from the storage?')) {
+            for(var i = 0; i < notes.length; i++) {
+                var noteId = currentNoteId; 
+                 if (notes[i].id === noteId) {
+                   notes.splice(i,1);
+                   document.getElementById('noteTitle').value = "";
+                   quill.setContents("");
+                   document.getElementsByClassName('tag-holder')[0].innerHTML = "";
+                   document.getElementById('tagInput').value= "";
+                   localStorage.setItem("notes", JSON.stringify(notes));
+                  
+                   showNotes(isFavoriteView);
+                 }
+             }
+        } 
     };
        
 
