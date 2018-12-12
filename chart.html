@@ -6,19 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<<<<<<< HEAD
-=======
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
->>>>>>> master
     <!--<link rel="stylesheet" type="text/css" media="screen" href="chart.css" />-->
     <!--<script src="main.js"></script>-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <style>
-<<<<<<< HEAD
-        .box {
-            height: 500px;
-            width: 500px;
-=======
         #time{
             font-size: 25px;
         text-align: center;
@@ -54,34 +46,12 @@
             font-size: 32px;
             font-weight: 700;
             color: black;
->>>>>>> master
         }
     </style>
 
 </head>
 
 <body>
-<<<<<<< HEAD
-     <header>
-
-     </header>
-    <div class="box">
-        <h1>MY NOTES</h1>
-        <canvas id="myChart" heigth="100" width="100"></canvas>
-    </div>
-    <div class="box">
-        <h1>TIME SPENT ON PAGE</h1>
-        <div id="time">
-
-        </div>
-    </div>
-    <div class="box">
-            <h1>MORE INFO</h1>
-            <canvas id="myChart" heigth="100" width="100"></canvas>
-        </div>
-
-
-=======
     <div id="wrap">
     <header>
         <div id="logo">
@@ -99,35 +69,11 @@
         </div>
     </div>
     </div>
->>>>>>> master
 
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const notesLength = urlParams.get('notesLength');
         const totalTime = urlParams.get('time');
-<<<<<<< HEAD
-        const hours = Math.trunc(totalTime/60);
-        const minutes = totalTime % 60;
-        //console.log(notesLength);
-
-
-        document.addEventListener('DOMContentLoaded', function () {
-            initChart();
-            //updateChart(notesLength);
-            document.getElementById('time').innerText = hours + ((hours == 1) ? " timme och " : " timmar och ") + minutes + " minuter.";
-        });
-
-        function initChart() {
-            var ctx = document.getElementById('myChart').getContext('2d');
-
-            var chart = new Chart(ctx, {
-                // The type of chart we want to create
-                type: 'bar',
-
-                // The data for our dataset
-                data: {
-                    //labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-=======
         const hours = Math.trunc(totalTime / 60);
         const minutes = totalTime % 60;
         //console.log(notesLength);
@@ -143,28 +89,10 @@
                 type: 'bar',
                 // The data for our dataset
                 data: {
->>>>>>> master
                     labels: ["Notes"],
                     datasets: [{
                         label: "NOTES",
                         backgroundColor: 'rgb(255, 99, 132)',
-<<<<<<< HEAD
-                        //borderColor: 'rgb(255, 99, 132)',
-                        backgroundColor: 'blue',
-                        data: [notesLength],
-                
-                    }]
-                },
-
-                // Configuration options go here
-                options: {
-                    scales:{
-                        xAxes:[{
-                            barPercentage:0.3
-                        }],
-                        yAxes:[{
-                            stacked:true
-=======
                         backgroundColor: 'blue',
                         data: [notesLength],
 
@@ -178,27 +106,17 @@
                         }],
                         yAxes: [{
                             stacked: true
->>>>>>> master
                         }]
                     }
                 }
             });
         }
-<<<<<<< HEAD
-
-
-=======
->>>>>>> master
         function updateChart(notesLength) {
             chart.data.datasets[0].data = notes.notesLength;
             chart.update();
         }
         // function to count and display keypresses
         var characters = 0;
-<<<<<<< HEAD
-
-=======
->>>>>>> master
         function charCounter() {
             characters++;
             return characters;
@@ -206,98 +124,18 @@
         function showCharacters() {
             console.log(charCounter());
         }
-<<<<<<< HEAD
-
-=======
->>>>>>> master
         // Counts words in editor - we need an eventlistner
         function wordCounts(str) {
             return str.split(' ')
                 .filter(function (n) { return n != '' })
                 .length;
         }
-<<<<<<< HEAD
-
-=======
->>>>>>> master
    /* var statistic = document.querySelector('.all-stat');
     statistic.addEventListener('click', countNotes);
     function countNotes() {
         alert(notes.length);
     }*/
 
-<<<<<<< HEAD
-
-//updating chart- Adding or Removing Data
-/*function addData(chart, label, data) {
-    chart.data.labels.push(label);
-    chart.data.datasets.forEach((dataset) => {
-        dataset.data.push(data);
-    });
-    chart.update();
-}
-
-function removeData(chart) {
-    chart.data.labels.pop();
-    chart.data.datasets.forEach((dataset) => {
-        dataset.data.pop();
-    });
-    chart.update();
-}
-//Updating Options
-function updateConfigByMutating(chart) {
-    chart.options.title.text = 'new title';
-    chart.update();
-}
-
-function updateConfigAsNewObject(chart) {
-    chart.options = {
-        responsive: true,
-        title:{
-            display:true,
-            text: 'Chart.js'
-        },
-        scales: {
-            xAxes: [{
-                display: true
-            }],
-            yAxes: [{
-                display: true
-            }]
-        }
-    }
-    chart.update();
-}
-//Update scales
-function updateScales(chart) {
-    var xScale = chart.scales['x-axis-0'];
-    var yScale = chart.scales['y-axis-0'];
-    chart.options.scales = {
-        xAxes: [{
-            id: 'newId',
-            display: true
-        }],
-        yAxes: [{
-            display: true,
-            type: 'logarithmic'
-        }]
-    }
-    chart.update();
-    // need to update the reference
-    xScale = chart.scales['newId'];
-    yScale = chart.scales['y-axis-0'];
-}
-//You can also update a specific scale either by specifying its index or id.
-
-function updateScale(chart) {
-    chart.options.scales.yAxes[0] = {
-        type: 'logarithmic'
-    }
-    chart.update();
-}*/
-
-=======
->>>>>>> master
     </script>
 </body>
 

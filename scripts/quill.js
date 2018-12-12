@@ -3,13 +3,7 @@
   let Font = Quill.import('formats/font');
   Font.whitelist = ['times-new-roman', 'arial','mirza','Roboto','Aref-Ruqaa'];
   Quill.register(Font, true);
-
-  /*
-  var Size = Quill.import('attributors/style/size');
-  Size.whitelist = ['12px', '14px', '18px', '24px'];
-  Quill.register(Size, true);
-  */
-
+  
 var toolbarOptions = [
   ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
   [{ 'list': 'ordered'}, { 'list': 'bullet' }],
@@ -33,7 +27,8 @@ var toolbarOptions = [
     modules: {
       toolbar: toolbarOptions,
     },
-    placeholder: 'write here...',
+    //placeholder: 'write here...',
+    //placeholder: 'write here...',
     theme: 'snow'
   });
   var Delta = Quill.import('delta');
