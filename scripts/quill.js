@@ -1,24 +1,26 @@
 
 
   let Font = Quill.import('formats/font');
-  Font.whitelist = ['times-new-roman', 'arial','mirza','Aref Ruqaa'];
+  Font.whitelist = ['times-new-roman', 'arial','mirza','Roboto'];
   Quill.register(Font, true);
 
+  /*
   var Size = Quill.import('attributors/style/size');
-  Size.whitelist = ['14px', '16px', '18px', '24px'];
+  Size.whitelist = ['12px', '14px', '18px', '24px'];
   Quill.register(Size, true);
+  */
 
 var toolbarOptions = [
   ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
   [{ 'list': 'ordered'}, { 'list': 'bullet' }],
   [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
   [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
-  [{ 'font': [] }],
+  //[{ 'font': [] }],
   [{ 'align': [] }],
-  [{ 'size': ['14px', '16px', '18px', '24px'] }],
+  //[{ 'size': ['Small', 'Normal', 'Large', 'Huge'] }],
   ['link', 'image'],
   // NEW
-  [{ 'font': ['', 'times-new-roman', 'arial', 'mirza','Aref-Ruqaa'] }],  
+  [{ 'font': ['', 'times-new-roman', 'arial', 'mirza','Roboto'] }],  
   /*['clean'],*/
   //[{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
   [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent

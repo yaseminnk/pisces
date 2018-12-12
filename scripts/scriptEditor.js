@@ -14,7 +14,7 @@
     let noteTitle = document.getElementById('noteTitle');
     let noteField = document.querySelector('.note-field');
     let noteSearch = document.getElementById('searchInput');
-    
+
     // EVENT LISTENERS 
     //logo.addEventListener('click', takeMeHome);
     logoShort.addEventListener('click', takeMeHome);
@@ -149,9 +149,9 @@
 
 
     // LISTENERS
-    let toolPrint = document.getElementById('toolbarPrintNote');   
+    let toolPrint = document.getElementById('toolbarPrintNote');
     toolPrint.addEventListener('click', printContent);
-    
+
 
     // CALLBACK PRINT
     function printContent() {
@@ -181,7 +181,7 @@
     tmpBus.addEventListener('click', changeTemplate);
     tmpParty.addEventListener('click', changeTemplate);
     tmpFan.addEventListener('click', changeTemplate);
-    tmpPlay.addEventListener('click',changeTemplate);
+    tmpPlay.addEventListener('click', changeTemplate);
 
 
     // CALLBACKS
@@ -192,7 +192,6 @@
     // Close the dropdown menu if the user clicks outside of
     window.onclick = function (event) {
         if (!event.target.matches('.btn-drop')) {
-
             var dropdowns = document.getElementsByClassName("dropdown-content");
             var i;
             for (i = 0; i < dropdowns.length; i++) {
@@ -207,22 +206,32 @@
     /*** Change template - change dynamic stylesheet ***/
     function changeTemplate() {
         dynStyle.setAttribute('href', '');
+        btnDrop.innerText = "Choose Template";
         var elId = this.id;
 
-        if (elId === 'tmpDeafult') {
-            dynStyle.setAttribute('href', '#');
-        }
-        else if (elId === 'tmpBusiness') {
-            dynStyle.setAttribute('href', 'css/stylesheetBusiness.css');
-        }
-        else if (elId === 'tmpParty') {
-            dynStyle.setAttribute('href', 'css/stylesheetParty.css');
-        }
-        else if (elId === 'tmpFantasy') {
-            dynStyle.setAttribute('href', 'css/stylesheetFantasy.css');
-        }
-        else if (elId === 'tmpPlayful') {
-            dynStyle.setAttribute('href', 'css/stylesheetPlayful.css');
+        switch (elId) {
+            case 'tmpDeafult':
+                dynStyle.setAttribute('href', '#');
+                btnDrop.innerText = "Choose Template";
+                break;
+            case 'tmpBusiness':
+                dynStyle.setAttribute('href', 'css/stylesheetBusiness.css');
+                btnDrop.innerText = "Business";
+                break;
+            case 'tmpParty':
+                dynStyle.setAttribute('href', 'css/stylesheetParty.css');
+                btnDrop.innerText = "Party";
+                break;
+            case 'tmpFantasy':
+                dynStyle.setAttribute('href', 'css/stylesheetFantasy.css');
+                btnDrop.innerText = "Fantasy";
+                break;
+            case 'tmpPlayful':
+                dynStyle.setAttribute('href', 'css/stylesheetPlayful.css');
+                btnDrop.innerText = "Playful";
+                break;
+            default:
+                break;
         }
     }
 }
@@ -238,11 +247,14 @@
     let themeSet = document.getElementById('themeFieldset');
     let btnDrop = document.querySelector('.btn-drop');
     let logoBrand = document.getElementById('logoBrand');
+    let noteCon = document.querySelector('.note-container');
+
+    let noteItems = document.querySelectorAll('.note-item');
+
     let searchHeadField = document.querySelector('#searchHeadField');
     let noteSearch = document.querySelector('.note-search');
     let headerNotes = document.querySelector('.header-notes');
     let searchIcon = document.querySelector('.fa-search');
-
 
     // EVENT LISTENERS
     earth.addEventListener('click', changeStylesheet);
@@ -259,8 +271,9 @@
             searchHeadField.classList.remove('search-head-sky');
             noteSearch.classList.remove('note-search-sky');
             searchIcon.classList.remove('fa-search-sky');
-
             menuField.setAttribute('class', 'earth-theme');
+
+            noteCon.style.backgroundColor = "rgb(46,45,45)";
             themeSet.style.borderColor = "rgb(102,102,102)";
             btnDrop.style.backgroundColor = "rgb(92,92,92)";
             logoBrand.style.backgroundColor = "rgb(46,45,45)";
@@ -271,8 +284,11 @@
             searchHeadField.classList.toggle('search-head-sky');
             noteSearch.classList.toggle('note-search-sky');
             searchIcon.classList.toggle('fa-search-sky');
-
             menuField.setAttribute('class', 'sky-theme');
+            /*noteItems.forEach( (note)=> {
+                note.style.backgroundColor = "rgb(242,242,242)";
+            });*/
+            noteCon.style.backgroundColor = "rgb(248,249,249)";
             themeSet.style.borderColor = "rgb(182,182,182)";
             btnDrop.style.backgroundColor = "rgb(23, 117, 171)";
             logoBrand.style.backgroundColor = "rgb(16, 113, 167)";
@@ -305,49 +321,8 @@ var quill = new Quill('#editor', {
 
 /*** STATISTIC LOGIC */
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-    // Counts words in editor
-    // 
-    /*
-    function wordCounts(str) {
-        return str.trim().split(' ')
-            .filter(function (n) { return n != '' })
-            .length;
-    }
-
-   /* var statistic = document.querySelector('.all-stat');
-    statistic.addEventListener('click', countNotes);
-    function countNotes() {
-        alert(notes.length);
-    }*/
-
-    
-    //ed.addEventListener('keydown', function(e){ e.preventDefault() });
-
-    /*
-    ed.addEventListener('keydown', check);
-
-    function check(e) {
-        var map = {};
-        onkeydown = onkeyup = function (ek) {
-            map[ek.keyCode] = ek.type == 'keydown';
-            if (map[17] && map[83]) { // CTRL+S
-                e.preventDefault();
-                console.log('Control S');
-                return false;
-            }
-        }
-    }
-    */
-
-=======
->>>>>>> master
-=======
->>>>>>> 3671545aabd869e5e729f810d2cd35ebad70aab8
     // ANCHORS
-    let statSpan = document.createElement('span');    
+    let statSpan = document.createElement('span');
     let qlContainer = document.querySelector('.ql-toolbar');
     let qlEditor = document.querySelector('.ql-editor');
 
@@ -381,123 +356,63 @@ var quill = new Quill('#editor', {
         return str.length;
     }
 }
-<<<<<<< HEAD
 
 
 
 /*** STATISTIC ***/
 
-var timer;
-var timerStart;
-var timeSpentOnSite = getTimeSpentOnSite();
+{
+    var timer;
+    var timerStart;
+    var timeSpentOnSite = getTimeSpentOnSite();
 
-function getTimeSpentOnSite(){
-    timeSpentOnSite = parseInt(localStorage.getItem('timeSpentOnSite'));
-    timeSpentOnSite = isNaN(timeSpentOnSite) ? 0 : timeSpentOnSite;
-    return timeSpentOnSite;
-}
-
-function startCounting(){
-    timerStart = Date.now();
-    timer = setInterval(function(){
-        timeSpentOnSite = getTimeSpentOnSite()+(Date.now()-timerStart);
-        localStorage.setItem('timeSpentOnSite',timeSpentOnSite);
-        timerStart = parseInt(Date.now());
-        // Convert to minutes
-        console.log(parseInt(timeSpentOnSite/(1000*60))%60);
-        document.getElementsByClassName('all-stat')[0].setAttribute('href', 'chart.html?notesLength=' + notes.length + '&time=' + parseInt(timeSpentOnSite/(1000*60)));
-    },1000);
-}
-startCounting();
-
-//Stop the timer when the window/tab is inactive:
-
-var stopCountingWhenWindowIsInactive = true; 
-
-if( stopCountingWhenWindowIsInactive ){
-
-    if( typeof document.hidden !== "undefined" ){
-        var hidden = "hidden", 
-        visibilityChange = "visibilitychange", 
-        visibilityState = "visibilityState";
-    }else if ( typeof document.msHidden !== "undefined" ){
-        var hidden = "msHidden", 
-        visibilityChange = "msvisibilitychange", 
-        visibilityState = "msVisibilityState";
+    function getTimeSpentOnSite() {
+        timeSpentOnSite = parseInt(localStorage.getItem('timeSpentOnSite'));
+        timeSpentOnSite = isNaN(timeSpentOnSite) ? 0 : timeSpentOnSite;
+        return timeSpentOnSite;
     }
-    var documentIsHidden = document[hidden];
 
-    document.addEventListener(visibilityChange, function() {
-        if(documentIsHidden != document[hidden]) {
-            if( document[hidden] ){
-                // Window is inactive
-                clearInterval(timer);
-            }else{
-                // Window is active
-                startCounting();
-            }
-            documentIsHidden = document[hidden];
-        }
-    });
-}
-=======
-
-
-
-/*** STATISTIC ***/
->>>>>>> 3671545aabd869e5e729f810d2cd35ebad70aab8
-
-var timer;
-var timerStart;
-var timeSpentOnSite = getTimeSpentOnSite();
-
-function getTimeSpentOnSite(){
-    timeSpentOnSite = parseInt(localStorage.getItem('timeSpentOnSite'));
-    timeSpentOnSite = isNaN(timeSpentOnSite) ? 0 : timeSpentOnSite;
-    return timeSpentOnSite;
-}
-
-function startCounting(){
-    timerStart = Date.now();
-    timer = setInterval(function(){
-        timeSpentOnSite = getTimeSpentOnSite()+(Date.now()-timerStart);
-        localStorage.setItem('timeSpentOnSite',timeSpentOnSite);
-        timerStart = parseInt(Date.now());
-        // Convert to minutes
-        console.log(parseInt(timeSpentOnSite/(1000*60))%60);
-        document.getElementsByClassName('all-stat')[0].setAttribute('href', 'chart.html?notesLength=' + notes.length + '&time=' + parseInt(timeSpentOnSite/(1000*60)));
-    },1000);
-}
-startCounting();
-
-//Stop the timer when the window/tab is inactive:
-
-var stopCountingWhenWindowIsInactive = true; 
-
-if( stopCountingWhenWindowIsInactive ){
-
-    if( typeof document.hidden !== "undefined" ){
-        var hidden = "hidden", 
-        visibilityChange = "visibilitychange", 
-        visibilityState = "visibilityState";
-    }else if ( typeof document.msHidden !== "undefined" ){
-        var hidden = "msHidden", 
-        visibilityChange = "msvisibilitychange", 
-        visibilityState = "msVisibilityState";
+    function startCounting() {
+        timerStart = Date.now();
+        timer = setInterval(function () {
+            timeSpentOnSite = getTimeSpentOnSite() + (Date.now() - timerStart);
+            localStorage.setItem('timeSpentOnSite', timeSpentOnSite);
+            timerStart = parseInt(Date.now());
+            // Convert to minutes
+            console.log(parseInt(timeSpentOnSite / (1000 * 60)) % 60);
+            document.getElementsByClassName('all-stat')[0].setAttribute('href', 'chart.html?notesLength=' + notes.length + '&time=' + parseInt(timeSpentOnSite / (1000 * 60)));
+        }, 1000);
     }
-    var documentIsHidden = document[hidden];
+    startCounting();
 
-    document.addEventListener(visibilityChange, function() {
-        if(documentIsHidden != document[hidden]) {
-            if( document[hidden] ){
-                // Window is inactive
-                clearInterval(timer);
-            }else{
-                // Window is active
-                startCounting();
-            }
-            documentIsHidden = document[hidden];
+    //Stop the timer when the window/tab is inactive:
+
+    var stopCountingWhenWindowIsInactive = true;
+
+    if (stopCountingWhenWindowIsInactive) {
+
+        if (typeof document.hidden !== "undefined") {
+            var hidden = "hidden",
+                visibilityChange = "visibilitychange",
+                visibilityState = "visibilityState";
+        } else if (typeof document.msHidden !== "undefined") {
+            var hidden = "msHidden",
+                visibilityChange = "msvisibilitychange",
+                visibilityState = "msVisibilityState";
         }
-    });
-}
+        var documentIsHidden = document[hidden];
 
+        document.addEventListener(visibilityChange, function () {
+            if (documentIsHidden != document[hidden]) {
+                if (document[hidden]) {
+                    // Window is inactive
+                    clearInterval(timer);
+                } else {
+                    // Window is active
+                    startCounting();
+                }
+                documentIsHidden = document[hidden];
+            }
+        });
+    }
+}

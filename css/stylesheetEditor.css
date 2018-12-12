@@ -47,7 +47,7 @@ a {
 
 #menuField {
   flex-basis: 5%;
-  min-width: 90px; 
+  min-width: 98px; 
   padding: 0 8px; 
   margin: 0;
 }
@@ -109,10 +109,14 @@ a {
   display: none;
 }
 */
-#newNote, #myNotes, #favNotes, #saveNote, #deleteNote, #printNote, #allTags, #allStat {
+#newNote, #myNotes, #favNotes, #saveNote, #deleteNote, #printNote, #allTags, #allStat, #searchNote {
   cursor: pointer;
   font-size: 1.45em;
   text-align: center;
+}
+#faSearch {
+  opacity: 0.8;
+  color: rgba(255,255,255,0.9) !important;
 }
 
 .fa-bars {
@@ -148,7 +152,7 @@ a {
   flex-basis: 8%;
   min-width: 226px;
   max-height: 1200px;  
-  background-color: rgb(42,43,43); 
+  background-color: rgb(46,45,45); 
   padding: 0;
   margin: 0;
   overflow-x: auto;
@@ -207,6 +211,7 @@ a {
   color: rgb(104,104,104) !important;
 }
 
+
 /***************************************/
 
 #searchHeadField {
@@ -220,6 +225,7 @@ a {
 }
 .search-head-sky {  
   background-color: rgb(36, 133, 197);   
+  background-color: rgb(116, 173, 210);   
 }
 
 .note-container .header-notes{
@@ -237,12 +243,12 @@ a {
   box-sizing: border-box;
 }
 .note-container .header-notes-sky {
-  background-color: rgb(36, 133, 197);   
+  background-color: rgb(116, 173, 210);   
 }
 
 .img-notes {
   color: rgb(254,254,254) !important;
-  font-size: 1.85em;
+  font-size: 1.8em;
   font-weight: 200;
   padding-top: 20px;
   display: block;
@@ -268,50 +274,37 @@ a {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   background-color: rgb(63, 61, 61);
   color: rgb(247,247,247);
-  padding: 10px 10px 10px 20px;  
+  padding: 10px;  
   border-bottom: 1px solid rgba(158, 156, 156, 0.596);    
   box-sizing: border-box;
 }
 .note-item .note-title{
   height: 20px;
-  font-size: 0.9em; 
+  font-size: 0.95em; 
   font-weight: 500;  
   color: rgb(247,247,247);
   cursor: pointer;
   text-shadow: 0.5px 0.5px 0 rgb(57,57,57);
   padding-top: 5px;
-  margin-bottom: 8px;  
+  margin-bottom: 10px;  
 }
 .note-item .note-content{
-  box-sizing: border-box;
-  /*padding-left: 10px;*/
-  padding-top:50px; 
-  font-size: 0.75em;
+  box-sizing: border-box;  
+  padding-top:50px;   
   overflow: hidden;
   white-space: nowrap;
   color:  rgba(206, 203, 203, 0.514);
   text-overflow: ellipsis;
   max-width: 180px;
 }
-.note-item .note-created{
-  /*padding-left: 10px;
-  padding-top: 10px;*/
-  position: absolute;
+.note-item .note-created, .note-item .note-modified {  
+  /*position: absolute;
   top: 45px;
-  left: 20px;
-  color: rgb(209, 208, 208);
-  /*height:10px;*/
-  font-size: 0.65em;  
+  left: 12px;*/
+  margin-bottom: 8px;
+  font-size: 0.70em;
+  color: rgb(209, 208, 208);  
 }
-
-.note-item .note-modified{
-  position: absolute;
-  top: 65px;
-  left: 20px;
-  color: rgb(209, 208, 208);
-  font-size: 0.65em;  
-}
-
 
 
 /*** WORK FIELD ***/
@@ -343,7 +336,7 @@ a {
 }
 .note-template-top {
   min-width: 150px;
-  margin-left: 22px;
+  margin-left: 24px;
 }
 .note-template-top h4 {
   color: rgb(107,107,107);
@@ -436,7 +429,7 @@ i .fas .fa-tags {
   display: none;
   padding-left: 8px;
 }
-.drop{
+.drop {
   display:block;
   text-decoration: none;
   font-size: 0.85em;
@@ -523,6 +516,13 @@ span.tag-container { /*2018/12/04*/
   height: -webkit-fill-available;
   border: none !important;
 }
+.ql-editor h1,.ql-editor h2,.ql-editor h3,.ql-editor h4,.ql-editor h5  {
+  max-width: 36ch;
+}
+.ql-editor p {
+  max-width: 78ch; 
+}
+
 .ql-tooltip {
   z-index: 9999 !important;
 }
@@ -577,38 +577,49 @@ span.tag-container { /*2018/12/04*/
         content: 'Mirza';
         font-family: 'Mirza';
         }
+        /*
         .ql-snow .ql-picker.ql-font .ql-picker-label[data-value='Aref-Ruqaa']::before,
         .ql-snow .ql-picker.ql-font .ql-picker-item[data-value='Aref-Ruqaa']::before
         {
         content: 'Aref-Ruqaa';
         font-family: 'Aref-Ruqaa';
         }
+        */
+        .ql-snow .ql-picker.ql-font .ql-picker-label[data-value='Roboto']::before,
+        .ql-snow .ql-picker.ql-font .ql-picker-item[data-value='Roboto']::before
+        {
+        content: 'Roboto';
+        font-family: 'Roboto';
+        }
 
         /****************************************************
         Set the font-family content used for the HTML content.
         *****************************************************/
         .ql-font-arial {
-        font-family: 'Arial';
+          font-family: 'Arial';
         }
         .ql-font-times-new-roman {
-        font-family: 'Times New Roman';
+          font-family: 'Times New Roman';
         }
         .ql-font-mirza {
-        font-family: "Mirza";
+          font-family: "Mirza";
         }
+        /*
         .ql-font-aref-ruqaa {
-        font-family: "Aref Ruqaa";
+          font-family: "Aref Ruqaa";
+        } */       
+        .ql-font-roboto {
+          font-family: "Roboto";
         }
+
         /*
         .ql-font-noto-serif-jp {
         font-family: "Noto Serif JP";
-        }
+        } 
         .ql-font-lobster {
-        font-family: "Lobster";
-        }
-        .ql-font-lora {
-        font-family: "Lora";
-        }*/
+          font-family: "Lobster";
+        }       
+        */
 
         /*** GOOGLE FONTS ***/
         /*#editor #toolbar-container .ql-container .ql-editor .ql-snow {
@@ -623,19 +634,23 @@ span.tag-container { /*2018/12/04*/
         #toolbar-container .ql-font span[data-label="Mirza"]::before {
         font-family: "Mirza";
         }
+        /*
         #toolbar-container .ql-font span[data-label="Aref Ruqaa"]::before {
         font-family: "Aref Ruqaa";
-        }
-        #toolbar-container .ql-font span[data-label="Noto Serif JP"]::before {
-        font-family: "Noto Serif JP";
-        }
+        } */
+        /*       
         #toolbar-container .ql-font span[data-label="Lobster"]::before {
         font-family: "Lobster";
+        }
+        */
+        /*
+        #toolbar-container .ql-font span[data-label="Noto Serif JP"]::before {
+          font-family: "Noto Serif JP";
         }
         #toolbar-container .ql-font span[data-label="Lora"]::before {
         font-family: "Lora";
         }
-
+        */
         
   
 /*** MEDIA QUERIES ***/
@@ -655,31 +670,9 @@ span.tag-container { /*2018/12/04*/
 }
 
 @media screen and (min-width: 769px) and (max-width: 1099px) {
-/*
-  #logo {
-    display: none;
-  }  
-  #logoShortVer {
-    display: block;    
-    margin: 2px 0 20px 0;
-  }    
-  #navBar {
-    padding: 22px 10px;
-  }  
-  */
-  /*
-  #newNote, #myNotes, #favNotes, #saveNote, #deleteNote, #printNote, #allTags  {
-    display: none;
-  }  
-  #newNoteHd, #myNotesHd, #favNotesHd, #saveNoteHd, #deleteNoteHd, #printNoteHd, #allTagHd{
-    display: block;    
-  }  
-  #themeSelection {   
-    padding: 8px 16px;
-  }
-  */
+
   .ql-editor {
-    padding: 32px 82px 32px 72px;
+    padding: 28px 72px 32px 72px;
   }
 }
 
@@ -693,17 +686,12 @@ span.tag-container { /*2018/12/04*/
   }
   .note-template-top {   
     margin: 12px 0 10px 10px;
-  }
-  /*
-  .container-navfield {    
-    flex-basis: 7%;
-    min-width: 128px;
-  } 
-  */  
+  }  
   .ql-editor {
     padding: 32px 48px 32px 42px;    
   }
 }
+
 
 @media screen and (max-width: 768px) {
   
@@ -772,18 +760,32 @@ span.tag-container { /*2018/12/04*/
     overflow: hidden;
     padding: 10px;   
   }  
-/*
-  .note-container {
-    width: 100%;
-  }
-*/
+
 .note-container {   
   display: flex;
   flex-wrap: wrap;
-  flex-basis: 100%;
-  height: 312px;
+  flex-basis: 100%;  
   border-bottom: 2px solid rgb(202,202,202);
 }
+
+#searchHeadField {
+  display: none;
+}
+#noteField {
+  flex-basis: 100%;
+}
+
+.note-item {
+  padding: 20px;
+}
+
+.note-item .note-created, .note-item .note-modified {    
+  margin-bottom: 8px;
+  font-size: 0.75em;
+  color: rgb(209, 208, 208);  
+}
+
+/*
 #searchHeadField {
   display: flex;
   flex-direction: column;
@@ -792,9 +794,7 @@ span.tag-container { /*2018/12/04*/
   padding: 15px 10px 0 22px;
   margin: 0;
 }
-.search-head-sky {
-  background-color: rgb(33, 147, 241);
-}
+*/
 /*
 .note-container #noteSearch {  
   display: inline-flex;
@@ -806,10 +806,6 @@ span.tag-container { /*2018/12/04*/
   margin: 14px auto 18px;
 }
 
-.note-field {
-  flex-basis: 100%;
-}
-
 #searchInput {
   padding: 4px 2px;
   color:rgb(219, 215, 215);
@@ -818,22 +814,9 @@ span.tag-container { /*2018/12/04*/
   border: none;
 }
 
-/*
-.note-flex {
-  width: 100%;
-  margin: 0;
-}*/
-
-  .note-container .header-notes {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    padding-top: 0;
-  }
   .img-notes, .icon-tags {
     display: none;
   }
-
   .note-field {
     overflow-x: auto;
   }
@@ -850,14 +833,16 @@ span.tag-container { /*2018/12/04*/
     display: block;
   } 
   .note-tags-top {
-    display: inline-block;
+    display: flex;  
+    flex-wrap: wrap;  
   }  
   .note-tags-top input {
     max-width: 112px;
   }
   .note-template-top {
-    float: right;
+    /* float: right; */    
     padding: 4px 10px;
+    /*margin-left: 10px;*/
   }  
   #themeSelection {
     max-width: 120px;

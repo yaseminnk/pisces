@@ -4,7 +4,7 @@
     font-family: 'Courier New', Courier, monospace;
     line-height: 2em;
     background-color: rgb(242,242,242);
-    padding: 36px 98px;    
+    padding: 36px 58px;       
 }
 
 .ql-editor h1, .ql-editor h2, .ql-editor h3, .ql-editor h4 {
@@ -15,7 +15,6 @@
 } 
 .ql-editor p {
     font-size: 1.1em;       
-    /*overflow: hidden;*/
     max-width: 72ch;
 }
 

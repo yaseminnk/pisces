@@ -17,8 +17,10 @@
     
     <!-- *** Google fonts *** -->
     <link href="https://fonts.googleapis.com/css?family=Charmonman" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Mirza" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Aref+Ruqaa|Mirza" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Mirza" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css?family=Aref+Ruqaa" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!--<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">-->
 
     <!--<link href="https://fonts.googleapis.com/css?family=Codystar|Crafty+Girls|Happy+Monkey|Lemon|Monoton|Rationale|Satisfy"
         rel="stylesheet">-->
@@ -53,7 +55,6 @@
                 </div>
 
                 <div id="collapseTarget" class="menu-collapse">
-                    <!--<h1 id="logo">QUIRE</h1>-->
                     <h1 id="logoShortVer" title="Quire">Q</h1><br>
                     <ul class="nav-ul">
                         <!--<li id="newNoteHd"><a class="nav-newNote" href="#">NEW NOTE</a></li>-->
@@ -87,8 +88,13 @@
                         </li>
 
                         <!--<li id="stat"><a class="all-tags" href="#">STAT</a></li>-->
-                        <li id="allStat" onclick="updateChart()"><a class="all-stat" title="Statistik" href="chart.html">
+                        <li id="allStat" onclick="updateChart()"><a class="all-stat" title="Statistic" href="chart.html">
                                 <i class="fas fa-chart-bar"></i></a>
+                        </li>
+
+                        <!--<li id="stat"><a class="all-tags" href="#">STAT</a></li>-->
+                        <li id="searchNote" onclick="updateChart()"><a class="search-note" title="Search">
+                            <i id="faSearch" class="fas fa-search fa-search-nav"></i></a>
                         </li>
 
                         <!--<li id="printNoteHd"><a class="print-note" href="#">PRINT</a></li>-->
@@ -125,7 +131,7 @@
                 </div>
             </div>
 
-            <div class="note-list note-field">
+            <div id="noteField" class="note-list note-field">
             </div>
         </div>
 
@@ -162,15 +168,7 @@
             </div>
 
             <!-- EDITOR -->
-            <div id="editor"></div>
-            <!--
-            <div id="toolbar-container" class="ql-container ql-snow">
-                <div id="editor">
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum itaque explicabo vero tempore
-                        commodi illum eaque architecto officiis asperiores distinctio, deserunt illo fugiat aliquid
-                        nobis. Exercitationem distinctio cum soluta consequatur!</p>
-                </div>
-            </div>-->
+            <div id="editor"></div>           
         </div>
     </div>
 
