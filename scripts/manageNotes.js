@@ -282,9 +282,8 @@
 
 
 
-
     // -----**** Dynamically creating notes view **** ------  
-    function  noteElement(note) {
+    function noteElement(note) {
         var divNoteItem = document.createElement("div");
         divNoteItem.id = note.id;
         divNoteItem.className = "note-item";
@@ -391,16 +390,12 @@
     let themeSet = document.getElementById('themeFieldset');
     let btnDrop = document.querySelector('.btn-drop');
     let logoBrand = document.getElementById('logoBrand');
-    let noteContainer = document.querySelector('.note-container');
-    let noteItems = document.querySelectorAll('.note-item');
-    let noteTitles = document.querySelectorAll('.note-title');
-    let noteCreated = document.querySelectorAll('.note-created');
-    let noteMod = document.querySelectorAll('.note-modified');
-    let noteContent = document.querySelectorAll('.note-content');
+    let noteContainer = document.querySelector('.note-container');    
     let searchHeadField = document.querySelector('#searchHeadField');
     let noteSearch = document.querySelector('.note-search');
     let headerNotes = document.querySelector('.header-notes');
     let searchIcon = document.getElementById('search');
+
 
     // EVENT LISTENERS
     earth.addEventListener('click', changeStylesheet);
@@ -409,6 +404,12 @@
 
     // CALLBACKS    
     function changeStylesheet() {
+        let noteItems = document.querySelectorAll('.note-item');
+        let noteTitles = document.querySelectorAll('.note-title');
+        let noteCreated = document.querySelectorAll('.note-created');
+        let noteMod = document.querySelectorAll('.note-modified');
+        let noteContent = document.querySelectorAll('.note-content');
+
         menuField.setAttribute('class', '');
         var elId = this.id;
 
@@ -472,4 +473,3 @@
         }
     }
 }
-

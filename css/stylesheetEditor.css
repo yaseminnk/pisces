@@ -283,7 +283,7 @@ a {
   border-bottom: 1px solid rgba(158, 156, 156, 0.596);    
   box-sizing: border-box;
 }
-.note-item-sky {
+#noteField .note-item-sky {
   background-color: rgb(242,242,242); 
 }
 
@@ -322,7 +322,7 @@ a {
 .note-item .note-content-sky {
   color: rgb(92,92,92);
   box-sizing: border-box;  
-  padding-top:50px;   
+  padding: 12px 0;   
   overflow: hidden;
   white-space: nowrap;  
   text-overflow: ellipsis;
@@ -559,9 +559,10 @@ span.tag-container { /*2018/12/04*/
   display: inline-block;
   width: 202px;
   white-space: nowrap;
+  color: rgb(72,72,72);
   padding: 3px 4px;
-  margin-left: 6px;
-  border: 1px solid rgb(202,202,202); 
+  margin-left: 8px;
+  /*border: 1px solid rgb(202,202,202); */
 }
 .counter-stat {  
   font-size: 0.9em;
