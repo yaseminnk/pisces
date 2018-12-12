@@ -307,7 +307,7 @@ a {
 
 .note-item .note-content{
   box-sizing: border-box;  
-  padding-top:50px;   
+  /* padding-top:50px;    */
   overflow: hidden;
   white-space: nowrap;
   color:  rgba(206, 203, 203, 0.514);
@@ -465,7 +465,9 @@ i .fas .fa-tags {
 }
 .tag-holder {
   display: inline;
-  min-width: 20px;
+  /* min-width: 20px; */
+  max-width: 20px;
+  text-overflow: ellipsis;
   font-size: 1.1em;
   margin-right: 10px;
 }
