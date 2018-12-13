@@ -1,7 +1,8 @@
 
 
   let Font = Quill.import('formats/font');
-  Font.whitelist = ['times-new-roman', 'arial','mirza','Roboto','Aref-Ruqaa'];
+  //Font.whitelist = ['times-new-roman', 'arial','mirza','Roboto','Aref-Ruqaa'];
+  Font.whitelist = ['sans-serif', 'times-new-roman', 'arial','mirza','Roboto'];
   Quill.register(Font, true);
   
 var toolbarOptions = [
@@ -14,7 +15,7 @@ var toolbarOptions = [
   //[{ 'size': ['Small', 'Normal', 'Large', 'Huge'] }],
   ['link', 'image'],
   // NEW
-  [{ 'font': ['sans-serif','times-new-roman','arial','mirza','Roboto','Aref-Ruqaa'] }],  
+  [{ 'font': ['sans-serif','times-new-roman','arial','mirza','Roboto'] }],  
   /*['clean'],*/
   //[{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
   [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent

@@ -192,12 +192,15 @@ a {
 }*/
 
 #noteSearchHd {
+  display: none;
   padding: 4px 2px;
-  margin: 12px auto;
+  margin: 12px auto;  
 }
+
 .note-search-hd {
   display: none;  
 }
+
 
 .note-search {
   width: 196px;   
@@ -211,7 +214,7 @@ a {
   background-color: rgb(242,243,243);
 }
 
-#searchInput {
+#searchInput, #searchInputUp {
   max-width: 165px;
   padding: 2px;
   color:rgb(219, 215, 215);
@@ -816,7 +819,7 @@ span.tag-container { /*2018/12/04*/
     text-align: center;
   }  
   #searchNote {
-    display: block;
+    display: none;
   }
   #menuField {
     flex-grow: 1;
@@ -851,7 +854,14 @@ span.tag-container { /*2018/12/04*/
   display: none;
   /*margin: 14px auto 18px;*/
 }
-
+.note-container {
+  background-color: rgb(57,57,57);
+}
+#noteSearchHd {
+  display: block;
+  padding: 4px;
+  margin: 12px auto;  
+}
 #searchInput {
   padding: 4px 2px;
   color:rgb(219, 215, 215);

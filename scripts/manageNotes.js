@@ -396,7 +396,7 @@
     let noteSearch = document.querySelector('.note-search');
     let headerNotes = document.querySelector('.header-notes');
     let searchIcon = document.getElementById('search');
- 
+    let nSear = document.getElementById('noteSearch');
 
     // EVENT LISTENERS
     earth.addEventListener('click', changeStylesheet);
@@ -437,7 +437,7 @@
             noteContent.forEach( (note)=> {
                 note.classList.remove('note-content-sky');
             });
-
+            nSear.style.backgroundColor = "rgb(42,43,43)";
             noteContainer.style.backgroundColor = "rgb(46,45,45)";
             themeSet.style.borderColor = "rgb(102,102,102)";
             btnDrop.style.backgroundColor = "rgb(92,92,92)";
@@ -467,7 +467,7 @@
             noteContent.forEach( (note)=> {
                 note.classList.toggle('note-content-sky');
             });
-            
+            nSear.style.backgroundColor = "rgb(247,247,247)";
             themeSet.style.borderColor = "rgb(182,182,182)";
             btnDrop.style.backgroundColor = "rgb(23, 117, 171)";
             logoBrand.style.backgroundColor = "rgb(16, 113, 167)";

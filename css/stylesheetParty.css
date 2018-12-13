@@ -1,6 +1,7 @@
 .ql-editor {
     font-family:'Times New Roman', Times, serif;
     background-color:black;
+    min-height: 402px;
 }
 
 .ql-editor p {

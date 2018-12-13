@@ -1,6 +1,6 @@
 .ql-editor {
     font-family:'Rationale';
- 
+    min-height: 402px;
 }
 .ql-editor p {
     font-family: 'Rationale';
