@@ -155,7 +155,6 @@ a {
 .note-container {
   flex-basis: 8%;
   min-width: 226px;
-  /*max-height: 1200px;  */
   min-height: 1100px;
   background-color: rgb(46,45,45); 
   padding: 0;
@@ -278,8 +277,8 @@ a {
   min-height: 120px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   background-color: rgb(63, 61, 61);
-  /*color: rgb(247,247,247);*/
   padding: 10px;  
+  border: 1px solid transparent;  
   border-bottom: 1px solid rgba(158, 156, 156, 0.596);    
   box-sizing: border-box;
 }
@@ -328,12 +327,13 @@ a {
   text-overflow: ellipsis;
   max-width: 180px;
 }
-.note-item:active {
-  border: 1px solid rgb(182,182,182);  
+.note-item:active, .note-item-sky:active {
+  border-top: 1px solid rgb(182,182,182);  
+  border-bottom: 1px solid rgb(182,182,182);  
 }
 .note-active {
-  /* background-color: rgb(77,77,77); */
-  background-color: rgb(247, 240, 240);
+  background-color: rgb(77,77,77); 
+  /*background-color: rgb(247, 240, 240);*/
   color: rgb(57,57,57);
 }
 /*** WORK FIELD ***/
@@ -546,7 +546,6 @@ span.tag-container { /*2018/12/04*/
 }
 .ql-editor {  
   padding: 44px 52px;
-  /* height: -webkit-fill-available; */
   border: none !important;
   /*overflow: hidden;*/
 }
@@ -794,14 +793,12 @@ span.tag-container { /*2018/12/04*/
 
 .note-container {   
   display: flex;
-  flex-wrap: wrap;
-  flex-basis: 100%;  
+  flex-wrap: wrap;  
+  flex-basis: 100%;
+  min-height: 0;  
   border-bottom: 2px solid rgb(202,202,202);
 }
 
-#searchHeadField {
-  display: none;
-}
 #noteField {
   flex-basis: 100%;
 }
@@ -816,25 +813,9 @@ span.tag-container { /*2018/12/04*/
   color: rgb(209, 208, 208);  
 }
 
-/*
 #searchHeadField {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  padding: 15px 10px 0 22px;
-  margin: 0;
-}
-*/
-/*
-.note-container #noteSearch {  
-  display: inline-flex;
-  margin-right: 20px;
-  padding-top: 0;
-}*/
-
-#noteSearch {
-  margin: 14px auto 18px;
+  display: none;
+  /*margin: 14px auto 18px;*/
 }
 
 #searchInput {
@@ -935,24 +916,22 @@ span.tag-container { /*2018/12/04*/
     page-break-inside: avoid;
   } */
 
-
-
-   pre, ol, ul, p, h1, h2, h3, h4, h5,div {
+  pre, ol, ul, p, h1, h2, h3, h4, h5,div {
+    page-break-before: always;
     page-break-inside: avoid;
-
+    margin: 0.5cm;
   } 
-  
   * { 
     border: none !important; 
-  } 
-
+  }
+/*
   .ql-editor {
      margin: 5%;
-  } 
+  }*/ 
 }
-/*
+
 @page {
   size: A4;
-  margin: 70px 25px;  
+  margin: 52px 25px;  
 }
-*/
+
