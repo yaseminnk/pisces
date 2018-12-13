@@ -383,8 +383,7 @@ var quill = new Quill('#editor', {
 }
 
 
-
-/*** STATISTIk ***/
+/*** STATISTIC ***/
 
 {
     var timer;
@@ -440,4 +439,27 @@ var quill = new Quill('#editor', {
             }
         });
     }
+}
+
+
+/*** SEARCH LOCIC FOR SMALL SCREENS ***/
+{
+    // ANCHORS
+    
+    let faSear = document.getElementById('faSearch');
+    let noteSearchBar = document.getElementById('noteSearchHd');
+    //let foo = document.querySelector('.search-note');
+
+    // LISTENERS
+    
+    faSear.addEventListener('click', showSearchBar);
+
+
+    // CALLBACKS
+
+    function showSearchBar() {
+        console.log("hello");
+        noteSearchBar.classList.toggle('note-search-hd');
+    }
+
 }
