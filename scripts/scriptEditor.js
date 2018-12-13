@@ -10,19 +10,16 @@
     let collapsedMenu = document.getElementById("collapseTarget");
     let cM = collapsedMenu;
     let navNewNote = document.querySelectorAll('.nav-newNote');
-    let navNotes = document.querySelectorAll('.nav-notes');
     let noteTitle = document.getElementById('noteTitle');
     let noteField = document.querySelector('.note-field');
     let noteSearch = document.getElementById('searchInput');
 
     // EVENT LISTENERS 
-    //logo.addEventListener('click', takeMeHome);
     logoShort.addEventListener('click', takeMeHome);
     menuToggler.addEventListener('click', toggleMenu);
 
     for (let i = 0; i < navNewNote.length; i++) {
         navNewNote[i].addEventListener('click', focusOnTitle);
-        //navNotes[i].addEventListener('click', showNotesField);
     }
     noteField.addEventListener('click', modNoteField);
 
@@ -74,10 +71,6 @@
         }
     }
 
-    // Field for my notes and favorite notes
-    //function showNotesField() {
-    //notesContainer.classList.toggle('data-container-hd');
-    //}
 
     //dropdown menu
     var dropdown = document.getElementsByClassName("dropdown-btn");
@@ -101,7 +94,6 @@
 /*** WE ADD TITLES TO TOOLBAR ***/
 {
     // ANCHORS
-    //let qlToolBar = document.querySelector('.ql-toolbar');
     let qlEd = document.querySelector('.ql-editor');
     let OList = document.querySelector('.ql-list');
     let UList = document.querySelectorAll('.ql-list')[1];
@@ -128,13 +120,10 @@
 
     // LISTENERS
     window.onload = edFocus;
-    //qlEd.addEventListener('blur', edBlur);
 
     // CALLBACK
     function edFocus() {
-        qlEd.focus();
-        //quill.root.innerText = "HELLO WORLD!";
-        //qlEd.setAttribute('placeholder', 'Write here: ');
+        qlEd.focus();        
     }
 
     // Logic when leaving the editor and note working with an existing note
@@ -147,7 +136,6 @@
             return false;
         }
     }*/
-
 }
 
 
@@ -260,89 +248,6 @@
     }
 }
 
-/* This was moved to manageNotes.js */
-/*** THEMES EARTH/BLUE ***/
-/*
-{
-    // ANCHORS
-    let bd = document.querySelector('body');
-    let menuField = document.querySelector('#menuField');
-    let earth = document.getElementById('earth');
-    let sky = document.getElementById('sky');
-    let themeSet = document.getElementById('themeFieldset');
-    let btnDrop = document.querySelector('.btn-drop');
-    let logoBrand = document.getElementById('logoBrand');
-    let noteCon = document.querySelector('.note-container');
-
-    let noteItems = document.querySelectorAll('.note-item');
-
-    let searchHeadField = document.querySelector('#searchHeadField');
-    let noteSearch = document.querySelector('.note-search');
-    let headerNotes = document.querySelector('.header-notes');
-    let searchIcon = document.querySelector('.fa-search');
-
-    // EVENT LISTENERS
-    earth.addEventListener('click', changeStylesheet);
-    sky.addEventListener('click', changeStylesheet);
-
-
-    // CALLBACKS    
-    function changeStylesheet() {
-        menuField.setAttribute('class', '');
-        var elId = this.id;
-
-        if (elId === 'earth') {
-            headerNotes.classList.remove('header-notes-sky');
-            searchHeadField.classList.remove('search-head-sky');
-            noteSearch.classList.remove('note-search-sky');
-            searchIcon.classList.remove('fa-search-sky');
-            menuField.setAttribute('class', 'earth-theme');
-
-            noteCon.style.backgroundColor = "rgb(46,45,45)";
-            themeSet.style.borderColor = "rgb(102,102,102)";
-            btnDrop.style.backgroundColor = "rgb(92,92,92)";
-            logoBrand.style.backgroundColor = "rgb(46,45,45)";
-            bd.style.backgroundColor = "rgb(92,92,92)";
-        }
-        else if (elId === 'sky') {
-            headerNotes.classList.toggle('header-notes-sky');
-            searchHeadField.classList.toggle('search-head-sky');
-            noteSearch.classList.toggle('note-search-sky');
-            searchIcon.classList.toggle('fa-search-sky');
-            menuField.setAttribute('class', 'sky-theme');
-            noteItems.forEach( (note)=> {
-                note.style.backgroundColor = "rgb(242,242,242)";
-            });
-            noteCon.style.backgroundColor = "rgb(248,249,249)";
-            themeSet.style.borderColor = "rgb(182,182,182)";
-            btnDrop.style.backgroundColor = "rgb(23, 117, 171)";
-            logoBrand.style.backgroundColor = "rgb(16, 113, 167)";
-            bd.style.backgroundColor = "rgb(36, 133, 197)";
-        }
-    }
-}
-*/
-
-// Implement and register module
-/*
-Quill.register('modules/counter', function (quill, options) {
-    var container = document.querySelector('#counter');
-    quill.on('text-change', function () {
-        var text = quill.getText();
-        // There are a couple issues with counting words
-        // this way but we'll fix these later
-        container.innerText = text.split(/\s+/).length;
-    });
-});
-
-// We can now initialize Quill with something like this:
-var quill = new Quill('#editor', {
-    modules: {
-        counter: true
-    }
-});
-*/
-
 
 /*** STATISTIC LOGIC */
 {
@@ -439,27 +344,3 @@ var quill = new Quill('#editor', {
         });
     }
 }
-
-
-/*** SEARCH LOCIC FOR SMALL SCREENS ***/
-//{
-    // ANCHORS
-    
-    //let faSear = document.getElementById('faSearch');
-    //let searchBar = document.getElementById('noteSearchHd');
-    //let noteSearchBar = document.getElementById('noteSearchHd');
-    //let foo = document.querySelector('.search-note');
-
-    // LISTENERS
-    
-   // faSear.addEventListener('click', showSearchBar);
-
-
-    // CALLBACKS
-/*
-    function showSearchBar() {
-        searchBar.style.display = "block";        
-        noteSearchBar.classList.toggle('note-search-hd');
-    }
-
-}*/

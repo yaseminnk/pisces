@@ -475,25 +475,3 @@
         }
     }
 }
-
-{    
-    let activeNotes = document.querySelector('.nav-newNote');    
-    activeNotes.addEventListener('click', setListener);
-
-    function setListener() {
-        let noteItems = document.querySelectorAll('.note-item');
-        // console.log(noteItems.length);
-
-        noteItems.forEach( (note)=> {
-            note.addEventListener('click', activeNote);
-        })
-    }
-
-    function activeNote() {
-        let noteItems = document.querySelectorAll('.note-item');
-        noteItems.forEach( (note)=> {
-            note.classList.remove('note-active');
-        })
-        this.classList.toggle('note-active');
-    }
-}
