@@ -271,12 +271,13 @@
     // EVENT LISTENERS 
     quill.on('text-change', function () {
         newSpanWords.innerText = "Words: " + wordCounter(quill.root.innerText);
-        newSpanChar.innerText = "Characters: " + charCounter(quill.root.innerText);
+        newSpanChar.innerText = "Characters: " + charCounter(quill.root.innerText);        
     });
     qlEditor.addEventListener('keydown', charCounter);
 
 
     // CALLBACKS
+    // we create an array consisting of all elements that fulfill the condition 
     function wordCounter(str) {
         return str.trim().split(' ')
             .filter(function (n) { return n != '' })

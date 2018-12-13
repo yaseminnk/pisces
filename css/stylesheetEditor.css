@@ -949,18 +949,8 @@ span.tag-container { /*2018/12/04*/
   .note-title-top,
   .ql-toolbar {
     display: none;
-  }
+  }  
   
-  /* h2 { 
-    page-break-before: always;
-  }
-  h3, h4 {
-    page-break-after: avoid;
-  }
-  pre, blockquote {
-    page-break-inside: avoid;
-  } */
-
   pre, ol, ul, p, h1, h2, h3, h4, h5,div {
     page-break-inside: avoid;
     margin: 0.5cm;
@@ -968,10 +958,12 @@ span.tag-container { /*2018/12/04*/
   * { 
     border: none !important; 
   }
-/*
+  body {
+    visibility:hidden;
+  }
   .ql-editor {
-     margin: 5%;
-  }*/ 
+    visibility: visible;
+  } 
 }
 
 @page {
