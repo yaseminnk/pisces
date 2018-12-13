@@ -10,12 +10,8 @@
     } else {
         }
         
+        
 
-    // -----**** Creating new note and adding to the array **** ------
-    // var newNote = document.querySelectorAll('.nav-newNote');
-    // for(let i = 0; i < newNote.length; i++) {
-    //     newNote[i].addEventListener('click', createNewNote);
-    // }
     document.querySelector('.nav-newNote').addEventListener('click', createNewNote);
     function createNewNote() {
         var newId = uniqueID();
@@ -99,11 +95,7 @@
         }
     };
 
-  
-    // notes.forEach(function(item){
-    //   allNotehtmlContent += '<div class="note-item"><div class="note-title">'+ item.title +'</div><div class="note-content">'+ item.content +'</div><div class="note-created">'+ item.created +'</div></div>';
-    // });
-
+ 
     // -----**** Added new eventListener and closed the toggle view **** ------ 
     var myNotes = document.querySelector('.nav-notes');
     myNotes.addEventListener('click', function() {
@@ -163,7 +155,7 @@
             }
         }
     }
-
+    
     // -----**** Selecting a specific note to display on editor **** ------  
     function selectNote (noteId) {
         currentNoteId = noteId;
@@ -172,7 +164,7 @@
                 {
                     document.getElementById('noteTitle').value =  notes[i].title ; //set title to Title field
                     quill.root.innerHTML = notes[i].contentHtml; //set contentHtml to quill editor
-    
+                    
                     var tagHolder = document.getElementsByClassName('tag-holder')[0];
                     tagHolder.innerHTML = "";
                     // Creating two span for showing tag value and remove icon
@@ -202,7 +194,7 @@
     
 
     // -----****Removing specific tag **** ------ 
-    // -----**** 2018/12/04  **** ------
+   
     function removeTag(noteId,tagValue) {
         
         for (var i = 0; i < notes.length; i++) {
@@ -490,7 +482,7 @@
 
     function setListener() {
         let noteItems = document.querySelectorAll('.note-item');
-        console.log(noteItems.length);
+        // console.log(noteItems.length);
 
         noteItems.forEach( (note)=> {
             note.addEventListener('click', activeNote);

@@ -295,6 +295,10 @@ a {
   text-shadow: 0.5px 0.5px 0 rgb(57,57,57);
   padding-top: 5px;
   margin-bottom: 10px;  
+  
+}
+.note-item .note-title::first-letter {
+  text-transform: uppercase;
 }
 .note-item .note-title-sky {
   color: rgb(92,92,92);
@@ -356,6 +360,10 @@ a {
   border: none;
   margin-left: 10px;
 }
+
+/* .note-title-top #noteTitle::first-letter {
+  text-transform: uppercase !important;
+} */
 .note-title-top, .note-tags-top, .note-template-top {
   display: inline-block;
   white-space: nowrap;
@@ -476,7 +484,7 @@ i .fas .fa-tags {
 .tag-holder {
   display: inline;
   /* min-width: 20px; */
-  max-width: 20px;
+  /* max-width: 20px; */
   text-overflow: ellipsis;
   font-size: 1.1em;
   margin-right: 10px;
@@ -510,7 +518,10 @@ span.tag-container { /*2018/12/04*/
   background-color: whitesmoke;
 }
 
-
+.selected-note {
+  background-color: white;
+  color: black;
+}
 /*** Toolbar ***/
 .ql-font{
   width: 154px !important;
@@ -917,7 +928,6 @@ span.tag-container { /*2018/12/04*/
   } */
 
   pre, ol, ul, p, h1, h2, h3, h4, h5,div {
-    page-break-before: always;
     page-break-inside: avoid;
     margin: 0.5cm;
   } 
