@@ -1,8 +1,9 @@
 #PROJECT QUIRE
+
 An organized multifunctional notebook created by team-PISCES.
 
 ##Motivation
-The task was to create a wysiwig editor with a number of prespecified features.The editor has to be easy to use with no previous knowledge being required.
+The task was to create a wysiwig editor with a number of prespecified features.The editor is easy to use with no previous knowledge being required.
 
 The project has been done as part of our Front-end education and the course Work methodology. The purpose has been to learn how to work in a group in an efficient way, following the Scrum methodlogy, an agile way to manage a project, usually software development.
 
