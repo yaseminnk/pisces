@@ -5,33 +5,41 @@
 }
 
 .ql-editor p {
-    font-family: 'crafty girls';
+    font-family: 'happy monkey';
     color: rgb(129, 90, 236);
     font-size: 3em;
+    max-width: 78ch;
 }
 .ql-snow .ql-editor h1{
     font-style: inherit;
     font-weight: bold;
-    font-family: 'crafty girls';
+    font-family: 'happy monkey';
     font-weight: bold;
     color:rgb(230, 79, 230);
     font-size:6em;
+    max-width: 78ch;
+    
 }
 .ql-snow .ql-editor h2{
     color:rgb(46, 106, 216);
     font-weight: bold;
-    font-family: 'crafty girls';
+    font-family: 'happy monkey';
     font-size:4em;
+    max-width: 78ch;
 }
 .ql-snow .ql-editor h3{
     font-weight: bold;
     color:green;
-    font-family: 'crafty girls';
+    font-family: 'happy monkey';
     font-size:2em;
+    max-width: 78ch;
 }
+    
 .ql-snow .ql-editor h4{
     font-weight: bold;
     color:rgb(255, 94, 0);
-    font-family: 'crafty girls';
+    font-family: 'happy monkey';
     font-size:2em;
+    max-width: 78ch;
+   
 }

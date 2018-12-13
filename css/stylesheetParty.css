@@ -8,19 +8,23 @@
     font-family: 'Charmonman';
     color: white;
     font-size: 3em;
+    max-width: 78ch;
 }
 .ql-snow .ql-editor h1{
     color:rgb(205, 72, 218);
     font-family: 'Lemon';
     font-size:6em;
+    max-width: 78ch;
 }
 .ql-snow .ql-editor h2{
     color:rgb(205, 72, 218);
     font-family: 'Lemon';
     font-size:3em;
+    max-width: 78ch;
 }
 .ql-snow .ql-editor h3{
     color:black;
     font-family: "Lemon";
     font-size:2em;
+    max-width: 78ch;
 }
