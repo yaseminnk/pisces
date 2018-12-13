@@ -7,13 +7,13 @@
     if ( storedNotes !== null){
         notes= storedNotes;// Get the saved note from localStorage and return them as object
         showNotes(isFavoriteView); //showNotes(true) only to show favorite notes
-    } else {
-        }
+    } 
         
-        
+    
 
     document.querySelector('.nav-newNote').addEventListener('click', createNewNote);
     function createNewNote() {
+        clearSelectedNoteAndEditor();
         var newId = uniqueID();
         var note = {
                 id : newId,
@@ -101,6 +101,7 @@
     myNotes.addEventListener('click', function() {
         isFavoriteView = false;
         showNotes(isFavoriteView);
+        clearSelectedNoteAndEditor();
     });
 
     // -----**** Updates All notes view **** ------    
@@ -191,7 +192,17 @@
                 }
             }
         }
-    
+    // -----****Select active note **** ------ 
+        document.getElementById("noteField").onclick = function(event) {
+            if(document.getElementsByClassName("selected-note").length > 0)
+            {
+                var prevSelectedNote = document.getElementsByClassName("selected-note");
+                for(let k=0;k<prevSelectedNote.length;k++){ 
+                    prevSelectedNote[k].classList.remove("selected-note");
+                }
+            }
+            document.getElementById(currentNoteId).classList.add("selected-note");
+        };
 
     // -----****Removing specific tag **** ------ 
    
@@ -220,6 +231,7 @@
     document.getElementById('allTags').addEventListener('click', showAllTags);
 
     function showAllTags() {
+        clearSelectedNoteAndEditor();
         isFavoriteView = false;
         var allTags = [];
         for(var i = 0; i < notes.length; i++){
@@ -237,7 +249,7 @@
         for(let i = 0; i < allTags.length; i++){
             var divTagItem = document.createElement('div');
             divTagItem.setAttribute("class", "note-tags");
-            divTagItem.onclick = function() { showNotesWithSpecificTag(allTags[i]); };
+            divTagItem.onclick = function() { showNotes(isFavoriteView,allTags[i]); };
             divTagItem.append(allTags[i]);
 
             list.append(divTagItem);
@@ -255,12 +267,22 @@
     }
     
     // -----**** Search note **** ------ 
-    var search = document.getElementById('search');
-    search.addEventListener("click", function searchNote(searchValue) {
+    document.getElementById('searchUp').addEventListener("click" , function(){
+        var searchValue =document.getElementById('searchInputUp').value;
+        searchNote(searchValue);
+        clearSelectedNoteAndEditor();
+    });
+    document.getElementById('search').addEventListener("click" , function(){
         var searchValue = document.getElementById('searchInput').value;
+        searchNote(searchValue);
+        clearSelectedNoteAndEditor();
+    });
+
+    
+    function searchNote(searchValue) {
         var list = document.getElementsByClassName('note-list')[0];
         list.innerHTML = "";
-        
+        searchValue = searchValue.toLowerCase();
         for (var i = 0; i < notes.length; i++) {
             var notesTitleText = notes[i].title.toLowerCase();
             var notesContentText = notes[i].contentText.toLowerCase();
@@ -269,17 +291,7 @@
             } 
         }
         document.getElementsByClassName('header-notes')[0].innerText = "Searched Notes";
-    });
-
-    
-
-    // -----**** Showing all notes with a specific tag **** ------  
-    
-    function showNotesWithSpecificTag(tagName) {
-        showNotes(isFavoriteView,tagName);
     }
-
-
 
     // -----**** Dynamically creating notes view **** ------  
     function noteElement(note) {
@@ -289,8 +301,15 @@
         divNoteItem.onclick = function() { selectNote(note.id); };
 
         var divNoteTitle  = document.createElement("div");
-        divNoteTitle.className = "note-title";
-        divNoteTitle.textContent  = note.title; 
+        divNoteTitle.className = "note-title";    
+        var spanNoteTitle = document.createElement("span");
+        spanNoteTitle.className = "note-title-span";
+        spanNoteTitle.textContent  = note.title;
+        divNoteTitle.appendChild(spanNoteTitle);
+
+        // var divNoteTitle  = document.createElement("div");
+        // divNoteTitle.className = "note-title";
+        // divNoteTitle.textContent  = note.title; 
 
         var iconNoteFavorite = document.createElement('i');
         if (note.isFavorite == true) {
@@ -312,6 +331,10 @@
         divNoteContent.className = "note-content";
         divNoteContent.textContent = note.contentText; 
 
+       
+
+        
+
         divNoteTitle.appendChild(iconNoteFavorite);
         divNoteItem.appendChild(divNoteTitle);
         divNoteItem.appendChild(divNoteCreated);
@@ -327,6 +350,7 @@
         favorite[i].onclick = function() { 
              isFavoriteView = true;
              showNotes(isFavoriteView);
+             clearSelectedNoteAndEditor();
          };
     }
 
@@ -358,18 +382,23 @@
                 var noteId = currentNoteId; 
                  if (notes[i].id === noteId) {
                    notes.splice(i,1);
-                   document.getElementById('noteTitle').value = "";
-                   quill.setContents("");
-                   document.getElementsByClassName('tag-holder')[0].innerHTML = "";
-                   document.getElementById('tagInput').value= "";
                    localStorage.setItem("notes", JSON.stringify(notes));
-                  
+                   
+                   clearSelectedNoteAndEditor();
                    showNotes(isFavoriteView);
                  }
              }
         } 
     };
        
+
+    function clearSelectedNoteAndEditor()
+    {
+        document.getElementById('noteTitle').value = "";
+        document.getElementsByClassName('tag-holder')[0].innerHTML = "";
+        document.getElementById('tagInput').value= "";
+        quill.setContents("");
+    }
 
     // -----**** GetUnique Id **** ------ 
     //https://gist.github.com/gordonbrander/2230317
