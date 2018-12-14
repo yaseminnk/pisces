@@ -33,6 +33,9 @@
        //notes.push(note);
         showNotes(isFavoriteView);
         currentNoteId = note.id;
+        if(document.getElementById(currentNoteId) !== null){
+            document.getElementById(currentNoteId).classList.add("selected-note");
+        }
     };
 
     

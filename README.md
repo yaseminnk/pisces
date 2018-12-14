@@ -90,7 +90,7 @@ Inspired by the tasks concept sketch and other editors as One note and Ever note
 
 1.Philip Ribera.
 
-2.Moitrayee Choudhury and
+2.Moitrayee Choudhury.
 
 3.Desirée Costa.
 
