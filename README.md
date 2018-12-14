@@ -89,7 +89,9 @@ Inspired by the tasks concept sketch and other editors as One note and Ever note
 ## Contributers
 
 1.Philip Ribera.
+
 2.Moitrayee Choudhury and
+
 3.Desirée Costa.
 
 ## Link to Trello
@@ -99,4 +101,5 @@ Inspired by the tasks concept sketch and other editors as One note and Ever note
 ## Credits
 
 Quill rich text editor.
+
 Technical supervisor(CTO): Kristian Kjeldsen
