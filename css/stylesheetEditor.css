@@ -509,8 +509,6 @@ i .fas .fa-tags {
 }
 .tag-holder {
   display: inline;
-  /* min-width: 20px; */
-  /* max-width: 20px; */
   text-overflow: ellipsis;
   font-size: 1.1em;
   margin-right: 10px;
@@ -521,7 +519,7 @@ i .fas .fa-tags {
   margin-top: 5px !important;
   opacity: .3;
 }
-.note-tags { /*2018/12/04*/
+.note-tags { 
   color: rgb(254,254,254);
   background-color: rgb(61, 59, 59);
   text-shadow: 0.5px 0.5px 0 rgb(57,57,57);

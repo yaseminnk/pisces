@@ -307,9 +307,6 @@
         spanNoteTitle.textContent  = note.title;
         divNoteTitle.appendChild(spanNoteTitle);
 
-        // var divNoteTitle  = document.createElement("div");
-        // divNoteTitle.className = "note-title";
-        // divNoteTitle.textContent  = note.title; 
 
         var iconNoteFavorite = document.createElement('i');
         if (note.isFavorite == true) {
@@ -330,10 +327,7 @@
         var divNoteContent = document.createElement("div");
         divNoteContent.className = "note-content";
         divNoteContent.textContent = note.contentText; 
-
-       
-
-        
+ 
 
         divNoteTitle.appendChild(iconNoteFavorite);
         divNoteItem.appendChild(divNoteTitle);
