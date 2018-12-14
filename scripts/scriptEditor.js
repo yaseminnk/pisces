@@ -254,7 +254,6 @@
     // ANCHORS
     let statSpan = document.createElement('span');
     let qlContainer = document.querySelector('.ql-toolbar');
-    let qlEditor = document.querySelector('.ql-editor');
 
     // WE CREATE NEW STAT ELEMENTS AND APPEND THESE TO THE DOM
     let newSpanWords = document.createElement('span');
@@ -273,9 +272,7 @@
         newSpanWords.innerText = "Words: " + wordCounter(quill.root.innerText);
         newSpanChar.innerText = "Characters: " + charCounter(quill.root.innerText);        
     });
-    qlEditor.addEventListener('keydown', charCounter);
-
-
+   
     // CALLBACKS
     // we create an array consisting of all elements that fulfill the condition 
     function wordCounter(str) {
@@ -283,8 +280,8 @@
             .filter( n => { return n != '' })            
             .length;           
     }
-    function charCounter(str) {
-        return str.length;
+    function charCounter(str) {        
+        return (str.length)-2;
     }
 }
 
