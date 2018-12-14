@@ -279,9 +279,9 @@
     // CALLBACKS
     // we create an array consisting of all elements that fulfill the condition 
     function wordCounter(str) {
-        return str.trim().split(' ')
-            .filter(function (n) { return n != '' })
-            .length;
+        return str.trim().split(' ')        
+            .filter( n => { return n != '' })            
+            .length;           
     }
     function charCounter(str) {
         return str.length;
