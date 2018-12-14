@@ -290,7 +290,7 @@ a {
   display: block;
 }
 
-.note-item .note-title i {
+.note-item .note-title-span i {
   padding-left: 10px;
 }
 .active-favorite {
@@ -311,7 +311,7 @@ a {
   background-color: rgb(242,242,242); 
 }
 
-.note-item .note-title{
+.note-item .note-title-span{
   box-sizing: border-box;
   /* height: 20px; */
   font-size: 0.95em; 
@@ -322,8 +322,13 @@ a {
   padding-top: 5px;
   margin-bottom: 10px; 
 }
-.note-item .note-title::first-letter {
+.note-item .note-title-span::first-letter {
   text-transform: uppercase;
+}
+
+.favorite-icon {
+  color: rgb(247,247,247);
+  padding-left: 10px;
 }
 .note-item .note-title-sky {
   color: rgb(92,92,92);
