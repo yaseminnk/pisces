@@ -5,26 +5,26 @@
 .ql-editor p {
     font-family: 'Rationale';
     font-size: 3em;
-    max-width: 78ch;
+    max-width: 50ch;
 }
 .ql-snow .ql-editor h1{
     font-style: inherit;
     font-weight: bold;
     font-family: 'Rationale';
     font-size:6em;
-    max-width: 78ch;
+    max-width: 50ch;
 }
 .ql-snow .ql-editor h2{
     color:black;
     font-family: 'Rationale';
     font-size:3em;
-    max-width: 78ch;
+    max-width: 50ch;
 }
 .ql-snow .ql-editor h3{
     color:black;
     font-family: "Rationale";
     font-size:2em;
-    max-width: 78ch;
+    max-width: 50ch;
 }
 
 
