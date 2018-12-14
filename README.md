@@ -98,6 +98,10 @@ Inspired by the tasks concept sketch and other editors as One note and Ever note
 
 [New-Pisces](https://trello.com/b/R4dsyXIs/new-pisces)
 
+## Link to Surge.sh
+
+[Quire-Pisces](http://quire-pisces.surge.sh/editor.html)
+
 ## Credits
 
 Quill rich text editor.
