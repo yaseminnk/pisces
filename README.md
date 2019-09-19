@@ -35,7 +35,7 @@ All the Javascript is written with Camelcase.
 
 Most of the Javascript logic is structured with anchors coming first followed by eventlisteners, followed by callbacks.
 
-## libraries and stylesheets
+## Libraries and Stylesheets
 
 [Quilljs](https://cdn.quilljs.com/1.3.6/quill.min.js)
 
